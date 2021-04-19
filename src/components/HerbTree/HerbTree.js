@@ -1,9 +1,12 @@
 import React from "react";
 import * as d3 from "d3";
-import "./HerbTree.scss";
-import herbHeirarcy from "../../data/herbHeirarcy.json";
+
+import { radToDeg } from "../../utils/math";
+
+import herbHierarchy from "../../data/herbHierarchy.json";
 import herbData from "../../data/herbData.json";
-import { degToRad, radToDeg } from "../../utils/math";
+
+import "./HerbTree.scss";
 const clearColor = "#f7f2f1";
 
 let width = 400;
@@ -22,10 +25,10 @@ class HerbTree extends React.Component {
   componentDidMount() {
     this.setGraphSize();
 
-    const herbHeirarcyPruned = removeSingleChildren(
-      JSON.parse(JSON.stringify(herbHeirarcy))
+    const herbHierarchyPruned = removeSingleChildren(
+      JSON.parse(JSON.stringify(herbHierarchy))
     );
-    graphEl = graph(this.d3ref, herbHeirarcyPruned);
+    graphEl = graph(this.d3ref, herbHierarchyPruned);
 
     window.addEventListener("resize", (e) => this.handleResize(e));
   }
@@ -45,7 +48,7 @@ class HerbTree extends React.Component {
       width,
       height,
     ]);
-    if (simulation) simulation.alphaTarget(0.3).restart();
+    if (simulation) simulation.alphaTarget(0.1).restart();
 
     // TODO update root node positions
   }
@@ -67,7 +70,8 @@ const removeSingleChildren = (node) => {
     node.rank !== "Cladus"
     // && node.rank !== "Familia"
   ) {
-    const { children, name } = node.children[0];
+    const { children, name, id } = node.children[0];
+    node.id = id;
     node.children = children;
     node.name = name;
   }
@@ -110,23 +114,27 @@ const graph = (ref, data) => {
 
   simulation = d3
     .forceSimulation(nodes)
-    .alphaDecay(0.008)
+    .alphaDecay(0.01)
     .force(
       "link",
       d3
         .forceLink(links)
         .id((d) => d.id)
-        .distance(18)
+        .distance(15)
         .strength(1)
     )
-    .force("charge", d3.forceManyBody().strength(-45))
+    .force("charge", d3.forceManyBody().strength(-30))
+    .force(
+      "collision",
+      d3.forceCollide().radius((d) => (d.children ? 2 : 10))
+    )
     .force("x", d3.forceX())
     .force("y", d3.forceY())
     .force("growth", (alpha) => {
       nodes.forEach((node) => {
         // Cause nodes to be above their parents
-        if (node.parent && node.y > node.parent.y - 50) {
-          node.y -= alpha * 3;
+        if (node.parent && node.y > node.parent.y - 100) {
+          node.y -= alpha * 4;
         }
       });
     })
@@ -163,19 +171,18 @@ const graph = (ref, data) => {
     .data(nodes)
     .join("g")
     .attr("class", "node")
+    .attr("id", (d) => d.data.id)
     .call(drag(simulation));
 
   node
     .append("circle")
+    .filter((d) => d.children)
     .attr("fill", (d) => (d.children ? "#999" : clearColor))
-    .attr("stroke", (d) => (d.children ? null : clearColor))
-    .attr("stroke-width", (d) => (d.children ? 0 : 1.5))
+    .attr("stroke", (d) => "transparent")
+    .attr("stroke-width", (d) => 10)
     .attr("r", (d) => (d.children ? 0.5 * radius : radius));
 
-  node.append("title").text((d) => d.data.name);
-  node.append("text").text((d) => d.data.id);
-
-  const imageSize = 15;
+  const imageSize = 16;
 
   node
     .filter((d) => !d.children)
@@ -186,19 +193,44 @@ const graph = (ref, data) => {
     .attr("width", imageSize)
     .attr("height", imageSize);
 
+  const text = svg
+    .append("g")
+    .selectAll("g")
+    .data(nodes)
+    .join("g")
+    .append("text")
+    .text((d) => (d.children ? d.data.name : herbData[d.data.id].hebrewName))
+    .attr("class", "nodeText")
+    .attr("text-anchor", "middle")
+    .attr("y", (d) => (d.children ? -5 : -0.8 * imageSize));
+
+  node
+    .on("mouseover", (e, d) => {
+      const { id } = d.data;
+      text.filter((d) => d.data.id === id).attr("class", "nodeText visible");
+    })
+    .on("mouseout", (e, d) => {
+      const { id } = d.data;
+      text.filter((d) => d.data.id === id).attr("class", "nodeText");
+    });
+
   simulation.on("tick", (e) => {
     // Update node positions
-    node.attr("transform", (d) => {
-      let transform = `translate(${d.x},${d.y})`;
-      if (!d.children) {
-        const deltaX = d.x - d.parent.x;
-        const deltaY = d.y - d.parent.y;
-        const angle = radToDeg(Math.atan2(deltaY, deltaX)) + 90;
-        transform += ` rotate(${angle})`;
-      }
+    node
+      .attr("transform", (d) => `translate(${d.x},${d.y})`)
+      .select("image")
+      .attr("transform", (d) => {
+        let transform = "";
+        if (!d.children) {
+          const deltaX = d.x - d.parent.x;
+          const deltaY = d.y - d.parent.y;
+          const angle = radToDeg(Math.atan2(deltaY, deltaX)) + 90;
+          transform += ` rotate(${angle})`;
+        }
+        return transform;
+      });
 
-      return transform;
-    });
+    text.attr("transform", (d) => `translate(${d.x},${d.y})`);
 
     // Update link positions
     link

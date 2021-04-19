@@ -4,9 +4,23 @@
   width: 100vw;
   height: 100vh;
 }
-
 .node {
-  text {
+  cursor: pointer;
+}
+
+.nodeText {
+  opacity: 0;
+  paint-order: stroke fill;
+  stroke: #f7f2f1;
+  stroke-width: 0.4em;
+  font-size: 0.5em;
+  user-select: none;
+  text-align: center;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+  font-style: italic;
+
+  &.visible {
     opacity: 1;
   }
 }
