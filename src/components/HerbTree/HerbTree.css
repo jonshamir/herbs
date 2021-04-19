@@ -1,0 +1,6 @@
+.graphContainer {
+  box-sizing: border-box;
+  /* border: 10px solid grey; */
+  width: 100vw;
+  height: 100vh;
+}
