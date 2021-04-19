@@ -1,6 +1,6 @@
 import React from "react";
 import * as d3 from "d3";
-import "./HerbTree.css";
+import "./HerbTree.scss";
 import herbHeirarcy from "../../data/herbHeirarcy.json";
 import herbData from "../../data/herbData.json";
 import { degToRad, radToDeg } from "../../utils/math";

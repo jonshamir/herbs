@@ -1,6 +1,6 @@
 import React from "react";
 import HerbTree from "./components/HerbTree/HerbTree";
-import "./App.css";
+import "./App.scss";
 
 class App extends React.Component {
   constructor(props) {
