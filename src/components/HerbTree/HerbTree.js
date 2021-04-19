@@ -38,7 +38,7 @@ class HerbTree extends React.Component {
   }
 
   setGraphSize() {
-    const w = document.documentElement.clientWidth;
+    const w = 0.7 * document.documentElement.clientWidth;
     const h = document.documentElement.clientHeight;
     width = w / 2;
     height = h / 2;

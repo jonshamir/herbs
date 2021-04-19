@@ -1,8 +1,12 @@
 .graphContainer {
   box-sizing: border-box;
   /* border: 10px solid grey; */
-  width: 100vw;
+  width: 70vw;
   height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
 }
 .node {
   cursor: pointer;
