@@ -2,8 +2,9 @@ import React from "react";
 import * as d3 from "d3";
 import "./HerbTree.css";
 import herbHeirarcy from "../../data/herbHeirarcy.json";
-
-const clearColor = "#eeeeee";
+import herbData from "../../data/herbData.json";
+import { degToRad, radToDeg } from "../../utils/math";
+const clearColor = "#f7f2f1";
 
 let width = 400;
 let height = 400;
@@ -45,6 +46,8 @@ class HerbTree extends React.Component {
       height,
     ]);
     if (simulation) simulation.alphaTarget(0.3).restart();
+
+    // TODO update root node positions
   }
 
   render() {
@@ -113,17 +116,17 @@ const graph = (ref, data) => {
       d3
         .forceLink(links)
         .id((d) => d.id)
-        .distance(20)
+        .distance(18)
         .strength(1)
     )
-    .force("charge", d3.forceManyBody().strength(-30))
+    .force("charge", d3.forceManyBody().strength(-45))
     .force("x", d3.forceX())
     .force("y", d3.forceY())
     .force("growth", (alpha) => {
       nodes.forEach((node) => {
         // Cause nodes to be above their parents
         if (node.parent && node.y > node.parent.y - 50) {
-          node.y -= alpha * 1;
+          node.y -= alpha * 3;
         }
       });
     })
@@ -148,7 +151,7 @@ const graph = (ref, data) => {
   const link = svg
     .append("g")
     .attr("stroke", "#ccc")
-    .attr("stroke-width", 1.2)
+    .attr("stroke-width", 1)
     .attr("stroke-opacity", 1)
     .selectAll("line")
     .data(links)
@@ -156,28 +159,46 @@ const graph = (ref, data) => {
 
   const node = svg
     .append("g")
-    .attr("fill", "#999")
-    .attr("stroke", clearColor)
-    .selectAll("circle")
+    .selectAll("g")
     .data(nodes)
-    .join("circle")
-    .attr("fill", (d) => (d.children ? null : "#999"))
-    .attr("stroke", (d) => (d.children ? null : clearColor))
-    .attr("stroke-width", (d) => (d.children ? 0 : 1.5))
-    .attr("r", (d) => (d.children ? 0.5 * radius : radius))
+    .join("g")
+    .attr("class", "node")
     .call(drag(simulation));
 
+  node
+    .append("circle")
+    .attr("fill", (d) => (d.children ? "#999" : clearColor))
+    .attr("stroke", (d) => (d.children ? null : clearColor))
+    .attr("stroke-width", (d) => (d.children ? 0 : 1.5))
+    .attr("r", (d) => (d.children ? 0.5 * radius : radius));
+
   node.append("title").text((d) => d.data.name);
+  node.append("text").text((d) => d.data.id);
+
+  const imageSize = 15;
+
+  node
+    .filter((d) => !d.children)
+    .append("svg:image")
+    .attr("xlink:href", "/images/herb.png")
+    .attr("x", -imageSize / 2)
+    .attr("y", -imageSize / 2)
+    .attr("width", imageSize)
+    .attr("height", imageSize);
 
   simulation.on("tick", (e) => {
     // Update node positions
-    node
-      .attr("cx", (d) => {
-        return d.x;
-      })
-      .attr("cy", (d) => {
-        return d.y;
-      });
+    node.attr("transform", (d) => {
+      let transform = `translate(${d.x},${d.y})`;
+      if (!d.children) {
+        const deltaX = d.x - d.parent.x;
+        const deltaY = d.y - d.parent.y;
+        const angle = radToDeg(Math.atan2(deltaY, deltaX)) + 90;
+        transform += ` rotate(${angle})`;
+      }
+
+      return transform;
+    });
 
     // Update link positions
     link
