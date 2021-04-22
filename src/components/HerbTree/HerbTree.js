@@ -5,6 +5,7 @@ import { radToDeg } from "../../utils/math";
 
 import herbHierarchy from "../../data/herbHierarchy.json";
 import herbData from "../../data/herbData.json";
+import initialNodePositions from "../../data/initialNodePositions.json";
 
 import "./HerbTree.scss";
 const clearColor = "#f7f2f1";
@@ -57,9 +58,18 @@ class HerbTree extends React.Component {
     // TODO update root node positions
   }
 
+  logPositions() {
+    const nodePositions = {};
+    simulation.nodes().forEach((node, i) => {
+      nodePositions[node.data.id] = { x: node.x, y: node.y };
+    });
+    console.log(JSON.stringify(nodePositions));
+  }
+
   render() {
     return (
-      <div className="App">
+      <div className="HerbTree">
+        {/*<button onClick={this.logPositions}>Get positions</button>*/}
         <div ref={this.d3ref}></div>
       </div>
     );
@@ -112,6 +122,14 @@ const graph = (ref, data, parentComponent) => {
   const root = d3.hierarchy(data);
   const links = root.links();
   const nodes = root.descendants();
+  nodes.forEach((node, i) => {
+    const { id } = node.data;
+    if (id !== 1000) {
+      const { x, y } = initialNodePositions[id];
+      node.x = x;
+      node.y = y;
+    }
+  });
 
   root.fixed = true;
   root.fx = 0;

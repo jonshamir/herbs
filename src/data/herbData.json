@@ -1,6 +1,7 @@
 [
   {
     "id": 0,
+    "slug": "oregano",
     "name": "Origanum vulgare",
     "englishName": "Oregano",
     "englishAltNames": "\u05d0\u05d6\u05d5\u05d1\u05d9\u05ea \u05e4\u05e9\u05d5\u05d8\u05d4",
@@ -29,6 +30,7 @@
   },
   {
     "id": 1,
+    "slug": "zaatar",
     "name": "Origanum syriacum",
     "englishName": "Zaatar",
     "englishAltNames": "\u05d6\u05e2\u05ea\u05e8",
@@ -57,6 +59,7 @@
   },
   {
     "id": 2,
+    "slug": "angelica",
     "name": "Angelica archangelica",
     "englishName": "Angelica",
     "englishAltNames": "",
@@ -82,6 +85,7 @@
   },
   {
     "id": 3,
+    "slug": "basil",
     "name": "Ocimum basilicum",
     "englishName": "Basil",
     "englishAltNames": "\u05e8\u05d9\u05d7\u05df",
@@ -108,6 +112,7 @@
   },
   {
     "id": 4,
+    "slug": "holy-basil",
     "name": "Ocimum tenuiflorum",
     "englishName": "Holy Basil",
     "englishAltNames": "\u05e8\u05d9\u05d7\u05df \u05e7\u05d3\u05d5\u05e9",
@@ -134,6 +139,7 @@
   },
   {
     "id": 5,
+    "slug": "thai-basil",
     "name": "Ocimum basilicum",
     "englishName": "Thai Basil",
     "englishAltNames": "\u05e8\u05d9\u05d7\u05df \u05ea\u05d0\u05d9\u05dc\u05e0\u05d3\u05d9",
@@ -160,6 +166,7 @@
   },
   {
     "id": 6,
+    "slug": "rocket",
     "name": "Eruca vesicaria",
     "englishName": "Rocket",
     "englishAltNames": "\u05e8\u05d5\u05e7\u05d8, \u05d0\u05e8\u05d5\u05d2\u05d5\u05dc\u05d4",
@@ -184,6 +191,7 @@
   },
   {
     "id": 7,
+    "slug": "scallion",
     "name": "Allium",
     "englishName": "Scallion",
     "englishAltNames": "",
@@ -204,6 +212,7 @@
   },
   {
     "id": 8,
+    "slug": "garden-cress",
     "name": "Lepidium sativum",
     "englishName": "Garden cress",
     "englishAltNames": "\u05e8\u05d0\u05e9\u05d3, \u05e9\u05d7\u05dc\u05d9\u05d9\u05dd \u05ea\u05e8\u05d1\u05d5\u05ea\u05d9\u05d9\u05dd",
@@ -227,6 +236,7 @@
   },
   {
     "id": 9,
+    "slug": "watercress",
     "name": "Nasturtium officinale",
     "englishName": "Watercress",
     "englishAltNames": "",
@@ -250,6 +260,7 @@
   },
   {
     "id": 10,
+    "slug": "sweet-scented-geranium",
     "name": "Pelargonium graveolens",
     "englishName": "Sweet scented geranium",
     "englishAltNames": "\u05e4\u05dc\u05e8\u05d2\u05d5\u05e0\u05d9\u05d5\u05dd \u05d7\u05e8\u05d9\u05e3, \u05e2\u05b7\u05d8\u05b0\u05e8\u05b8\u05d4, \u05d2\u05e8\u05e0\u05d9\u05d5\u05dd \u05dc\u05d9\u05de\u05d5\u05e0\u05d9, \u05e4\u05dc\u05e8\u05d2\u05d5\u05e0\u05d9\u05d5\u05dd \u05e8\u05d9\u05d7\u05e0\u05d9, \u05e4\u05dc\u05e8\u05d2\u05d5\u05df",
@@ -272,6 +283,7 @@
   },
   {
     "id": 11,
+    "slug": "myrtle",
     "name": "Myrtus communis L.",
     "englishName": "Myrtle",
     "englishAltNames": "",
@@ -296,6 +308,7 @@
   },
   {
     "id": 12,
+    "slug": "white-micromeria",
     "name": "Micromeria fruticosa",
     "englishName": "White Micromeria",
     "englishAltNames": "",
@@ -322,6 +335,7 @@
   },
   {
     "id": 13,
+    "slug": "mallow",
     "name": "Malva",
     "englishName": "Mallow",
     "englishAltNames": "\u05d7\u05dc\u05de\u05d9\u05ea",
@@ -348,6 +362,7 @@
   },
   {
     "id": 14,
+    "slug": "sorrel",
     "name": "Rumex acetosa",
     "englishName": "Sorrel",
     "englishAltNames": "\u05d7\u05de\u05e6\u05d9\u05e5",
@@ -373,6 +388,7 @@
   },
   {
     "id": 15,
+    "slug": "fenugreek",
     "name": "Trigonella foenum-graecum",
     "englishName": "Fenugreek",
     "englishAltNames": "\u05d2\u05e8\u05d2\u05e8\u05e0\u05d9\u05ea \u05d9\u05d5\u05d5\u05e0\u05d9\u05ea, \u05d2\u05b7\u05bc\u05e8\u05b0\u05d2\u05b0\u05bc\u05e8\u05b8\u05e0\u05b4\u05d9\u05ea \u05d7\u05b4\u05d9\u05dc\u05b0\u05d1\u05b8\u05bc\u05d4",
@@ -397,6 +413,7 @@
   },
   {
     "id": 16,
+    "slug": "white-mustard",
     "name": "Sinapis alba",
     "englishName": "White mustard",
     "englishAltNames": "",
@@ -421,6 +438,7 @@
   },
   {
     "id": 17,
+    "slug": "tarragon",
     "name": "Artemisia dracunculus",
     "englishName": "Tarragon",
     "englishAltNames": "\u05dc\u05e2\u05e0\u05d4 \u05d3\u05e8\u05e7\u05d5\u05e0\u05d9\u05ea",
@@ -450,6 +468,7 @@
   },
   {
     "id": 18,
+    "slug": "coriander",
     "name": "Coriandrum sativum",
     "englishName": "Coriander",
     "englishAltNames": "\u05d2\u05d3 \u05d4\u05e9\u05d3\u05d4, \u05db\u05d6\u05d1\u05e8\u05d4",
@@ -474,6 +493,7 @@
   },
   {
     "id": 19,
+    "slug": "leek",
     "name": "Allium ampeloprasum",
     "englishName": "Leek",
     "englishAltNames": "\u05dc\u05d5\u05bc\u05e3, \u05e4\u05e8\u05d0\u05e1\u05d4",
@@ -496,6 +516,7 @@
   },
   {
     "id": 20,
+    "slug": "lavender",
     "name": "Lavandula",
     "englishName": "Lavender",
     "englishAltNames": "\u05d0\u05d6\u05d5\u05d1\u05d9\u05d5\u05df",
@@ -520,6 +541,7 @@
   },
   {
     "id": 21,
+    "slug": "lemon-verbana",
     "name": "Aloysia citrodora",
     "englishName": "Lemon Verbana",
     "englishAltNames": "\u05dc\u05d5\u05d0\u05d9\u05d6\u05d4 \u05dc\u05d9\u05de\u05d5\u05e0\u05d9\u05ea",
@@ -543,6 +565,7 @@
   },
   {
     "id": 22,
+    "slug": "lovage",
     "name": "Levisticum officinale",
     "englishName": "Lovage",
     "englishAltNames": "",
@@ -565,6 +588,7 @@
   },
   {
     "id": 23,
+    "slug": "grand-wormwood",
     "name": "Artemisia absinthium",
     "englishName": "Grand wormwood",
     "englishAltNames": "",
@@ -591,6 +615,7 @@
   },
   {
     "id": 24,
+    "slug": "marjoram",
     "name": "Origanum majorana",
     "englishName": "Marjoram",
     "englishAltNames": "\u05d0\u05d6\u05d5\u05d1 \u05ea\u05e8\u05d1\u05d5\u05ea\u05d9, \u05de\u05d9\u05d5\u05e8\u05dd",
@@ -616,6 +641,7 @@
   },
   {
     "id": 25,
+    "slug": "melissa",
     "name": "Melissa officinalis",
     "englishName": "Melissa",
     "englishAltNames": "",
@@ -641,6 +667,7 @@
   },
   {
     "id": 26,
+    "slug": "sage",
     "name": "Salvia officinalis",
     "englishName": "Sage",
     "englishAltNames": "",
@@ -668,6 +695,7 @@
   },
   {
     "id": 27,
+    "slug": "mint",
     "name": "Mentha",
     "englishName": "Mint",
     "englishAltNames": "\u05de\u05e0\u05d8\u05d4",
@@ -692,6 +720,7 @@
   },
   {
     "id": 28,
+    "slug": "celery",
     "name": "Apium graveolens",
     "englishName": "Celery",
     "englishAltNames": "\u05db\u05e8\u05e4\u05e1 \u05e8\u05d9\u05d7\u05e0\u05d9",
@@ -716,6 +745,7 @@
   },
   {
     "id": 29,
+    "slug": "chives",
     "name": "Allium schoenoprasum",
     "englishName": "Chives",
     "englishAltNames": "\u05e9\u05d5\u05dd \u05d4\u05e2\u05d9\u05e8\u05d9\u05ea",
@@ -738,6 +768,7 @@
   },
   {
     "id": 30,
+    "slug": "garlic-chives",
     "name": "Allium tuberosum",
     "englishName": "Garlic chives",
     "englishAltNames": "\u05e9\u05d5\u05dd \u05d4\u05e0\u05d9\u05e8\u05d4",
@@ -761,6 +792,7 @@
   },
   {
     "id": 31,
+    "slug": "bay-leaf",
     "name": "Laurus nobilis",
     "englishName": "Bay Leaf",
     "englishAltNames": "\u05e2\u05e8 \u05d0\u05e6\u05d9\u05dc",
@@ -780,6 +812,7 @@
   },
   {
     "id": 32,
+    "slug": "curry-leaf",
     "name": "Murraya koenigii",
     "englishName": "Curry leaf",
     "englishAltNames": "\u05e2\u05dc\u05d9 \u05d0\u05d6\u05d3\u05e8\u05db\u05ea \u05de\u05ea\u05d5\u05e7\u05d4",
@@ -805,6 +838,7 @@
   },
   {
     "id": 33,
+    "slug": "lemongrass",
     "name": "Cymbopogon citratus",
     "englishName": "Lemongrass",
     "englishAltNames": "\u05dc\u05d9\u05de\u05d5\u05e0\u05d9\u05ea \u05e8\u05d9\u05d7\u05e0\u05d9\u05ea, \u05dc\u05de\u05d5\u05df \u05d2\u05e8\u05d0\u05e1",
@@ -828,6 +862,7 @@
   },
   {
     "id": 34,
+    "slug": "parsley",
     "name": "Petroselinum crispum",
     "englishName": "Parsley",
     "englishAltNames": "",
@@ -852,6 +887,7 @@
   },
   {
     "id": 35,
+    "slug": "rue",
     "name": "Ruta graveolens",
     "englishName": "Rue",
     "englishAltNames": "",
@@ -875,6 +911,7 @@
   },
   {
     "id": 36,
+    "slug": "summer-savory",
     "name": "Satureja hortensis",
     "englishName": "Summer savory",
     "englishAltNames": "",
@@ -900,6 +937,7 @@
   },
   {
     "id": 37,
+    "slug": "mediterranean-thyme",
     "name": "Thymbra spicata",
     "englishName": "Mediterranean thyme",
     "englishAltNames": "\u05d6\u05e2\u05ea\u05e8 \u05e4\u05d0\u05e8\u05e1\u05d9",
@@ -928,6 +966,7 @@
   },
   {
     "id": 38,
+    "slug": "chamomile",
     "name": "Matricaria chamomilla",
     "englishName": "Chamomile",
     "englishAltNames": "\u05d1\u05d1\u05d5\u05e0\u05d2",
@@ -953,6 +992,7 @@
   },
   {
     "id": 39,
+    "slug": "kaffir-lime",
     "name": "Citrus hystrix",
     "englishName": "Kaffir lime",
     "englishAltNames": "",
@@ -978,6 +1018,7 @@
   },
   {
     "id": 40,
+    "slug": "rosemary",
     "name": "Salvia rosmarinus",
     "englishName": "Rosemary",
     "englishAltNames": "",
@@ -1004,6 +1045,7 @@
   },
   {
     "id": 41,
+    "slug": "fennel",
     "name": "Foeniculum vulgare",
     "englishName": "Fennel",
     "englishAltNames": "\u05e9\u05d5\u05de\u05e8 \u05e4\u05e9\u05d5\u05d8",
@@ -1031,6 +1073,7 @@
   },
   {
     "id": 42,
+    "slug": "tree-wormwood",
     "name": "Artemisia arborescens",
     "englishName": "Tree wormwood",
     "englishAltNames": "\u05dc\u05e2\u05e0\u05d4 \u05e9\u05d9\u05d7\u05e0\u05d9\u05ea, \u05e9\u05d9\u05d1\u05d4",
@@ -1057,6 +1100,7 @@
   },
   {
     "id": 43,
+    "slug": "dill",
     "name": "Anethum graveolens",
     "englishName": "Dill",
     "englishAltNames": "\u05e9\u05b6\u05c1\u05d1\u05b6\u05ea \u05e8\u05b5\u05d9\u05d7\u05b8\u05e0\u05b4\u05d9",
@@ -1081,6 +1125,7 @@
   },
   {
     "id": 44,
+    "slug": "dandelion",
     "name": "Taraxacum officinale",
     "englishName": "Dandelion",
     "englishAltNames": "\u05e9\u05d9\u05e0\u05df",
@@ -1106,6 +1151,7 @@
   },
   {
     "id": 45,
+    "slug": "thyme",
     "name": "Thymus vulgaris",
     "englishName": "Thyme",
     "englishAltNames": "\u05e7\u05d5\u05e8\u05e0\u05d9\u05ea",
@@ -1133,6 +1179,7 @@
   },
   {
     "id": 46,
+    "slug": "chervil",
     "name": "Anthriscus cerefolium",
     "englishName": "Chervil",
     "englishAltNames": "\u05e9\u05e8\u05d1\u05d9\u05dc",

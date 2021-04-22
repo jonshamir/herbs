@@ -6,11 +6,13 @@ import "./HerbPage.scss";
 
 const HerbPage = (props) => {
   let { slug } = useParams();
+  const herb = herbData.filter((herb) => herb.slug === slug)[0];
+
+  console.log(herb);
 
   return (
     <div className="HerbPage">
-      <h1>עמוד צמח</h1>
-      <h2>{slug}</h2>
+      <h1>{herb.hebrewName}</h1>
       <img className="HerbIcon" src={`/images/icons/${slug}.png`} />
     </div>
   );

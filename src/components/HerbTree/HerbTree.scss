@@ -28,3 +28,12 @@
     opacity: 1;
   }
 }
+
+.HerbTree button {
+  position: absolute;
+  left: 2em;
+  top: 2em;
+  display: block;
+  margin: auto;
+  z-index: 100;
+}
