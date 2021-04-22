@@ -17,87 +17,102 @@
                                 {
                                   "id": 0,
                                   "name": "Origanum vulgare",
-                                  "rank": "Subspecies"
+                                  "rank": "Subspecies",
+                                  "slug": "oregano"
                                 },
                                 {
                                   "id": 1,
                                   "name": "Origanum syriacum",
-                                  "rank": "Subspecies"
+                                  "rank": "Subspecies",
+                                  "slug": "zaatar"
                                 },
                                 {
                                   "id": 24,
                                   "name": "Origanum majorana",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "marjoram"
                                 }
                               ],
                               "id": 1007,
                               "name": "Origanum",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "origanum"
                             },
                             {
                               "children": [
                                 {
                                   "id": 12,
                                   "name": "Micromeria fruticosa",
-                                  "rank": "Subspecies"
+                                  "rank": "Subspecies",
+                                  "slug": "white-micromeria"
                                 }
                               ],
                               "id": 1038,
                               "name": "Clinopodium",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "clinopodium"
                             },
                             {
                               "children": [
                                 {
                                   "id": 27,
                                   "name": "Mentha",
-                                  "rank": "Genus"
+                                  "rank": "Genus",
+                                  "slug": "mint"
                                 }
                               ],
                               "id": 1072,
                               "name": "Mentha",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "mentha"
                             },
                             {
                               "children": [
                                 {
                                   "id": 36,
                                   "name": "Satureja hortensis",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "summer-savory"
                                 }
                               ],
                               "id": 1094,
                               "name": "Satureja",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "satureja"
                             },
                             {
                               "children": [
                                 {
                                   "id": 37,
                                   "name": "Thymbra spicata",
-                                  "rank": "Subspecies"
+                                  "rank": "Subspecies",
+                                  "slug": "mediterranean-thyme"
                                 }
                               ],
                               "id": 1095,
                               "name": "Thymbra",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "thymbra"
                             },
                             {
                               "children": [
                                 {
                                   "id": 45,
                                   "name": "Thymus vulgaris",
-                                  "rank": "Subspecies"
+                                  "rank": "Subspecies",
+                                  "slug": "thyme"
                                 }
                               ],
                               "id": 1106,
                               "name": "Thymus",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "thymus"
                             }
                           ],
                           "id": 1006,
                           "name": "Menthinae",
-                          "rank": "Subtribus"
+                          "rank": "Subtribus",
+                          "slug": "menthinae"
                         },
                         {
                           "children": [
@@ -106,39 +121,46 @@
                                 {
                                   "id": 25,
                                   "name": "Melissa officinalis",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "melissa"
                                 }
                               ],
                               "id": 1070,
                               "name": "Melissa",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "melissa"
                             },
                             {
                               "children": [
                                 {
                                   "id": 26,
                                   "name": "Salvia officinalis",
-                                  "rank": "Subspecies"
+                                  "rank": "Subspecies",
+                                  "slug": "sage"
                                 },
                                 {
                                   "id": 40,
                                   "name": "Salvia rosmarinus",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "rosemary"
                                 }
                               ],
                               "id": 1071,
                               "name": "Salvia",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "salvia"
                             }
                           ],
                           "id": 1069,
                           "name": "Salviinae",
-                          "rank": "Subtribus"
+                          "rank": "Subtribus",
+                          "slug": "salviinae"
                         }
                       ],
                       "id": 1005,
                       "name": "Mentheae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "mentheae"
                     },
                     {
                       "children": [
@@ -149,27 +171,32 @@
                                 {
                                   "id": 3,
                                   "name": "Ocimum basilicum",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "basil"
                                 },
                                 {
                                   "id": 4,
                                   "name": "Ocimum tenuiflorum",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "holy-basil"
                                 },
                                 {
                                   "id": 5,
                                   "name": "Ocimum basilicum",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "thai-basil"
                                 }
                               ],
                               "id": 1015,
                               "name": "Ocimum",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "ocimum"
                             }
                           ],
                           "id": 1014,
                           "name": "Ociminae",
-                          "rank": "Subtribus"
+                          "rank": "Subtribus",
+                          "slug": "ociminae"
                         },
                         {
                           "children": [
@@ -178,32 +205,38 @@
                                 {
                                   "id": 20,
                                   "name": "Lavandula",
-                                  "rank": "Genus"
+                                  "rank": "Genus",
+                                  "slug": "lavender"
                                 }
                               ],
                               "id": 1064,
                               "name": "Lavandula",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "lavandula"
                             }
                           ],
                           "id": 1063,
                           "name": "Lavandulinae",
-                          "rank": "Subtribus"
+                          "rank": "Subtribus",
+                          "slug": "lavandulinae"
                         }
                       ],
                       "id": 1013,
                       "name": "Ocimeae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "ocimeae"
                     }
                   ],
                   "id": 1004,
                   "name": "Nepetoideae",
-                  "rank": "Subfamilia"
+                  "rank": "Subfamilia",
+                  "slug": "nepetoideae"
                 }
               ],
               "id": 1003,
               "name": "Lamiaceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "lamiaceae"
             },
             {
               "children": [
@@ -214,27 +247,32 @@
                         {
                           "id": 21,
                           "name": "Aloysia citrodora",
-                          "rank": "Species"
+                          "rank": "Species",
+                          "slug": "lemon-verbana"
                         }
                       ],
                       "id": 1067,
                       "name": "Aloysia",
-                      "rank": "Genus"
+                      "rank": "Genus",
+                      "slug": "aloysia"
                     }
                   ],
                   "id": 1066,
                   "name": "Lantaneae",
-                  "rank": "Tribus"
+                  "rank": "Tribus",
+                  "slug": "lantaneae"
                 }
               ],
               "id": 1065,
               "name": "Verbenaceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "verbenaceae"
             }
           ],
           "id": 1002,
           "name": "Lamiales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "lamiales"
         },
         {
           "children": [
@@ -249,17 +287,20 @@
                             {
                               "id": 2,
                               "name": "Angelica archangelica",
-                              "rank": "Subspecies"
+                              "rank": "Subspecies",
+                              "slug": "angelica"
                             }
                           ],
                           "id": 1012,
                           "name": "Angelica",
-                          "rank": "Genus"
+                          "rank": "Genus",
+                          "slug": "angelica"
                         }
                       ],
                       "id": 1011,
                       "name": "Selineae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "selineae"
                     },
                     {
                       "children": [
@@ -268,17 +309,20 @@
                             {
                               "id": 18,
                               "name": "Coriandrum sativum",
-                              "rank": "Species"
+                              "rank": "Species",
+                              "slug": "coriander"
                             }
                           ],
                           "id": 1062,
                           "name": "Coriandrum",
-                          "rank": "Genus"
+                          "rank": "Genus",
+                          "slug": "coriandrum"
                         }
                       ],
                       "id": 1061,
                       "name": "Coriandreae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "coriandreae"
                     },
                     {
                       "children": [
@@ -287,53 +331,62 @@
                             {
                               "id": 28,
                               "name": "Apium graveolens",
-                              "rank": "Species"
+                              "rank": "Species",
+                              "slug": "celery"
                             }
                           ],
                           "id": 1074,
                           "name": "Apium",
-                          "rank": "Genus"
+                          "rank": "Genus",
+                          "slug": "apium"
                         },
                         {
                           "children": [
                             {
                               "id": 34,
                               "name": "Petroselinum crispum",
-                              "rank": "Species"
+                              "rank": "Species",
+                              "slug": "parsley"
                             }
                           ],
                           "id": 1091,
                           "name": "Petroselinum",
-                          "rank": "Genus"
+                          "rank": "Genus",
+                          "slug": "petroselinum"
                         },
                         {
                           "children": [
                             {
                               "id": 41,
                               "name": "Foeniculum vulgare",
-                              "rank": "Subspecies"
+                              "rank": "Subspecies",
+                              "slug": "fennel"
                             }
                           ],
                           "id": 1100,
                           "name": "Foeniculum",
-                          "rank": "Genus"
+                          "rank": "Genus",
+                          "slug": "foeniculum"
                         },
                         {
                           "children": [
                             {
                               "id": 43,
                               "name": "Anethum graveolens",
-                              "rank": "Species"
+                              "rank": "Species",
+                              "slug": "dill"
                             }
                           ],
                           "id": 1101,
                           "name": "Anethum",
-                          "rank": "Genus"
+                          "rank": "Genus",
+                          "slug": "anethum"
                         }
                       ],
                       "id": 1073,
                       "name": "Apieae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "apieae"
                     },
                     {
                       "children": [
@@ -344,49 +397,58 @@
                                 {
                                   "id": 46,
                                   "name": "Anthriscus cerefolium",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "chervil"
                                 }
                               ],
                               "id": 1109,
                               "name": "Anthriscus",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "anthriscus"
                             }
                           ],
                           "id": 1108,
                           "name": "Scandicinae",
-                          "rank": "Subtribus"
+                          "rank": "Subtribus",
+                          "slug": "scandicinae"
                         }
                       ],
                       "id": 1107,
                       "name": "Scandiceae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "scandiceae"
                     }
                   ],
                   "id": 1010,
                   "name": "Apioideae",
-                  "rank": "Subfamilia"
+                  "rank": "Subfamilia",
+                  "slug": "apioideae"
                 },
                 {
                   "children": [
                     {
                       "id": 22,
                       "name": "Levisticum officinale",
-                      "rank": "Species"
+                      "rank": "Species",
+                      "slug": "lovage"
                     }
                   ],
                   "id": 1068,
                   "name": "Levisticum",
-                  "rank": "Genus"
+                  "rank": "Genus",
+                  "slug": "levisticum"
                 }
               ],
               "id": 1009,
               "name": "Apiaceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "apiaceae"
             }
           ],
           "id": 1008,
           "name": "Apiales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "apiales"
         },
         {
           "children": [
@@ -399,29 +461,34 @@
                         {
                           "id": 6,
                           "name": "Eruca vesicaria",
-                          "rank": "Subspecies"
+                          "rank": "Subspecies",
+                          "slug": "rocket"
                         }
                       ],
                       "id": 1019,
                       "name": "Eruca",
-                      "rank": "Genus"
+                      "rank": "Genus",
+                      "slug": "eruca"
                     },
                     {
                       "children": [
                         {
                           "id": 16,
                           "name": "Sinapis alba",
-                          "rank": "Subspecies"
+                          "rank": "Subspecies",
+                          "slug": "white-mustard"
                         }
                       ],
                       "id": 1054,
                       "name": "Sinapis",
-                      "rank": "Genus"
+                      "rank": "Genus",
+                      "slug": "sinapis"
                     }
                   ],
                   "id": 1018,
                   "name": "Brassiceae",
-                  "rank": "Tribus"
+                  "rank": "Tribus",
+                  "slug": "brassiceae"
                 },
                 {
                   "children": [
@@ -430,17 +497,20 @@
                         {
                           "id": 8,
                           "name": "Lepidium sativum",
-                          "rank": "Species"
+                          "rank": "Species",
+                          "slug": "garden-cress"
                         }
                       ],
                       "id": 1027,
                       "name": "Lepidium",
-                      "rank": "Genus"
+                      "rank": "Genus",
+                      "slug": "lepidium"
                     }
                   ],
                   "id": 1026,
                   "name": "Lepidieae",
-                  "rank": "Tribus"
+                  "rank": "Tribus",
+                  "slug": "lepidieae"
                 },
                 {
                   "children": [
@@ -449,27 +519,32 @@
                         {
                           "id": 9,
                           "name": "Nasturtium officinale",
-                          "rank": "Species"
+                          "rank": "Species",
+                          "slug": "watercress"
                         }
                       ],
                       "id": 1029,
                       "name": "Nasturtium",
-                      "rank": "Genus"
+                      "rank": "Genus",
+                      "slug": "nasturtium"
                     }
                   ],
                   "id": 1028,
                   "name": "Cardamineae",
-                  "rank": "Tribus"
+                  "rank": "Tribus",
+                  "slug": "cardamineae"
                 }
               ],
               "id": 1017,
               "name": "Brassicaceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "brassicaceae"
             }
           ],
           "id": 1016,
           "name": "Brassicales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "brassicales"
         },
         {
           "children": [
@@ -480,22 +555,26 @@
                     {
                       "id": 10,
                       "name": "Pelargonium graveolens",
-                      "rank": "Subgenus"
+                      "rank": "Subgenus",
+                      "slug": "sweet-scented-geranium"
                     }
                   ],
                   "id": 1032,
                   "name": "Pelargonium",
-                  "rank": "Genus"
+                  "rank": "Genus",
+                  "slug": "pelargonium"
                 }
               ],
               "id": 1031,
               "name": "Geraniaceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "geraniaceae"
             }
           ],
           "id": 1030,
           "name": "Geraniales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "geraniales"
         },
         {
           "children": [
@@ -510,32 +589,38 @@
                             {
                               "id": 11,
                               "name": "Myrtus communis L.",
-                              "rank": "Species"
+                              "rank": "Species",
+                              "slug": "myrtle"
                             }
                           ],
                           "id": 1037,
                           "name": "Myrtus",
-                          "rank": "Genus"
+                          "rank": "Genus",
+                          "slug": "myrtus"
                         }
                       ],
                       "id": 1036,
                       "name": "Myrteae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "myrteae"
                     }
                   ],
                   "id": 1035,
                   "name": "Myrtoideae",
-                  "rank": "Subfamilia"
+                  "rank": "Subfamilia",
+                  "slug": "myrtoideae"
                 }
               ],
               "id": 1034,
               "name": "Myrtaceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "myrtaceae"
             }
           ],
           "id": 1033,
           "name": "Myrtales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "myrtales"
         },
         {
           "children": [
@@ -550,32 +635,38 @@
                             {
                               "id": 13,
                               "name": "Malva",
-                              "rank": "Species"
+                              "rank": "Species",
+                              "slug": "mallow"
                             }
                           ],
                           "id": 1043,
                           "name": "Malva",
-                          "rank": "Genus"
+                          "rank": "Genus",
+                          "slug": "malva"
                         }
                       ],
                       "id": 1042,
                       "name": "Malveae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "malveae"
                     }
                   ],
                   "id": 1041,
                   "name": "Malvoideae",
-                  "rank": "Subfamilia"
+                  "rank": "Subfamilia",
+                  "slug": "malvoideae"
                 }
               ],
               "id": 1040,
               "name": "Malvaceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "malvaceae"
             }
           ],
           "id": 1039,
           "name": "Malvales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "malvales"
         },
         {
           "children": [
@@ -590,32 +681,38 @@
                             {
                               "id": 14,
                               "name": "Rumex acetosa",
-                              "rank": "Subspecies"
+                              "rank": "Subspecies",
+                              "slug": "sorrel"
                             }
                           ],
                           "id": 1048,
                           "name": "Rumex",
-                          "rank": "Genus"
+                          "rank": "Genus",
+                          "slug": "rumex"
                         }
                       ],
                       "id": 1047,
                       "name": "Rumiceae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "rumiceae"
                     }
                   ],
                   "id": 1046,
                   "name": "Polygonoideae",
-                  "rank": "Subfamilia"
+                  "rank": "Subfamilia",
+                  "slug": "polygonoideae"
                 }
               ],
               "id": 1045,
               "name": "Polygonaceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "polygonaceae"
             }
           ],
           "id": 1044,
           "name": "Caryophyllales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "caryophyllales"
         },
         {
           "children": [
@@ -630,32 +727,38 @@
                             {
                               "id": 15,
                               "name": "Trigonella foenum-graecum",
-                              "rank": "Species"
+                              "rank": "Species",
+                              "slug": "fenugreek"
                             }
                           ],
                           "id": 1053,
                           "name": "Trigonella",
-                          "rank": "Genus"
+                          "rank": "Genus",
+                          "slug": "trigonella"
                         }
                       ],
                       "id": 1052,
                       "name": "Trifolieae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "trifolieae"
                     }
                   ],
                   "id": 1051,
                   "name": "Faboideae",
-                  "rank": "Subfamilia"
+                  "rank": "Subfamilia",
+                  "slug": "faboideae"
                 }
               ],
               "id": 1050,
               "name": "Fabaceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "fabaceae"
             }
           ],
           "id": 1049,
           "name": "Fabales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "fabales"
         },
         {
           "children": [
@@ -672,27 +775,32 @@
                                 {
                                   "id": 17,
                                   "name": "Artemisia dracunculus",
-                                  "rank": "Subspecies"
+                                  "rank": "Subspecies",
+                                  "slug": "tarragon"
                                 },
                                 {
                                   "id": 23,
                                   "name": "Artemisia absinthium",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "grand-wormwood"
                                 },
                                 {
                                   "id": 42,
                                   "name": "Artemisia arborescens",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "tree-wormwood"
                                 }
                               ],
                               "id": 1060,
                               "name": "Artemisia",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "artemisia"
                             }
                           ],
                           "id": 1059,
                           "name": "Artemisiinae",
-                          "rank": "Subtribus"
+                          "rank": "Subtribus",
+                          "slug": "artemisiinae"
                         },
                         {
                           "children": [
@@ -701,27 +809,32 @@
                                 {
                                   "id": 38,
                                   "name": "Matricaria chamomilla",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "chamomile"
                                 }
                               ],
                               "id": 1097,
                               "name": "Matricaria",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "matricaria"
                             }
                           ],
                           "id": 1096,
                           "name": "Matricariinae",
-                          "rank": "Subtribus"
+                          "rank": "Subtribus",
+                          "slug": "matricariinae"
                         }
                       ],
                       "id": 1058,
                       "name": "Anthemideae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "anthemideae"
                     }
                   ],
                   "id": 1057,
                   "name": "Asteroideae",
-                  "rank": "Subfamilia"
+                  "rank": "Subfamilia",
+                  "slug": "asteroideae"
                 },
                 {
                   "children": [
@@ -734,37 +847,44 @@
                                 {
                                   "id": 44,
                                   "name": "Taraxacum officinale",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "dandelion"
                                 }
                               ],
                               "id": 1105,
                               "name": "Taraxacum",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "taraxacum"
                             }
                           ],
                           "id": 1104,
                           "name": "Crepidinae",
-                          "rank": "Subtribus"
+                          "rank": "Subtribus",
+                          "slug": "crepidinae"
                         }
                       ],
                       "id": 1103,
                       "name": "Cichorieae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "cichorieae"
                     }
                   ],
                   "id": 1102,
                   "name": "Cichorioideae",
-                  "rank": "Subfamilia"
+                  "rank": "Subfamilia",
+                  "slug": "cichorioideae"
                 }
               ],
               "id": 1056,
               "name": "Asteraceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "asteraceae"
             }
           ],
           "id": 1055,
           "name": "Asterales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "asterales"
         },
         {
           "children": [
@@ -781,17 +901,20 @@
                                 {
                                   "id": 32,
                                   "name": "Murraya koenigii",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "curry-leaf"
                                 }
                               ],
                               "id": 1084,
                               "name": "Murraya",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "murraya"
                             }
                           ],
                           "id": 1083,
                           "name": "Merrilliinae",
-                          "rank": "Subtribus"
+                          "rank": "Subtribus",
+                          "slug": "merrilliinae"
                         },
                         {
                           "children": [
@@ -800,27 +923,32 @@
                                 {
                                   "id": 39,
                                   "name": "Citrus hystrix",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "kaffir-lime"
                                 }
                               ],
                               "id": 1099,
                               "name": "Citrus",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "citrus"
                             }
                           ],
                           "id": 1098,
                           "name": "Citrinae",
-                          "rank": "Subtribus"
+                          "rank": "Subtribus",
+                          "slug": "citrinae"
                         }
                       ],
                       "id": 1082,
                       "name": "Aurantieae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "aurantieae"
                     }
                   ],
                   "id": 1081,
                   "name": "Aurantioideae",
-                  "rank": "Subfamilia"
+                  "rank": "Subfamilia",
+                  "slug": "aurantioideae"
                 },
                 {
                   "children": [
@@ -829,32 +957,38 @@
                         {
                           "id": 35,
                           "name": "Ruta graveolens",
-                          "rank": "Species"
+                          "rank": "Species",
+                          "slug": "rue"
                         }
                       ],
                       "id": 1093,
                       "name": "Ruta",
-                      "rank": "Genus"
+                      "rank": "Genus",
+                      "slug": "ruta"
                     }
                   ],
                   "id": 1092,
                   "name": "Rutoideae",
-                  "rank": "Subfamilia"
+                  "rank": "Subfamilia",
+                  "slug": "rutoideae"
                 }
               ],
               "id": 1080,
               "name": "Rutaceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "rutaceae"
             }
           ],
           "id": 1079,
           "name": "Sapindales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "sapindales"
         }
       ],
       "id": 1001,
       "name": "Eudicots",
-      "rank": "Cladus"
+      "rank": "Cladus",
+      "slug": "eudicots"
     },
     {
       "children": [
@@ -871,47 +1005,56 @@
                             {
                               "id": 7,
                               "name": "Allium",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "scallion"
                             },
                             {
                               "id": 19,
                               "name": "Allium ampeloprasum",
-                              "rank": "Species"
+                              "rank": "Species",
+                              "slug": "leek"
                             },
                             {
                               "id": 29,
                               "name": "Allium schoenoprasum",
-                              "rank": "Species"
+                              "rank": "Species",
+                              "slug": "chives"
                             },
                             {
                               "id": 30,
                               "name": "Allium tuberosum",
-                              "rank": "Species"
+                              "rank": "Species",
+                              "slug": "garlic-chives"
                             }
                           ],
                           "id": 1025,
                           "name": "Allium",
-                          "rank": "Genus"
+                          "rank": "Genus",
+                          "slug": "allium"
                         }
                       ],
                       "id": 1024,
                       "name": "Allieae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "allieae"
                     }
                   ],
                   "id": 1023,
                   "name": "Allioideae",
-                  "rank": "Subfamilia"
+                  "rank": "Subfamilia",
+                  "slug": "allioideae"
                 }
               ],
               "id": 1022,
               "name": "Amaryllidaceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "amaryllidaceae"
             }
           ],
           "id": 1021,
           "name": "Asparagales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "asparagales"
         },
         {
           "children": [
@@ -928,42 +1071,50 @@
                                 {
                                   "id": 33,
                                   "name": "Cymbopogon citratus",
-                                  "rank": "Species"
+                                  "rank": "Species",
+                                  "slug": "lemongrass"
                                 }
                               ],
                               "id": 1090,
                               "name": "Cymbopogon",
-                              "rank": "Genus"
+                              "rank": "Genus",
+                              "slug": "cymbopogon"
                             }
                           ],
                           "id": 1089,
                           "name": "Anthistiriinae",
-                          "rank": "Subtribus"
+                          "rank": "Subtribus",
+                          "slug": "anthistiriinae"
                         }
                       ],
                       "id": 1088,
                       "name": "Andropogoneae",
-                      "rank": "Tribus"
+                      "rank": "Tribus",
+                      "slug": "andropogoneae"
                     }
                   ],
                   "id": 1087,
                   "name": "Panicoideae",
-                  "rank": "Subfamilia"
+                  "rank": "Subfamilia",
+                  "slug": "panicoideae"
                 }
               ],
               "id": 1086,
               "name": "Poaceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "poaceae"
             }
           ],
           "id": 1085,
           "name": "Poales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "poales"
         }
       ],
       "id": 1020,
       "name": "Monocots",
-      "rank": "Cladus"
+      "rank": "Cladus",
+      "slug": "monocots"
     },
     {
       "children": [
@@ -976,27 +1127,32 @@
                     {
                       "id": 31,
                       "name": "Laurus nobilis",
-                      "rank": "Species"
+                      "rank": "Species",
+                      "slug": "bay-leaf"
                     }
                   ],
                   "id": 1078,
                   "name": "Laurus",
-                  "rank": "Genus"
+                  "rank": "Genus",
+                  "slug": "laurus"
                 }
               ],
               "id": 1077,
               "name": "Lauraceae",
-              "rank": "Familia"
+              "rank": "Familia",
+              "slug": "lauraceae"
             }
           ],
           "id": 1076,
           "name": "Laurales",
-          "rank": "Ordo"
+          "rank": "Ordo",
+          "slug": "laurales"
         }
       ],
       "id": 1075,
       "name": "Magnoliids",
-      "rank": "Cladus"
+      "rank": "Cladus",
+      "slug": "magnoliids"
     }
   ],
   "id": 1000,

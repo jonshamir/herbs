@@ -74,10 +74,11 @@ const removeSingleChildren = (node) => {
     node.rank !== "Cladus"
     // && node.rank !== "Familia"
   ) {
-    const { children, name, id } = node.children[0];
+    const { children, name, id, slug } = node.children[0];
     node.id = id;
     node.children = children;
     node.name = name;
+    node.slug = slug;
   }
   return node;
 };
@@ -191,10 +192,7 @@ const graph = (ref, data, parentComponent) => {
   node
     .filter((d) => !d.children)
     .append("svg:image")
-    .attr("xlink:href", (d) => {
-      const name = herbData[d.data.id].englishName.toLowerCase();
-      return `/images/icons/${name}.png`;
-    })
+    .attr("xlink:href", (d) => `/images/icons/${d.data.slug}.png`)
     .on("error", function (d) {
       d3.select(this).attr("xlink:href", "/images/herb.png");
     })

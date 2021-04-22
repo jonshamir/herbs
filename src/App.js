@@ -14,7 +14,7 @@ class App extends React.Component {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route path="/herb/:id">
+        <Route path="/herb/:slug">
           <HerbPage />
         </Route>
       </Router>

@@ -10,7 +10,7 @@ class HomePage extends React.Component {
   }
 
   handleNodeClick = (node) => {
-    this.setState({ redirect: `/herb/${node.id}` });
+    this.setState({ redirect: `/herb/${node.slug}` });
   };
 
   render() {
