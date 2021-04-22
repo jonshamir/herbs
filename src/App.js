@@ -1,6 +1,7 @@
 import React from "react";
-import HerbTree from "./components/HerbTree/HerbTree";
-import "./App.scss";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import HerbPage from "./pages/HerbPage/HerbPage";
 
 class App extends React.Component {
   constructor(props) {
@@ -9,32 +10,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="ContentRight">
-          <h1>עלה טעם</h1>
-          <p>
-            זה פה טקסט מויקיפדיה. עשבי תיבול הוא שם כולל לכל אותם צמחים אשר ניתן
-            להשתמש בהם לתיבול 'כמו שהם' - ללא ייבוש, טחינה, בישול או עיבוד אחר
-            כלשהו.
-          </p>
-          <p>
-            במטבח הישראלי משמשים עשבי תיבול שמקורם במטבחי העדות השונות, בין השאר
-            שמיר מהמטבח האשכנזי, כוסברה ונענע מהמטבח המזרחי, ובזיליקום ואורגנו
-            שאומצו מהמטבח האיטלקי. פטרוזיליה משמשת במתכונים של מטבחי רוב העדות.
-          </p>
-          <p>
-            רוב עשבי התבלין קלים לגידול, ואינם שיחים המצריכים גינה לשם גידולם,
-            דבר זה מאפשר לגדל אותם באדניות או עציצים קטנים גם בבתים חסרי גינה אך
-            בעלי חלון או מרפסת, וכך גם דיירי בניינים נהנים מעשבי תיבול טריים
-            בתבשיליהם.
-          </p>
-          <p>
-            להשתמש בהם לתיבול 'כמו שהם' - ללא ייבוש, טחינה, בישול או עיבוד אחר
-            כלשהו.
-          </p>
-        </div>
-        <HerbTree />
-      </div>
+      <Router>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route path="/herb/:id">
+          <HerbPage />
+        </Route>
+      </Router>
     );
   }
 }

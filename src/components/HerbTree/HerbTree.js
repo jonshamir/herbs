@@ -28,13 +28,17 @@ class HerbTree extends React.Component {
     const herbHierarchyPruned = removeSingleChildren(
       JSON.parse(JSON.stringify(herbHierarchy))
     );
-    graphEl = graph(this.d3ref, herbHierarchyPruned);
+    graphEl = graph(this.d3ref, herbHierarchyPruned, this);
 
     window.addEventListener("resize", (e) => this.handleResize(e));
   }
 
   handleResize(e) {
     this.setGraphSize();
+  }
+
+  handleClick(event, node) {
+    this.props.onNodeClick(node.data);
   }
 
   setGraphSize() {
@@ -103,7 +107,7 @@ const drag = (simulation) => {
     .on("end", dragended);
 };
 
-const graph = (ref, data) => {
+const graph = (ref, data, parentComponent) => {
   const root = d3.hierarchy(data);
   const links = root.links();
   const nodes = root.descendants();
@@ -218,6 +222,9 @@ const graph = (ref, data) => {
     .on("mouseout", (e, d) => {
       const { id } = d.data;
       text.filter((d) => d.data.id === id).attr("class", "nodeText");
+    })
+    .on("click", (e, d) => {
+      parentComponent.handleClick(e, d);
     });
 
   simulation.on("tick", (e) => {
