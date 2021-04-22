@@ -126,7 +126,7 @@ const graph = (ref, data) => {
     .force("charge", d3.forceManyBody().strength(-30))
     .force(
       "collision",
-      d3.forceCollide().radius((d) => (d.children ? 2 : 10))
+      d3.forceCollide().radius((d) => (d.children ? 2 : 11))
     )
     .force("x", d3.forceX())
     .force("y", d3.forceY())
@@ -182,12 +182,18 @@ const graph = (ref, data) => {
     .attr("stroke-width", (d) => 10)
     .attr("r", (d) => (d.children ? 0.5 * radius : radius));
 
-  const imageSize = 16;
+  const imageSize = 25;
 
   node
     .filter((d) => !d.children)
     .append("svg:image")
-    .attr("xlink:href", "/images/herb.png")
+    .attr("xlink:href", (d) => {
+      const name = herbData[d.data.id].englishName.toLowerCase();
+      return `/images/icons/${name}.png`;
+    })
+    .on("error", function (d) {
+      d3.select(this).attr("xlink:href", "/images/herb.png");
+    })
     .attr("x", -imageSize / 2)
     .attr("y", -imageSize / 2)
     .attr("width", imageSize)
@@ -202,7 +208,7 @@ const graph = (ref, data) => {
     .text((d) => (d.children ? d.data.name : herbData[d.data.id].hebrewName))
     .attr("class", "nodeText")
     .attr("text-anchor", "middle")
-    .attr("y", (d) => (d.children ? -5 : -0.8 * imageSize));
+    .attr("y", (d) => (d.children ? -5 : -0.4 * imageSize));
 
   node
     .on("mouseover", (e, d) => {

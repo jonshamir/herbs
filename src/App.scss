@@ -13,6 +13,12 @@
   width: 40vw;
   max-width: 400px;
   box-sizing: border-box;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   h1 {
     font-style: italic;
