@@ -1,12 +1,12 @@
 .graphContainer {
   box-sizing: border-box;
   /* border: 10px solid grey; */
-  width: 70vw;
+  width: 60vw;
   height: 100vh;
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  // position: absolute;
+  // left: 0;
+  // top: 0;
+  // bottom: 0;
 }
 .node {
   cursor: pointer;
@@ -17,7 +17,7 @@
   paint-order: stroke fill;
   stroke: #f7f2f1;
   stroke-width: 0.4em;
-  font-size: 0.5em;
+  font-size: 0.7em;
   user-select: none;
   text-align: center;
   transition: opacity 200ms ease;

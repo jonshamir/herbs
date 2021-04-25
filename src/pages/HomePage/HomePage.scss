@@ -1,10 +1,68 @@
+$light-text: #757373;
+
+.WindowIllustration {
+  position: relative;
+  margin: auto;
+  height: 60vh;
+  width: 50vh;
+
+  img {
+    position: absolute;
+  }
+  .window {
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+  .fan {
+    width: 28.5%;
+    top: 65.7%;
+    right: 51%;
+    animation: rotation 6s infinite linear;
+    transition: animation-duration 300ms ease;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.hero {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 2em;
+
+  h1 {
+    font-size: 4em;
+    margin-top: 0;
+    margin-bottom: 0.15em;
+  }
+  .tagline {
+    font-style: italic;
+    font-size: 1.5em;
+    color: $light-text;
+  }
+}
+
+.columns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .ContentRight {
   text-align: right;
   padding: 2em 3em;
-  position: absolute;
   right: 0;
   top: 0;
-  height: 100vh;
   width: 40vw;
   max-width: 400px;
   box-sizing: border-box;
@@ -15,10 +73,47 @@
     display: none;
   }
 
-  h1 {
-    font-style: italic;
-    font-size: 3em;
-    font-weight: normal;
+  h2 {
+    font-size: 2em;
+    font-weight: bold;
     margin-top: 0;
+  }
+}
+
+.ContentLeft {
+  position: relative;
+}
+
+.TabSelect {
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  li {
+    padding: 1em 0.7em;
+    opacity: 0.35;
+    transition: opacity 300ms ease, color 300ms ease, transform 300ms ease;
+    cursor: pointer;
+    transform: translateY(0);
+
+    &:hover {
+      color: orangered;
+      opacity: 1;
+      transform: translateY(-0.5em);
+    }
+
+    &.active {
+      opacity: 1;
+    }
   }
 }

@@ -1,21 +1,45 @@
 import React from "react";
-import { BrowserRouter as Router, useParams } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import {
+  BrowserRouter as Router,
+  useParams,
+  withRouter,
+} from "react-router-dom";
 import herbData from "../../data/herbData.json";
 
 import "./HerbPage.scss";
 
-const HerbPage = (props) => {
-  let { slug } = useParams();
-  const herb = herbData.filter((herb) => herb.slug === slug)[0];
+class HerbPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { md: "loading..." };
+  }
 
-  console.log(herb);
+  async componentDidMount() {
+    // const { slug } = this.props.match.params;
+    const slug = "bay-leaf";
+    const file = await import(`../../data/herbs/${slug}.md`);
+    const response = await fetch(file.default);
+    const text = await response.text();
 
-  return (
-    <div className="HerbPage">
-      <h1>{herb.hebrewName}</h1>
-      <img className="HerbIcon" src={`/images/icons/${slug}.png`} />
-    </div>
-  );
-};
+    this.setState({
+      md: text,
+    });
+  }
 
-export default HerbPage;
+  render() {
+    // const { slug } = this.props.match.params;
+    const slug = "bay-leaf";
+    const herb = herbData.filter((herb) => herb.slug === slug)[0];
+
+    return (
+      <div className="HerbPage">
+        <h1>{herb.hebrewName}</h1>
+        <img className="HerbIcon" src={`/images/icons/${slug}.png`} />
+        <ReactMarkdown>{this.state.md}</ReactMarkdown>
+      </div>
+    );
+  }
+}
+
+export default withRouter(HerbPage);

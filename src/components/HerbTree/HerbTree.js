@@ -8,7 +8,7 @@ import herbData from "../../data/herbData.json";
 import initialNodePositions from "../../data/initialNodePositions.json";
 
 import "./HerbTree.scss";
-const clearColor = "#f7f2f1";
+const clearColor = "#f9f5f4";
 
 let width = 400;
 let height = 400;
@@ -133,11 +133,11 @@ const graph = (ref, data, parentComponent) => {
 
   root.fixed = true;
   root.fx = 0;
-  root.fy = 0.5 * height - 0.8 * margin;
+  root.fy = 0.5 * height - 1 * margin;
 
   simulation = d3
     .forceSimulation(nodes)
-    .alphaDecay(0.01)
+    .alphaDecay(0.05)
     .force(
       "link",
       d3
@@ -168,7 +168,7 @@ const graph = (ref, data, parentComponent) => {
           alpha * Math.max(1, Math.abs(node.x) - (width / 2 - margin));
         node.x -= Math.sign(node.x) * wallRepulsionX;
         const wallRepulsionY =
-          alpha * Math.max(1, Math.abs(node.y) - (height / 2 - margin));
+          alpha * Math.max(1, Math.abs(node.y) - (height / 2 - margin * 0.5));
         node.y -= Math.sign(node.y) * wallRepulsionY;
       });
     });
@@ -228,7 +228,7 @@ const graph = (ref, data, parentComponent) => {
     .text((d) => (d.children ? d.data.name : herbData[d.data.id].hebrewName))
     .attr("class", "nodeText")
     .attr("text-anchor", "middle")
-    .attr("y", (d) => (d.children ? -5 : -0.4 * imageSize));
+    .attr("y", (d) => (d.children ? -5 : -0.6 * imageSize));
 
   node
     .on("mouseover", (e, d) => {
