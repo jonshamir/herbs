@@ -260,7 +260,11 @@ const graph = (ref, data, parentComponent) => {
       .delay((d) => d.source.depth * growthTime - 100)
       .duration((d) => growthTime)
       .ease(d3.easeLinear)
-      .attr("stroke-dashoffset", 0);
+      .attr("stroke-dashoffset", 0)
+      .end()
+      .then(function (e) {
+        link.attr("stroke-dasharray", "none");
+      });
 
     svg
       .selectAll("circle, image, text")
