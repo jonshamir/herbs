@@ -1,7 +1,7 @@
 import React from "react";
 import * as d3 from "d3";
 
-import { radToDeg, normalize2D } from "../../utils/math";
+import { radToDeg, normalize2D, dist2D } from "../../utils/math";
 
 import herbHierarchy from "../../data/herbHierarchy.json";
 import herbData from "../../data/herbData.json";
@@ -44,11 +44,11 @@ class HerbTree extends React.Component {
   }
 
   handleClick(event, node) {
-    this.props.onNodeClick(node.data);
+    // this.props.onNodeClick(node.data);
   }
 
   setGraphSize() {
-    const w = 0.7 * document.documentElement.clientWidth;
+    const w = document.documentElement.clientWidth;
     const h = document.documentElement.clientHeight;
     width = w / 2;
     height = h;
@@ -87,7 +87,7 @@ const removeSingleChildren = (node) => {
     node.children &&
     node.children.length === 1 &&
     node.rank !== "Cladus"
-    // && node.rank !== "Familia"
+    //  && node.rank !== "Familia"
   ) {
     const { children, name, id, slug } = node.children[0];
     node.id = id;
@@ -123,10 +123,14 @@ const drag = (simulation) => {
     .on("end", dragended);
 };
 
-function setSubtreeActive(root, isActive) {
+const setSubtreeActive = (root, isActive) => {
   root.isActive = isActive;
   root.children && root.children.forEach((d) => setSubtreeActive(d, isActive));
-}
+};
+
+const linkLength = (link) => {
+  return dist2D(link.source, link.target) + 3;
+};
 
 const graph = (ref, data, parentComponent) => {
   const root = d3.hierarchy(data);
@@ -134,7 +138,7 @@ const graph = (ref, data, parentComponent) => {
   const nodes = root.descendants();
   nodes.forEach((node, i) => {
     const { id } = node.data;
-    if (id !== 1000) {
+    if (id !== 1000 && initialNodePositions[id]) {
       const { x, y } = initialNodePositions[id];
       node.x = x;
       node.y = y;
@@ -194,7 +198,8 @@ const graph = (ref, data, parentComponent) => {
     .selectAll("line")
     .data(links)
     .join("line")
-    .attr("class", "link");
+    .attr("class", "link")
+    .attr("opacity", 0);
 
   const node = svg
     .append("g")
@@ -210,7 +215,8 @@ const graph = (ref, data, parentComponent) => {
   node
     .filter((d) => d.children)
     .append("circle")
-    .attr("r", 0.5 * radius);
+    .attr("r", 0.5 * radius)
+    .attr("opacity", 0);
 
   node
     .filter((d) => !d.children)
@@ -222,7 +228,8 @@ const graph = (ref, data, parentComponent) => {
     .attr("x", -imageSize / 2)
     .attr("y", -imageSize / 2)
     .attr("width", imageSize)
-    .attr("height", imageSize);
+    .attr("height", imageSize)
+    .attr("opacity", 0);
 
   node
     .filter((d) => !d.children)
@@ -239,7 +246,37 @@ const graph = (ref, data, parentComponent) => {
     .attr("class", "nodeText")
     .classed("visible", (d) => !d.children)
     .attr("text-anchor", "middle")
-    .attr("y", (d) => (d.children ? -5 : 0));
+    .attr("y", (d) => (d.children ? -5 : 0))
+    .attr("opacity", 0);
+
+  // ==== enterance transition ====
+  setTimeout(() => {
+    const growthTime = 600;
+    link
+      .attr("opacity", 1)
+      .attr("stroke-dasharray", (d) => linkLength(d) + " " + linkLength(d))
+      .attr("stroke-dashoffset", (d) => linkLength(d))
+      .transition()
+      .delay((d) => d.source.depth * growthTime - 100)
+      .duration((d) => growthTime)
+      .ease(d3.easeLinear)
+      .attr("stroke-dashoffset", 0);
+
+    svg
+      .selectAll("circle, image, text")
+      .transition()
+      .delay((d) => d.depth * growthTime)
+      .duration(growthTime)
+      .attr("opacity", 1);
+
+    // svg
+    //   .selectAll("image")
+    //   .attr("opacity", 1)
+    //   .attr("transform")
+    //   .transition()
+    //   .delay((d) => d.depth * growthTime)
+    //   .duration(growthTime);
+  }, 1000);
 
   node
     .on("mouseover", (e, d) => {

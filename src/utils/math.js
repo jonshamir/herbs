@@ -203,6 +203,10 @@ function mapRange(value, inputMin, inputMax, outputMin, outputMax, clamp) {
   }
 }
 
+function dist2D(v1, v2) {
+  return len2D(v1.x - v2.x, v1.y - v2.y);
+}
+
 module.exports = {
   mod: mod,
   fract: fract,
@@ -226,4 +230,5 @@ module.exports = {
   expand4D: expandVector(4),
   normalize2D: normalize2D,
   len2D: len2D,
+  dist2D: dist2D,
 };
