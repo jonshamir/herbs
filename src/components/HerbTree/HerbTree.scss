@@ -1,39 +1,81 @@
+@use "src/index" as *;
+
 .graphContainer {
   box-sizing: border-box;
-  /* border: 10px solid grey; */
-  width: 60vw;
-  height: 100vh;
+  width: 100vw;
+  height: 200vh;
   // position: absolute;
   // left: 0;
   // top: 0;
   // bottom: 0;
 }
-.node {
-  cursor: pointer;
-}
 
-.nodeText {
-  opacity: 0;
-  paint-order: stroke fill;
-  stroke: #f7f2f1;
-  stroke-width: 0.4em;
-  font-size: 0.7em;
-  user-select: none;
-  text-align: center;
-  transition: opacity 200ms ease;
-  pointer-events: none;
-  font-style: italic;
+.inactive {
+  .node:not(.active) {
+    &.leaf {
+      fill-opacity: 0.8 !important;
+    }
 
-  &.visible {
-    opacity: 1;
+    &.internode {
+      fill: lighten(#999, 20%) !important;
+    }
+  }
+  .link:not(.active) {
+    stroke-opacity: 0.5 !important;
+  }
+  .nodeText:not(.active) {
+    fill: lighten($text-color, 50%);
   }
 }
 
-.HerbTree button {
-  position: absolute;
-  left: 2em;
-  top: 2em;
-  display: block;
-  margin: auto;
-  z-index: 100;
+.HerbTree {
+  .node {
+    cursor: pointer;
+
+    &.leaf {
+      fill: $bg-color;
+      fill-opacity: 0;
+      transition: fill-opacity $transition-defaults;
+    }
+
+    &.internode {
+      fill: #999;
+      stroke-width: 18;
+      stroke: transparent;
+      transition: fill $transition-defaults;
+    }
+  }
+
+  .link {
+    stroke: #ccc;
+    stroke-width: 1;
+    stroke-opacity: 1;
+    transition: stroke-opacity $transition-defaults;
+  }
+
+  .nodeText {
+    opacity: 0;
+    paint-order: stroke fill;
+    stroke: $bg-color;
+    stroke-width: 0.4em;
+    font-size: 0.5em;
+    user-select: none;
+    text-align: center;
+    transition: opacity $transition-defaults, fill $transition-defaults;
+    pointer-events: none;
+    font-weight: 500;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+
+  button {
+    position: absolute;
+    left: 2em;
+    top: 2em;
+    display: block;
+    margin: auto;
+    z-index: 100;
+  }
 }

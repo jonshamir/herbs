@@ -1,9 +1,13 @@
+$text-color: #303030;
+$bg-color: #f9f5f4;
+$transition-defaults: 300ms ease;
+
 body {
   margin: 0;
   direction: rtl;
-  font-family: "Days", "Charter", serif;
+  font-family: "ArbelHagilda", "Days", "Charter", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f9f5f4;
-  color: #303030;
+  background-color: $bg-color;
+  color: $text-color;
 }

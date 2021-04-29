@@ -1,7 +1,7 @@
 import React from "react";
 import * as d3 from "d3";
 
-import { radToDeg } from "../../utils/math";
+import { radToDeg, normalize2D } from "../../utils/math";
 
 import herbHierarchy from "../../data/herbHierarchy.json";
 import herbData from "../../data/herbData.json";
@@ -13,7 +13,12 @@ const clearColor = "#f9f5f4";
 let width = 400;
 let height = 400;
 const radius = 3;
-const margin = 40;
+const marginX = 5;
+const marginY = 20;
+const offsetX = -50;
+const imageSize = 40;
+const collisionRadius = 16;
+
 let graphEl;
 let simulation;
 
@@ -46,7 +51,7 @@ class HerbTree extends React.Component {
     const w = 0.7 * document.documentElement.clientWidth;
     const h = document.documentElement.clientHeight;
     width = w / 2;
-    height = h / 2;
+    height = h;
     d3.select(graphEl).attr("viewBox", [
       -width / 2,
       -height / 2,
@@ -118,6 +123,11 @@ const drag = (simulation) => {
     .on("end", dragended);
 };
 
+function setSubtreeActive(root, isActive) {
+  root.isActive = isActive;
+  root.children && root.children.forEach((d) => setSubtreeActive(d, isActive));
+}
+
 const graph = (ref, data, parentComponent) => {
   const root = d3.hierarchy(data);
   const links = root.links();
@@ -132,8 +142,8 @@ const graph = (ref, data, parentComponent) => {
   });
 
   root.fixed = true;
-  root.fx = 0;
-  root.fy = 0.5 * height - 1 * margin;
+  root.fx = offsetX;
+  root.fy = 0.5 * height - 1 * marginY;
 
   simulation = d3
     .forceSimulation(nodes)
@@ -143,21 +153,21 @@ const graph = (ref, data, parentComponent) => {
       d3
         .forceLink(links)
         .id((d) => d.id)
-        .distance(15)
+        .distance(40)
         .strength(1)
     )
-    .force("charge", d3.forceManyBody().strength(-30))
+    .force("charge", d3.forceManyBody().strength(-80))
     .force(
       "collision",
-      d3.forceCollide().radius((d) => (d.children ? 2 : 11))
+      d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
     )
-    .force("x", d3.forceX())
+    .force("x", d3.forceX(offsetX))
     .force("y", d3.forceY())
     .force("growth", (alpha) => {
       nodes.forEach((node) => {
         // Cause nodes to be above their parents
         if (node.parent && node.y > node.parent.y - 100) {
-          node.y -= alpha * 4;
+          node.y -= alpha * 6;
         }
       });
     })
@@ -165,11 +175,11 @@ const graph = (ref, data, parentComponent) => {
       // Repel walls
       nodes.forEach((node) => {
         const wallRepulsionX =
-          alpha * Math.max(1, Math.abs(node.x) - (width / 2 - margin));
+          alpha * Math.max(1, Math.abs(node.x) - (width / 2 - marginX));
         node.x -= Math.sign(node.x) * wallRepulsionX;
         const wallRepulsionY =
-          alpha * Math.max(1, Math.abs(node.y) - (height / 2 - margin * 0.5));
-        node.y -= Math.sign(node.y) * wallRepulsionY;
+          alpha * Math.max(1, Math.abs(node.y) - (height / 2 - marginY));
+        // node.y -= Math.sign(node.y) * wallRepulsionY;
       });
     });
 
@@ -181,12 +191,10 @@ const graph = (ref, data, parentComponent) => {
 
   const link = svg
     .append("g")
-    .attr("stroke", "#ccc")
-    .attr("stroke-width", 1)
-    .attr("stroke-opacity", 1)
     .selectAll("line")
     .data(links)
-    .join("line");
+    .join("line")
+    .attr("class", "link");
 
   const node = svg
     .append("g")
@@ -194,18 +202,15 @@ const graph = (ref, data, parentComponent) => {
     .data(nodes)
     .join("g")
     .attr("class", "node")
+    .classed("internode", (d) => d.children)
+    .classed("leaf", (d) => !d.children)
     .attr("id", (d) => d.data.id)
     .call(drag(simulation));
 
   node
-    .append("circle")
     .filter((d) => d.children)
-    .attr("fill", (d) => (d.children ? "#999" : clearColor))
-    .attr("stroke", (d) => "transparent")
-    .attr("stroke-width", (d) => 10)
-    .attr("r", (d) => (d.children ? 0.5 * radius : radius));
-
-  const imageSize = 25;
+    .append("circle")
+    .attr("r", 0.5 * radius);
 
   node
     .filter((d) => !d.children)
@@ -219,6 +224,11 @@ const graph = (ref, data, parentComponent) => {
     .attr("width", imageSize)
     .attr("height", imageSize);
 
+  node
+    .filter((d) => !d.children)
+    .append("circle")
+    .attr("r", collisionRadius + 4);
+
   const text = svg
     .append("g")
     .selectAll("g")
@@ -227,24 +237,37 @@ const graph = (ref, data, parentComponent) => {
     .append("text")
     .text((d) => (d.children ? d.data.name : herbData[d.data.id].hebrewName))
     .attr("class", "nodeText")
+    .classed("visible", (d) => !d.children)
     .attr("text-anchor", "middle")
-    .attr("y", (d) => (d.children ? -5 : -0.6 * imageSize));
+    .attr("y", (d) => (d.children ? -5 : 0));
 
   node
     .on("mouseover", (e, d) => {
-      const { id } = d.data;
-      text.filter((d) => d.data.id === id).attr("class", "nodeText visible");
+      if (d.children) {
+        graphEl.classList.add("inactive");
+        const { id } = d.data;
+        text.filter((d) => d.data.id === id).classed("visible", true);
+
+        setSubtreeActive(d, true);
+
+        node.classed("active", (d) => d.isActive);
+        text.classed("active", (d) => d.isActive);
+        link.classed("active", (d) => d.source.isActive);
+      }
     })
     .on("mouseout", (e, d) => {
-      const { id } = d.data;
-      text.filter((d) => d.data.id === id).attr("class", "nodeText");
+      if (d.children) {
+        graphEl.classList.remove("inactive");
+        const { id } = d.data;
+        text.filter((d) => d.data.id === id).classed("visible", false);
+        setSubtreeActive(d, false);
+      }
     })
     .on("click", (e, d) => {
       parentComponent.handleClick(e, d);
     });
 
   simulation.on("tick", (e) => {
-    // Update node positions
     node
       .attr("transform", (d) => `translate(${d.x},${d.y})`)
       .select("image")
@@ -259,9 +282,20 @@ const graph = (ref, data, parentComponent) => {
         return transform;
       });
 
-    text.attr("transform", (d) => `translate(${d.x},${d.y})`);
+    text.attr("transform", (d) => {
+      let xPos = d.x;
+      let yPos = d.y;
+      if (!d.children) {
+        const deltaX = d.x - d.parent.x;
+        const deltaY = d.y - d.parent.y;
+        const dir = normalize2D(deltaX, deltaY);
+        xPos += dir.x * imageSize * 0.5;
+        yPos += dir.y * imageSize * 0.5;
+      }
 
-    // Update link positions
+      return `translate(${xPos},${yPos})`;
+    });
+
     link
       .attr("x1", (d) => d.source.x)
       .attr("y1", (d) => d.source.y)

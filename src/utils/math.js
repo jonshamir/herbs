@@ -172,6 +172,15 @@ function dampArray(a, b, lambda, dt, out) {
   return out;
 }
 
+function normalize2D(x, y) {
+  const len = len2D(x, y);
+  return { x: x / len, y: y / len };
+}
+
+function len2D(x, y) {
+  return Math.sqrt(x * x + y * y);
+}
+
 function mapRange(value, inputMin, inputMax, outputMin, outputMax, clamp) {
   // Reference:
   // https://openframeworks.cc/documentation/math/ofMath/
@@ -215,4 +224,6 @@ module.exports = {
   expand2D: expandVector(2),
   expand3D: expandVector(3),
   expand4D: expandVector(4),
+  normalize2D: normalize2D,
+  len2D: len2D,
 };

@@ -1,57 +1,5 @@
 $light-text: #757373;
 
-.WindowIllustration {
-  position: relative;
-  margin: auto;
-  height: 60vh;
-  width: 50vh;
-
-  img {
-    position: absolute;
-  }
-  .window {
-    height: 100%;
-    top: 0;
-    right: 0;
-  }
-  .fan {
-    width: 28.5%;
-    top: 65.7%;
-    right: 51%;
-    animation: rotation 6s infinite linear;
-    transition: animation-duration 300ms ease;
-  }
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
-
-.hero {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding-top: 2em;
-
-  h1 {
-    font-size: 4em;
-    margin-top: 0;
-    margin-bottom: 0.15em;
-  }
-  .tagline {
-    font-style: italic;
-    font-size: 1.5em;
-    color: $light-text;
-  }
-}
-
 .columns {
   display: flex;
   align-items: center;
