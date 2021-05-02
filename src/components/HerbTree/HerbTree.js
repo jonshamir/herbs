@@ -28,6 +28,7 @@ class HerbTree extends React.Component {
   }
 
   componentDidMount() {
+    console.log("HerbTree mounted");
     this.setGraphSize();
 
     const herbHierarchyPruned = removeSingleChildren(
