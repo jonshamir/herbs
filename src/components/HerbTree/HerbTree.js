@@ -8,7 +8,6 @@ import herbData from "../../data/herbData.json";
 import initialNodePositions from "../../data/initialNodePositions.json";
 
 import "./HerbTree.scss";
-const clearColor = "#f9f5f4";
 
 let width = 400;
 let height = 400;
@@ -181,8 +180,8 @@ const graph = (ref, data, parentComponent) => {
         const wallRepulsionX =
           alpha * Math.max(1, Math.abs(node.x) - (width / 2 - marginX));
         node.x -= Math.sign(node.x) * wallRepulsionX;
-        const wallRepulsionY =
-          alpha * Math.max(1, Math.abs(node.y) - (height / 2 - marginY));
+        // const wallRepulsionY =
+        //   alpha * Math.max(1, Math.abs(node.y) - (height / 2 - marginY));
         // node.y -= Math.sign(node.y) * wallRepulsionY;
       });
     });

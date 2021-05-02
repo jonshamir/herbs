@@ -1,7 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import HerbTree from "../../components/HerbTree/HerbTree";
-import WindowHeader from "../../components/WindowHeader/WindowHeader";
+// import WindowHeader from "../../components/WindowHeader/WindowHeader";
 import "./HomePage.scss";
 
 class HomePage extends React.Component {

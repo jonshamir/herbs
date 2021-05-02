@@ -4,10 +4,6 @@ import HomePage from "./pages/HomePage/HomePage";
 import HerbPage from "./pages/HerbPage/HerbPage";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Router>

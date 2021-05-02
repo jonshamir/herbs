@@ -1,10 +1,6 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import {
-  BrowserRouter as Router,
-  useParams,
-  withRouter,
-} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import herbData from "../../data/herbData.json";
 
 import "./HerbPage.scss";
@@ -35,7 +31,11 @@ class HerbPage extends React.Component {
     return (
       <div className="HerbPage">
         <h1>{herb.hebrewName}</h1>
-        <img className="HerbIcon" src={`/images/icons/${slug}.png`} />
+        <img
+          className="HerbIcon"
+          src={`/images/icons/${slug}.png`}
+          alt={slug}
+        />
         <ReactMarkdown>{this.state.md}</ReactMarkdown>
       </div>
     );

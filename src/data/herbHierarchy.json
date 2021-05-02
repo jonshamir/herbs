@@ -633,52 +633,6 @@
                         {
                           "children": [
                             {
-                              "id": 13,
-                              "name": "Malva",
-                              "rank": "Species",
-                              "slug": "mallow"
-                            }
-                          ],
-                          "id": 1043,
-                          "name": "Malva",
-                          "rank": "Genus",
-                          "slug": "malva"
-                        }
-                      ],
-                      "id": 1042,
-                      "name": "Malveae",
-                      "rank": "Tribus",
-                      "slug": "malveae"
-                    }
-                  ],
-                  "id": 1041,
-                  "name": "Malvoideae",
-                  "rank": "Subfamilia",
-                  "slug": "malvoideae"
-                }
-              ],
-              "id": 1040,
-              "name": "Malvaceae",
-              "rank": "Familia",
-              "slug": "malvaceae"
-            }
-          ],
-          "id": 1039,
-          "name": "Malvales",
-          "rank": "Ordo",
-          "slug": "malvales"
-        },
-        {
-          "children": [
-            {
-              "children": [
-                {
-                  "children": [
-                    {
-                      "children": [
-                        {
-                          "children": [
-                            {
                               "id": 14,
                               "name": "Rumex acetosa",
                               "rank": "Subspecies",
