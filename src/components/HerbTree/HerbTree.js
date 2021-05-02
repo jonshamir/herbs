@@ -28,7 +28,6 @@ class HerbTree extends React.Component {
   }
 
   componentDidMount() {
-    console.log("HerbTree mounted");
     this.setGraphSize();
 
     const herbHierarchyPruned = removeSingleChildren(
@@ -36,6 +35,7 @@ class HerbTree extends React.Component {
     );
     graphEl = graph(this.d3ref, herbHierarchyPruned, this);
 
+    window.scrollTo(0, document.body.scrollHeight);
     window.addEventListener("resize", (e) => this.handleResize(e));
   }
 
