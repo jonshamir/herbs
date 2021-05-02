@@ -73,7 +73,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Apiales" },
       { "Familia": "Apiaceae" },
       { "Subfamilia": "Apioideae" },
@@ -116,7 +116,7 @@
     "name": "Ocimum tenuiflorum",
     "englishName": "Holy Basil",
     "englishAltNames": "\u05e8\u05d9\u05d7\u05df \u05e7\u05d3\u05d5\u05e9",
-    "hebrewName": "\u05d1\u05d6\u05d9\u05dc\u05d9\u05e7\u05d5\u05dd \u05e7\u05d3\u05d5\u05e9",
+    "hebrewName": "\u05d1\u05d6\u05d9\u05dc \u05e7\u05d3\u05d5\u05e9",
     "hebrewAltNames": "\u05e8\u05d9\u05d7\u05df \u05e7\u05d3\u05d5\u05e9",
     "arabicName": "",
     "taxonomy": [
@@ -143,7 +143,7 @@
     "name": "Ocimum basilicum",
     "englishName": "Thai Basil",
     "englishAltNames": "\u05e8\u05d9\u05d7\u05df \u05ea\u05d0\u05d9\u05dc\u05e0\u05d3\u05d9",
-    "hebrewName": "\u05d1\u05d6\u05d9\u05dc\u05d9\u05e7\u05d5\u05dd \u05ea\u05d0\u05d9\u05dc\u05e0\u05d3\u05d9",
+    "hebrewName": "\u05d1\u05d6\u05d9\u05dc \u05ea\u05d0\u05d9\u05dc\u05e0\u05d3\u05d9",
     "hebrewAltNames": "\u05e8\u05d9\u05d7\u05df \u05ea\u05d0\u05d9\u05dc\u05e0\u05d3\u05d9",
     "arabicName": "",
     "taxonomy": [
@@ -169,9 +169,9 @@
     "slug": "rocket",
     "name": "Eruca vesicaria",
     "englishName": "Rocket",
-    "englishAltNames": "\u05e8\u05d5\u05e7\u05d8, \u05d0\u05e8\u05d5\u05d2\u05d5\u05dc\u05d4",
-    "hebrewName": "\u05d1\u05df-\u05d7\u05e8\u05d3\u05dc \u05de\u05e6\u05d5\u05d9",
-    "hebrewAltNames": "\u05e8\u05d5\u05e7\u05d8, \u05d0\u05e8\u05d5\u05d2\u05d5\u05dc\u05d4",
+    "englishAltNames": "\u05d0\u05e8\u05d5\u05d2\u05d5\u05dc\u05d4, \u05d1\u05df-\u05d7\u05e8\u05d3\u05dc \u05de\u05e6\u05d5\u05d9",
+    "hebrewName": "\u05e8\u05d5\u05e7\u05d8",
+    "hebrewAltNames": "\u05d0\u05e8\u05d5\u05d2\u05d5\u05dc\u05d4, \u05d1\u05df-\u05d7\u05e8\u05d3\u05dc \u05de\u05e6\u05d5\u05d9",
     "arabicName": "",
     "taxonomy": [
       { "Superregnum": "Eukaryota" },
@@ -264,7 +264,7 @@
     "name": "Pelargonium graveolens",
     "englishName": "Sweet scented geranium",
     "englishAltNames": "\u05e4\u05dc\u05e8\u05d2\u05d5\u05e0\u05d9\u05d5\u05dd \u05d7\u05e8\u05d9\u05e3, \u05e2\u05b7\u05d8\u05b0\u05e8\u05b8\u05d4, \u05d2\u05e8\u05e0\u05d9\u05d5\u05dd \u05dc\u05d9\u05de\u05d5\u05e0\u05d9, \u05e4\u05dc\u05e8\u05d2\u05d5\u05e0\u05d9\u05d5\u05dd \u05e8\u05d9\u05d7\u05e0\u05d9, \u05e4\u05dc\u05e8\u05d2\u05d5\u05df",
-    "hebrewName": "\u05d2\u05e8\u05e0\u05d9\u05d5\u05dd \u05dc\u05d9\u05de\u05d5\u05e0\u05d9",
+    "hebrewName": "\u05d2\u05e8\u05e0\u05d9\u05d5\u05dd \u05e8\u05d9\u05d7\u05e0\u05d9",
     "hebrewAltNames": "\u05e4\u05dc\u05e8\u05d2\u05d5\u05e0\u05d9\u05d5\u05dd \u05d7\u05e8\u05d9\u05e3, \u05e2\u05b7\u05d8\u05b0\u05e8\u05b8\u05d4, \u05d2\u05e8\u05e0\u05d9\u05d5\u05dd \u05dc\u05d9\u05de\u05d5\u05e0\u05d9, \u05e4\u05dc\u05e8\u05d2\u05d5\u05e0\u05d9\u05d5\u05dd \u05e8\u05d9\u05d7\u05e0\u05d9, \u05e4\u05dc\u05e8\u05d2\u05d5\u05df",
     "arabicName": "",
     "taxonomy": [
@@ -335,33 +335,6 @@
   },
   {
     "id": 13,
-    "slug": "mallow",
-    "name": "Malva",
-    "englishName": "Mallow",
-    "englishAltNames": "\u05d7\u05dc\u05de\u05d9\u05ea",
-    "hebrewName": "\u05d7\u05d5\u05d1\u05d9\u05d6\u05d4",
-    "hebrewAltNames": "\u05d7\u05dc\u05de\u05d9\u05ea",
-    "arabicName": "",
-    "taxonomy": [
-      { "Superregnum": "Eukaryota" },
-      { "Regnum": "Plantae" },
-      { "Cladus": "Angiosperms" },
-      { "Cladus": "Eudicots" },
-      { "Cladus": "Core eudicots" },
-      { "Cladus": "Rosids" },
-      { "Cladus": "Eurosids II" },
-      { "Ordo": "Malvales" },
-      { "Familia": "Malvaceae" },
-      { "Subfamilia": "Malvoideae" },
-      { "Tribus": "Malveae" },
-      { "Genus": "Malva" },
-      {
-        "Species": "M.\u00a0aegyptia\u00a0\u2013 M.\u00a0aethiopica\u00a0\u2013 M.\u00a0alcea\u00a0\u2013 M.\u00a0assurgentiflora\u00a0\u2013 M.\u00a0australiana\u00a0\u2013 M.\u00a0cretica\u00a0\u2013 M.\u00a0dendromorpha\u00a0\u2013 M.\u00a0hispanica\u00a0\u2013 M.\u00a0linnaei\u00a0\u2013 M.\u00a0moschata\u00a0\u2013 M.\u00a0neglecta\u00a0\u2013 M.\u00a0nicaeensis\u00a0\u2013 M.\u00a0occidentalis\u00a0\u2013 M.\u00a0pacifica\u00a0\u2013 M.\u00a0parviflora\u00a0\u2013 M.\u00a0pusilla\u00a0\u2013 M.\u00a0sylvestris\u00a0\u2013 M.\u00a0tournefortiana\u00a0\u2013 M.\u00a0transcaucasica\u00a0\u2013  M.\u00a0verticillata"
-      }
-    ]
-  },
-  {
-    "id": 14,
     "slug": "sorrel",
     "name": "Rumex acetosa",
     "englishName": "Sorrel",
@@ -387,7 +360,7 @@
     ]
   },
   {
-    "id": 15,
+    "id": 14,
     "slug": "fenugreek",
     "name": "Trigonella foenum-graecum",
     "englishName": "Fenugreek",
@@ -412,7 +385,7 @@
     ]
   },
   {
-    "id": 16,
+    "id": 15,
     "slug": "white-mustard",
     "name": "Sinapis alba",
     "englishName": "White mustard",
@@ -437,7 +410,7 @@
     ]
   },
   {
-    "id": 17,
+    "id": 16,
     "slug": "tarragon",
     "name": "Artemisia dracunculus",
     "englishName": "Tarragon",
@@ -452,7 +425,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Asterales" },
       { "Familia": "Asteraceae" },
       { "Subfamilia": "Asteroideae" },
@@ -467,7 +440,7 @@
     ]
   },
   {
-    "id": 18,
+    "id": 17,
     "slug": "coriander",
     "name": "Coriandrum sativum",
     "englishName": "Coriander",
@@ -482,7 +455,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Apiales" },
       { "Familia": "Apiaceae" },
       { "Subfamilia": "Apioideae" },
@@ -492,7 +465,7 @@
     ]
   },
   {
-    "id": 19,
+    "id": 18,
     "slug": "leek",
     "name": "Allium ampeloprasum",
     "englishName": "Leek",
@@ -515,7 +488,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 19,
     "slug": "lavender",
     "name": "Lavandula",
     "englishName": "Lavender",
@@ -540,7 +513,7 @@
     ]
   },
   {
-    "id": 21,
+    "id": 20,
     "slug": "lemon-verbana",
     "name": "Aloysia citrodora",
     "englishName": "Lemon Verbana",
@@ -564,13 +537,13 @@
     ]
   },
   {
-    "id": 22,
+    "id": 21,
     "slug": "lovage",
     "name": "Levisticum officinale",
     "englishName": "Lovage",
-    "englishAltNames": "",
+    "englishAltNames": "\u05dc\u05d5\u05d1\u05d0\u05d2', \u05dc\u05d0\u05d5\u05e9\u05d8\u05d9\u05d9\u05df",
     "hebrewName": "\u05dc\u05d5\u05d1\u05d0\u05d6'",
-    "hebrewAltNames": "",
+    "hebrewAltNames": "\u05dc\u05d5\u05d1\u05d0\u05d2', \u05dc\u05d0\u05d5\u05e9\u05d8\u05d9\u05d9\u05df",
     "arabicName": "",
     "taxonomy": [
       { "Superregnum": "Eukaryota" },
@@ -579,7 +552,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Apiales" },
       { "Familia": "Apiaceae" },
       { "Genus": "Levisticum" },
@@ -587,7 +560,7 @@
     ]
   },
   {
-    "id": 23,
+    "id": 22,
     "slug": "grand-wormwood",
     "name": "Artemisia absinthium",
     "englishName": "Grand wormwood",
@@ -602,7 +575,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Asterales" },
       { "Familia": "Asteraceae" },
       { "Subfamilia": "Asteroideae" },
@@ -614,7 +587,7 @@
     ]
   },
   {
-    "id": 24,
+    "id": 23,
     "slug": "marjoram",
     "name": "Origanum majorana",
     "englishName": "Marjoram",
@@ -640,7 +613,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 24,
     "slug": "melissa",
     "name": "Melissa officinalis",
     "englishName": "Melissa",
@@ -666,7 +639,7 @@
     ]
   },
   {
-    "id": 26,
+    "id": 25,
     "slug": "sage",
     "name": "Salvia officinalis",
     "englishName": "Sage",
@@ -694,7 +667,7 @@
     ]
   },
   {
-    "id": 27,
+    "id": 26,
     "slug": "mint",
     "name": "Mentha",
     "englishName": "Mint",
@@ -719,7 +692,7 @@
     ]
   },
   {
-    "id": 28,
+    "id": 27,
     "slug": "celery",
     "name": "Apium graveolens",
     "englishName": "Celery",
@@ -734,7 +707,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Apiales" },
       { "Familia": "Apiaceae" },
       { "Subfamilia": "Apioideae" },
@@ -744,7 +717,7 @@
     ]
   },
   {
-    "id": 29,
+    "id": 28,
     "slug": "chives",
     "name": "Allium schoenoprasum",
     "englishName": "Chives",
@@ -767,7 +740,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 29,
     "slug": "garlic-chives",
     "name": "Allium tuberosum",
     "englishName": "Garlic chives",
@@ -791,7 +764,7 @@
     ]
   },
   {
-    "id": 31,
+    "id": 30,
     "slug": "bay-leaf",
     "name": "Laurus nobilis",
     "englishName": "Bay Leaf",
@@ -811,7 +784,7 @@
     ]
   },
   {
-    "id": 32,
+    "id": 31,
     "slug": "curry-leaf",
     "name": "Murraya koenigii",
     "englishName": "Curry leaf",
@@ -837,7 +810,7 @@
     ]
   },
   {
-    "id": 33,
+    "id": 32,
     "slug": "lemongrass",
     "name": "Cymbopogon citratus",
     "englishName": "Lemongrass",
@@ -861,7 +834,7 @@
     ]
   },
   {
-    "id": 34,
+    "id": 33,
     "slug": "parsley",
     "name": "Petroselinum crispum",
     "englishName": "Parsley",
@@ -876,7 +849,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Apiales" },
       { "Familia": "Apiaceae" },
       { "Subfamilia": "Apioideae" },
@@ -886,13 +859,13 @@
     ]
   },
   {
-    "id": 35,
+    "id": 34,
     "slug": "rue",
     "name": "Ruta graveolens",
     "englishName": "Rue",
-    "englishAltNames": "",
+    "englishAltNames": "\u05e8\u05d5\u05d3\u05d4, \u05e8\u05d5\u05d8\u05d4",
     "hebrewName": "\u05e4\u05d9\u05d2\u05dd",
-    "hebrewAltNames": "",
+    "hebrewAltNames": "\u05e8\u05d5\u05d3\u05d4, \u05e8\u05d5\u05d8\u05d4",
     "arabicName": "",
     "taxonomy": [
       { "Superregnum": "Eukaryota" },
@@ -910,7 +883,7 @@
     ]
   },
   {
-    "id": 36,
+    "id": 35,
     "slug": "summer-savory",
     "name": "Satureja hortensis",
     "englishName": "Summer savory",
@@ -936,7 +909,7 @@
     ]
   },
   {
-    "id": 37,
+    "id": 36,
     "slug": "mediterranean-thyme",
     "name": "Thymbra spicata",
     "englishName": "Mediterranean thyme",
@@ -965,7 +938,7 @@
     ]
   },
   {
-    "id": 38,
+    "id": 37,
     "slug": "chamomile",
     "name": "Matricaria chamomilla",
     "englishName": "Chamomile",
@@ -980,7 +953,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Asterales" },
       { "Familia": "Asteraceae" },
       { "Subfamilia": "Asteroideae" },
@@ -991,7 +964,7 @@
     ]
   },
   {
-    "id": 39,
+    "id": 38,
     "slug": "kaffir-lime",
     "name": "Citrus hystrix",
     "englishName": "Kaffir lime",
@@ -1017,7 +990,7 @@
     ]
   },
   {
-    "id": 40,
+    "id": 39,
     "slug": "rosemary",
     "name": "Salvia rosmarinus",
     "englishName": "Rosemary",
@@ -1044,7 +1017,7 @@
     ]
   },
   {
-    "id": 41,
+    "id": 40,
     "slug": "fennel",
     "name": "Foeniculum vulgare",
     "englishName": "Fennel",
@@ -1059,7 +1032,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Apiales" },
       { "Familia": "Apiaceae" },
       { "Subfamilia": "Apioideae" },
@@ -1072,7 +1045,7 @@
     ]
   },
   {
-    "id": 42,
+    "id": 41,
     "slug": "tree-wormwood",
     "name": "Artemisia arborescens",
     "englishName": "Tree wormwood",
@@ -1087,7 +1060,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Asterales" },
       { "Familia": "Asteraceae" },
       { "Subfamilia": "Asteroideae" },
@@ -1099,7 +1072,7 @@
     ]
   },
   {
-    "id": 43,
+    "id": 42,
     "slug": "dill",
     "name": "Anethum graveolens",
     "englishName": "Dill",
@@ -1114,7 +1087,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Apiales" },
       { "Familia": "Apiaceae" },
       { "Subfamilia": "Apioideae" },
@@ -1124,7 +1097,7 @@
     ]
   },
   {
-    "id": 44,
+    "id": 43,
     "slug": "dandelion",
     "name": "Taraxacum officinale",
     "englishName": "Dandelion",
@@ -1139,7 +1112,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Asterales" },
       { "Familia": "Asteraceae" },
       { "Subfamilia": "Cichorioideae" },
@@ -1150,7 +1123,7 @@
     ]
   },
   {
-    "id": 45,
+    "id": 44,
     "slug": "thyme",
     "name": "Thymus vulgaris",
     "englishName": "Thyme",
@@ -1178,7 +1151,7 @@
     ]
   },
   {
-    "id": 46,
+    "id": 45,
     "slug": "chervil",
     "name": "Anthriscus cerefolium",
     "englishName": "Chervil",
@@ -1193,7 +1166,7 @@
       { "Cladus": "Eudicots" },
       { "Cladus": "Core eudicots" },
       { "Cladus": "Asterids" },
-      { "Cladus": "Euasterids II" },
+      { "Cladus": "Campanulids" },
       { "Ordo": "Apiales" },
       { "Familia": "Apiaceae" },
       { "Subfamilia": "Apioideae" },

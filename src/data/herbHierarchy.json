@@ -27,7 +27,7 @@
                                   "slug": "zaatar"
                                 },
                                 {
-                                  "id": 24,
+                                  "id": 23,
                                   "name": "Origanum majorana",
                                   "rank": "Species",
                                   "slug": "marjoram"
@@ -36,6 +36,7 @@
                               "id": 1007,
                               "name": "Origanum",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "origanum"
                             },
                             {
@@ -50,68 +51,74 @@
                               "id": 1038,
                               "name": "Clinopodium",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "clinopodium"
                             },
                             {
                               "children": [
                                 {
-                                  "id": 27,
+                                  "id": 26,
                                   "name": "Mentha",
                                   "rank": "Genus",
                                   "slug": "mint"
                                 }
                               ],
-                              "id": 1072,
+                              "id": 1067,
                               "name": "Mentha",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "mentha"
                             },
                             {
                               "children": [
                                 {
-                                  "id": 36,
+                                  "id": 35,
                                   "name": "Satureja hortensis",
                                   "rank": "Species",
                                   "slug": "summer-savory"
                                 }
                               ],
-                              "id": 1094,
+                              "id": 1089,
                               "name": "Satureja",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "satureja"
                             },
                             {
                               "children": [
                                 {
-                                  "id": 37,
+                                  "id": 36,
                                   "name": "Thymbra spicata",
                                   "rank": "Subspecies",
                                   "slug": "mediterranean-thyme"
                                 }
                               ],
-                              "id": 1095,
+                              "id": 1090,
                               "name": "Thymbra",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "thymbra"
                             },
                             {
                               "children": [
                                 {
-                                  "id": 45,
+                                  "id": 44,
                                   "name": "Thymus vulgaris",
                                   "rank": "Subspecies",
                                   "slug": "thyme"
                                 }
                               ],
-                              "id": 1106,
+                              "id": 1101,
                               "name": "Thymus",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "thymus"
                             }
                           ],
                           "id": 1006,
                           "name": "Menthinae",
                           "rank": "Subtribus",
+                          "rankHebrew": "\u05ea\u05ea-\u05e9\u05d1\u05d8",
                           "slug": "menthinae"
                         },
                         {
@@ -119,47 +126,51 @@
                             {
                               "children": [
                                 {
-                                  "id": 25,
+                                  "id": 24,
                                   "name": "Melissa officinalis",
                                   "rank": "Species",
                                   "slug": "melissa"
                                 }
                               ],
-                              "id": 1070,
+                              "id": 1065,
                               "name": "Melissa",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "melissa"
                             },
                             {
                               "children": [
                                 {
-                                  "id": 26,
+                                  "id": 25,
                                   "name": "Salvia officinalis",
                                   "rank": "Subspecies",
                                   "slug": "sage"
                                 },
                                 {
-                                  "id": 40,
+                                  "id": 39,
                                   "name": "Salvia rosmarinus",
                                   "rank": "Species",
                                   "slug": "rosemary"
                                 }
                               ],
-                              "id": 1071,
+                              "id": 1066,
                               "name": "Salvia",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "salvia"
                             }
                           ],
-                          "id": 1069,
+                          "id": 1064,
                           "name": "Salviinae",
                           "rank": "Subtribus",
+                          "rankHebrew": "\u05ea\u05ea-\u05e9\u05d1\u05d8",
                           "slug": "salviinae"
                         }
                       ],
                       "id": 1005,
                       "name": "Mentheae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "mentheae"
                     },
                     {
@@ -190,12 +201,14 @@
                               "id": 1015,
                               "name": "Ocimum",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "ocimum"
                             }
                           ],
                           "id": 1014,
                           "name": "Ociminae",
                           "rank": "Subtribus",
+                          "rankHebrew": "\u05ea\u05ea-\u05e9\u05d1\u05d8",
                           "slug": "ociminae"
                         },
                         {
@@ -203,39 +216,44 @@
                             {
                               "children": [
                                 {
-                                  "id": 20,
+                                  "id": 19,
                                   "name": "Lavandula",
                                   "rank": "Genus",
                                   "slug": "lavender"
                                 }
                               ],
-                              "id": 1064,
+                              "id": 1059,
                               "name": "Lavandula",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "lavandula"
                             }
                           ],
-                          "id": 1063,
+                          "id": 1058,
                           "name": "Lavandulinae",
                           "rank": "Subtribus",
+                          "rankHebrew": "\u05ea\u05ea-\u05e9\u05d1\u05d8",
                           "slug": "lavandulinae"
                         }
                       ],
                       "id": 1013,
                       "name": "Ocimeae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "ocimeae"
                     }
                   ],
                   "id": 1004,
                   "name": "Nepetoideae",
                   "rank": "Subfamilia",
+                  "rankHebrew": "\u05ea\u05ea-\u05de\u05e9\u05e4\u05d7\u05d4",
                   "slug": "nepetoideae"
                 }
               ],
               "id": 1003,
               "name": "Lamiaceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "lamiaceae"
             },
             {
@@ -245,33 +263,37 @@
                     {
                       "children": [
                         {
-                          "id": 21,
+                          "id": 20,
                           "name": "Aloysia citrodora",
                           "rank": "Species",
                           "slug": "lemon-verbana"
                         }
                       ],
-                      "id": 1067,
+                      "id": 1062,
                       "name": "Aloysia",
                       "rank": "Genus",
+                      "rankHebrew": "\u05e1\u05d5\u05d2",
                       "slug": "aloysia"
                     }
                   ],
-                  "id": 1066,
+                  "id": 1061,
                   "name": "Lantaneae",
                   "rank": "Tribus",
+                  "rankHebrew": "\u05e9\u05d1\u05d8",
                   "slug": "lantaneae"
                 }
               ],
-              "id": 1065,
+              "id": 1060,
               "name": "Verbenaceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "verbenaceae"
             }
           ],
           "id": 1002,
           "name": "Lamiales",
           "rank": "Ordo",
+          "rankHebrew": "\u05e1\u05d3\u05e8\u05d4",
           "slug": "lamiales"
         },
         {
@@ -294,12 +316,14 @@
                           "id": 1012,
                           "name": "Angelica",
                           "rank": "Genus",
+                          "rankHebrew": "\u05e1\u05d5\u05d2",
                           "slug": "angelica"
                         }
                       ],
                       "id": 1011,
                       "name": "Selineae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "selineae"
                     },
                     {
@@ -307,21 +331,23 @@
                         {
                           "children": [
                             {
-                              "id": 18,
+                              "id": 17,
                               "name": "Coriandrum sativum",
                               "rank": "Species",
                               "slug": "coriander"
                             }
                           ],
-                          "id": 1062,
+                          "id": 1057,
                           "name": "Coriandrum",
                           "rank": "Genus",
+                          "rankHebrew": "\u05e1\u05d5\u05d2",
                           "slug": "coriandrum"
                         }
                       ],
-                      "id": 1061,
+                      "id": 1056,
                       "name": "Coriandreae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "coriandreae"
                     },
                     {
@@ -329,63 +355,68 @@
                         {
                           "children": [
                             {
-                              "id": 28,
+                              "id": 27,
                               "name": "Apium graveolens",
                               "rank": "Species",
                               "slug": "celery"
                             }
                           ],
-                          "id": 1074,
+                          "id": 1069,
                           "name": "Apium",
                           "rank": "Genus",
+                          "rankHebrew": "\u05e1\u05d5\u05d2",
                           "slug": "apium"
                         },
                         {
                           "children": [
                             {
-                              "id": 34,
+                              "id": 33,
                               "name": "Petroselinum crispum",
                               "rank": "Species",
                               "slug": "parsley"
                             }
                           ],
-                          "id": 1091,
+                          "id": 1086,
                           "name": "Petroselinum",
                           "rank": "Genus",
+                          "rankHebrew": "\u05e1\u05d5\u05d2",
                           "slug": "petroselinum"
                         },
                         {
                           "children": [
                             {
-                              "id": 41,
+                              "id": 40,
                               "name": "Foeniculum vulgare",
                               "rank": "Subspecies",
                               "slug": "fennel"
                             }
                           ],
-                          "id": 1100,
+                          "id": 1095,
                           "name": "Foeniculum",
                           "rank": "Genus",
+                          "rankHebrew": "\u05e1\u05d5\u05d2",
                           "slug": "foeniculum"
                         },
                         {
                           "children": [
                             {
-                              "id": 43,
+                              "id": 42,
                               "name": "Anethum graveolens",
                               "rank": "Species",
                               "slug": "dill"
                             }
                           ],
-                          "id": 1101,
+                          "id": 1096,
                           "name": "Anethum",
                           "rank": "Genus",
+                          "rankHebrew": "\u05e1\u05d5\u05d2",
                           "slug": "anethum"
                         }
                       ],
-                      "id": 1073,
+                      "id": 1068,
                       "name": "Apieae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "apieae"
                     },
                     {
@@ -395,59 +426,66 @@
                             {
                               "children": [
                                 {
-                                  "id": 46,
+                                  "id": 45,
                                   "name": "Anthriscus cerefolium",
                                   "rank": "Species",
                                   "slug": "chervil"
                                 }
                               ],
-                              "id": 1109,
+                              "id": 1104,
                               "name": "Anthriscus",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "anthriscus"
                             }
                           ],
-                          "id": 1108,
+                          "id": 1103,
                           "name": "Scandicinae",
                           "rank": "Subtribus",
+                          "rankHebrew": "\u05ea\u05ea-\u05e9\u05d1\u05d8",
                           "slug": "scandicinae"
                         }
                       ],
-                      "id": 1107,
+                      "id": 1102,
                       "name": "Scandiceae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "scandiceae"
                     }
                   ],
                   "id": 1010,
                   "name": "Apioideae",
                   "rank": "Subfamilia",
+                  "rankHebrew": "\u05ea\u05ea-\u05de\u05e9\u05e4\u05d7\u05d4",
                   "slug": "apioideae"
                 },
                 {
                   "children": [
                     {
-                      "id": 22,
+                      "id": 21,
                       "name": "Levisticum officinale",
                       "rank": "Species",
                       "slug": "lovage"
                     }
                   ],
-                  "id": 1068,
+                  "id": 1063,
                   "name": "Levisticum",
                   "rank": "Genus",
+                  "rankHebrew": "\u05e1\u05d5\u05d2",
                   "slug": "levisticum"
                 }
               ],
               "id": 1009,
               "name": "Apiaceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "apiaceae"
             }
           ],
           "id": 1008,
           "name": "Apiales",
           "rank": "Ordo",
+          "rankHebrew": "\u05e1\u05d3\u05e8\u05d4",
           "slug": "apiales"
         },
         {
@@ -468,26 +506,29 @@
                       "id": 1019,
                       "name": "Eruca",
                       "rank": "Genus",
+                      "rankHebrew": "\u05e1\u05d5\u05d2",
                       "slug": "eruca"
                     },
                     {
                       "children": [
                         {
-                          "id": 16,
+                          "id": 15,
                           "name": "Sinapis alba",
                           "rank": "Subspecies",
                           "slug": "white-mustard"
                         }
                       ],
-                      "id": 1054,
+                      "id": 1049,
                       "name": "Sinapis",
                       "rank": "Genus",
+                      "rankHebrew": "\u05e1\u05d5\u05d2",
                       "slug": "sinapis"
                     }
                   ],
                   "id": 1018,
                   "name": "Brassiceae",
                   "rank": "Tribus",
+                  "rankHebrew": "\u05e9\u05d1\u05d8",
                   "slug": "brassiceae"
                 },
                 {
@@ -504,12 +545,14 @@
                       "id": 1027,
                       "name": "Lepidium",
                       "rank": "Genus",
+                      "rankHebrew": "\u05e1\u05d5\u05d2",
                       "slug": "lepidium"
                     }
                   ],
                   "id": 1026,
                   "name": "Lepidieae",
                   "rank": "Tribus",
+                  "rankHebrew": "\u05e9\u05d1\u05d8",
                   "slug": "lepidieae"
                 },
                 {
@@ -526,24 +569,28 @@
                       "id": 1029,
                       "name": "Nasturtium",
                       "rank": "Genus",
+                      "rankHebrew": "\u05e1\u05d5\u05d2",
                       "slug": "nasturtium"
                     }
                   ],
                   "id": 1028,
                   "name": "Cardamineae",
                   "rank": "Tribus",
+                  "rankHebrew": "\u05e9\u05d1\u05d8",
                   "slug": "cardamineae"
                 }
               ],
               "id": 1017,
               "name": "Brassicaceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "brassicaceae"
             }
           ],
           "id": 1016,
           "name": "Brassicales",
           "rank": "Ordo",
+          "rankHebrew": "\u05e1\u05d3\u05e8\u05d4",
           "slug": "brassicales"
         },
         {
@@ -562,18 +609,21 @@
                   "id": 1032,
                   "name": "Pelargonium",
                   "rank": "Genus",
+                  "rankHebrew": "\u05e1\u05d5\u05d2",
                   "slug": "pelargonium"
                 }
               ],
               "id": 1031,
               "name": "Geraniaceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "geraniaceae"
             }
           ],
           "id": 1030,
           "name": "Geraniales",
           "rank": "Ordo",
+          "rankHebrew": "\u05e1\u05d3\u05e8\u05d4",
           "slug": "geraniales"
         },
         {
@@ -596,30 +646,35 @@
                           "id": 1037,
                           "name": "Myrtus",
                           "rank": "Genus",
+                          "rankHebrew": "\u05e1\u05d5\u05d2",
                           "slug": "myrtus"
                         }
                       ],
                       "id": 1036,
                       "name": "Myrteae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "myrteae"
                     }
                   ],
                   "id": 1035,
                   "name": "Myrtoideae",
                   "rank": "Subfamilia",
+                  "rankHebrew": "\u05ea\u05ea-\u05de\u05e9\u05e4\u05d7\u05d4",
                   "slug": "myrtoideae"
                 }
               ],
               "id": 1034,
               "name": "Myrtaceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "myrtaceae"
             }
           ],
           "id": 1033,
           "name": "Myrtales",
           "rank": "Ordo",
+          "rankHebrew": "\u05e1\u05d3\u05e8\u05d4",
           "slug": "myrtales"
         },
         {
@@ -633,39 +688,44 @@
                         {
                           "children": [
                             {
-                              "id": 14,
+                              "id": 13,
                               "name": "Rumex acetosa",
                               "rank": "Subspecies",
                               "slug": "sorrel"
                             }
                           ],
-                          "id": 1048,
+                          "id": 1043,
                           "name": "Rumex",
                           "rank": "Genus",
+                          "rankHebrew": "\u05e1\u05d5\u05d2",
                           "slug": "rumex"
                         }
                       ],
-                      "id": 1047,
+                      "id": 1042,
                       "name": "Rumiceae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "rumiceae"
                     }
                   ],
-                  "id": 1046,
+                  "id": 1041,
                   "name": "Polygonoideae",
                   "rank": "Subfamilia",
+                  "rankHebrew": "\u05ea\u05ea-\u05de\u05e9\u05e4\u05d7\u05d4",
                   "slug": "polygonoideae"
                 }
               ],
-              "id": 1045,
+              "id": 1040,
               "name": "Polygonaceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "polygonaceae"
             }
           ],
-          "id": 1044,
+          "id": 1039,
           "name": "Caryophyllales",
           "rank": "Ordo",
+          "rankHebrew": "\u05e1\u05d3\u05e8\u05d4",
           "slug": "caryophyllales"
         },
         {
@@ -679,39 +739,44 @@
                         {
                           "children": [
                             {
-                              "id": 15,
+                              "id": 14,
                               "name": "Trigonella foenum-graecum",
                               "rank": "Species",
                               "slug": "fenugreek"
                             }
                           ],
-                          "id": 1053,
+                          "id": 1048,
                           "name": "Trigonella",
                           "rank": "Genus",
+                          "rankHebrew": "\u05e1\u05d5\u05d2",
                           "slug": "trigonella"
                         }
                       ],
-                      "id": 1052,
+                      "id": 1047,
                       "name": "Trifolieae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "trifolieae"
                     }
                   ],
-                  "id": 1051,
+                  "id": 1046,
                   "name": "Faboideae",
                   "rank": "Subfamilia",
+                  "rankHebrew": "\u05ea\u05ea-\u05de\u05e9\u05e4\u05d7\u05d4",
                   "slug": "faboideae"
                 }
               ],
-              "id": 1050,
+              "id": 1045,
               "name": "Fabaceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "fabaceae"
             }
           ],
-          "id": 1049,
+          "id": 1044,
           "name": "Fabales",
           "rank": "Ordo",
+          "rankHebrew": "\u05e1\u05d3\u05e8\u05d4",
           "slug": "fabales"
         },
         {
@@ -727,33 +792,35 @@
                             {
                               "children": [
                                 {
-                                  "id": 17,
+                                  "id": 16,
                                   "name": "Artemisia dracunculus",
                                   "rank": "Subspecies",
                                   "slug": "tarragon"
                                 },
                                 {
-                                  "id": 23,
+                                  "id": 22,
                                   "name": "Artemisia absinthium",
                                   "rank": "Species",
                                   "slug": "grand-wormwood"
                                 },
                                 {
-                                  "id": 42,
+                                  "id": 41,
                                   "name": "Artemisia arborescens",
                                   "rank": "Species",
                                   "slug": "tree-wormwood"
                                 }
                               ],
-                              "id": 1060,
+                              "id": 1055,
                               "name": "Artemisia",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "artemisia"
                             }
                           ],
-                          "id": 1059,
+                          "id": 1054,
                           "name": "Artemisiinae",
                           "rank": "Subtribus",
+                          "rankHebrew": "\u05ea\u05ea-\u05e9\u05d1\u05d8",
                           "slug": "artemisiinae"
                         },
                         {
@@ -761,33 +828,37 @@
                             {
                               "children": [
                                 {
-                                  "id": 38,
+                                  "id": 37,
                                   "name": "Matricaria chamomilla",
                                   "rank": "Species",
                                   "slug": "chamomile"
                                 }
                               ],
-                              "id": 1097,
+                              "id": 1092,
                               "name": "Matricaria",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "matricaria"
                             }
                           ],
-                          "id": 1096,
+                          "id": 1091,
                           "name": "Matricariinae",
                           "rank": "Subtribus",
+                          "rankHebrew": "\u05ea\u05ea-\u05e9\u05d1\u05d8",
                           "slug": "matricariinae"
                         }
                       ],
-                      "id": 1058,
+                      "id": 1053,
                       "name": "Anthemideae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "anthemideae"
                     }
                   ],
-                  "id": 1057,
+                  "id": 1052,
                   "name": "Asteroideae",
                   "rank": "Subfamilia",
+                  "rankHebrew": "\u05ea\u05ea-\u05de\u05e9\u05e4\u05d7\u05d4",
                   "slug": "asteroideae"
                 },
                 {
@@ -799,45 +870,51 @@
                             {
                               "children": [
                                 {
-                                  "id": 44,
+                                  "id": 43,
                                   "name": "Taraxacum officinale",
                                   "rank": "Species",
                                   "slug": "dandelion"
                                 }
                               ],
-                              "id": 1105,
+                              "id": 1100,
                               "name": "Taraxacum",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "taraxacum"
                             }
                           ],
-                          "id": 1104,
+                          "id": 1099,
                           "name": "Crepidinae",
                           "rank": "Subtribus",
+                          "rankHebrew": "\u05ea\u05ea-\u05e9\u05d1\u05d8",
                           "slug": "crepidinae"
                         }
                       ],
-                      "id": 1103,
+                      "id": 1098,
                       "name": "Cichorieae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "cichorieae"
                     }
                   ],
-                  "id": 1102,
+                  "id": 1097,
                   "name": "Cichorioideae",
                   "rank": "Subfamilia",
+                  "rankHebrew": "\u05ea\u05ea-\u05de\u05e9\u05e4\u05d7\u05d4",
                   "slug": "cichorioideae"
                 }
               ],
-              "id": 1056,
+              "id": 1051,
               "name": "Asteraceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "asteraceae"
             }
           ],
-          "id": 1055,
+          "id": 1050,
           "name": "Asterales",
           "rank": "Ordo",
+          "rankHebrew": "\u05e1\u05d3\u05e8\u05d4",
           "slug": "asterales"
         },
         {
@@ -853,21 +930,23 @@
                             {
                               "children": [
                                 {
-                                  "id": 32,
+                                  "id": 31,
                                   "name": "Murraya koenigii",
                                   "rank": "Species",
                                   "slug": "curry-leaf"
                                 }
                               ],
-                              "id": 1084,
+                              "id": 1079,
                               "name": "Murraya",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "murraya"
                             }
                           ],
-                          "id": 1083,
+                          "id": 1078,
                           "name": "Merrilliinae",
                           "rank": "Subtribus",
+                          "rankHebrew": "\u05ea\u05ea-\u05e9\u05d1\u05d8",
                           "slug": "merrilliinae"
                         },
                         {
@@ -875,33 +954,37 @@
                             {
                               "children": [
                                 {
-                                  "id": 39,
+                                  "id": 38,
                                   "name": "Citrus hystrix",
                                   "rank": "Species",
                                   "slug": "kaffir-lime"
                                 }
                               ],
-                              "id": 1099,
+                              "id": 1094,
                               "name": "Citrus",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "citrus"
                             }
                           ],
-                          "id": 1098,
+                          "id": 1093,
                           "name": "Citrinae",
                           "rank": "Subtribus",
+                          "rankHebrew": "\u05ea\u05ea-\u05e9\u05d1\u05d8",
                           "slug": "citrinae"
                         }
                       ],
-                      "id": 1082,
+                      "id": 1077,
                       "name": "Aurantieae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "aurantieae"
                     }
                   ],
-                  "id": 1081,
+                  "id": 1076,
                   "name": "Aurantioideae",
                   "rank": "Subfamilia",
+                  "rankHebrew": "\u05ea\u05ea-\u05de\u05e9\u05e4\u05d7\u05d4",
                   "slug": "aurantioideae"
                 },
                 {
@@ -909,39 +992,44 @@
                     {
                       "children": [
                         {
-                          "id": 35,
+                          "id": 34,
                           "name": "Ruta graveolens",
                           "rank": "Species",
                           "slug": "rue"
                         }
                       ],
-                      "id": 1093,
+                      "id": 1088,
                       "name": "Ruta",
                       "rank": "Genus",
+                      "rankHebrew": "\u05e1\u05d5\u05d2",
                       "slug": "ruta"
                     }
                   ],
-                  "id": 1092,
+                  "id": 1087,
                   "name": "Rutoideae",
                   "rank": "Subfamilia",
+                  "rankHebrew": "\u05ea\u05ea-\u05de\u05e9\u05e4\u05d7\u05d4",
                   "slug": "rutoideae"
                 }
               ],
-              "id": 1080,
+              "id": 1075,
               "name": "Rutaceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "rutaceae"
             }
           ],
-          "id": 1079,
+          "id": 1074,
           "name": "Sapindales",
           "rank": "Ordo",
+          "rankHebrew": "\u05e1\u05d3\u05e8\u05d4",
           "slug": "sapindales"
         }
       ],
       "id": 1001,
       "name": "Eudicots",
       "rank": "Cladus",
+      "rankHebrew": "\u05de\u05d7\u05dc\u05e7\u05d4",
       "slug": "eudicots"
     },
     {
@@ -963,19 +1051,19 @@
                               "slug": "scallion"
                             },
                             {
-                              "id": 19,
+                              "id": 18,
                               "name": "Allium ampeloprasum",
                               "rank": "Species",
                               "slug": "leek"
                             },
                             {
-                              "id": 29,
+                              "id": 28,
                               "name": "Allium schoenoprasum",
                               "rank": "Species",
                               "slug": "chives"
                             },
                             {
-                              "id": 30,
+                              "id": 29,
                               "name": "Allium tuberosum",
                               "rank": "Species",
                               "slug": "garlic-chives"
@@ -984,30 +1072,35 @@
                           "id": 1025,
                           "name": "Allium",
                           "rank": "Genus",
+                          "rankHebrew": "\u05e1\u05d5\u05d2",
                           "slug": "allium"
                         }
                       ],
                       "id": 1024,
                       "name": "Allieae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "allieae"
                     }
                   ],
                   "id": 1023,
                   "name": "Allioideae",
                   "rank": "Subfamilia",
+                  "rankHebrew": "\u05ea\u05ea-\u05de\u05e9\u05e4\u05d7\u05d4",
                   "slug": "allioideae"
                 }
               ],
               "id": 1022,
               "name": "Amaryllidaceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "amaryllidaceae"
             }
           ],
           "id": 1021,
           "name": "Asparagales",
           "rank": "Ordo",
+          "rankHebrew": "\u05e1\u05d3\u05e8\u05d4",
           "slug": "asparagales"
         },
         {
@@ -1023,51 +1116,58 @@
                             {
                               "children": [
                                 {
-                                  "id": 33,
+                                  "id": 32,
                                   "name": "Cymbopogon citratus",
                                   "rank": "Species",
                                   "slug": "lemongrass"
                                 }
                               ],
-                              "id": 1090,
+                              "id": 1085,
                               "name": "Cymbopogon",
                               "rank": "Genus",
+                              "rankHebrew": "\u05e1\u05d5\u05d2",
                               "slug": "cymbopogon"
                             }
                           ],
-                          "id": 1089,
+                          "id": 1084,
                           "name": "Anthistiriinae",
                           "rank": "Subtribus",
+                          "rankHebrew": "\u05ea\u05ea-\u05e9\u05d1\u05d8",
                           "slug": "anthistiriinae"
                         }
                       ],
-                      "id": 1088,
+                      "id": 1083,
                       "name": "Andropogoneae",
                       "rank": "Tribus",
+                      "rankHebrew": "\u05e9\u05d1\u05d8",
                       "slug": "andropogoneae"
                     }
                   ],
-                  "id": 1087,
+                  "id": 1082,
                   "name": "Panicoideae",
                   "rank": "Subfamilia",
+                  "rankHebrew": "\u05ea\u05ea-\u05de\u05e9\u05e4\u05d7\u05d4",
                   "slug": "panicoideae"
                 }
               ],
-              "id": 1086,
+              "id": 1081,
               "name": "Poaceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "poaceae"
             }
           ],
-          "id": 1085,
+          "id": 1080,
           "name": "Poales",
           "rank": "Ordo",
+          "rankHebrew": "\u05e1\u05d3\u05e8\u05d4",
           "slug": "poales"
         }
       ],
       "id": 1020,
       "name": "Monocots",
       "rank": "Cladus",
+      "rankHebrew": "\u05de\u05d7\u05dc\u05e7\u05d4",
       "slug": "monocots"
     },
     {
@@ -1079,33 +1179,37 @@
                 {
                   "children": [
                     {
-                      "id": 31,
+                      "id": 30,
                       "name": "Laurus nobilis",
                       "rank": "Species",
                       "slug": "bay-leaf"
                     }
                   ],
-                  "id": 1078,
+                  "id": 1073,
                   "name": "Laurus",
                   "rank": "Genus",
+                  "rankHebrew": "\u05e1\u05d5\u05d2",
                   "slug": "laurus"
                 }
               ],
-              "id": 1077,
+              "id": 1072,
               "name": "Lauraceae",
               "rank": "Familia",
+              "rankHebrew": "\u05de\u05e9\u05e4\u05d7\u05d4",
               "slug": "lauraceae"
             }
           ],
-          "id": 1076,
+          "id": 1071,
           "name": "Laurales",
           "rank": "Ordo",
+          "rankHebrew": "\u05e1\u05d3\u05e8\u05d4",
           "slug": "laurales"
         }
       ],
-      "id": 1075,
+      "id": 1070,
       "name": "Magnoliids",
       "rank": "Cladus",
+      "rankHebrew": "\u05de\u05d7\u05dc\u05e7\u05d4",
       "slug": "magnoliids"
     }
   ],

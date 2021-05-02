@@ -2,6 +2,24 @@ $text-color: #303030;
 $bg-color: #f9f5f4;
 $transition-defaults: 300ms ease;
 
+@font-face {
+  font-family: ArbelHagilda;
+  src: url("./fonts/ArbelHagildaRegular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: ArbelHagilda;
+  src: url("./fonts/ArbelHagildaMedium.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: ArbelHagilda;
+  src: url("./fonts/ArbelHagildaBold.otf");
+  font-weight: 800;
+}
+
 body {
   margin: 0;
   direction: rtl;
