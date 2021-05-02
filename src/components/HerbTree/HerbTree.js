@@ -5,15 +5,16 @@ import { radToDeg, normalize2D, dist2D } from "../../utils/math";
 
 import herbHierarchy from "../../data/herbHierarchy.json";
 import herbData from "../../data/herbData.json";
+import rankData from "../../data/rankData.json";
 import initialNodePositions from "../../data/initialNodePositions.json";
 
 import "./HerbTree.scss";
 
 let width = 400;
 let height = 400;
-const radius = 3;
+const radius = 2;
 const marginX = 15;
-const marginY = 20;
+const marginY = 30;
 const offsetX = -50;
 const imageSize = 40;
 const collisionRadius = 16;
@@ -49,7 +50,7 @@ class HerbTree extends React.Component {
 
   setGraphSize() {
     const w = document.documentElement.clientWidth;
-    const h = document.documentElement.clientHeight;
+    const h = Math.min(document.documentElement.clientHeight, 750);
     width = w / 2;
     height = h;
     d3.select(graphEl).attr("viewBox", [
@@ -94,8 +95,8 @@ const removeSingleChildren = (node) => {
     node.children = children;
     node.name = name;
     node.slug = slug;
-    // node.rank = rank;
-    // node.rankHebrew = rankHebrew;
+    node.rank = rank;
+    node.rankHebrew = rankHebrew;
   }
   return node;
 };
@@ -105,6 +106,7 @@ const drag = (simulation) => {
     if (!event.active) simulation.alphaTarget(0.3).restart();
     d.fx = d.x;
     d.fy = d.y;
+    console.log(simulation);
   }
 
   function dragged(event, d) {
@@ -218,8 +220,8 @@ const graph = (ref, data, parentComponent) => {
   node
     .filter((d) => d.children)
     .append("circle")
-    .attr("r", 0.5 * radius)
-    .attr("opacity", 0);
+    .attr("r", radius)
+    .attr("opacity", 0); // For transition
 
   node
     .filter((d) => !d.children)
@@ -254,6 +256,18 @@ const graph = (ref, data, parentComponent) => {
     .attr("text-anchor", "middle")
     .attr("y", (d) => (d.children ? -5 : 0))
     .attr("opacity", 0);
+
+  var tooltipContainer = svg
+    .append("foreignObject")
+    .attr("class", "tooltipContainer")
+    .attr("width", 200)
+    .attr("height", 400);
+
+  var tooltip = tooltipContainer
+    .append("xhtml:div")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
   // ==== enterance transition ====
   setTimeout(() => {
@@ -292,14 +306,25 @@ const graph = (ref, data, parentComponent) => {
     .on("mouseover", (e, d) => {
       if (d.children) {
         graphEl.classList.add("inactive");
-        const { id } = d.data;
-        text.filter((d) => d.data.id === id).classed("visible", true);
+        const { id, slug, name, hebrewRank } = d.data;
+        // text.filter((d) => d.data.id === id).classed("visible", true);
 
         setSubtreeActive(d, true);
 
         node.classed("active", (d) => d.isActive);
         text.classed("active", (d) => d.isActive);
         link.classed("active", (d) => d.source.isActive);
+
+        const rankInfo = rankData[slug];
+        if (rankInfo) {
+          tooltip.html(
+            `<h4>${rankInfo.hebrew} /<span> ${rankInfo.hebrewRank}</span></h4><p>${rankInfo.description}</p>`
+          );
+        } else {
+          tooltip.html(`<h4>${name} /<span> ${hebrewRank}</span></h4>`);
+        }
+        tooltipContainer.attr("transform", `translate(${d.x - 200},${d.y})`);
+        tooltip.transition().duration(300).style("opacity", 1);
       }
     })
     .on("mouseout", (e, d) => {
@@ -308,6 +333,8 @@ const graph = (ref, data, parentComponent) => {
         const { id } = d.data;
         text.filter((d) => d.data.id === id).classed("visible", false);
         setSubtreeActive(d, false);
+
+        tooltip.transition().duration(300).style("opacity", 0);
       }
     })
     .on("click", (e, d) => {
