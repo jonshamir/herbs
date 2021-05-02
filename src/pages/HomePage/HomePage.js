@@ -19,9 +19,20 @@ class HomePage extends React.Component {
 
     return (
       <div className="HomePage">
-        <div className="columns">
-          <div className="ContentLeft">
-            <HerbTree onNodeClick={this.handleNodeClick} />
+        <div className="">
+          <HerbTree onNodeClick={this.handleNodeClick} />
+          <div className="intro">
+            <h2>צמחי תבלין</h2>
+            <p>
+              מאז ימי קדם בני אדם משתמשים בצמחים להוסיף טעם למנות. הרבה מצמחי
+              התבלין המוכרים לנו כיום במטבח המערבי התפתחו באזור הים התיכון,
+              ומצויים ברחבי הארץ.
+            </p>
+            <p>
+              בעץ תוכלו לראות את השיוך הגנטי של צמחי תבין נפוצים. שורש האץ מייצג
+              את האב הקדמון של כל הצמחים בכדור הארץ. כל ענף מכיל צמחים בעלי מקור
+              גנטי משותף, שבא לידי ביטוי גם במאפיינים שונים של הצמח.
+            </p>
           </div>
         </div>
       </div>

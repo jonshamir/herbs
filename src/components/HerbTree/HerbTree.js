@@ -12,7 +12,7 @@ import "./HerbTree.scss";
 let width = 400;
 let height = 400;
 const radius = 3;
-const marginX = 5;
+const marginX = 15;
 const marginY = 20;
 const offsetX = -50;
 const imageSize = 40;
@@ -89,11 +89,13 @@ const removeSingleChildren = (node) => {
     node.rank !== "Cladus"
     //  && node.rank !== "Familia"
   ) {
-    const { children, name, id, slug } = node.children[0];
+    const { children, name, id, slug, rank, rankHebrew } = node.children[0];
     node.id = id;
     node.children = children;
     node.name = name;
     node.slug = slug;
+    // node.rank = rank;
+    // node.rankHebrew = rankHebrew;
   }
   return node;
 };
@@ -179,7 +181,8 @@ const graph = (ref, data, parentComponent) => {
       // Repel walls
       nodes.forEach((node) => {
         const wallRepulsionX =
-          alpha * Math.max(1, Math.abs(node.x) - (width / 2 - marginX));
+          alpha *
+          Math.max(1, Math.abs(node.x + offsetX) - (width / 2 - marginX));
         node.x -= Math.sign(node.x) * wallRepulsionX;
         // const wallRepulsionY =
         //   alpha * Math.max(1, Math.abs(node.y) - (height / 2 - marginY));
@@ -242,7 +245,10 @@ const graph = (ref, data, parentComponent) => {
     .data(nodes)
     .join("g")
     .append("text")
-    .text((d) => (d.children ? d.data.name : herbData[d.data.id].hebrewName))
+    .text((d) => {
+      if (d.children) return `${d.data.name}`;
+      else return herbData[d.data.id].hebrewName;
+    })
     .attr("class", "nodeText")
     .classed("visible", (d) => !d.children)
     .attr("text-anchor", "middle")

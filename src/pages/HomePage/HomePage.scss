@@ -6,62 +6,10 @@ $light-text: #757373;
   justify-content: center;
 }
 
-.ContentRight {
-  text-align: right;
-  padding: 2em 3em;
-  right: 0;
-  top: 0;
-  width: 40vw;
-  max-width: 400px;
-  box-sizing: border-box;
-  overflow-y: scroll;
-  overflow-x: hidden;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  h2 {
-    font-size: 2em;
-    font-weight: bold;
-    margin-top: 0;
-  }
-}
-
-.ContentLeft {
-  position: relative;
-}
-
-.TabSelect {
-  list-style-type: none;
-  font-weight: bold;
-  font-size: 1.5em;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  li {
-    padding: 1em 0.7em;
-    opacity: 0.35;
-    transition: opacity 300ms ease, color 300ms ease, transform 300ms ease;
-    cursor: pointer;
-    transform: translateY(0);
-
-    &:hover {
-      color: orangered;
-      opacity: 1;
-      transform: translateY(-0.5em);
-    }
-
-    &.active {
-      opacity: 1;
-    }
-  }
+.intro {
+  position: fixed;
+  bottom: 3em;
+  right: 4em;
+  max-width: 30%;
+  line-height: 1.5em;
 }
