@@ -7,12 +7,12 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <Route exact path="/">
+        <Route path="/*">
           <HomePage />
         </Route>
-        <Route path="/herb/:slug">
+        {/*<Route path="/herb/:slug">
           <HerbPage />
-        </Route>
+        </Route>*/}
       </Router>
     );
   }
