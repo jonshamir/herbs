@@ -1,7 +1,7 @@
 {
   "short_name": "Herbs",
   "name": "The Herbs Project",
-  "start_url": "./",
+  "start_url": "/herbs/",
   "icons": [
     {
       "src": "favicon.ico",
