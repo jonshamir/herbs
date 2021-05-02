@@ -221,9 +221,9 @@ const graph = (ref, data, parentComponent) => {
   node
     .filter((d) => !d.children)
     .append("svg:image")
-    .attr("xlink:href", (d) => `/images/icons/${d.data.slug}.png`)
+    .attr("xlink:href", (d) => `./images/icons/${d.data.slug}.png`)
     .on("error", function (d) {
-      d3.select(this).attr("xlink:href", "/images/herb.png");
+      d3.select(this).attr("xlink:href", "./images/herb.png");
     })
     .attr("x", -imageSize / 2)
     .attr("y", -imageSize / 2)
