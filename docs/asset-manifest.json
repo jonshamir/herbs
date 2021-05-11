@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.2d40a079.chunk.css",
+    "main.css": "./static/css/main.8bc868e9.chunk.css",
     "main.js": "./static/js/main.9e93c683.chunk.js",
     "main.js.map": "./static/js/main.9e93c683.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.efaaabb7.js",
@@ -10,14 +10,14 @@
     "static/js/3.98724183.chunk.js": "./static/js/3.98724183.chunk.js",
     "static/js/3.98724183.chunk.js.map": "./static/js/3.98724183.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.2d40a079.chunk.css.map": "./static/css/main.2d40a079.chunk.css.map",
+    "static/css/main.8bc868e9.chunk.css.map": "./static/css/main.8bc868e9.chunk.css.map",
     "static/js/2.8236d687.chunk.js.LICENSE.txt": "./static/js/2.8236d687.chunk.js.LICENSE.txt",
     "static/media/HerbTree.scss": "./static/media/ArbelHagildaRegular.9d84f404.otf"
   },
   "entrypoints": [
     "static/js/runtime-main.efaaabb7.js",
     "static/js/2.8236d687.chunk.js",
-    "static/css/main.2d40a079.chunk.css",
+    "static/css/main.8bc868e9.chunk.css",
     "static/js/main.9e93c683.chunk.js"
   ]
 }

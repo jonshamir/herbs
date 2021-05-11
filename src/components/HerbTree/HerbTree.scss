@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+svg {
+  // shape-rendering: optimizeSpeed;
+  text-rendering: optimizeSpeed;
+  image-rendering: optimizeSpeed;
+}
+
 .graphContainer {
   box-sizing: border-box;
   width: 100vw;
@@ -17,7 +23,7 @@
     }
 
     &.internode {
-      fill: lighten(#999, 20%) !important;
+      fill: lighten(#999, 30%) !important;
     }
   }
   .link:not(.active) {
@@ -107,7 +113,7 @@
     position: fixed;
     user-select: none;
     pointer-events: none;
-    background-color: rgba($bg-color, 0.7);
+    background-color: rgba($bg-color, 0.5);
     margin: 0.5em;
   }
 }
