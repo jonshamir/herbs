@@ -51,7 +51,8 @@ class HomePage extends React.Component {
           className="intro"
           style={{ opacity: introOpacity, display: introDisplay }}
         >
-          <h2>צמחי תבלין</h2>
+          <h1>על טעם וריח</h1>
+          <h2>מדריך שימושי לעשבי תיבול</h2>
           <p>
             צמחים שעליהם משמשים להוסיף טעם למאכלים ומשקאות. הרבה מעשבי התיבול
             המוכרים ביותר כיום, כגון בזיליקום, פטרוזיליה ואורגנו, התפתחו

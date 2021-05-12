@@ -21,6 +21,7 @@ const collisionRadius = 16;
 
 let graphEl;
 let simulation;
+let rootNode;
 
 class HerbTree extends React.Component {
   constructor(props) {
@@ -59,9 +60,12 @@ class HerbTree extends React.Component {
       width,
       height,
     ]);
-    if (simulation) simulation.alphaTarget(0.1).restart();
+    if (simulation) {
+      simulation.alphaTarget(0.1).restart();
 
-    // TODO update root node positions
+      rootNode.fx = offsetX;
+      rootNode.fy = 0.5 * height - 1 * marginY;
+    }
   }
 
   logPositions() {
@@ -106,7 +110,6 @@ const drag = (simulation) => {
     if (!event.active) simulation.alphaTarget(0.3).restart();
     d.fx = d.x;
     d.fy = d.y;
-    console.log(simulation);
   }
 
   function dragged(event, d) {
@@ -137,9 +140,9 @@ const linkLength = (link) => {
 };
 
 const graph = (ref, data, parentComponent) => {
-  const root = d3.hierarchy(data);
-  const links = root.links();
-  const nodes = root.descendants();
+  rootNode = d3.hierarchy(data);
+  const links = rootNode.links();
+  const nodes = rootNode.descendants();
   nodes.forEach((node, i) => {
     const { id } = node.data;
     if (id !== 1000 && initialNodePositions[id]) {
@@ -149,9 +152,9 @@ const graph = (ref, data, parentComponent) => {
     }
   });
 
-  root.fixed = true;
-  root.fx = offsetX;
-  root.fy = 0.5 * height - 1 * marginY;
+  rootNode.fixed = true;
+  rootNode.fx = offsetX;
+  rootNode.fy = 0.5 * height - 1 * marginY;
 
   simulation = d3
     .forceSimulation(nodes)
@@ -214,8 +217,10 @@ const graph = (ref, data, parentComponent) => {
     .attr("class", "node")
     .classed("internode", (d) => d.children)
     .classed("leaf", (d) => !d.children)
-    .attr("id", (d) => d.data.id)
-    .call(drag(simulation));
+    .attr("id", (d) => d.data.id);
+
+  // Allow dragging for all but root node
+  node.filter((d) => d.depth > 0).call(drag(simulation));
 
   node
     .filter((d) => d.children)
@@ -234,7 +239,8 @@ const graph = (ref, data, parentComponent) => {
     .attr("y", -imageSize / 2)
     .attr("width", imageSize)
     .attr("height", imageSize)
-    .attr("opacity", 0);
+    .attr("transform", "scale(0.01)");
+  // .attr("opacity", 0);
 
   node
     .filter((d) => !d.children)
@@ -287,19 +293,19 @@ const graph = (ref, data, parentComponent) => {
       });
 
     svg
-      .selectAll("circle, image, text")
+      .selectAll("circle, text")
       .transition()
-      .delay((d) => d.depth * growthTime)
+      .delay((d) => d.depth * growthTime + 500)
       .duration(growthTime)
       .attr("opacity", 1);
 
-    // svg
-    //   .selectAll("image")
-    //   .attr("opacity", 1)
-    //   .attr("transform")
-    //   .transition()
-    //   .delay((d) => d.depth * growthTime)
-    //   .duration(growthTime);
+    svg
+      .selectAll("image")
+      // .attr("opacity", 1)
+      .transition()
+      .delay((d) => d.depth * growthTime + 600 * Math.random() - 300)
+      .duration(growthTime)
+      .attr("transform", "scale(1)");
   }, 1000);
 
   node
@@ -342,19 +348,27 @@ const graph = (ref, data, parentComponent) => {
     });
 
   simulation.on("tick", (e) => {
-    node
-      .attr("transform", (d) => `translate(${d.x},${d.y})`)
-      .select("image")
-      .attr("transform", (d) => {
-        let transform = "";
-        if (!d.children) {
-          const deltaX = d.x - d.parent.x;
-          const deltaY = d.y - d.parent.y;
-          const angle = radToDeg(Math.atan2(deltaY, deltaX)) + 90;
-          transform += ` rotate(${angle})`;
-        }
-        return transform;
-      });
+    node.attr("transform", (d) => {
+      let transform = `translate(${d.x},${d.y})`;
+      if (!d.children) {
+        const deltaX = d.x - d.parent.x;
+        const deltaY = d.y - d.parent.y;
+        const angle = radToDeg(Math.atan2(deltaY, deltaX)) + 90;
+        transform += ` rotate(${angle})`;
+      }
+      return transform;
+    });
+
+    // node.select("leaf").attr("transform", (d) => {
+    //   let transform = `translate(${d.x},${d.y})`;
+    //   if (!d.children) {
+    //     const deltaX = d.x - d.parent.x;
+    //     const deltaY = d.y - d.parent.y;
+    //     const angle = radToDeg(Math.atan2(deltaY, deltaX)) + 90;
+    //     transform += ` rotate(${angle})`;
+    //   }
+    //   return transform;
+    // });
 
     text.attr("transform", (d) => {
       let xPos = d.x;

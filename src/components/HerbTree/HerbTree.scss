@@ -42,6 +42,10 @@ svg {
       fill: $bg-color;
       fill-opacity: 0;
       transition: fill-opacity $transition-defaults;
+
+      image {
+        transform-origin: 0 10px;
+      }
     }
 
     &.internode {
@@ -96,6 +100,7 @@ svg {
   pointer-events: none;
   font-size: 0.5rem;
   line-height: 1.5em;
+
   p {
     font-weight: 400;
     margin: 0.2rem 0;
