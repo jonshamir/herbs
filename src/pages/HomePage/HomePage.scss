@@ -8,16 +8,13 @@ $light-text: #757373;
 
 .intro {
   h1 {
-    margin: 0.4em 0;
-    font-kerning: none;
-    font-size: 3em;
-    font-weight: 400;
-    font-family: "Hadassah Friedlaender";
-    font-weight: bold;
+    margin: 0;
+  }
+  h2 {
+    margin-top: 0.2em;
   }
   position: fixed;
   bottom: 3em;
   right: 4em;
   max-width: 35%;
-  line-height: 1.5em;
 }

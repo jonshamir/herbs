@@ -1,6 +1,25 @@
 .HerbPage {
   text-align: center;
-  .HerbIcon {
-    width: 400px;
+  max-width: 1000px;
+  margin: auto;
+
+  .HerbInfo {
+    height: 100vh;
+    box-sizing: border-box;
+    position: fixed;
+    width: 250px;
+
+    .HerbIcon {
+      width: 200px;
+      margin: 2em;
+    }
+  }
+
+  .HerbContent {
+    text-align: right;
+    padding: 2em;
+    padding-right: 0;
+    margin-right: 250px;
+    box-sizing: border-box;
   }
 }

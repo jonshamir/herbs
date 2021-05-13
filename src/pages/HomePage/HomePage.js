@@ -1,5 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
+import { motion } from "framer-motion";
 import { debounce } from "lodash";
 import HerbTree from "../../components/HerbTree/HerbTree";
 // import WindowHeader from "../../components/WindowHeader/WindowHeader";
@@ -9,11 +10,18 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = { redirect: null, introOpacity: 1 };
+    this.handleScroll = debounce(this.handleScroll, 10);
   }
 
   componentDidMount() {
-    const debouncedHandleScroll = debounce(this.handleScroll, 10);
-    window.addEventListener("scroll", debouncedHandleScroll);
+    window.addEventListener("scroll", this.handleScroll);
+    if (window.history.scrollRestoration) {
+      window.history.scrollRestoration = "manual";
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
   handleScroll = () => {
@@ -45,7 +53,12 @@ class HomePage extends React.Component {
     const introDisplay = introOpacity > 0 ? "block" : "none";
 
     return (
-      <div className="HomePage">
+      <motion.div
+        className="HomePage"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <HerbTree onNodeClick={this.handleNodeClick} />
         <div
           className="intro"
@@ -67,7 +80,7 @@ class HomePage extends React.Component {
             על נקודות שונות בעץ כדי לגלות עוד פרטים.
           </p>
         </div>
-      </div>
+      </motion.div>
     );
   }
 }

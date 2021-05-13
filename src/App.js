@@ -1,17 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { Route, Switch, useLocation } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
+import HerbPage from "./pages/HerbPage/HerbPage";
 
-class App extends React.Component {
-  render() {
-    return (
-      <Router>
-        <Route path="/*">
+const App = () => {
+  const location = useLocation();
+  return (
+    <AnimatePresence exitBeforeEnter initial={false}>
+      <Switch location={location} key={location.pathname}>
+        <Route exact path="/">
           <HomePage />
         </Route>
-      </Router>
-    );
-  }
-}
+        <Route path="/herb/:slug">
+          <HerbPage />
+        </Route>
+      </Switch>
+    </AnimatePresence>
+  );
+};
 
 export default App;

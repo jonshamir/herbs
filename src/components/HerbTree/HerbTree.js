@@ -46,7 +46,19 @@ class HerbTree extends React.Component {
   }
 
   handleClick(event, node) {
-    // this.props.onNodeClick(node.data);
+    // const { slug } = node.data;
+    // const img = document.getElementsByClassName(`image-${slug}`)[0];
+    // var imgOffset = img.getBoundingClientRect();
+    // const imgWidth = img.width.baseVal.value;
+    // const imgHeight = img.height.baseVal.value;
+    //
+    // var centerX = imgOffset.left + imgWidth / 2;
+    // var centerY = imgOffset.top + imgHeight / 2;
+    //
+    // var transX = window.innerWidth / 2 - centerX;
+    // var transY = window.innerHeight / 2 - centerY;
+    // // img.style.transform = `translate(${transX}px,${transY}px) scale(2.8)`;
+    this.props.onNodeClick(node.data);
   }
 
   setGraphSize() {
@@ -232,6 +244,7 @@ const graph = (ref, data, parentComponent) => {
     .filter((d) => !d.children)
     .append("svg:image")
     .attr("xlink:href", (d) => `./images/icons/${d.data.slug}.png`)
+    .attr("class", (d) => `image-${d.data.slug}`)
     .on("error", function (d) {
       d3.select(this).attr("xlink:href", "./images/herb.png");
     })
@@ -277,7 +290,7 @@ const graph = (ref, data, parentComponent) => {
 
   // ==== enterance transition ====
   setTimeout(() => {
-    const growthTime = 600;
+    const growthTime = 400;
     link
       .attr("opacity", 1)
       .attr("stroke-dasharray", (d) => linkLength(d) + " " + linkLength(d))
@@ -310,18 +323,19 @@ const graph = (ref, data, parentComponent) => {
 
   node
     .on("mouseover", (e, d) => {
+      graphEl.classList.add("inactive");
+      const { slug, name, hebrewRank } = d.data;
+      // text.filter((d) => d.data.id === id).classed("visible", true);
+
+      setSubtreeActive(d, true);
+
+      node.classed("active", (d) => d.isActive);
+      text.classed("active", (d) => d.isActive);
+      link.classed("active", (d) => d.source.isActive);
+
       if (d.children) {
-        graphEl.classList.add("inactive");
-        const { id, slug, name, hebrewRank } = d.data;
-        // text.filter((d) => d.data.id === id).classed("visible", true);
-
-        setSubtreeActive(d, true);
-
-        node.classed("active", (d) => d.isActive);
-        text.classed("active", (d) => d.isActive);
-        link.classed("active", (d) => d.source.isActive);
-
         const rankInfo = rankData[slug];
+
         if (rankInfo) {
           tooltip.html(
             `<h4>${rankInfo.hebrew} /<span> ${rankInfo.hebrewRank}</span></h4><p>${rankInfo.description}</p>`
@@ -334,11 +348,12 @@ const graph = (ref, data, parentComponent) => {
       }
     })
     .on("mouseout", (e, d) => {
+      graphEl.classList.remove("inactive");
+      setSubtreeActive(d, false);
+
       if (d.children) {
-        graphEl.classList.remove("inactive");
         const { id } = d.data;
         text.filter((d) => d.data.id === id).classed("visible", false);
-        setSubtreeActive(d, false);
 
         tooltip.transition().duration(300).style("opacity", 0);
       }
