@@ -19,7 +19,7 @@ svg {
 .inactive {
   .node:not(.active) {
     &.leaf {
-      fill-opacity: 0.85 !important;
+      fill-opacity: 0.9 !important;
     }
 
     &.internode {
@@ -118,7 +118,7 @@ svg {
     position: fixed;
     user-select: none;
     pointer-events: none;
-    background-color: rgba($bg-color, 0.5);
+    // background-color: rgba($bg-color, 0.5);
     margin: 0.5em;
   }
 }
