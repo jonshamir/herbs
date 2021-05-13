@@ -1,9 +1,11 @@
 import * as d3 from "d3";
 import { radToDeg, normalize2D, dist2D } from "../../utils/math";
 
-import herbData from "../../data/herbData.json";
-import rankData from "../../data/rankData.json";
+import herbInfo from "../../data/herbInfo.json";
+import rankInfo from "../../data/rankInfo.json";
 import initialNodePositions from "../../data/initialNodePositions.json";
+
+import lang from "../../lang";
 
 let width = 400;
 let height = 400;
@@ -47,7 +49,7 @@ export const graph = (ref, data, parentComponent) => {
 
   node
     .on("mouseover", (e, d) => {
-      const { slug, name, hebrewRank } = d.data;
+      const { slug, name, rank } = d.data;
 
       // console.log(d3.select(`.node-${slug}`));
       d3.select(`.node-${slug}`).raise();
@@ -61,14 +63,17 @@ export const graph = (ref, data, parentComponent) => {
       link.classed("active", (d) => d.source.isActive);
 
       if (d.children) {
-        const rankInfo = rankData[slug];
+        const nodeInfo = rankInfo[slug];
 
-        if (rankInfo) {
+        if (nodeInfo) {
+          const rankType = nodeInfo.rankOverride
+            ? nodeInfo.rankOverride[lang]
+            : rank[lang];
           tooltip.html(
-            `<h4>${rankInfo.hebrew} /<span> ${rankInfo.hebrewRank}</span></h4><p>${rankInfo.description}</p>`
+            `<h4>${nodeInfo.name[lang]} /<span> ${rankType}</span></h4><p>${nodeInfo.description[lang]}</p>`
           );
         } else {
-          tooltip.html(`<h4>${name} /<span> ${hebrewRank}</span></h4>`);
+          tooltip.html(`<h4>${name} /<span> ${rank[lang]}</span></h4>`);
         }
         tooltipContainer.attr("transform", `translate(${d.x - 200},${d.y})`);
         tooltip.transition().duration(300).style("opacity", 1);
@@ -230,7 +235,7 @@ export const drawGraph = (ref, simulation, nodes, links) => {
     .append("text")
     .text((d) => {
       if (d.children) return `${d.data.name}`;
-      else return herbData[d.data.id].hebrewName;
+      else return herbInfo[d.data.id].commonName[lang];
     })
     .attr("class", "nodeText")
     .classed("visible", (d) => !d.children)

@@ -1,6 +1,7 @@
 import React from "react";
 
-import herbHierarchy from "../../data/herbHierarchy.json";
+import taxonomyTree from "../../data/taxonomyTree.json";
+
 import { graph, updateGraphSize } from "./graphUtils";
 
 import "./HerbTree.scss";
@@ -14,10 +15,10 @@ class HerbTree extends React.Component {
   componentDidMount() {
     this.setGraphSize();
 
-    const herbHierarchyPruned = removeSingleChildren(
-      JSON.parse(JSON.stringify(herbHierarchy))
+    const taxonomyTreePruned = removeSingleChildren(
+      JSON.parse(JSON.stringify(taxonomyTree))
     );
-    this.simulation = graph(this.d3ref, herbHierarchyPruned, this);
+    this.simulation = graph(this.d3ref, taxonomyTreePruned, this);
 
     window.scrollTo(0, document.body.scrollHeight);
     window.addEventListener("resize", (e) => this.handleResize(e));
@@ -48,7 +49,7 @@ class HerbTree extends React.Component {
   render() {
     return (
       <div className="HerbTree">
-        {/*<button onClick={this.logPositions}>Get positions</button>*/}
+        {/*<button onClick={() => this.logPositions()}>Get positions</button>*/}
         <div ref={this.d3ref}></div>
       </div>
     );
@@ -60,16 +61,14 @@ const removeSingleChildren = (node) => {
   if (
     node.children &&
     node.children.length === 1 &&
-    node.rank !== "Cladus"
-    //  && node.rank !== "Familia"
+    node.rank.en !== "Cladus"
   ) {
-    const { children, name, id, slug, rank, rankHebrew } = node.children[0];
+    const { id, children, name, rank, slug } = node.children[0];
     node.id = id;
     node.children = children;
     node.name = name;
-    node.slug = slug;
     node.rank = rank;
-    node.rankHebrew = rankHebrew;
+    node.slug = slug;
   }
   return node;
 };

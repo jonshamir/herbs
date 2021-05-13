@@ -2,7 +2,9 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import { motion } from "framer-motion";
 import { withRouter } from "react-router-dom";
-import herbData from "../../data/herbData.json";
+import lang from "../../lang";
+
+import herbInfo from "../../data/herbInfo.json";
 
 import "./HerbPage.scss";
 
@@ -27,7 +29,7 @@ class HerbPage extends React.Component {
   render() {
     const { slug } = this.props.match.params;
     // const slug = "bay-leaf";
-    const herb = herbData.filter((herb) => herb.slug === slug)[0];
+    const herb = herbInfo.filter((herb) => herb.slug === slug)[0];
 
     return (
       <motion.div
@@ -44,7 +46,7 @@ class HerbPage extends React.Component {
           />
         </div>
         <div className="HerbContent">
-          <h1>{herb.hebrewName}</h1>
+          <h1>{herb.commonName[lang]}</h1>
           <ReactMarkdown>{this.state.md}</ReactMarkdown>
         </div>
       </motion.div>
