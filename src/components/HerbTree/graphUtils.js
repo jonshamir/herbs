@@ -110,10 +110,12 @@ export const graph = (ref, data, parentComponent) => {
       let xPos = d.x;
       let yPos = d.y;
       if (!d.children) {
+        // Leaf nodes
+        const label = getNodeLabel(d);
         const deltaX = d.x - d.parent.x;
         const deltaY = d.y - d.parent.y;
         const dir = normalize2D(deltaX, deltaY);
-        xPos += dir.x * imageSize * 0.5;
+        xPos += dir.x * (imageSize * 0.5 + label.length * 1.5);
         yPos += dir.y * imageSize * 0.5;
       }
 
@@ -168,6 +170,11 @@ export const setupSimulation = (nodes, links) => {
         // node.y -= Math.sign(node.y) * wallRepulsionY;
       });
     });
+};
+
+const getNodeLabel = (d) => {
+  if (d.children) return `${d.data.name}`;
+  else return herbInfo[d.data.id].commonName[lang];
 };
 
 export const drawGraph = (ref, simulation, nodes, links) => {
@@ -233,10 +240,7 @@ export const drawGraph = (ref, simulation, nodes, links) => {
     .data(nodes)
     .join("g")
     .append("text")
-    .text((d) => {
-      if (d.children) return `${d.data.name}`;
-      else return herbInfo[d.data.id].commonName[lang];
-    })
+    .text(getNodeLabel)
     .attr("class", "nodeText")
     .classed("visible", (d) => !d.children)
     .attr("text-anchor", "middle")

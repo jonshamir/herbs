@@ -66,6 +66,7 @@ svg {
   }
 
   .nodeText {
+    fill: $text-color;
     fill-opacity: 0;
     stroke-opacity: 0;
     paint-order: stroke fill;
