@@ -1,2 +1,0 @@
-(this.webpackJsonpherbs=this.webpackJsonpherbs||[]).push([[3],{278:function(s,a,e){"use strict";e.r(a),a.default=e.p+"static/media/bay-leaf.a3d23b1c.md"}}]);
-//# sourceMappingURL=3.128eae4b.chunk.js.map

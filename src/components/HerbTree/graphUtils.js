@@ -45,54 +45,18 @@ export const graph = (ref, data, parentComponent) => {
   const { tooltipContainer, tooltip } = setupTooltip(svg);
 
   // Enterance transition
-  setTimeout(() => enteranceTransition(link, svg), 1000);
-
-  node
-    .on("mouseover", (e, d) => {
-      const { slug, name, rank } = d.data;
-
-      // console.log(d3.select(`.node-${slug}`));
-      d3.select(`.node-${slug}`).raise();
-      svg.classed("inactive", true);
-      // text.filter((d) => d.data.id === id).classed("visible", true);
-
-      setSubtreeActive(d, true);
-
-      node.classed("active", (d) => d.isActive);
-      text.classed("active", (d) => d.isActive);
-      link.classed("active", (d) => d.source.isActive);
-
-      if (d.children) {
-        const nodeInfo = rankInfo[slug];
-
-        if (nodeInfo) {
-          const rankType = nodeInfo.rankOverride
-            ? nodeInfo.rankOverride[lang]
-            : rank[lang];
-          tooltip.html(
-            `<h4>${nodeInfo.name[lang]} /<span> ${rankType}</span></h4><p>${nodeInfo.description[lang]}</p>`
-          );
-        } else {
-          tooltip.html(`<h4>${name} /<span> ${rank[lang]}</span></h4>`);
-        }
-        tooltipContainer.attr("transform", `translate(${d.x - 200},${d.y})`);
-        tooltip.transition().duration(300).style("opacity", 1);
-      }
-    })
-    .on("mouseout", (e, d) => {
-      svg.classed("inactive", false);
-      setSubtreeActive(d, false);
-
-      if (d.children) {
-        const { id } = d.data;
-        text.filter((d) => d.data.id === id).classed("visible", false);
-
-        tooltip.transition().duration(300).style("opacity", 0);
-      }
-    })
-    .on("click", (e, d) => {
-      parentComponent.handleClick(e, d);
-    });
+  setTimeout(() => {
+    enteranceTransition(link, svg);
+    setupInteractions(
+      svg,
+      link,
+      node,
+      text,
+      tooltip,
+      tooltipContainer,
+      parentComponent
+    );
+  }, 1000);
 
   simulation.on("tick", (e) => {
     node.attr("transform", (d) => {
@@ -263,6 +227,75 @@ export const setupTooltip = (svg) => {
     .style("opacity", 0);
 
   return { tooltipContainer, tooltip };
+};
+
+export const setupInteractions = (
+  svg,
+  link,
+  node,
+  text,
+  tooltip,
+  tooltipContainer,
+  parentComponent
+) => {
+  node
+    .on("mouseover", (e, d) => {
+      const { slug, name, rank } = d.data;
+
+      if (d.children) {
+        // console.log(d3.select(`.node-${slug}`));
+        d3.select(`.node-${slug}`).raise();
+        svg.classed("inactive", true);
+        // text.filter((d) => d.data.id === id).classed("visible", true);
+
+        setSubtreeActive(d, true);
+
+        node.classed("active", (d) => d.isActive);
+        text.classed("active", (d) => d.isActive);
+        link.classed("active", (d) => d.source.isActive);
+
+        const nodeInfo = rankInfo[slug];
+
+        if (nodeInfo) {
+          const rankType = nodeInfo.rankOverride
+            ? nodeInfo.rankOverride[lang]
+            : rank[lang];
+          tooltip.html(
+            `<h4>${nodeInfo.name[lang]} /<span> ${rankType}</span></h4><p>${nodeInfo.description[lang]}</p>`
+          );
+        } else {
+          tooltip.html(`<h4>${name} /<span> ${rank[lang]}</span></h4>`);
+        }
+        tooltipContainer.attr("transform", `translate(${d.x - 200},${d.y})`);
+        tooltip.transition().duration(300).style("opacity", 1);
+      } else {
+        d3.select(`.image-${slug}`)
+          .transition()
+          .duration(100)
+          .attr("transform", `scale(1.1)`);
+      }
+    })
+    .on("mouseout", (e, d) => {
+      const { slug } = d.data;
+
+      if (d.children) {
+        svg.classed("inactive", false);
+        setSubtreeActive(d, false);
+
+        const { id } = d.data;
+        text.filter((d) => d.data.id === id).classed("visible", false);
+
+        tooltip.transition().duration(200).style("opacity", 0);
+      } else {
+        d3.select(`.image-${slug}`)
+          .transition()
+          .duration(100)
+          .attr("transform", `scale(1)`);
+      }
+    })
+    .on("click", (e, d) => {
+      parentComponent.handleClick(e, d);
+    });
 };
 
 export const enteranceTransition = (link, svg) => {
