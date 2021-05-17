@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.fe85314c.chunk.css",
+    "main.css": "./static/css/main.596741e8.chunk.css",
     "main.js": "./static/js/main.fd7b1097.chunk.js",
     "main.js.map": "./static/js/main.fd7b1097.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.503b739d.js",
@@ -10,14 +10,14 @@
     "static/js/3.48f0ace2.chunk.js": "./static/js/3.48f0ace2.chunk.js",
     "static/js/3.48f0ace2.chunk.js.map": "./static/js/3.48f0ace2.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.fe85314c.chunk.css.map": "./static/css/main.fe85314c.chunk.css.map",
+    "static/css/main.596741e8.chunk.css.map": "./static/css/main.596741e8.chunk.css.map",
     "static/js/2.56207093.chunk.js.LICENSE.txt": "./static/js/2.56207093.chunk.js.LICENSE.txt",
     "static/media/HerbTree.scss": "./static/media/HadassahFriedlaenderBold.56a2de76.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.503b739d.js",
     "static/js/2.56207093.chunk.js",
-    "static/css/main.fe85314c.chunk.css",
+    "static/css/main.596741e8.chunk.css",
     "static/js/main.fd7b1097.chunk.js"
   ]
 }
