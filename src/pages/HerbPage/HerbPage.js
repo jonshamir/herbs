@@ -17,8 +17,7 @@ class HerbPage extends React.Component {
   async componentDidMount() {
     // const { slug } = this.props.match.params;
     const slug = "bay-leaf";
-    const file = await import(`../../data/herbs/${slug}.md`);
-    const response = await fetch(file.default);
+    const response = await fetch(`/herb-pages/${slug}.md`);
     const text = await response.text();
 
     this.setState({
@@ -44,6 +43,33 @@ class HerbPage extends React.Component {
             src={`/images/icons/${slug}.png`}
             alt={slug}
           />
+          <table className="InfoTable">
+            <tbody>
+              <tr>
+                <td colSpan="2" className="scientificName">
+                  {herb.name}
+                </td>
+              </tr>
+              <tr>
+                <th>באנגלית</th>
+                <td>{herb.commonName["en"]}</td>
+              </tr>
+              <tr>
+                <th>שמות נוספים</th>
+                <td>{herb.altNames[lang]}</td>
+              </tr>
+              <tr>
+                <th>משפחה</th>
+                <td>משפחה</td>
+              </tr>
+              <tr>
+                <th>צורת חיים</th>
+                <td>
+                  {herb.lifeform[lang]} {herb.lifecycle[lang]}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div className="HerbContent">
           <h1>{herb.commonName[lang]}</h1>

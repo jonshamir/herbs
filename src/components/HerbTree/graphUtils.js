@@ -269,14 +269,11 @@ export const setupInteractions = (
         tooltipContainer.attr("transform", `translate(${d.x - 200},${d.y})`);
         tooltip.transition().duration(300).style("opacity", 1);
       } else {
-        d3.select(`.image-${slug}`)
-          .transition()
-          .duration(100)
-          .attr("transform", `scale(1.1)`);
+        // d3.select(`.image-${slug}`).attr("transform", `scale(1.1)`);
       }
     })
     .on("mouseout", (e, d) => {
-      const { slug } = d.data;
+      // const { slug } = d.data;
 
       if (d.children) {
         svg.classed("inactive", false);
@@ -287,10 +284,7 @@ export const setupInteractions = (
 
         tooltip.transition().duration(200).style("opacity", 0);
       } else {
-        d3.select(`.image-${slug}`)
-          .transition()
-          .duration(100)
-          .attr("transform", `scale(1)`);
+        // d3.select(`.image-${slug}`).attr("transform", `scale(1)`);
       }
     })
     .on("click", (e, d) => {

@@ -3,15 +3,42 @@
   max-width: 1000px;
   margin: auto;
 
+  h2 {
+    margin-top: 2em;
+  }
+
   .HerbInfo {
     height: 100vh;
     box-sizing: border-box;
     position: fixed;
-    width: 250px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.3em;
+
+    .scientificName {
+      font-style: italic;
+      text-align: center;
+      padding-bottom: 2em !important;
+    }
 
     .HerbIcon {
-      width: 200px;
-      margin: 4em 2em;
+      width: 160px;
+      margin-top: 4em;
+      margin-bottom: 0.2em;
+    }
+
+    .InfoTable {
+      td,
+      th {
+        padding: 0.5em;
+      }
+      text-align: right;
+      th {
+        text-align: left;
+        font-weight: bold;
+      }
     }
   }
 
@@ -19,7 +46,7 @@
     text-align: right;
     padding: 2em;
     padding-right: 0;
-    margin-right: 250px;
+    margin-right: 300px;
     box-sizing: border-box;
   }
 }
