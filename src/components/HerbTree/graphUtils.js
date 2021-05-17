@@ -12,7 +12,7 @@ let height = 400;
 const radius = 2;
 const marginX = 15;
 const marginY = 30;
-const offsetX = -50;
+const offsetX = -30;
 const imageSize = 40;
 const collisionRadius = 16;
 
@@ -113,7 +113,7 @@ export const setupSimulation = (nodes, links) => {
       "collision",
       d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
     )
-    .force("x", d3.forceX(offsetX))
+    .force("x", d3.forceX(offsetX / 3))
     .force("y", d3.forceY())
     .force("growth", (alpha) => {
       nodes.forEach((node) => {

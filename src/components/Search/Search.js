@@ -2,21 +2,41 @@ import React from "react";
 import herbInfo from "../../data/herbInfo.json";
 import Autosuggest from "react-autosuggest";
 import lang from "../../lang";
+import AutosuggestMatch from "autosuggest-highlight/match";
+import AutosuggestParse from "autosuggest-highlight/parse";
 
 import "./Search.scss";
+
+const stringToUnicode = (str) =>
+  str
+    .split("")
+    .map((char) => "\\u" + str.charCodeAt(0).toString(16))
+    .join("");
+
+const doesContainPrefix = (str, prefix) => {
+  return str
+    .split(" ")
+    .reduce(
+      (containsPrefix, word) =>
+        containsPrefix || word.slice(0, prefix.length) === prefix,
+      false
+    );
+};
 
 // Teach Autosuggest how to calculate suggestions for any given input value.
 const getSuggestions = (value) => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
-  return inputLength === 0
-    ? []
-    : herbInfo.filter(
-        (herb) =>
-          herb.commonName[lang].toLowerCase().slice(0, inputLength) ===
-          inputValue
-      );
+  if (inputLength <= 1) return [];
+
+  return herbInfo.filter((herb) => {
+    // console.log(doesContainPrefix(herb.commonName[lang], inputValue));
+    return doesContainPrefix(
+      herb.commonName[lang] + " " + herb.altNames[lang].replace(",", ""),
+      inputValue
+    );
+  });
 };
 
 // When suggestion is clicked, Autosuggest needs to populate the input
@@ -25,9 +45,36 @@ const getSuggestions = (value) => {
 const getSuggestionValue = (suggestion) => suggestion.commonName[lang];
 
 // Use your imagination to render suggestions.
-const renderSuggestion = (suggestion) => (
-  <div>{suggestion.commonName[lang]}</div>
-);
+const renderSuggestion = (suggestion, { query }) => {
+  const commonName = suggestion.commonName[lang];
+  // Find matched name
+  let allNames = suggestion.altNames[lang].split(",");
+  allNames.unshift(commonName);
+
+  const suggestionText = allNames.find((name) =>
+    doesContainPrefix(name, query)
+  );
+
+  const matches = AutosuggestMatch(suggestionText, query);
+  const parts = AutosuggestParse(suggestionText, matches);
+
+  return (
+    <div>
+      <span className="name">
+        {parts.map((part, index) => {
+          const className = part.highlight ? "highlight" : null;
+
+          return (
+            <span className={className} key={index}>
+              {part.text}
+            </span>
+          );
+        })}
+        {suggestionText !== commonName && ` (${commonName})`}
+      </span>
+    </div>
+  );
+};
 
 class Search extends React.Component {
   constructor() {

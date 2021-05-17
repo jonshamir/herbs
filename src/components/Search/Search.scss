@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   background-color: $bg-color;
-  padding: 3em;
+  padding: 2em;
   border-bottom-right-radius: 2em;
   display: flex;
   align-items: center;
@@ -16,6 +16,7 @@
     opacity: 0.7;
     width: 1em;
     height: 1em;
+    pointer-events: none;
   }
 
   .react-autosuggest__input {
@@ -30,14 +31,26 @@
 
   .react-autosuggest__suggestions-container {
     position: absolute;
+    right: 0;
     background-color: $bg-color;
     width: 100%;
+
     ul {
       list-style-type: none;
+      padding: 0;
+      .highlight {
+        font-weight: bold;
+      }
     }
     li {
       padding: 0.5em;
+      padding-right: 4em;
       cursor: pointer;
+    }
+    .react-autosuggest__suggestion:hover span,
+    .react-autosuggest__suggestion--highlighted span {
+      background-color: $text-color;
+      color: $bg-color;
     }
   }
 }

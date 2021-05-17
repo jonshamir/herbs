@@ -29,7 +29,6 @@ $transition-defaults: 300ms ease;
 body {
   margin: 0;
   background-color: $bg-color;
-  color: $text-color;
 }
 
 input,
@@ -39,6 +38,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1em;
+  color: $text-color;
 }
 
 h1 {
