@@ -1,7 +1,7 @@
 {
   "short_name": "Herbs",
   "name": "על טעם וריח",
-  "start_url": "./",
+  "start_url": "/",
   "icons": [
     {
       "src": "favicon.png",
