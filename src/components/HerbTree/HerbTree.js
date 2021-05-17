@@ -1,9 +1,6 @@
 import React from "react";
-
 import taxonomyTree from "../../data/taxonomyTree.json";
-
 import { graph, updateGraphSize } from "./graphUtils";
-
 import "./HerbTree.scss";
 
 class HerbTree extends React.Component {

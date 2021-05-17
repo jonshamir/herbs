@@ -28,12 +28,17 @@ $transition-defaults: 300ms ease;
 
 body {
   margin: 0;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+input,
+body {
   direction: rtl;
   font-family: "ArbelHagilda", "Days", "Charter", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $bg-color;
-  color: $text-color;
+  font-size: 1em;
 }
 
 h1 {

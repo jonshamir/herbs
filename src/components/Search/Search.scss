@@ -1,0 +1,43 @@
+@use "src/index" as *;
+
+.Search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $bg-color;
+  padding: 3em;
+  border-bottom-right-radius: 2em;
+  display: flex;
+  align-items: center;
+
+  .searchIcon {
+    padding: 0;
+    padding-bottom: 0.2em;
+    opacity: 0.7;
+    width: 1em;
+    height: 1em;
+  }
+
+  .react-autosuggest__input {
+    padding: 0.4em 1em;
+    padding-right: 2.3em;
+    margin-right: -1.5em;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #666;
+    outline: none;
+  }
+
+  .react-autosuggest__suggestions-container {
+    position: absolute;
+    background-color: $bg-color;
+    width: 100%;
+    ul {
+      list-style-type: none;
+    }
+    li {
+      padding: 0.5em;
+      cursor: pointer;
+    }
+  }
+}
