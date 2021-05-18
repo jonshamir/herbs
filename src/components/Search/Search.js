@@ -7,12 +7,6 @@ import AutosuggestParse from "autosuggest-highlight/parse";
 
 import "./Search.scss";
 
-const stringToUnicode = (str) =>
-  str
-    .split("")
-    .map((char) => "\\u" + str.charCodeAt(0).toString(16))
-    .join("");
-
 const doesContainPrefix = (str, prefix) => {
   return str
     .split(" ")
@@ -23,20 +17,38 @@ const doesContainPrefix = (str, prefix) => {
     );
 };
 
-// Teach Autosuggest how to calculate suggestions for any given input value.
+const getMatchedName = (herb, query) => {
+  let allNames = herb.altNames[lang].split(",");
+  allNames.unshift(herb.commonName[lang]);
+
+  const matchIndex = allNames.findIndex((name) =>
+    doesContainPrefix(name, query)
+  );
+  const matchName = matchIndex > -1 ? allNames[matchIndex] : "";
+  return { matchName, matchIndex };
+};
+
+const getMatchIndex = (herb, query) => {
+  return getMatchedName(herb, query).matchIndex;
+};
+
+// How to calculate suggestions for any given input value.
 const getSuggestions = (value) => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
   if (inputLength <= 1) return [];
 
-  return herbInfo.filter((herb) => {
-    // console.log(doesContainPrefix(herb.commonName[lang], inputValue));
-    return doesContainPrefix(
-      herb.commonName[lang] + " " + herb.altNames[lang].replace(",", ""),
-      inputValue
-    );
-  });
+  // Sort results by index of match
+  const matchedHerbs = herbInfo
+    .map((herb, i) => ({
+      herb,
+      matchIndex: getMatchIndex(herb, inputValue),
+    }))
+    .filter((herb) => herb.matchIndex > -1)
+    .sort((h1, h2) => h1.matchIndex - h2.matchIndex);
+
+  return matchedHerbs.map((herb) => herb.herb);
 };
 
 // When suggestion is clicked, Autosuggest needs to populate the input
@@ -47,13 +59,7 @@ const getSuggestionValue = (suggestion) => suggestion.commonName[lang];
 // Use your imagination to render suggestions.
 const renderSuggestion = (suggestion, { query }) => {
   const commonName = suggestion.commonName[lang];
-  // Find matched name
-  let allNames = suggestion.altNames[lang].split(",");
-  allNames.unshift(commonName);
-
-  const suggestionText = allNames.find((name) =>
-    doesContainPrefix(name, query)
-  );
+  const suggestionText = getMatchedName(suggestion, query).matchName;
 
   const matches = AutosuggestMatch(suggestionText, query);
   const parts = AutosuggestParse(suggestionText, matches);
@@ -80,11 +86,6 @@ class Search extends React.Component {
   constructor() {
     super();
 
-    // Autosuggest is a controlled component.
-    // This means that you need to provide an input value
-    // and an onChange handler that updates this value (see below).
-    // Suggestions also need to be provided to the Autosuggest,
-    // and they are initially empty because the Autosuggest is closed.
     this.state = {
       value: "",
       suggestions: [],
@@ -98,7 +99,6 @@ class Search extends React.Component {
   };
 
   // Autosuggest will call this function every time you need to update suggestions.
-  // You already implemented this logic above, so just use it.
   onSuggestionsFetchRequested = ({ value }) => {
     this.setState({
       suggestions: getSuggestions(value),
@@ -122,7 +122,6 @@ class Search extends React.Component {
       onChange: this.onChange,
     };
 
-    // Finally, render it!
     return (
       <div className="Search">
         <img src="/images/ui/search.svg" alt="Search" className="searchIcon" />

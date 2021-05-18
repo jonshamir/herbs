@@ -9,6 +9,17 @@
   border-bottom-right-radius: 2em;
   display: flex;
   align-items: center;
+  transition: transform $transition-defaults;
+  transform: translateX(-200px);
+
+  &:hover,
+  &:focus-within {
+    transform: translateX(0);
+
+    .react-autosuggest__input {
+      opacity: 1;
+    }
+  }
 
   .searchIcon {
     padding: 0;
@@ -20,6 +31,8 @@
   }
 
   .react-autosuggest__input {
+    opacity: 0;
+    transition: opacity $transition-defaults;
     padding: 0.4em 1em;
     padding-right: 2.3em;
     margin-right: -1.5em;
@@ -40,6 +53,7 @@
       padding: 0;
       .highlight {
         font-weight: bold;
+        color: #000;
       }
     }
     li {
