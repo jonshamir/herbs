@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import lang from "../../lang";
 
 import herbInfo from "../../data/herbInfo.json";
+import familyInfo from "../../data/familyInfo.json";
 
 import "./HerbPage.scss";
 
@@ -29,6 +30,9 @@ class HerbPage extends React.Component {
     const { slug } = this.props.match.params;
     // const slug = "bay-leaf";
     const herb = herbInfo.filter((herb) => herb.slug === slug)[0];
+    const family = herb.taxonomy.find((rank) => rank.hasOwnProperty("Familia"))
+      .Familia;
+    const familyContent = familyInfo[family.toLowerCase()];
     const altNames = herb.altNames[lang];
 
     return (
@@ -63,7 +67,7 @@ class HerbPage extends React.Component {
               )}
               <tr>
                 <th>משפחה</th>
-                <td>משפחה</td>
+                <td>{familyContent.name[lang]}</td>
               </tr>
               <tr>
                 <th>צורת חיים</th>
@@ -77,6 +81,8 @@ class HerbPage extends React.Component {
         <div className="HerbContent">
           <h1>{herb.commonName[lang]}</h1>
           <ReactMarkdown>{this.state.md}</ReactMarkdown>
+          <h2>משפחת ה{familyContent.name[lang]}</h2>
+          <p>{familyContent.description[lang]}</p>
         </div>
         <img src={`/images/photos/${slug}.jpg`} class="herbPhoto" />
       </motion.div>

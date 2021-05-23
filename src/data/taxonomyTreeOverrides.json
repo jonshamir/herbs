@@ -1,0 +1,26 @@
+{
+  "nepetoideae": {
+    "name": "Lamiaceae",
+    "rank": {
+      "en": "Familia",
+      "he": "משפחה"
+    },
+    "slug": "lamiaceae"
+  },
+  "magnoliids": {
+    "name": "Lauraceae",
+    "rank": {
+      "en": "Familia",
+      "he": "משפחה"
+    },
+    "slug": "lauraceae"
+  },
+  "allium": {
+    "name": "Amaryllidaceae",
+    "rank": {
+      "en": "Familia",
+      "he": "משפחה"
+    },
+    "slug": "amaryllidaceae"
+  }
+}

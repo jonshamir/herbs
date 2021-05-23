@@ -39,42 +39,30 @@
       "en": ""
     }
   },
-  "nepetoideae": {
+  "lamiaceae": {
     "name": {
       "he": "שפתניים",
       "en": "Lamiaceae"
-    },
-    "rankOverride": {
-      "he": "משפחה",
-      "en": "Familia"
     },
     "description": {
       "he": "ידועה גם כמשפחת הנענע. רבים מחבריה מייצרים שמנים אתריים ריחניים בכל חלקי הצמח, ולכן משמשים כתבלינים.",
       "en": ""
     }
   },
-  "magnoliids": {
+  "lauraceae": {
     "name": {
       "he": "עריים",
       "en": "Lauraceae"
-    },
-    "rankOverride": {
-      "he": "משפחה",
-      "en": "Familia"
     },
     "description": {
       "he": "חברי המשפחה הם לרוב עצים טרופיים המייצרים שמנים אתריים ריחניים. כוללת את עץ הקינמון, האבוקדו והדפנה.",
       "en": ""
     }
   },
-  "allium": {
+  "amaryllidaceae": {
     "name": {
       "he": "נרקיסיים",
       "en": "Amaryllidaceae"
-    },
-    "rankOverride": {
-      "he": "משפחה",
-      "en": "Familia"
     },
     "description": {
       "he": "כל חברי המשפחה מגדלים בצל תת-קרקעי. הבצל אוגר מים ומזון בעונה הגשומה, ומאפשר לצמח לשרוד במשך העונה היבשה.",

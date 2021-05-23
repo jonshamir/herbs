@@ -2,7 +2,7 @@ import * as d3 from "d3";
 import { radToDeg, normalize2D, dist2D } from "../../utils/math";
 
 import herbInfo from "../../data/herbInfo.json";
-import rankInfo from "../../data/rankInfo.json";
+import familyInfo from "../../data/familyInfo.json";
 import initialNodePositions from "../../data/initialNodePositions.json";
 
 import lang from "../../lang";
@@ -254,14 +254,11 @@ export const setupInteractions = (
         text.classed("active", (d) => d.isActive);
         link.classed("active", (d) => d.source.isActive);
 
-        const nodeInfo = rankInfo[slug];
+        const nodeInfo = familyInfo[slug];
 
         if (nodeInfo) {
-          const rankType = nodeInfo.rankOverride
-            ? nodeInfo.rankOverride[lang]
-            : rank[lang];
           tooltip.html(
-            `<h4>${nodeInfo.name[lang]} /<span> ${rankType}</span></h4><p>${nodeInfo.description[lang]}</p>`
+            `<h4>${nodeInfo.name[lang]} /<span> ${rank[lang]}</span></h4><p>${nodeInfo.description[lang]}</p>`
           );
         } else {
           tooltip.html(`<h4>${name} /<span> ${rank[lang]}</span></h4>`);

@@ -1,5 +1,6 @@
 import React from "react";
 import taxonomyTree from "../../data/taxonomyTree.json";
+import taxonomyTreeOverrides from "../../data/taxonomyTreeOverrides.json";
 import { graph, updateGraphSize } from "./graphUtils";
 import "./HerbTree.scss";
 
@@ -12,9 +13,10 @@ class HerbTree extends React.Component {
   componentDidMount() {
     this.setGraphSize();
 
-    const taxonomyTreePruned = removeSingleChildren(
-      JSON.parse(JSON.stringify(taxonomyTree))
+    const taxonomyTreePruned = applyNodeOverrides(
+      removeSingleChildren(JSON.parse(JSON.stringify(taxonomyTree)))
     );
+    console.log(taxonomyTreePruned);
     this.simulation = graph(this.d3ref, taxonomyTreePruned, this);
 
     window.scrollTo(0, document.body.scrollHeight);
@@ -52,6 +54,19 @@ class HerbTree extends React.Component {
     );
   }
 }
+
+const applyNodeOverrides = (node) => {
+  if (node.children) node.children.forEach(applyNodeOverrides);
+
+  // applyNodeOverrides
+  if (node.slug in taxonomyTreeOverrides) {
+    const overrideNode = taxonomyTreeOverrides[node.slug];
+    node.name = overrideNode.name;
+    node.rank = overrideNode.rank;
+    node.slug = overrideNode.slug;
+  }
+  return node;
+};
 
 const removeSingleChildren = (node) => {
   if (node.children) node.children.forEach(removeSingleChildren);
