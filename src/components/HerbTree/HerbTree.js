@@ -16,7 +16,6 @@ class HerbTree extends React.Component {
     const taxonomyTreePruned = applyNodeOverrides(
       removeSingleChildren(JSON.parse(JSON.stringify(taxonomyTree)))
     );
-    console.log(taxonomyTreePruned);
     this.simulation = graph(this.d3ref, taxonomyTreePruned, this);
 
     window.scrollTo(0, document.body.scrollHeight);

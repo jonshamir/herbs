@@ -1,9 +1,12 @@
 import React from "react";
-import herbInfo from "../../data/herbInfo.json";
+import { Redirect } from "react-router-dom";
 import Autosuggest from "react-autosuggest";
 import lang from "../../lang";
+
 import AutosuggestMatch from "autosuggest-highlight/match";
 import AutosuggestParse from "autosuggest-highlight/parse";
+
+import herbInfo from "../../data/herbInfo.json";
 
 import "./Search.scss";
 
@@ -20,6 +23,10 @@ const doesContainPrefix = (str, prefix) => {
 const getMatchedName = (herb, query) => {
   let allNames = herb.altNames[lang].split(",");
   allNames.unshift(herb.commonName[lang]);
+  let enNames = herb.altNames.en.toLowerCase().split(",");
+  enNames.unshift(herb.commonName.en.toLowerCase());
+  enNames.push(herb.name.toLowerCase());
+  allNames = allNames.concat(enNames);
 
   const matchIndex = allNames.findIndex((name) =>
     doesContainPrefix(name, query)
@@ -58,6 +65,7 @@ const getSuggestionValue = (suggestion) => suggestion.commonName[lang];
 
 // Use your imagination to render suggestions.
 const renderSuggestion = (suggestion, { query }) => {
+  query = query.toLowerCase();
   const commonName = suggestion.commonName[lang];
   const suggestionText = getMatchedName(suggestion, query).matchName;
 
@@ -87,6 +95,7 @@ class Search extends React.Component {
     super();
 
     this.state = {
+      redirect: null,
       value: "",
       suggestions: [],
     };
@@ -112,7 +121,13 @@ class Search extends React.Component {
     });
   };
 
+  onSuggestionSelected = (e, { suggestion }) => {
+    this.setState({ redirect: `/herb/${suggestion.slug}` });
+  };
+
   render() {
+    if (this.state.redirect) return <Redirect to={this.state.redirect} push />;
+
     const { value, suggestions } = this.state;
 
     // Autosuggest will pass through all these props to the input.
@@ -129,6 +144,7 @@ class Search extends React.Component {
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          onSuggestionSelected={this.onSuggestionSelected}
           getSuggestionValue={getSuggestionValue}
           renderSuggestion={renderSuggestion}
           inputProps={inputProps}

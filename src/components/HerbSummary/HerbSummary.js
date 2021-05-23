@@ -20,12 +20,12 @@ const HerbSummary = (props) => {
             <th>באנגלית</th>
             <td>{herb.commonName["en"]}</td>
           </tr>
-          {altNames && (
+          {altNames ? (
             <tr>
               <th>שמות נוספים</th>
               <td>{altNames}</td>
             </tr>
-          )}
+          ) : null}
           <tr>
             <th>משפחה</th>
             <td>{family.name[lang]}</td>
