@@ -1,10 +1,4 @@
-$light-text: #757373;
-
-.columns {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@use "src/index" as *;
 
 .intro {
   h1 {
@@ -13,7 +7,7 @@ $light-text: #757373;
   h2 {
     margin-top: 0.2em;
   }
-  position: fixed;
+  position: absolute;
   bottom: 3em;
   right: 4em;
   max-width: 35%;

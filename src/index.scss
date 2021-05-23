@@ -29,6 +29,7 @@ $transition-defaults: 300ms ease;
 body {
   margin: 0;
   background-color: $bg-color;
+  overflow-x: hidden;
 }
 
 input,
@@ -65,4 +66,10 @@ a {
   &:hover {
     text-decoration: none;
   }
+}
+
+main {
+  max-width: 1400px;
+  position: relative;
+  margin: auto;
 }

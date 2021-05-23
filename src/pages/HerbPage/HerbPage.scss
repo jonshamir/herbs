@@ -1,6 +1,8 @@
+@use "src/index" as *;
+
 .HerbPage {
   text-align: center;
-  max-width: 1000px;
+  position: relative;
   margin: auto;
 
   h2 {
@@ -9,56 +11,22 @@
 
   .HerbContent {
     text-align: right;
+    min-height: 100vh;
     padding: 2em;
     padding-right: 0;
     box-sizing: border-box;
-    position: fixed;
-    right: 300px;
-  }
-
-  .HerbInfo {
-    height: 100vh;
-    box-sizing: border-box;
-    position: fixed;
-    right: 0;
-    width: 300px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    line-height: 1.3em;
-
-    .scientificName {
-      font-style: italic;
-      text-align: center;
-      padding-bottom: 2em !important;
-    }
-
-    .HerbIcon {
-      width: 160px;
-      margin-top: 4em;
-      margin-bottom: 0.2em;
-    }
-
-    .InfoTable {
-      td,
-      th {
-        padding: 0.5em;
-      }
-      text-align: right;
-      th {
-        text-align: left;
-        font-weight: bold;
-      }
-    }
+    margin-right: 300px;
   }
 
   .herbPhoto {
     width: 1000px;
-    position: fixed;
-    right: 55%;
+    height: 100%;
+    position: absolute;
+    right: 800px;
     top: 0;
-    left: 0;
-    mix-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: $bg-color;
+    background-size: 1000px auto;
   }
 }

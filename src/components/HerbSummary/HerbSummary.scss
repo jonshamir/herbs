@@ -1,0 +1,39 @@
+@use "src/index" as *;
+
+.HerbSummary {
+  box-sizing: border-box;
+  position: sticky;
+  right: 0;
+  top: 0;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.3em;
+  height: 100vh;
+  margin-bottom: -100vh;
+
+  .scientificName {
+    font-style: italic;
+    text-align: center;
+    padding-bottom: 2em !important;
+  }
+
+  .HerbIcon {
+    width: 160px;
+    margin-top: 4em;
+    margin-bottom: 0.2em;
+  }
+
+  .InfoTable {
+    td,
+    th {
+      padding: 0.5em;
+    }
+    text-align: right;
+    th {
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+}

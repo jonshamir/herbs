@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { withRouter } from "react-router-dom";
 import lang from "../../lang";
 
+import HerbSummary from "../../components/HerbSummary/HerbSummary";
 import herbInfo from "../../data/herbInfo.json";
 import familyInfo from "../../data/familyInfo.json";
 
@@ -30,62 +31,31 @@ class HerbPage extends React.Component {
     const { slug } = this.props.match.params;
     // const slug = "bay-leaf";
     const herb = herbInfo.filter((herb) => herb.slug === slug)[0];
-    const family = herb.taxonomy.find((rank) => rank.hasOwnProperty("Familia"))
-      .Familia;
-    const familyContent = familyInfo[family.toLowerCase()];
-    const altNames = herb.altNames[lang];
+    const familyName = herb.taxonomy.find((rank) =>
+      rank.hasOwnProperty("Familia")
+    ).Familia;
+    const family = familyInfo[familyName.toLowerCase()];
 
     return (
-      <motion.div
+      <motion.main
         className="HerbPage"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <div className="HerbInfo">
-          <img
-            className="HerbIcon"
-            src={`/images/icons/${slug}.png`}
-            alt={slug}
-          />
-          <table className="InfoTable">
-            <tbody>
-              <tr>
-                <td colSpan="2" className="scientificName">
-                  {herb.name}
-                </td>
-              </tr>
-              <tr>
-                <th>באנגלית</th>
-                <td>{herb.commonName["en"]}</td>
-              </tr>
-              {altNames && (
-                <tr>
-                  <th>שמות נוספים</th>
-                  <td>{altNames}</td>
-                </tr>
-              )}
-              <tr>
-                <th>משפחה</th>
-                <td>{familyContent.name[lang]}</td>
-              </tr>
-              <tr>
-                <th>צורת חיים</th>
-                <td>
-                  {herb.lifeform[lang]} {herb.lifecycle[lang]}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <HerbSummary herb={herb} slug={slug} family={family} />
         <div className="HerbContent">
+          <div
+            src={`/images/photos/${slug}.jpg`}
+            className="herbPhoto"
+            style={{ backgroundImage: `url("/images/photos/${slug}.jpg")` }}
+          ></div>
           <h1>{herb.commonName[lang]}</h1>
           <ReactMarkdown>{this.state.md}</ReactMarkdown>
-          <h2>משפחת ה{familyContent.name[lang]}</h2>
-          <p>{familyContent.description[lang]}</p>
+          <h2>משפחת ה{family.name[lang]}</h2>
+          <p>{family.description[lang]}</p>
         </div>
-        <img src={`/images/photos/${slug}.jpg`} class="herbPhoto" />
-      </motion.div>
+      </motion.main>
     );
   }
 }
