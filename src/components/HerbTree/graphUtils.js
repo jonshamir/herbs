@@ -113,7 +113,7 @@ export const setupSimulation = (nodes, links) => {
       "collision",
       d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
     )
-    .force("x", d3.forceX(offsetX / 3))
+    .force("x", d3.forceX(offsetX / 4))
     .force("y", d3.forceY())
     .force("growth", (alpha) => {
       nodes.forEach((node) => {

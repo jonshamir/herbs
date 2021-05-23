@@ -33,7 +33,7 @@
                                   "slug": "zaatar"
                                 },
                                 {
-                                  "id": 22,
+                                  "id": 21,
                                   "name": "Origanum majorana",
                                   "rank": {
                                     "en": "Species",
@@ -73,7 +73,7 @@
                             {
                               "children": [
                                 {
-                                  "id": 25,
+                                  "id": 24,
                                   "name": "Mentha spicata",
                                   "rank": {
                                     "en": "Species",
@@ -82,7 +82,7 @@
                                   "slug": "spearmint"
                                 },
                                 {
-                                  "id": 26,
+                                  "id": 25,
                                   "name": "Mentha × piperita",
                                   "rank": {
                                     "en": "Species",
@@ -102,7 +102,7 @@
                             {
                               "children": [
                                 {
-                                  "id": 35,
+                                  "id": 34,
                                   "name": "Satureja hortensis",
                                   "rank": {
                                     "en": "Species",
@@ -111,7 +111,7 @@
                                   "slug": "summer-savory"
                                 },
                                 {
-                                  "id": 36,
+                                  "id": 35,
                                   "name": "Satureja hortensis",
                                   "rank": {
                                     "en": "Species",
@@ -131,7 +131,7 @@
                             {
                               "children": [
                                 {
-                                  "id": 44,
+                                  "id": 43,
                                   "name": "Thymus vulgaris",
                                   "rank": {
                                     "en": "Species",
@@ -162,7 +162,7 @@
                             {
                               "children": [
                                 {
-                                  "id": 23,
+                                  "id": 22,
                                   "name": "Melissa officinalis",
                                   "rank": {
                                     "en": "Species",
@@ -182,7 +182,7 @@
                             {
                               "children": [
                                 {
-                                  "id": 24,
+                                  "id": 23,
                                   "name": "Salvia officinalis",
                                   "rank": {
                                     "en": "Species",
@@ -191,7 +191,7 @@
                                   "slug": "sage"
                                 },
                                 {
-                                  "id": 39,
+                                  "id": 38,
                                   "name": "Salvia rosmarinus",
                                   "rank": {
                                     "en": "Species",
@@ -282,7 +282,7 @@
                             {
                               "children": [
                                 {
-                                  "id": 18,
+                                  "id": 17,
                                   "name": "Lavandula",
                                   "rank": {
                                     "en": "Species",
@@ -342,7 +342,7 @@
                     {
                       "children": [
                         {
-                          "id": 19,
+                          "id": 18,
                           "name": "Aloysia citrodora",
                           "rank": {
                             "en": "Species",
@@ -459,7 +459,7 @@
                         {
                           "children": [
                             {
-                              "id": 27,
+                              "id": 26,
                               "name": "Apium graveolens",
                               "rank": {
                                 "en": "Species",
@@ -479,7 +479,7 @@
                         {
                           "children": [
                             {
-                              "id": 33,
+                              "id": 32,
                               "name": "Petroselinum crispum",
                               "rank": {
                                 "en": "Species",
@@ -499,7 +499,7 @@
                         {
                           "children": [
                             {
-                              "id": 40,
+                              "id": 39,
                               "name": "Foeniculum vulgare",
                               "rank": {
                                 "en": "Species",
@@ -519,7 +519,7 @@
                         {
                           "children": [
                             {
-                              "id": 42,
+                              "id": 41,
                               "name": "Anethum graveolens",
                               "rank": {
                                 "en": "Species",
@@ -552,7 +552,7 @@
                             {
                               "children": [
                                 {
-                                  "id": 45,
+                                  "id": 44,
                                   "name": "Anthriscus cerefolium",
                                   "rank": {
                                     "en": "Species",
@@ -599,7 +599,7 @@
                 {
                   "children": [
                     {
-                      "id": 20,
+                      "id": 19,
                       "name": "Levisticum officinale",
                       "rank": {
                         "en": "Species",
@@ -669,7 +669,7 @@
                             "en": "Species",
                             "he": "מין"
                           },
-                          "slug": "white-mustard"
+                          "slug": "mustard"
                         }
                       ],
                       "id": 1044,
@@ -961,7 +961,7 @@
                                   "slug": "tarragon"
                                 },
                                 {
-                                  "id": 21,
+                                  "id": 20,
                                   "name": "Artemisia absinthium",
                                   "rank": {
                                     "en": "Species",
@@ -970,13 +970,22 @@
                                   "slug": "grand-wormwood"
                                 },
                                 {
-                                  "id": 41,
+                                  "id": 40,
                                   "name": "Artemisia arborescens",
                                   "rank": {
                                     "en": "Species",
                                     "he": "מין"
                                   },
                                   "slug": "tree-wormwood"
+                                },
+                                {
+                                  "id": 45,
+                                  "name": "Artemisia vulgaris",
+                                  "rank": {
+                                    "en": "Species",
+                                    "he": "מין"
+                                  },
+                                  "slug": "mugwort"
                                 }
                               ],
                               "id": 1050,
@@ -1001,7 +1010,7 @@
                             {
                               "children": [
                                 {
-                                  "id": 37,
+                                  "id": 36,
                                   "name": "Matricaria chamomilla",
                                   "rank": {
                                     "en": "Species",
@@ -1054,7 +1063,7 @@
                             {
                               "children": [
                                 {
-                                  "id": 43,
+                                  "id": 42,
                                   "name": "Taraxacum officinale",
                                   "rank": {
                                     "en": "Species",
@@ -1129,7 +1138,7 @@
                             {
                               "children": [
                                 {
-                                  "id": 31,
+                                  "id": 30,
                                   "name": "Murraya koenigii",
                                   "rank": {
                                     "en": "Species",
@@ -1160,7 +1169,7 @@
                             {
                               "children": [
                                 {
-                                  "id": 38,
+                                  "id": 37,
                                   "name": "Citrus hystrix",
                                   "rank": {
                                     "en": "Species",
@@ -1209,7 +1218,7 @@
                     {
                       "children": [
                         {
-                          "id": 34,
+                          "id": 33,
                           "name": "Ruta graveolens",
                           "rank": {
                             "en": "Species",
@@ -1284,16 +1293,7 @@
                               "slug": "scallion"
                             },
                             {
-                              "id": 17,
-                              "name": "Allium ampeloprasum",
-                              "rank": {
-                                "en": "Species",
-                                "he": "מין"
-                              },
-                              "slug": "leek"
-                            },
-                            {
-                              "id": 28,
+                              "id": 27,
                               "name": "Allium schoenoprasum",
                               "rank": {
                                 "en": "Species",
@@ -1302,7 +1302,7 @@
                               "slug": "chives"
                             },
                             {
-                              "id": 29,
+                              "id": 28,
                               "name": "Allium tuberosum",
                               "rank": {
                                 "en": "Species",
@@ -1368,7 +1368,7 @@
                             {
                               "children": [
                                 {
-                                  "id": 32,
+                                  "id": 31,
                                   "name": "Cymbopogon citratus",
                                   "rank": {
                                     "en": "Species",
@@ -1448,7 +1448,7 @@
                 {
                   "children": [
                     {
-                      "id": 30,
+                      "id": 29,
                       "name": "Laurus nobilis",
                       "rank": {
                         "en": "Species",
