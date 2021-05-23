@@ -7,10 +7,20 @@
     margin-top: 2em;
   }
 
+  .HerbContent {
+    text-align: right;
+    padding: 2em;
+    padding-right: 0;
+    box-sizing: border-box;
+    position: fixed;
+    right: 300px;
+  }
+
   .HerbInfo {
     height: 100vh;
     box-sizing: border-box;
     position: fixed;
+    right: 0;
     width: 300px;
     height: 300px;
     display: flex;
@@ -43,11 +53,12 @@
     }
   }
 
-  .HerbContent {
-    text-align: right;
-    padding: 2em;
-    padding-right: 0;
-    margin-right: 300px;
-    box-sizing: border-box;
+  .herbPhoto {
+    width: 1000px;
+    position: fixed;
+    right: 55%;
+    top: 0;
+    left: 0;
+    mix-blend-mode: multiply;
   }
 }

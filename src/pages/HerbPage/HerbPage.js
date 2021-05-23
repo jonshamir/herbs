@@ -15,8 +15,8 @@ class HerbPage extends React.Component {
   }
 
   async componentDidMount() {
-    // const { slug } = this.props.match.params;
-    const slug = "bay-leaf";
+    const { slug } = this.props.match.params;
+    // const slug = "bay-leaf";
     const response = await fetch(`/herb-pages/${slug}.md`);
     const text = await response.text();
 
@@ -29,6 +29,7 @@ class HerbPage extends React.Component {
     const { slug } = this.props.match.params;
     // const slug = "bay-leaf";
     const herb = herbInfo.filter((herb) => herb.slug === slug)[0];
+    const altNames = herb.altNames[lang];
 
     return (
       <motion.div
@@ -54,10 +55,12 @@ class HerbPage extends React.Component {
                 <th>באנגלית</th>
                 <td>{herb.commonName["en"]}</td>
               </tr>
-              <tr>
-                <th>שמות נוספים</th>
-                <td>{herb.altNames[lang]}</td>
-              </tr>
+              {altNames && (
+                <tr>
+                  <th>שמות נוספים</th>
+                  <td>{altNames}</td>
+                </tr>
+              )}
               <tr>
                 <th>משפחה</th>
                 <td>משפחה</td>
@@ -75,6 +78,7 @@ class HerbPage extends React.Component {
           <h1>{herb.commonName[lang]}</h1>
           <ReactMarkdown>{this.state.md}</ReactMarkdown>
         </div>
+        <img src={`/images/photos/${slug}.jpg`} class="herbPhoto" />
       </motion.div>
     );
   }

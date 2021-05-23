@@ -59,3 +59,10 @@ p {
   line-height: 1.5em;
   max-width: 500px;
 }
+
+a {
+  color: lighten($text-color, 35%);
+  &:hover {
+    text-decoration: none;
+  }
+}
