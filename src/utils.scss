@@ -1,0 +1,9 @@
+$text-color: #303030;
+$bg-color: #f9f5f4;
+$transition-defaults: 300ms ease;
+
+@mixin bg-noise {
+  background-color: $bg-color;
+  background-image: url("/bg.png");
+  background-size: 256px 256px;
+}

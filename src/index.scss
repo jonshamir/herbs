@@ -1,6 +1,4 @@
-$text-color: #303030;
-$bg-color: #f9f5f4;
-$transition-defaults: 300ms ease;
+@use "src/utils" as *;
 
 @font-face {
   font-family: ArbelHagilda;
@@ -28,8 +26,8 @@ $transition-defaults: 300ms ease;
 
 body {
   margin: 0;
-  background-color: $bg-color;
   overflow-x: hidden;
+  @include bg-noise;
 }
 
 input,

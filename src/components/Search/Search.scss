@@ -1,11 +1,12 @@
-@use "src/index" as *;
+@use "src/utils" as *;
 
 .Search {
+  @include bg-noise;
+
   position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
-  background-color: $bg-color;
   padding: 2em;
   border-bottom-right-radius: 2em;
   display: flex;
@@ -44,15 +45,17 @@
   }
 
   .react-autosuggest__suggestions-container {
+    @include bg-noise;
+
     position: absolute;
     right: 0;
-    background-color: $bg-color;
+    // background-color: $bg-color;
     width: 100%;
     text-transform: capitalize;
 
     ul {
       list-style-type: none;
-      padding: 0;
+      padding: 0em;
       .highlight {
         font-weight: bold;
         color: #000;
@@ -63,6 +66,10 @@
       padding-right: 4em;
       cursor: pointer;
     }
+    .react-autosuggest__suggestion .name {
+      padding: 0.3em;
+    }
+
     .react-autosuggest__suggestion:hover span,
     .react-autosuggest__suggestion--highlighted span {
       background-color: $text-color;

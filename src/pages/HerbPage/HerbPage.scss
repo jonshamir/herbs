@@ -1,4 +1,4 @@
-@use "src/index" as *;
+@use "src/utils" as *;
 
 .HerbPage {
   text-align: center;
@@ -26,7 +26,8 @@
     top: 0;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    background-color: $bg-color;
+    // background-color: $bg-color;
+    mix-blend-mode: multiply;
     background-size: 1000px auto;
   }
 }
