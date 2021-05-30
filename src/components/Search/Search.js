@@ -125,6 +125,15 @@ class Search extends React.Component {
     this.setState({ redirect: `/herb/${suggestion.slug}` });
   };
 
+  onKeyDown = (e) => {
+    if (e.key === "Enter") {
+      const { suggestions } = this.state;
+      if (suggestions.length > 0) {
+        this.setState({ redirect: `/herb/${suggestions[0].slug}` });
+      }
+    }
+  };
+
   render() {
     if (this.state.redirect) return <Redirect to={this.state.redirect} push />;
 
@@ -135,6 +144,7 @@ class Search extends React.Component {
       placeholder: "חיפוש",
       value,
       onChange: this.onChange,
+      onKeyDown: this.onKeyDown,
     };
 
     return (

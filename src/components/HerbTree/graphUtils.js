@@ -19,7 +19,7 @@ const collisionRadius = 16;
 let simulation;
 let rootNode;
 let graphEl;
-let mousePos = { x: 0, y: 0 };
+let mousePos = { x: -1, y: -1 };
 
 export const graph = (ref, data, parentComponent) => {
   rootNode = d3.hierarchy(data);
@@ -61,13 +61,11 @@ export const graph = (ref, data, parentComponent) => {
 
   simulation.on("tick", (e) => {
     node.attr("transform", (d) => {
-      const { x, y } = mousePos;
-
       //d.data.id === 1
-      if (true) {
-        // Effect is stronger closer to mouse
+      if (mousePos.x !== -1) {
         const dist = dist2D(d, mousePos);
-        if (dist > 20 && dist < 200) {
+        if (dist < 20) {
+        } else if (dist < 200) {
           const invDist = clamp01(1 - (6 * dist) / height);
           const deltaX = d.x - mousePos.x;
           const deltaY = d.y - mousePos.y;
@@ -393,5 +391,5 @@ function handleMouseMove(event) {
     x: (x - width) / 2,
     y: (offsetY - height) / 2,
   };
-  simulation.alphaTarget(0.3).restart();
+  simulation.alphaTarget(0.2).restart();
 }
