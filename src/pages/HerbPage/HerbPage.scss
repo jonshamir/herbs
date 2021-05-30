@@ -24,10 +24,10 @@
     position: absolute;
     right: 800px;
     top: 0;
+    // @include bg-noise;
+
     background-repeat: no-repeat;
-    background-blend-mode: multiply;
     // background-color: $bg-color;
-    mix-blend-mode: multiply;
     background-size: 1000px auto;
   }
 }

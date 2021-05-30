@@ -45,8 +45,11 @@ class HerbTree extends React.Component {
   }
 
   render() {
+    const classNames = this.props.isMinimal ? "HerbTree minimal" : "HerbTree";
+    if (this.props.isMinimal && this.simulation) this.simulation.stop();
+
     return (
-      <div className="HerbTree ">
+      <div className={classNames}>
         {/*<button onClick={() => this.logPositions()}>Get positions</button>*/}
         <div ref={this.d3ref}></div>
       </div>

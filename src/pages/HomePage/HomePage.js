@@ -59,7 +59,7 @@ class HomePage extends React.Component {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <HerbTree onNodeClick={this.handleNodeClick} />
+        {/*<HerbTree onNodeClick={this.handleNodeClick} />*/}
         <main>
           <div
             className="intro"

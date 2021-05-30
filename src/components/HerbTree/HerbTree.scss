@@ -17,7 +17,11 @@ svg {
 }
 
 .minimal {
+  opacity: 0.6;
+  position: fixed;
   pointer-events: none;
+  transform: translateX(600px) translateY(-150px) rotate(-20deg);
+
   .textGroup {
     opacity: 0;
   }
@@ -40,7 +44,6 @@ svg {
     }
 
     &.internode {
-      paint-order: stroke fill;
       fill: #ccc !important;
       stroke-width: 3 !important;
       stroke-opacity: 1 !important;
@@ -91,9 +94,11 @@ svg {
     &.internode {
       fill: #999;
       transition: fill $transition-defaults;
-      stroke-width: 18;
+      paint-order: stroke fill;
+      stroke-width: 3;
       stroke: $bg-color;
-      stroke-opacity: 0;
+      transition: fill $transition-defaults, stroke $transition-defaults;
+      cursor: help;
     }
   }
 

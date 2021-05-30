@@ -62,7 +62,7 @@ export const graph = (ref, data, parentComponent) => {
   simulation.on("tick", (e) => {
     node.attr("transform", (d) => {
       //d.data.id === 1
-      if (mousePos.x !== -1) {
+      if (mousePos.x !== -1 && !d.fixed) {
         const dist = dist2D(d, mousePos);
         if (dist < 20) {
         } else if (dist < 200) {
@@ -184,21 +184,29 @@ export const drawGraph = (ref, simulation, nodes, links) => {
   // Allow dragging for all but root node
   node.filter((d) => d.depth > 0).call(drag(simulation));
 
-  // Internodes
+  // Internode
   node
     .filter((d) => d.children)
     .append("circle")
     .attr("r", radius)
     .attr("opacity", 0);
 
+  // Internode click areas
+  node
+    .filter((d) => d.children)
+    .append("circle")
+    .attr("r", 18)
+    .attr("fill-opacity", 0)
+    .attr("stroke-width", 0);
+
   // Leaf images
   node
     .filter((d) => !d.children)
     .append("svg:image")
-    .attr("xlink:href", (d) => `./images/icons/${d.data.slug}.png`)
+    .attr("xlink:href", (d) => `/images/icons/${d.data.slug}.png`)
     .attr("class", (d) => `image-${d.data.slug}`)
     .on("error", function (d) {
-      d3.select(this).attr("xlink:href", "./images/herb.png");
+      d3.select(this).attr("xlink:href", "/images/herb.png");
     })
     .attr("x", -imageSize / 2)
     .attr("y", -imageSize / 2)

@@ -48,7 +48,7 @@ class HerbPage extends React.Component {
           <div
             src={`/images/photos/${slug}.jpg`}
             className="herbPhoto"
-            style={{ backgroundImage: `url("/images/photos/${slug}.jpg")` }}
+            style={{ backgroundImage: `url("/images/photos-bg/${slug}.jpg")` }}
           ></div>
           <h1>{herb.commonName[lang]}</h1>
           <ReactMarkdown>{this.state.md}</ReactMarkdown>
