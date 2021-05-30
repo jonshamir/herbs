@@ -215,6 +215,7 @@ export const drawGraph = (ref, simulation, nodes, links) => {
   // Leaf text
   const text = svg
     .append("g")
+    .attr("class", "textGroup")
     .selectAll("g")
     .data(nodes)
     .join("g")
@@ -288,8 +289,6 @@ export const setupInteractions = (
       }
     })
     .on("mouseout", (e, d) => {
-      // const { slug } = d.data;
-
       if (d.children) {
         svg.classed("inactive", false);
         setSubtreeActive(d, false);

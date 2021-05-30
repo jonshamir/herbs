@@ -16,6 +16,46 @@ svg {
   width: 100vw;
 }
 
+.minimal {
+  pointer-events: none;
+  .textGroup {
+    opacity: 0;
+  }
+  .node {
+    &.leaf {
+      stroke: $bg-color;
+      fill: #ccc !important;
+      fill-opacity: 1 !important;
+      stroke-width: 10px;
+      transition: fill-opacity $transition-defaults;
+
+      circle {
+        transform-origin: 0 0;
+        transform: scale(0.2, 0.2);
+      }
+
+      image {
+        display: none;
+      }
+    }
+
+    &.internode {
+      paint-order: stroke fill;
+      fill: #ccc !important;
+      stroke-width: 3 !important;
+      stroke-opacity: 1 !important;
+    }
+  }
+
+  .link {
+    stroke: #ccc;
+    stroke-width: 1;
+    stroke-opacity: 1;
+    // stroke-linecap: round;
+    transition: stroke-opacity $transition-defaults;
+  }
+}
+
 .inactive {
   .node:not(.active) {
     &.leaf {
@@ -52,7 +92,7 @@ svg {
       fill: #999;
       transition: fill $transition-defaults;
       stroke-width: 18;
-      stroke: red;
+      stroke: $bg-color;
       stroke-opacity: 0;
     }
   }

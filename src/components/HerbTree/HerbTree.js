@@ -46,7 +46,7 @@ class HerbTree extends React.Component {
 
   render() {
     return (
-      <div className="HerbTree">
+      <div className="HerbTree ">
         {/*<button onClick={() => this.logPositions()}>Get positions</button>*/}
         <div ref={this.d3ref}></div>
       </div>
