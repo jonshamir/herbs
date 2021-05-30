@@ -1141,31 +1141,5 @@
       { "Genus": "Anthriscus" },
       { "Species": "Anthriscus cerefolium" }
     ]
-  },
-  {
-    "id": 45,
-    "slug": "mugwort",
-    "name": "Artemisia vulgaris",
-    "commonName": { "en": "Mugwort", "he": "לענה מצויה" },
-    "altNames": { "en": "wild wormwood, riverside wormwood", "he": "לענה" },
-    "lifeform": { "en": "herb", "he": "עשב" },
-    "lifecycle": { "en": "perennial", "he": "רב-שנתי" },
-    "taxonomy": [
-      { "Superregnum": "Eukaryota" },
-      { "Regnum": "Plantae" },
-      { "Cladus": "Angiosperms" },
-      { "Cladus": "Eudicots" },
-      { "Cladus": "Core eudicots" },
-      { "Cladus": "Asterids" },
-      { "Cladus": "Campanulids" },
-      { "Ordo": "Asterales" },
-      { "Familia": "Asteraceae" },
-      { "Subfamilia": "Asteroideae" },
-      { "Tribus": "Anthemideae" },
-      { "Subtribus": "Artemisiinae" },
-      { "Genus": "Artemisia" },
-      { "Species": "Artemisia vulgaris" },
-      { "Subspecies": "A. v. subsp. inundata – A. v. subsp. vulgaris" }
-    ]
   }
 ]

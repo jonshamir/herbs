@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import { radToDeg, normalize2D, dist2D } from "../../utils/math";
+import { radToDeg, normalize2D, dist2D, clamp01 } from "../../utils/math";
 
 import herbInfo from "../../data/herbInfo.json";
 import familyInfo from "../../data/familyInfo.json";
@@ -19,6 +19,7 @@ const collisionRadius = 16;
 let simulation;
 let rootNode;
 let graphEl;
+let mousePos = { x: 0, y: 0 };
 
 export const graph = (ref, data, parentComponent) => {
   rootNode = d3.hierarchy(data);
@@ -60,6 +61,22 @@ export const graph = (ref, data, parentComponent) => {
 
   simulation.on("tick", (e) => {
     node.attr("transform", (d) => {
+      const { x, y } = mousePos;
+
+      //d.data.id === 1
+      if (true) {
+        // Effect is stronger closer to mouse
+        const dist = dist2D(d, mousePos);
+        if (dist > 20 && dist < 200) {
+          const invDist = clamp01(1 - (6 * dist) / height);
+          const deltaX = d.x - mousePos.x;
+          const deltaY = d.y - mousePos.y;
+          const dir = normalize2D(deltaX, deltaY);
+          d.x += dir.x * invDist * 1.5;
+          d.y += dir.y * invDist * 1.5;
+        }
+      }
+
       let transform = `translate(${d.x},${d.y})`;
       if (!d.children) {
         const deltaX = d.x - d.parent.x;
@@ -226,6 +243,9 @@ export const setupTooltip = (svg) => {
     .attr("class", "tooltip")
     .style("opacity", 0);
 
+  // Mouse hover effect
+  svg.on("mousemove", handleMouseMove);
+
   return { tooltipContainer, tooltip };
 };
 
@@ -366,3 +386,12 @@ export const updateGraphSize = (w, h) => {
     rootNode.fy = 0.5 * height - 1 * marginY;
   }
 };
+
+function handleMouseMove(event) {
+  const { x, offsetY } = event;
+  mousePos = {
+    x: (x - width) / 2,
+    y: (offsetY - height) / 2,
+  };
+  simulation.alphaTarget(0.3).restart();
+}
