@@ -2,7 +2,6 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { motion } from "framer-motion";
 import { debounce } from "lodash";
-import HerbTree from "../../components/HerbTree/HerbTree";
 // import WindowHeader from "../../components/WindowHeader/WindowHeader";
 import "./HomePage.scss";
 

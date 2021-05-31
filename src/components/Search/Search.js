@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Autosuggest from "react-autosuggest";
 import lang from "../../lang";
 
@@ -95,7 +95,6 @@ class Search extends React.Component {
     super();
 
     this.state = {
-      redirect: null,
       value: "",
       suggestions: [],
     };
@@ -122,21 +121,23 @@ class Search extends React.Component {
   };
 
   onSuggestionSelected = (e, { suggestion }) => {
-    this.setState({ redirect: `/herb/${suggestion.slug}` });
+    this.props.history.push(`/herb/${suggestion.slug}`);
   };
 
   onKeyDown = (e) => {
     if (e.key === "Enter") {
       const { suggestions } = this.state;
       if (suggestions.length > 0) {
-        this.setState({ redirect: `/herb/${suggestions[0].slug}` });
+        this.setState({
+          value: "",
+          suggestions: [],
+        });
+        this.props.history.push(`/herb/${suggestions[0].slug}`);
       }
     }
   };
 
   render() {
-    if (this.state.redirect) return <Redirect to={this.state.redirect} push />;
-
     const { value, suggestions } = this.state;
 
     // Autosuggest will pass through all these props to the input.
@@ -164,4 +165,4 @@ class Search extends React.Component {
   }
 }
 
-export default Search;
+export default withRouter(Search);

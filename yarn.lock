@@ -3475,6 +3475,12 @@ d3-fetch@2:
   dependencies:
     d3-dsv "1 - 2"
 
+d3-force-reuse@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/d3-force-reuse/-/d3-force-reuse-1.0.1.tgz#75a61177e2bf1b467a39d567a95278a6388dde6e"
+  dependencies:
+    d3-quadtree "^1.0.3"
+
 d3-force@2:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/d3-force/-/d3-force-2.1.1.tgz#f20ccbf1e6c9e80add1926f09b51f686a8bc0937"
@@ -3514,6 +3520,10 @@ d3-polygon@2:
 "d3-quadtree@1 - 2", d3-quadtree@2:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/d3-quadtree/-/d3-quadtree-2.0.0.tgz#edbad045cef88701f6fee3aee8e93fb332d30f9d"
+
+d3-quadtree@^1.0.3:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/d3-quadtree/-/d3-quadtree-1.0.7.tgz#ca8b84df7bb53763fe3c2f24bd435137f4e53135"
 
 d3-random@2:
   version "2.2.2"

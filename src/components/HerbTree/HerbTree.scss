@@ -92,13 +92,17 @@ svg {
     }
 
     &.internode {
-      fill: #999;
+      fill: #ccc;
       transition: fill $transition-defaults;
       paint-order: stroke fill;
       stroke-width: 3;
       stroke: $bg-color;
       transition: fill $transition-defaults, stroke $transition-defaults;
       cursor: help;
+
+      &.family {
+        fill: #999;
+      }
     }
   }
 

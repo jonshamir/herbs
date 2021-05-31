@@ -1,4 +1,5 @@
 import * as d3 from "d3";
+import { forceManyBodyReuse } from "d3-force-reuse";
 import { radToDeg, normalize2D, dist2D, clamp01 } from "../../utils/math";
 
 import herbInfo from "../../data/herbInfo.json";
@@ -9,8 +10,7 @@ import lang from "../../lang";
 
 let width = 400;
 let height = 400;
-const radius = 2;
-const marginX = 15;
+// const marginX = 15;
 const marginY = 30;
 const offsetX = -30;
 const imageSize = 40;
@@ -61,20 +61,6 @@ export const graph = (ref, data, parentComponent) => {
 
   simulation.on("tick", (e) => {
     node.attr("transform", (d) => {
-      //d.data.id === 1
-      if (mousePos.x !== -1 && !d.fixed) {
-        const dist = dist2D(d, mousePos);
-        if (dist < 20) {
-        } else if (dist < 200) {
-          const invDist = clamp01(1 - (6 * dist) / height);
-          const deltaX = d.x - mousePos.x;
-          const deltaY = d.y - mousePos.y;
-          const dir = normalize2D(deltaX, deltaY);
-          d.x += dir.x * invDist * 1.5;
-          d.y += dir.y * invDist * 1.5;
-        }
-      }
-
       let transform = `translate(${d.x},${d.y})`;
       if (!d.children) {
         const deltaX = d.x - d.parent.x;
@@ -112,29 +98,53 @@ export const graph = (ref, data, parentComponent) => {
 };
 
 export const setupSimulation = (nodes, links) => {
-  return d3
-    .forceSimulation(nodes)
-    .alphaDecay(0.05)
-    .force(
-      "link",
-      d3
-        .forceLink(links)
-        .id((d) => d.id)
-        .distance(40)
-        .strength(1)
-    )
-    .force("charge", d3.forceManyBody().strength(-80))
-    .force(
-      "collision",
-      d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
-    )
-    .force("x", d3.forceX(offsetX / 4))
-    .force("y", d3.forceY())
+  return (
+    d3
+      .forceSimulation(nodes)
+      .alphaDecay(0.05)
+      // .alphaMin(0.02)
+      .force(
+        "link",
+        d3
+          .forceLink(links)
+          .id((d) => d.id)
+          .distance(40)
+          .strength(0.5)
+      )
+      .force("charge", forceManyBodyReuse().strength(-80))
+      .force(
+        "collision",
+        d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
+      )
+      .force("x", d3.forceX(offsetX / 4))
+      .force("y", d3.forceY())
+      .force("mouse", (alpha) => {
+        // console.log(alpha);
+        nodes.forEach((d) => {
+          if (mousePos.x !== -1 && !d.fixed) {
+            const dist = dist2D(d, mousePos);
+            if (dist < 25) {
+              // Snap to cursor
+            } else if (dist < 250) {
+              const invDist = Math.pow(clamp01(1 - (6 * dist) / height), 2);
+              const deltaX = d.x - mousePos.x;
+              const deltaY = d.y - mousePos.y;
+              const dir = normalize2D(deltaX, deltaY);
+              d.x += dir.x * invDist * 12 * alpha;
+              d.y += dir.y * invDist * 12 * alpha;
+            }
+          }
+        });
+      })
+  );
+  /*
     .force("growth", (alpha) => {
+      const multiplier = Math.pow(alpha, 1);
+
       nodes.forEach((node) => {
         // Cause nodes to be above their parents
-        if (node.parent && node.y > node.parent.y - 100) {
-          node.y -= alpha * 6;
+        if (node.parent && node.y > node.parent.y - 1000) {
+          node.y -= multiplier * 6;
         }
       });
     })
@@ -148,7 +158,7 @@ export const setupSimulation = (nodes, links) => {
         //   alpha * Math.max(1, Math.abs(node.y) - (height / 2 - marginY));
         // node.y -= Math.sign(node.y) * wallRepulsionY;
       });
-    });
+    });*/
 };
 
 const getNodeLabel = (d) => {
@@ -178,17 +188,18 @@ export const drawGraph = (ref, simulation, nodes, links) => {
     .join("g")
     .attr("class", (d) => `node node-${d.data.slug}`)
     .classed("internode", (d) => d.children)
+    .classed("family", (d) => d.data.slug in familyInfo)
     .classed("leaf", (d) => !d.children)
     .attr("id", (d) => d.data.id);
 
   // Allow dragging for all but root node
-  node.filter((d) => d.depth > 0).call(drag(simulation));
+  // node.filter((d) => d.depth > 0).call(drag(simulation));
 
   // Internode
   node
     .filter((d) => d.children)
     .append("circle")
-    .attr("r", radius)
+    .attr("r", (d) => (d.data.slug in familyInfo ? 2 : 1.5))
     .attr("opacity", 0);
 
   // Internode click areas
@@ -398,5 +409,5 @@ function handleMouseMove(event) {
     x: (x - width) / 2,
     y: (offsetY - height) / 2,
   };
-  simulation.alphaTarget(0.2).restart();
+  simulation.alpha(0.2).restart();
 }
