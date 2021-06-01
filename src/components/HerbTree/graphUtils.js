@@ -98,45 +98,43 @@ export const graph = (ref, data, parentComponent) => {
 };
 
 export const setupSimulation = (nodes, links) => {
-  return (
-    d3
-      .forceSimulation(nodes)
-      .alphaDecay(0.05)
-      // .alphaMin(0.02)
-      .force(
-        "link",
-        d3
-          .forceLink(links)
-          .id((d) => d.id)
-          .distance(40)
-          .strength(0.5)
-      )
-      .force("charge", forceManyBodyReuse().strength(-80))
-      .force(
-        "collision",
-        d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
-      )
-      .force("x", d3.forceX(offsetX / 4))
-      .force("y", d3.forceY())
-      .force("mouse", (alpha) => {
-        // console.log(alpha);
-        nodes.forEach((d) => {
-          if (mousePos.x !== -1 && !d.fixed) {
-            const dist = dist2D(d, mousePos);
-            if (dist < 25) {
-              // Snap to cursor
-            } else if (dist < 250) {
-              const invDist = Math.pow(clamp01(1 - (6 * dist) / height), 2);
-              const deltaX = d.x - mousePos.x;
-              const deltaY = d.y - mousePos.y;
-              const dir = normalize2D(deltaX, deltaY);
-              d.x += dir.x * invDist * 12 * alpha;
-              d.y += dir.y * invDist * 12 * alpha;
-            }
+  return d3
+    .forceSimulation(nodes)
+    .alphaDecay(0.05)
+    .alphaMin(0.01)
+    .force(
+      "link",
+      d3
+        .forceLink(links)
+        .id((d) => d.id)
+        .distance(40)
+        .strength(0.5)
+    )
+    .force("charge", forceManyBodyReuse().strength(-80))
+    .force(
+      "collision",
+      d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
+    )
+    .force("x", d3.forceX(offsetX / 4))
+    .force("y", d3.forceY())
+    .force("mouse", (alpha) => {
+      // console.log(alpha);
+      nodes.forEach((d) => {
+        if (mousePos.x !== -1 && !d.fixed) {
+          const dist = dist2D(d, mousePos);
+          if (dist < 25) {
+            // Snap to cursor
+          } else if (dist < 250) {
+            const invDist = Math.pow(clamp01(1 - (6 * dist) / height), 2);
+            const deltaX = d.x - mousePos.x;
+            const deltaY = d.y - mousePos.y;
+            const dir = normalize2D(deltaX, deltaY);
+            d.x += dir.x * invDist * 12 * alpha;
+            d.y += dir.y * invDist * 12 * alpha;
           }
-        });
-      })
-  );
+        }
+      });
+    });
   /*
     .force("growth", (alpha) => {
       const multiplier = Math.pow(alpha, 1);
