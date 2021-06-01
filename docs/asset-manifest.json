@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9ee26235.chunk.css",
+    "main.js": "/static/js/main.c4766c88.chunk.js",
+    "main.js.map": "/static/js/main.c4766c88.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f5176881.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f5176881.js.map",
+    "static/js/2.e30cd1ee.chunk.js": "/static/js/2.e30cd1ee.chunk.js",
+    "static/js/2.e30cd1ee.chunk.js.map": "/static/js/2.e30cd1ee.chunk.js.map",
+    "static/js/3.893835d6.chunk.js": "/static/js/3.893835d6.chunk.js",
+    "static/js/3.893835d6.chunk.js.map": "/static/js/3.893835d6.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.9ee26235.chunk.css.map": "/static/css/main.9ee26235.chunk.css.map",
+    "static/js/2.e30cd1ee.chunk.js.LICENSE.txt": "/static/js/2.e30cd1ee.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/static/media/HadassahFriedlaenderBold.56a2de76.ttf",
+    "static/media/Search.scss": "/static/media/bg.57bc2b45.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f5176881.js",
+    "static/js/2.e30cd1ee.chunk.js",
+    "static/css/main.9ee26235.chunk.css",
+    "static/js/main.c4766c88.chunk.js"
+  ]
+}
