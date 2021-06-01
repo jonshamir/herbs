@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Herb Tree
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Visualization of common herb taxonomy.
 
 ## Available Scripts
 

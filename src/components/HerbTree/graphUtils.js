@@ -118,7 +118,6 @@ export const setupSimulation = (nodes, links) => {
     .force("x", d3.forceX(offsetX / 4))
     .force("y", d3.forceY())
     .force("mouse", (alpha) => {
-      // console.log(alpha);
       nodes.forEach((d) => {
         if (mousePos.x !== -1 && !d.fixed) {
           const dist = dist2D(d, mousePos);
