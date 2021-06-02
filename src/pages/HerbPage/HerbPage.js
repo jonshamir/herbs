@@ -38,18 +38,21 @@ class HerbPage extends React.Component {
 
     return (
       <FadeInOut className="HerbPage">
-        <HerbSummary herb={herb} slug={slug} family={family} />
-        <div className="HerbContent">
-          <div
-            src={`/images/photos/${slug}.jpg`}
-            className="herbPhoto"
-            style={{ backgroundImage: `url("/images/photos-bg/${slug}.jpg")` }}
-          ></div>
-          <h1>{herb.commonName[lang]}</h1>
-          <ReactMarkdown>{this.state.md}</ReactMarkdown>
-          <h2>משפחת ה{family.name[lang]}</h2>
-          <p>{family.description[lang]}</p>
-        </div>
+        <main>
+          <HerbSummary herb={herb} slug={slug} family={family} />
+          <div className="HerbContent">
+            <div className="herbPhoto">
+              <img
+                src={`/images/photos/${slug}.jpg`}
+                alt={herb.commonName[lang]}
+              />
+            </div>
+            <h1>{herb.commonName[lang]}</h1>
+            <ReactMarkdown>{this.state.md}</ReactMarkdown>
+            <h2>משפחת ה{family.name[lang]}</h2>
+            <p>{family.description[lang]}</p>
+          </div>
+        </main>
       </FadeInOut>
     );
   }

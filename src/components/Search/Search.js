@@ -76,7 +76,7 @@ const renderSuggestion = (suggestion, { query }) => {
     <div>
       <span className="name">
         {parts.map((part, index) => {
-          const className = part.highlight ? "highlight" : null;
+          const className = part.highlight ? "highlight" : "";
 
           return (
             <span className={className} key={index}>
@@ -97,8 +97,14 @@ class Search extends React.Component {
     this.state = {
       value: "",
       suggestions: [],
+      highlightedSuggestion: "",
     };
   }
+
+  isSuggestionHighlighted = () => {
+    const { suggestions, highlightedSuggestion } = this.state;
+    return suggestions.some((s) => s === highlightedSuggestion);
+  };
 
   onChange = (event, { newValue }) => {
     this.setState({
@@ -117,22 +123,32 @@ class Search extends React.Component {
   onSuggestionsClearRequested = () => {
     this.setState({
       suggestions: [],
+      highlightedSuggestion: "",
     });
   };
 
   onSuggestionSelected = (e, { suggestion }) => {
+    this.goToResult(suggestion);
+  };
+
+  onSuggestionHighlighted = ({ suggestion }) => {
+    this.setState({ highlightedSuggestion: suggestion });
+  };
+
+  goToResult = (suggestion) => {
+    this.setState({
+      value: "",
+      suggestions: [],
+      highlightedSuggestion: "",
+    });
     this.props.history.push(`/herb/${suggestion.slug}`);
   };
 
   onKeyDown = (e) => {
     if (e.key === "Enter") {
       const { suggestions } = this.state;
-      if (suggestions.length > 0) {
-        this.setState({
-          value: "",
-          suggestions: [],
-        });
-        this.props.history.push(`/herb/${suggestions[0].slug}`);
+      if (!this.isSuggestionHighlighted() && suggestions.length > 0) {
+        this.goToResult(suggestions[0]);
       }
     }
   };
@@ -156,6 +172,7 @@ class Search extends React.Component {
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
           onSuggestionsClearRequested={this.onSuggestionsClearRequested}
           onSuggestionSelected={this.onSuggestionSelected}
+          onSuggestionHighlighted={this.onSuggestionHighlighted}
           getSuggestionValue={getSuggestionValue}
           renderSuggestion={renderSuggestion}
           inputProps={inputProps}

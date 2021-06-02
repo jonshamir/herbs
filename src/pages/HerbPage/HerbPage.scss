@@ -24,10 +24,17 @@
     position: absolute;
     right: 800px;
     top: 0;
-    // @include bg-noise;
+    @include bg-noise;
+    overflow: hidden;
 
-    background-repeat: no-repeat;
+    img {
+      width: 100%;
+      mix-blend-mode: multiply;
+    }
+
+    // background-repeat: no-repeat;
     // background-color: $bg-color;
-    background-size: 1000px auto;
+    // background-blend-mode: multiply;
+    // background-size: 1000px auto;
   }
 }
