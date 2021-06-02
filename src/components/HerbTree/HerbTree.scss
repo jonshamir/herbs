@@ -3,6 +3,7 @@
 .HerbTree {
   width: 100vw;
   box-sizing: border-box;
+  transition: transform $transition-defaults;
 }
 
 svg {
@@ -14,6 +15,10 @@ svg {
 .graphContainer {
   box-sizing: border-box;
   width: 100vw;
+}
+
+.hidden {
+  display: none;
 }
 
 .minimal {

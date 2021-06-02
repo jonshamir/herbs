@@ -12,7 +12,7 @@ let width = 400;
 let height = 400;
 // const marginX = 15;
 const marginY = 30;
-const offsetX = -30;
+const offsetX = 0;
 const imageSize = 40;
 const collisionRadius = 16;
 

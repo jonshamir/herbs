@@ -1,0 +1,22 @@
+@use "src/utils" as *;
+
+.Button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  padding: 0.7em 1em 0.6em 1em;
+  cursor: pointer;
+  transition: background-color $transition-defaults,
+    transform $transition-defaults;
+  transform: translateX(0);
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 0.5em;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    // transform: translateX(-5px);
+  }
+  &:active {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+}

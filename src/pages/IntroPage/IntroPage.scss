@@ -1,0 +1,19 @@
+@use "src/utils" as *;
+
+.IntroPage {
+  text-align: center;
+  h1 {
+    font-size: 8em;
+    margin-bottom: 0;
+    margin-top: 30vh;
+  }
+  h2 {
+    margin-top: 0;
+  }
+
+  p {
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+  }
+}

@@ -31,13 +31,15 @@ body {
 }
 
 input,
-body {
+body,
+button {
   direction: rtl;
   font-family: "ArbelHagilda", "Days", "Charter", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1em;
   color: $text-color;
+  border-radius: 0;
 }
 
 h1 {

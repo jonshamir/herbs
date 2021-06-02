@@ -45,8 +45,11 @@ class HerbTree extends React.Component {
   }
 
   render() {
-    const classNames = this.props.isMinimal ? "HerbTree minimal" : "HerbTree";
-    if (this.props.isMinimal && this.simulation) this.simulation.stop();
+    const { isMinimal, isHidden } = this.props;
+    let classNames = "HerbTree";
+    if (isMinimal) classNames += " minimal";
+    if (isHidden) classNames += " hidden";
+    if ((isMinimal || isHidden) && this.simulation) this.simulation.stop();
 
     return (
       <div className={classNames}>

@@ -2,7 +2,6 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { motion } from "framer-motion";
 import { debounce } from "lodash";
-// import WindowHeader from "../../components/WindowHeader/WindowHeader";
 import "./HomePage.scss";
 
 class HomePage extends React.Component {
@@ -49,8 +48,8 @@ class HomePage extends React.Component {
   render() {
     if (this.state.redirect) return <Redirect to={this.state.redirect} push />;
     const { introOpacity } = this.state;
-    const introDisplay = introOpacity > 0 ? "block" : "none";
-
+    // const introDisplay = introOpacity > 0 ? "block" : "none";
+    const introDisplay = "none";
     return (
       <motion.div
         className="HomePage"
