@@ -5,7 +5,6 @@
   h1 {
     font-size: 8em;
     margin-bottom: 0;
-    margin-top: 30vh;
   }
   h2 {
     margin-top: 0;
@@ -15,5 +14,25 @@
     text-align: center;
     font-weight: bold;
     margin: auto;
+    margin-bottom: 2em;
   }
+  .page {
+    margin-top: 30vh;
+  }
+}
+
+.Skip {
+  position: fixed;
+  z-index: 101;
+  bottom: 0;
+  left: 0;
+  padding: 1.5em;
+}
+
+.ProtoPlant {
+  width: 50px;
+  height: 50px;
+  border-radius: 500px;
+  background-color: #55814d;
+  margin: 2em auto;
 }

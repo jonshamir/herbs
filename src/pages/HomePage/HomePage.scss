@@ -1,16 +1,16 @@
 @use "src/utils" as *;
 
-.intro {
-  display: none;
+.Logo {
+  position: fixed;
+  top: 0.2em;
+  width: 100vw;
+  text-align: center;
+}
 
-  h1 {
-    margin: 0;
-  }
-  h2 {
-    margin-top: 0.2em;
-  }
-  position: absolute;
-  bottom: 3em;
-  right: 4em;
-  max-width: 35%;
+.Help {
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  right: 0;
+  padding: 1.5em;
 }

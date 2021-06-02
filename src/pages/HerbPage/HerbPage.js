@@ -1,9 +1,9 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import { motion } from "framer-motion";
 import { withRouter } from "react-router-dom";
 import lang from "../../lang";
 
+import FadeInOut from "../../components/FadeInOut/FadeInOut";
 import HerbSummary from "../../components/HerbSummary/HerbSummary";
 import herbInfo from "../../data/herbInfo.json";
 import familyInfo from "../../data/familyInfo.json";
@@ -37,12 +37,7 @@ class HerbPage extends React.Component {
     const family = familyInfo[familyName.toLowerCase()];
 
     return (
-      <motion.main
-        className="HerbPage"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
+      <FadeInOut className="HerbPage">
         <HerbSummary herb={herb} slug={slug} family={family} />
         <div className="HerbContent">
           <div
@@ -55,7 +50,7 @@ class HerbPage extends React.Component {
           <h2>משפחת ה{family.name[lang]}</h2>
           <p>{family.description[lang]}</p>
         </div>
-      </motion.main>
+      </FadeInOut>
     );
   }
 }

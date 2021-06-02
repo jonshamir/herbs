@@ -354,31 +354,6 @@ export const enteranceTransition = (link, svg) => {
     .attr("transform", "scale(1)");
 };
 
-const drag = (simulation) => {
-  function dragstarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-  }
-
-  function dragged(event, d) {
-    d.fx = event.x;
-    d.fy = event.y;
-  }
-
-  function dragended(event, d) {
-    if (!event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
-  }
-
-  return d3
-    .drag()
-    .on("start", dragstarted)
-    .on("drag", dragged)
-    .on("end", dragended);
-};
-
 const setSubtreeActive = (root, isActive) => {
   root.isActive = isActive;
   root.children && root.children.forEach((d) => setSubtreeActive(d, isActive));
@@ -408,3 +383,30 @@ function handleMouseMove(event) {
   };
   simulation.alpha(0.2).restart();
 }
+
+/*
+const drag = (simulation) => {
+  function dragstarted(event, d) {
+    if (!event.active) simulation.alphaTarget(0.3).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+
+  function dragged(event, d) {
+    d.fx = event.x;
+    d.fy = event.y;
+  }
+
+  function dragended(event, d) {
+    if (!event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+
+  return d3
+    .drag()
+    .on("start", dragstarted)
+    .on("drag", dragged)
+    .on("end", dragended);
+};
+*/

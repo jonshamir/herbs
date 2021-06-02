@@ -5,18 +5,19 @@
   border: 0;
   padding: 0.7em 1em 0.6em 1em;
   cursor: pointer;
-  transition: background-color $transition-defaults,
-    transform $transition-defaults;
+  transition: background-color $transition-defaults, color $transition-defaults;
   transform: translateX(0);
   font-weight: bold;
   border-radius: 5px;
   margin: 0.5em;
+  color: #777;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.06);
-    // transform: translateX(-5px);
+    color: $text-color;
   }
   &:active {
     background-color: rgba(0, 0, 0, 0.15);
+    color: $text-color;
   }
 }

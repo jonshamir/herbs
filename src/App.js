@@ -23,7 +23,7 @@ const App = () => {
         isHidden={location.pathname === "/intro"}
         onNodeClick={handleNodeClick}
       />
-      <AnimatePresence exitBeforeEnter initial={false}>
+      <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/">
             <HomePage />
