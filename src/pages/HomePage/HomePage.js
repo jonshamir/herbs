@@ -9,16 +9,19 @@ import "./HomePage.scss";
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { redirect: null };
+    this.state = { redirect: null, logoOpacity: 1 };
   }
 
   componentDidMount() {
-    // if (window.history.scrollRestoration) {
-    //   window.history.scrollRestoration = "manual";
-    // }
+    window.addEventListener("scroll", this.handleScroll);
+    if (window.history.scrollRestoration) {
+      window.history.scrollRestoration = "manual";
+    }
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
 
   handleScroll = () => {
     const currScroll =
@@ -28,14 +31,12 @@ class HomePage extends React.Component {
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
 
-    const distToBottom = totalHeight - currScroll;
-
     const opacityThreshold = 100;
 
-    if (distToBottom > opacityThreshold) {
-      if (this.state.introOpacity !== 0) this.setState({ introOpacity: 0 });
+    if (currScroll > opacityThreshold) {
+      if (this.state.logoOpacity !== 0) this.setState({ logoOpacity: 0 });
     } else {
-      this.setState({ introOpacity: 1 - distToBottom / opacityThreshold });
+      this.setState({ logoOpacity: 1 - currScroll / opacityThreshold });
     }
   };
 
@@ -45,13 +46,16 @@ class HomePage extends React.Component {
 
   render() {
     if (this.state.redirect) return <Redirect to={this.state.redirect} push />;
+    const { logoOpacity } = this.state;
     return (
       <FadeInOut className="HomePage">
         {/*<HerbTree onNodeClick={this.handleNodeClick} />*/}
         <Link to="/intro" className="Help">
           <Button>מה זה?</Button>
         </Link>
-        <h1 className="Logo">על טעם וריח</h1>
+        <h1 className="Logo" style={{ opacity: logoOpacity + 0.15 }}>
+          על טעם וריח
+        </h1>
       </FadeInOut>
     );
   }

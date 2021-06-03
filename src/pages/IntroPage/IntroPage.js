@@ -42,14 +42,36 @@ const renderPage = (page, setPage) => {
       );
     case 2:
       return (
-        <FadeInOut className="page P2" key="P2">
+        <FadeInOut
+          className="page P2"
+          key="P2"
+          style={{
+            backgroundImage: "url('/images/tree-bg-big.jpg')",
+          }}
+        >
           <p>
             במשך מאות מיליוני שנים הצמחים התפתחו לאינספור זנים שונים. לרבים מהם
             מצאו בני האדם שימושים: לבנות בתים, לרקום בדים, ואולי השימוש החשוב
             ביותר - מאכל.
           </p>
+          <Button onClick={() => setPage(3)}>סבבה</Button>
+        </FadeInOut>
+      );
+    case 3:
+      return (
+        <FadeInOut
+          className="page P3"
+          key="P3"
+          style={{
+            backgroundImage: "url('/images/tree-bg-small.jpg')",
+          }}
+        >
+          <p>
+            האתר שלפניכם נותן הצצה לעץ החיים הענק הזה, דרך צמחי התבלין. בנוסף,
+            תוכלו למצוא פה הסברים, מתכונים, ושיטות שימוש לצמחים השונים.
+          </p>
           <Link to="/">
-            <Button>יופי</Button>
+            <Button>יאללה!</Button>
           </Link>
         </FadeInOut>
       );
