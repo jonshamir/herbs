@@ -8,6 +8,7 @@ class HerbTree extends React.Component {
   constructor(props) {
     super(props);
     this.d3ref = React.createRef();
+    this.tooltipRef = React.createRef();
   }
 
   componentDidMount() {
@@ -16,7 +17,12 @@ class HerbTree extends React.Component {
     const taxonomyTreePruned = applyNodeOverrides(
       removeSingleChildren(JSON.parse(JSON.stringify(taxonomyTree)))
     );
-    this.simulation = graph(this.d3ref, taxonomyTreePruned, this);
+    this.simulation = graph(
+      this.d3ref,
+      this.tooltipRef,
+      taxonomyTreePruned,
+      this
+    );
 
     window.scrollTo(0, document.body.scrollHeight);
     window.addEventListener("resize", (e) => this.handleResize(e));
@@ -34,6 +40,7 @@ class HerbTree extends React.Component {
     const w = document.documentElement.clientWidth;
     const h = Math.min(document.documentElement.clientHeight, 710);
     updateGraphSize(w, h);
+    console.log(this.d3ref.current);
   }
 
   logPositions() {
@@ -54,7 +61,9 @@ class HerbTree extends React.Component {
     return (
       <div className={classNames}>
         {/*<button onClick={() => this.logPositions()}>Get positions</button>*/}
-        <div ref={this.d3ref}></div>
+        <div className="treeContainer" ref={this.d3ref}>
+          <div className="tooltipContainer" ref={this.tooltipRef}></div>
+        </div>
       </div>
     );
   }

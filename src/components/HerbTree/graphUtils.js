@@ -21,7 +21,7 @@ let rootNode;
 let graphEl;
 let mousePos = { x: -1, y: -1 };
 
-export const graph = (ref, data, parentComponent) => {
+export const graph = (ref, tooltipRef, data, parentComponent) => {
   rootNode = d3.hierarchy(data);
   const links = rootNode.links();
   const nodes = rootNode.descendants();
@@ -43,7 +43,7 @@ export const graph = (ref, data, parentComponent) => {
   const { svg, link, node, text } = drawGraph(ref, simulation, nodes, links);
   graphEl = svg.node();
 
-  const { tooltipContainer, tooltip } = setupTooltip(svg);
+  const { tooltipContainer, tooltip } = setupTooltip(tooltipRef);
 
   // Enterance transition
   setTimeout(() => {
@@ -189,9 +189,6 @@ export const drawGraph = (ref, simulation, nodes, links) => {
     .classed("leaf", (d) => !d.children)
     .attr("id", (d) => d.data.id);
 
-  // Allow dragging for all but root node
-  // node.filter((d) => d.depth > 0).call(drag(simulation));
-
   // Internode
   node
     .filter((d) => d.children)
@@ -228,6 +225,9 @@ export const drawGraph = (ref, simulation, nodes, links) => {
     .append("circle")
     .attr("r", collisionRadius + 4);
 
+  // Mouse hover effect
+  svg.on("mousemove", handleMouseMove);
+
   // Leaf text
   const text = svg
     .append("g")
@@ -245,24 +245,51 @@ export const drawGraph = (ref, simulation, nodes, links) => {
   return { svg, link, node, text };
 };
 
-export const setupTooltip = (svg) => {
-  const tooltipContainer = svg
-    .append("foreignObject")
-    .attr("class", "tooltipContainer")
-    .attr("width", 200)
-    .attr("height", 400);
+export const setupTooltip = (tooltipRef) => {
+  const tooltipContainer = d3.select(tooltipRef.current);
 
   const tooltip = tooltipContainer
-    .append("xhtml:div")
     .append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
 
-  // Mouse hover effect
-  svg.on("mousemove", handleMouseMove);
-
   return { tooltipContainer, tooltip };
 };
+
+const onHover = (d, svg, link, node, text, tooltip, tooltipContainer) => {
+  const { slug, name, rank } = d.data;
+
+  if (d.children) {
+    // console.log(d3.select(`.node-${slug}`));
+    d3.select(`.node-${slug}`).raise();
+    svg.classed("inactive", true);
+    // text.filter((d) => d.data.id === id).classed("visible", true);
+
+    setSubtreeActive(d, true);
+
+    node.classed("active", (d) => d.isActive);
+    text.classed("active", (d) => d.isActive);
+    link.classed("active", (d) => d.source.isActive);
+
+    const nodeInfo = familyInfo[slug];
+
+    if (nodeInfo) {
+      tooltip.html(
+        `<h4>${nodeInfo.name[lang]} /<span> ${rank[lang]}</span></h4><p>${nodeInfo.description[lang]}</p>`
+      );
+    } else {
+      tooltip.html(`<h4>${name} /<span> ${rank[lang]}</span></h4>`);
+    }
+    const x = 2 * d.x;
+    const y = 2 * d.y;
+    tooltipContainer.attr("style", `transform: translate(${x}px,${y}px)`);
+    tooltip.transition().duration(300).style("opacity", 1);
+  } else {
+    // d3.select(`.image-${slug}`).attr("transform", `scale(1.1)`);
+  }
+};
+
+let hoverTimer;
 
 export const setupInteractions = (
   svg,
@@ -275,36 +302,12 @@ export const setupInteractions = (
 ) => {
   node
     .on("mouseover", (e, d) => {
-      const { slug, name, rank } = d.data;
-
-      if (d.children) {
-        // console.log(d3.select(`.node-${slug}`));
-        d3.select(`.node-${slug}`).raise();
-        svg.classed("inactive", true);
-        // text.filter((d) => d.data.id === id).classed("visible", true);
-
-        setSubtreeActive(d, true);
-
-        node.classed("active", (d) => d.isActive);
-        text.classed("active", (d) => d.isActive);
-        link.classed("active", (d) => d.source.isActive);
-
-        const nodeInfo = familyInfo[slug];
-
-        if (nodeInfo) {
-          tooltip.html(
-            `<h4>${nodeInfo.name[lang]} /<span> ${rank[lang]}</span></h4><p>${nodeInfo.description[lang]}</p>`
-          );
-        } else {
-          tooltip.html(`<h4>${name} /<span> ${rank[lang]}</span></h4>`);
-        }
-        tooltipContainer.attr("transform", `translate(${d.x - 200},${d.y})`);
-        tooltip.transition().duration(300).style("opacity", 1);
-      } else {
-        // d3.select(`.image-${slug}`).attr("transform", `scale(1.1)`);
-      }
+      hoverTimer = setTimeout(() => {
+        onHover(d, svg, link, node, text, tooltip, tooltipContainer);
+      }, 300);
     })
     .on("mouseout", (e, d) => {
+      clearTimeout(hoverTimer);
       if (d.children) {
         svg.classed("inactive", false);
         setSubtreeActive(d, false);
