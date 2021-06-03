@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
 import Button from "../../components/Button/Button";
@@ -9,7 +9,7 @@ import "./HomePage.scss";
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { redirect: null, logoOpacity: 1 };
+    this.state = { logoOpacity: 1 };
   }
 
   componentDidMount() {
@@ -41,11 +41,10 @@ class HomePage extends React.Component {
   };
 
   handleNodeClick = (node) => {
-    this.setState({ redirect: `/herb/${node.slug}` });
+    this.props.history.push(`/herb/${node.slug}`);
   };
 
   render() {
-    if (this.state.redirect) return <Redirect to={this.state.redirect} push />;
     const { logoOpacity } = this.state;
     return (
       <FadeInOut className="HomePage">
@@ -61,4 +60,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default withRouter(HomePage);

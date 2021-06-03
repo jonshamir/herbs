@@ -868,7 +868,7 @@
     "id": 34,
     "slug": "summer-savory",
     "name": "Satureja hortensis",
-    "commonName": { "en": "Summer savory", "he": "צתרה קיצית" },
+    "commonName": { "en": "Summer savory", "he": "צתרה קייצית" },
     "altNames": { "en": "Summer Savoury", "he": "" },
     "lifeform": { "en": "herb", "he": "עשב" },
     "lifecycle": { "en": "annual", "he": "חד-שנתי" },
@@ -892,7 +892,7 @@
   {
     "id": 35,
     "slug": "winter-savory",
-    "name": "Satureja hortensis",
+    "name": "Satureja montana",
     "commonName": { "en": "Winter savory", "he": "צתרה חורפית" },
     "altNames": { "en": "Winter Savoury, mountain savory", "he": "" },
     "lifeform": { "en": "herb", "he": "עשב" },

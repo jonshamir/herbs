@@ -3,7 +3,7 @@
 .HerbTree {
   width: 100vw;
   box-sizing: border-box;
-  transition: transform $transition-defaults;
+  transition: transform 350ms ease-out;
 }
 
 svg {
