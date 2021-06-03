@@ -40,7 +40,6 @@ class HerbTree extends React.Component {
     const w = document.documentElement.clientWidth;
     const h = Math.min(document.documentElement.clientHeight, 710);
     updateGraphSize(w, h);
-    console.log(this.d3ref.current);
   }
 
   logPositions() {

@@ -280,9 +280,10 @@ const onHover = (d, svg, link, node, text, tooltip, tooltipContainer) => {
     } else {
       tooltip.html(`<h4>${name} /<span> ${rank[lang]}</span></h4>`);
     }
-    const x = 2 * d.x;
-    const y = 2 * d.y;
-    tooltipContainer.attr("style", `transform: translate(${x}px,${y}px)`);
+    tooltipContainer.attr(
+      "style",
+      `transform: translate(${2 * d.x}px,${2 * d.y}px)`
+    );
     tooltip.transition().duration(300).style("opacity", 1);
   } else {
     // d3.select(`.image-${slug}`).attr("transform", `scale(1.1)`);
