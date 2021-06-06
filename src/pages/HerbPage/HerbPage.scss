@@ -30,6 +30,12 @@
     img {
       width: 100%;
       mix-blend-mode: multiply;
+      transition: opacity 500ms ease-in;
+      opacity: 0;
+
+      &.loaded {
+        opacity: 1;
+      }
     }
 
     // background-repeat: no-repeat;
