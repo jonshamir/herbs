@@ -398,9 +398,11 @@ export const highlightHerb = (slug) => {
   const rotationNeeded = Math.abs(currRotation) / 360;
   const scrollTop = containerEl.parentElement.scrollTop;
 
+  const moveX = width < 700 ? width - (70 + 80) : 550;
+
   d3.select(containerEl).attr(
     "style",
-    `transform: translate(${550}px,${-550 + scrollTop}px)`
+    `transform: translate(${moveX}px,${-550 + scrollTop}px)`
   );
 
   svg

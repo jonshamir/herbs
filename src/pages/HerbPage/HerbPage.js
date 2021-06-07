@@ -13,7 +13,7 @@ import "./HerbPage.scss";
 class HerbPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { md: "loading...", imageLoaded: false };
+    this.state = { md: "loading...", imageLoaded: false, timerComplete: false };
   }
 
   async componentDidMount() {
@@ -25,15 +25,17 @@ class HerbPage extends React.Component {
     this.setState({
       md: text,
     });
+
+    setTimeout(() => this.setState({ timerComplete: true }), 1000);
   }
 
   handleImageLoad(e) {
-    setTimeout(() => this.setState({ imageLoaded: true }), 1000);
+    this.setState({ imageLoaded: true });
   }
 
   render() {
     const { slug } = this.props.match.params;
-    const { imageLoaded } = this.state;
+    const { imageLoaded, timerComplete } = this.state;
     // const slug = "bay-leaf";
     const herb = herbInfo.filter((herb) => herb.slug === slug)[0];
     const familyName = herb.taxonomy.find((rank) =>
@@ -50,7 +52,7 @@ class HerbPage extends React.Component {
               <img
                 src={`/images/photos/${slug}.jpg`}
                 alt={herb.commonName[lang]}
-                className={imageLoaded ? "loaded" : ""}
+                className={imageLoaded && timerComplete ? "loaded" : ""}
                 onLoad={(e) => this.handleImageLoad(e)}
               />
             </div>
