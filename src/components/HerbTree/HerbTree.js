@@ -14,6 +14,7 @@ import "./HerbTree.scss";
 class HerbTree extends React.Component {
   constructor(props) {
     super(props);
+    this.containerRef = React.createRef();
     this.d3ref = React.createRef();
     this.tooltipRef = React.createRef();
 
@@ -21,7 +22,7 @@ class HerbTree extends React.Component {
       isHidden: true,
       isMinimal: false,
       isInteractive: false,
-      initalLoad: false,
+      initalLoaded: false,
     };
   }
 
@@ -38,7 +39,7 @@ class HerbTree extends React.Component {
       this
     );
 
-    window.scrollTo(0, document.body.scrollHeight);
+    this.containerRef.current.scrollTo(0, this.d3ref.current.scrollHeight);
     window.addEventListener("resize", (e) => this.handleResize(e));
     setTimeout(() => this.onRouteChanged(), 200);
   }
@@ -48,13 +49,15 @@ class HerbTree extends React.Component {
   }
 
   handleClick(event, node) {
-    if (node.height === 0) this.props.onNodeClick(node.data);
+    if (node.height === 0) {
+      this.props.onNodeClick(node.data);
+    }
   }
 
   setGraphSize() {
     const w = document.documentElement.clientWidth;
-    const h = Math.min(document.documentElement.clientHeight, 710);
-    updateGraphSize(w, h);
+    // const h = document.documentElement.clientHeight;
+    updateGraphSize(w, 710);
   }
 
   logPositions() {
@@ -67,25 +70,31 @@ class HerbTree extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
-      this.onRouteChanged();
+      this.onRouteChanged(prevProps.location);
     }
   }
 
-  onRouteChanged() {
+  onRouteChanged(prevLocation) {
     const route = this.props.location.pathname;
     const routeParts = route.split("/");
     if (route === "/") {
       this.setState({ isMinimal: false, isHidden: false });
-      unhighlightAll();
-      this.setState({ isInteractive: this.state.initalLoad });
-      if (!this.state.initalLoad) {
-        this.setState({ initalLoad: true });
+      this.setState({ isInteractive: this.state.initalLoaded });
+      unhighlightAll(this.state.initalLoaded);
+
+      if (!this.state.initalLoaded) {
+        this.setState({ initalLoaded: true });
         growTree(400, () => {
           this.setState({ isInteractive: true });
         });
       }
     } else {
       this.setState({ isInteractive: false });
+      // this.containerRef.current.scrollTo({
+      //   top: 0,
+      //   left: 0,
+      //   behavior: "smooth",
+      // });
       if (routeParts[1] === "herb") {
         this.setState({
           isMinimal: true,
@@ -112,7 +121,7 @@ class HerbTree extends React.Component {
     if ((isMinimal || isHidden) && this.simulation) this.simulation.stop();
 
     return (
-      <div className={classNames}>
+      <div className={classNames} ref={this.containerRef}>
         {/*<button onClick={() => this.logPositions()}>Get positions</button>*/}
         <div className="treeContainer" ref={this.d3ref}>
           <div className="tooltipContainer" ref={this.tooltipRef}></div>

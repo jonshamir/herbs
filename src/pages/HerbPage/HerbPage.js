@@ -28,7 +28,7 @@ class HerbPage extends React.Component {
   }
 
   handleImageLoad(e) {
-    setTimeout(() => this.setState({ imageLoaded: true }), 100);
+    setTimeout(() => this.setState({ imageLoaded: true }), 1000);
   }
 
   render() {

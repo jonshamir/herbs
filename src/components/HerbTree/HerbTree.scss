@@ -2,17 +2,30 @@
 
 .HerbTree {
   width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
   box-sizing: border-box;
-  transition: transform 350ms ease-out;
-  position: absolute;
-  pointer-events: none;
+  transition: transform 600ms ease-in, opacity $transition-defaults;
+  position: fixed;
+  direction: ltr;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-  &.interactive {
+  svg {
+    pointer-events: none;
+  }
+  &.interactive svg {
     pointer-events: all !important;
+  }
+  .textGroup {
+    transition: opacity $transition-defaults;
+    transition-delay: 600ms;
   }
 }
 
 .treeContainer {
+  direction: rtl;
   position: relative;
   transition: transform $transition-defaults;
 }
@@ -26,19 +39,18 @@ svg {
 }
 
 .hidden {
-  display: none;
+  opacity: 0;
 }
 
 .minimal {
-  opacity: 0.6;
-
   .textGroup {
     opacity: 0;
+    transition-delay: 0s;
   }
   .node {
-    &.leaf {
+    &.leaf:not(.highlighted) {
       stroke: $bg-color;
-      fill: #ccc !important;
+      fill: #ddd !important;
       fill-opacity: 1 !important;
       stroke-width: 10px;
       transition: fill-opacity $transition-defaults;
@@ -47,28 +59,17 @@ svg {
         transform-origin: 0 0;
         transform: scale(0.2, 0.2);
       }
-
-      image {
-        display: none;
-      }
-
-      &.highlighted {
-        fill: red !important;
-        image {
-          display: auto !important;
-        }
-      }
     }
 
     &.internode {
-      fill: #ccc !important;
+      fill: #ddd !important;
       stroke-width: 3 !important;
       stroke-opacity: 1 !important;
     }
   }
 
   .link {
-    stroke: #ccc;
+    stroke: #ddd !important;
     stroke-width: 1;
     stroke-opacity: 1;
     // stroke-linecap: round;

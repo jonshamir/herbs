@@ -23,6 +23,7 @@ let protoPlant;
 let simulation;
 let rootNode;
 let svgEl;
+let containerEl;
 let mousePos = { x: -1, y: -1 };
 
 const getCirclePath = (cx, cy, r) =>
@@ -167,10 +168,13 @@ const getNodeLabel = (d) => {
 };
 
 export const drawTree = (ref, simulation, nodes, links) => {
+  containerEl = ref.current;
+
   svg = d3
-    .select(ref.current)
+    .select(containerEl)
     .append("svg")
-    .attr("viewBox", [-width / 2, -height / 2, width, height]);
+    .attr("viewBox", [-width / 2, -height / 2, width, height])
+    .lower();
 
   link = svg
     .append("g")
@@ -363,31 +367,64 @@ export const updateGraphSize = (w, h) => {
   height = h;
   d3.select(svgEl).attr("viewBox", [-width / 2, -height / 2, width, height]);
   if (simulation) {
-    simulation.alphaTarget(0.1).restart();
+    simulation.alpha(0.2).restart();
 
     rootNode.fx = offsetX;
     rootNode.fy = 0.5 * height - 1 * marginY;
   }
 };
 
+const highlightDuration = 600;
+let currRotation = 0;
+
 export const highlightHerb = (slug) => {
+  svg
+    .selectAll("image")
+    .transition()
+    .duration(highlightDuration / 2)
+    .attr("transform", (d) =>
+      d.data.slug === slug ? "scale(2)" : "scale(0.01)"
+    );
+
   for (let el of document.getElementsByClassName("highlighted")) {
     d3.select(el).classed("highlighted", false);
   }
   const herbNode = document.getElementsByClassName(`node-${slug}`)[0];
   d3.select(herbNode).classed("highlighted", true);
-  const angle = herbNode.transform.baseVal[1].angle;
+  currRotation = -herbNode.transform.baseVal[1].angle;
   const x = -2 * herbNode.transform.baseVal[0].matrix.e;
   const y = -2 * herbNode.transform.baseVal[0].matrix.f;
 
+  const rotationNeeded = Math.abs(currRotation) / 360;
+  const scrollTop = containerEl.parentElement.scrollTop;
+
+  d3.select(containerEl).attr(
+    "style",
+    `transform: translate(${550}px,${-550 + scrollTop}px)`
+  );
+
   svg
     .transition()
-    .duration(350)
-    .attr("transform", `rotate(${-angle}) translate(${x} ${y})`);
+    .duration(highlightDuration * (1 + rotationNeeded))
+    .attr("transform", `rotate(${currRotation}) translate(${x} ${y})`);
 };
 
-export const unhighlightAll = () => {
-  svg.transition().duration(350).attr("transform", "");
+export const unhighlightAll = (scaleImages) => {
+  if (scaleImages) {
+    svg
+      .selectAll("image")
+      .transition()
+      .duration(highlightDuration)
+      .attr("transform", "scale(1)");
+  }
+
+  d3.select(containerEl).attr("style", "");
+  const rotationNeeded = Math.abs(currRotation) / 360;
+  currRotation = 0;
+  svg
+    .transition()
+    .duration(highlightDuration * (1 + rotationNeeded))
+    .attr("transform", "");
 };
 
 function handleMouseMove(event) {
