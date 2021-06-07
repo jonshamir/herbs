@@ -77,6 +77,7 @@ class HerbTree extends React.Component {
     if (route === "/") {
       this.setState({ isMinimal: false, isHidden: false });
       unhighlightAll();
+      this.setState({ isInteractive: this.state.initalLoad });
       if (!this.state.initalLoad) {
         this.setState({ initalLoad: true });
         growTree(400, () => {

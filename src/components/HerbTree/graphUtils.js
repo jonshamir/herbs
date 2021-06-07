@@ -25,6 +25,11 @@ let rootNode;
 let svgEl;
 let mousePos = { x: -1, y: -1 };
 
+const getCirclePath = (cx, cy, r) =>
+  `M ${cx - r}, ${cy}
+   a ${r},${r} 0 1,0 ${r * 2},0
+   a ${r},${r} 0 1,0 -${r * 2},0`;
+
 export const initTree = (ref, tooltipRef, data, parentComponent) => {
   rootNode = d3.hierarchy(data);
   const links = rootNode.links();
@@ -46,6 +51,14 @@ export const initTree = (ref, tooltipRef, data, parentComponent) => {
   drawTree(ref, simulation, nodes, links);
   setupTooltip(tooltipRef);
   setupInteractions(parentComponent);
+
+  protoPlant = svg.append("g").classed("protoPlant", true);
+  for (let i = 1; i <= 4; i++) {
+    protoPlant
+      .append("path")
+      .attr("d", getCirclePath(0, 0, 16))
+      .attr("id", `Circle${i}`);
+  }
 
   svgEl = svg.node();
 

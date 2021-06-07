@@ -27,10 +27,6 @@ class HomePage extends React.Component {
     const currScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
 
-    const totalHeight =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
-
     const opacityThreshold = 100;
 
     if (currScroll > opacityThreshold) {
