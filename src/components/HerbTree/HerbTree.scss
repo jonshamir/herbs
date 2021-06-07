@@ -4,19 +4,23 @@
   width: 100vw;
   box-sizing: border-box;
   transition: transform 350ms ease-out;
+  position: absolute;
+  pointer-events: none;
+
+  &.interactive {
+    pointer-events: all !important;
+  }
 }
 
 .treeContainer {
   position: relative;
+  transition: transform $transition-defaults;
 }
 
 svg {
   // shape-rendering: optimizeSpeed;
   text-rendering: optimizeSpeed;
   image-rendering: optimizeSpeed;
-}
-
-.graphContainer {
   box-sizing: border-box;
   width: 100vw;
 }
@@ -27,9 +31,6 @@ svg {
 
 .minimal {
   opacity: 0.6;
-  position: fixed;
-  pointer-events: none;
-  transform: translateX(600px) translateY(-150px) rotate(-20deg);
 
   .textGroup {
     opacity: 0;
@@ -49,6 +50,13 @@ svg {
 
       image {
         display: none;
+      }
+
+      &.highlighted {
+        fill: red !important;
+        image {
+          display: auto !important;
+        }
       }
     }
 

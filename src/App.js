@@ -18,16 +18,12 @@ const App = () => {
   return (
     <div>
       <Search />
-      <HerbTree
-        isMinimal={location.pathname !== "/"}
-        isHidden={location.pathname === "/intro"}
-        onNodeClick={handleNodeClick}
-      />
+      <HerbTree onNodeClick={handleNodeClick} />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/">
             <HomePage />
-          </Route>{" "}
+          </Route>
           <Route exact path="/intro">
             <IntroPage />
           </Route>

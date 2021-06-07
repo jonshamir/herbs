@@ -8,7 +8,12 @@ const HerbSummary = (props) => {
 
   return (
     <div className="HerbSummary">
-      <img className="HerbIcon" src={`/images/icons/${slug}.png`} alt={slug} />
+      <img
+        className="HerbIcon"
+        id="herb-icon"
+        src={`/images/icons/${slug}.png`}
+        alt={slug}
+      />
       <table className="InfoTable">
         <tbody>
           <tr>

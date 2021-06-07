@@ -16,12 +16,16 @@ const offsetX = 0;
 const imageSize = 40;
 const collisionRadius = 16;
 
+// Global variables
+let svg, link, node, text;
+let tooltip, tooltipContainer;
+let protoPlant;
 let simulation;
 let rootNode;
-let graphEl;
+let svgEl;
 let mousePos = { x: -1, y: -1 };
 
-export const graph = (ref, tooltipRef, data, parentComponent) => {
+export const initTree = (ref, tooltipRef, data, parentComponent) => {
   rootNode = d3.hierarchy(data);
   const links = rootNode.links();
   const nodes = rootNode.descendants();
@@ -38,26 +42,12 @@ export const graph = (ref, tooltipRef, data, parentComponent) => {
   rootNode.fx = offsetX;
   rootNode.fy = 0.5 * height - 1 * marginY;
 
-  simulation = setupSimulation(nodes, links);
+  setupSimulation(nodes, links);
+  drawTree(ref, simulation, nodes, links);
+  setupTooltip(tooltipRef);
+  setupInteractions(parentComponent);
 
-  const { svg, link, node, text } = drawGraph(ref, simulation, nodes, links);
-  graphEl = svg.node();
-
-  const { tooltipContainer, tooltip } = setupTooltip(tooltipRef);
-
-  // Enterance transition
-  setTimeout(() => {
-    enteranceTransition(link, svg);
-    setupInteractions(
-      svg,
-      link,
-      node,
-      text,
-      tooltip,
-      tooltipContainer,
-      parentComponent
-    );
-  }, 1000);
+  svgEl = svg.node();
 
   simulation.on("tick", (e) => {
     node.attr("transform", (d) => {
@@ -98,7 +88,7 @@ export const graph = (ref, tooltipRef, data, parentComponent) => {
 };
 
 export const setupSimulation = (nodes, links) => {
-  return d3
+  simulation = d3
     .forceSimulation(nodes)
     .alphaDecay(0.05)
     .alphaMin(0.01)
@@ -115,7 +105,7 @@ export const setupSimulation = (nodes, links) => {
       "collision",
       d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
     )
-    .force("x", d3.forceX(offsetX / 4))
+    .force("x", d3.forceX(offsetX))
     .force("y", d3.forceY())
     .force("mouse", (alpha) => {
       nodes.forEach((d) => {
@@ -163,14 +153,13 @@ const getNodeLabel = (d) => {
   else return herbInfo[d.data.id].commonName[lang];
 };
 
-export const drawGraph = (ref, simulation, nodes, links) => {
-  const svg = d3
+export const drawTree = (ref, simulation, nodes, links) => {
+  svg = d3
     .select(ref.current)
     .append("svg")
-    .attr("class", "graphContainer")
     .attr("viewBox", [-width / 2, -height / 2, width, height]);
 
-  const link = svg
+  link = svg
     .append("g")
     .selectAll("line")
     .data(links)
@@ -178,7 +167,7 @@ export const drawGraph = (ref, simulation, nodes, links) => {
     .attr("class", "link")
     .attr("opacity", 0);
 
-  const node = svg
+  node = svg
     .append("g")
     .selectAll("g")
     .data(nodes)
@@ -229,7 +218,7 @@ export const drawGraph = (ref, simulation, nodes, links) => {
   svg.on("mousemove", handleMouseMove);
 
   // Leaf text
-  const text = svg
+  text = svg
     .append("g")
     .attr("class", "textGroup")
     .selectAll("g")
@@ -246,14 +235,12 @@ export const drawGraph = (ref, simulation, nodes, links) => {
 };
 
 export const setupTooltip = (tooltipRef) => {
-  const tooltipContainer = d3.select(tooltipRef.current);
+  tooltipContainer = d3.select(tooltipRef.current);
 
-  const tooltip = tooltipContainer
+  tooltip = tooltipContainer
     .append("div")
     .attr("class", "tooltip")
     .style("opacity", 0);
-
-  return { tooltipContainer, tooltip };
 };
 
 const onHover = (d, svg, link, node, text, tooltip, tooltipContainer) => {
@@ -292,15 +279,7 @@ const onHover = (d, svg, link, node, text, tooltip, tooltipContainer) => {
 
 let hoverTimer;
 
-export const setupInteractions = (
-  svg,
-  link,
-  node,
-  text,
-  tooltip,
-  tooltipContainer,
-  parentComponent
-) => {
+export const setupInteractions = (parentComponent) => {
   node
     .on("mouseover", (e, d) => {
       hoverTimer = setTimeout(() => {
@@ -317,8 +296,6 @@ export const setupInteractions = (
         text.filter((d) => d.data.id === id).classed("visible", false);
 
         tooltip.transition().duration(200).style("opacity", 0);
-      } else {
-        // d3.select(`.image-${slug}`).attr("transform", `scale(1)`);
       }
     })
     .on("click", (e, d) => {
@@ -326,8 +303,7 @@ export const setupInteractions = (
     });
 };
 
-export const enteranceTransition = (link, svg) => {
-  const growthTime = 400;
+export const growTree = (growthTime = 400, callback = () => {}) => {
   link
     .attr("opacity", 1)
     .attr("stroke-dasharray", (d) => linkLength(d) + " " + linkLength(d))
@@ -347,7 +323,9 @@ export const enteranceTransition = (link, svg) => {
     .transition()
     .delay((d) => d.depth * growthTime + 500)
     .duration(growthTime)
-    .attr("opacity", 1);
+    .attr("opacity", 1)
+    .end()
+    .then(callback);
 
   svg
     .selectAll("image")
@@ -370,13 +348,33 @@ const linkLength = (link) => {
 export const updateGraphSize = (w, h) => {
   width = w / 2;
   height = h;
-  d3.select(graphEl).attr("viewBox", [-width / 2, -height / 2, width, height]);
+  d3.select(svgEl).attr("viewBox", [-width / 2, -height / 2, width, height]);
   if (simulation) {
     simulation.alphaTarget(0.1).restart();
 
     rootNode.fx = offsetX;
     rootNode.fy = 0.5 * height - 1 * marginY;
   }
+};
+
+export const highlightHerb = (slug) => {
+  for (let el of document.getElementsByClassName("highlighted")) {
+    d3.select(el).classed("highlighted", false);
+  }
+  const herbNode = document.getElementsByClassName(`node-${slug}`)[0];
+  d3.select(herbNode).classed("highlighted", true);
+  const angle = herbNode.transform.baseVal[1].angle;
+  const x = -2 * herbNode.transform.baseVal[0].matrix.e;
+  const y = -2 * herbNode.transform.baseVal[0].matrix.f;
+
+  svg
+    .transition()
+    .duration(350)
+    .attr("transform", `rotate(${-angle}) translate(${x} ${y})`);
+};
+
+export const unhighlightAll = () => {
+  svg.transition().duration(350).attr("transform", "");
 };
 
 function handleMouseMove(event) {
@@ -387,30 +385,3 @@ function handleMouseMove(event) {
   };
   simulation.alpha(0.2).restart();
 }
-
-/*
-const drag = (simulation) => {
-  function dragstarted(event, d) {
-    if (!event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-  }
-
-  function dragged(event, d) {
-    d.fx = event.x;
-    d.fy = event.y;
-  }
-
-  function dragended(event, d) {
-    if (!event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
-  }
-
-  return d3
-    .drag()
-    .on("start", dragstarted)
-    .on("drag", dragged)
-    .on("end", dragended);
-};
-*/

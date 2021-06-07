@@ -1,7 +1,14 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import taxonomyTree from "../../data/taxonomyTree.json";
 import taxonomyTreeOverrides from "../../data/taxonomyTreeOverrides.json";
-import { graph, updateGraphSize } from "./graphUtils";
+import {
+  initTree,
+  updateGraphSize,
+  highlightHerb,
+  unhighlightAll,
+  growTree,
+} from "./graphUtils";
 import "./HerbTree.scss";
 
 class HerbTree extends React.Component {
@@ -9,6 +16,13 @@ class HerbTree extends React.Component {
     super(props);
     this.d3ref = React.createRef();
     this.tooltipRef = React.createRef();
+
+    this.state = {
+      isHidden: true,
+      isMinimal: false,
+      isInteractive: false,
+      initalLoad: false,
+    };
   }
 
   componentDidMount() {
@@ -17,7 +31,7 @@ class HerbTree extends React.Component {
     const taxonomyTreePruned = applyNodeOverrides(
       removeSingleChildren(JSON.parse(JSON.stringify(taxonomyTree)))
     );
-    this.simulation = graph(
+    this.simulation = initTree(
       this.d3ref,
       this.tooltipRef,
       taxonomyTreePruned,
@@ -26,6 +40,7 @@ class HerbTree extends React.Component {
 
     window.scrollTo(0, document.body.scrollHeight);
     window.addEventListener("resize", (e) => this.handleResize(e));
+    setTimeout(() => this.onRouteChanged(), 200);
   }
 
   handleResize(e) {
@@ -50,11 +65,49 @@ class HerbTree extends React.Component {
     console.log(JSON.stringify(nodePositions));
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      this.onRouteChanged();
+    }
+  }
+
+  onRouteChanged() {
+    const route = this.props.location.pathname;
+    const routeParts = route.split("/");
+    if (route === "/") {
+      this.setState({ isMinimal: false, isHidden: false });
+      unhighlightAll();
+      if (!this.state.initalLoad) {
+        this.setState({ initalLoad: true });
+        growTree(400, () => {
+          this.setState({ isInteractive: true });
+        });
+      }
+    } else {
+      this.setState({ isInteractive: false });
+      if (routeParts[1] === "herb") {
+        this.setState({
+          isMinimal: true,
+          isHidden: false,
+        });
+        growTree(0);
+        const herbSlug = routeParts[2];
+        highlightHerb(herbSlug);
+      } else if (routeParts[1] === "intro") {
+        this.setState({
+          isMinimal: false,
+          isHidden: true,
+        });
+      }
+    }
+  }
+
   render() {
-    const { isMinimal, isHidden } = this.props;
+    const { isMinimal, isHidden, isInteractive } = this.state;
     let classNames = "HerbTree";
     if (isMinimal) classNames += " minimal";
     if (isHidden) classNames += " hidden";
+    if (isInteractive) classNames += " interactive";
     if ((isMinimal || isHidden) && this.simulation) this.simulation.stop();
 
     return (
@@ -98,4 +151,4 @@ const removeSingleChildren = (node) => {
   return node;
 };
 
-export default HerbTree;
+export default withRouter(HerbTree);
