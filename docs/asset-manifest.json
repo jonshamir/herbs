@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.546b4607.chunk.css",
-    "main.js": "/static/js/main.a37cee8e.chunk.js",
-    "main.js.map": "/static/js/main.a37cee8e.chunk.js.map",
+    "main.css": "/static/css/main.8feaab4a.chunk.css",
+    "main.js": "/static/js/main.116bd4f5.chunk.js",
+    "main.js.map": "/static/js/main.116bd4f5.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c4f7e35f.js",
     "runtime-main.js.map": "/static/js/runtime-main.c4f7e35f.js.map",
     "static/js/2.da2853be.chunk.js": "/static/js/2.da2853be.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.d84ddca9.chunk.js": "/static/js/3.d84ddca9.chunk.js",
     "static/js/3.d84ddca9.chunk.js.map": "/static/js/3.d84ddca9.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.546b4607.chunk.css.map": "/static/css/main.546b4607.chunk.css.map",
+    "static/css/main.8feaab4a.chunk.css.map": "/static/css/main.8feaab4a.chunk.css.map",
     "static/js/2.da2853be.chunk.js.LICENSE.txt": "/static/js/2.da2853be.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/HadassahFriedlaenderBold.56a2de76.ttf",
     "static/media/Search.scss": "/static/media/bg.57bc2b45.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.c4f7e35f.js",
     "static/js/2.da2853be.chunk.js",
-    "static/css/main.546b4607.chunk.css",
-    "static/js/main.a37cee8e.chunk.js"
+    "static/css/main.8feaab4a.chunk.css",
+    "static/js/main.116bd4f5.chunk.js"
   ]
 }

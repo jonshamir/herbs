@@ -28,6 +28,17 @@
   }
 
   .InfoTable {
+    tr {
+      animation: fadeIn 300ms ease-in;
+      animation-fill-mode: both;
+
+      @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+          animation-delay: 100ms * $i;
+        }
+      }
+    }
+
     td,
     th {
       padding: 0.5em;

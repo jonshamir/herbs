@@ -37,10 +37,9 @@
         opacity: 1;
       }
     }
-
-    // background-repeat: no-repeat;
-    // background-color: $bg-color;
-    // background-blend-mode: multiply;
-    // background-size: 1000px auto;
+  }
+  .mainText {
+    animation: fadeIn 300ms ease-in 700ms;
+    animation-fill-mode: both;
   }
 }

@@ -11,6 +11,8 @@ import {
 } from "./graphUtils";
 import "./HerbTree.scss";
 
+const MIN_LOGO_OPACITY = 0.15;
+
 class HerbTree extends React.Component {
   constructor(props) {
     super(props);
@@ -19,6 +21,7 @@ class HerbTree extends React.Component {
     this.tooltipRef = React.createRef();
 
     this.state = {
+      logoOpacity: MIN_LOGO_OPACITY,
       isHidden: true,
       isMinimal: false,
       isInteractive: false,
@@ -40,8 +43,33 @@ class HerbTree extends React.Component {
     );
 
     this.containerRef.current.scrollTo(0, this.d3ref.current.scrollHeight);
+
     window.addEventListener("resize", (e) => this.handleResize(e));
-    setTimeout(() => this.onRouteChanged(), 200);
+    setTimeout(() => {
+      this.onRouteChanged();
+      this.containerRef.current.addEventListener("scroll", (e) =>
+        this.handleScroll(e)
+      );
+    }, 200);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+
+  handleScroll() {
+    const currScroll = this.containerRef.current.scrollTop;
+
+    const opacityThreshold = 100;
+
+    if (currScroll > opacityThreshold) {
+      if (this.state.logoOpacity !== 0)
+        this.setState({ logoOpacity: MIN_LOGO_OPACITY });
+    } else {
+      this.setState({
+        logoOpacity: 1 - currScroll / opacityThreshold + MIN_LOGO_OPACITY,
+      });
+    }
   }
 
   handleResize(e) {
@@ -113,15 +141,20 @@ class HerbTree extends React.Component {
   }
 
   render() {
-    const { isMinimal, isHidden, isInteractive } = this.state;
+    const { isMinimal, isHidden, isInteractive, logoOpacity } = this.state;
     let classNames = "HerbTree";
     if (isMinimal) classNames += " minimal";
     if (isHidden) classNames += " hidden";
     if (isInteractive) classNames += " interactive";
     if ((isMinimal || isHidden) && this.simulation) this.simulation.stop();
 
+    const finalLogoOpacity = isMinimal || isHidden ? 0 : logoOpacity;
+
     return (
       <div className={classNames} ref={this.containerRef}>
+        <h1 className="Logo" style={{ opacity: finalLogoOpacity }}>
+          על טעם וריח
+        </h1>
         {/*<button onClick={() => this.logPositions()}>Get positions</button>*/}
         <div className="treeContainer" ref={this.d3ref}>
           <div className="tooltipContainer" ref={this.tooltipRef}></div>

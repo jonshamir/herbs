@@ -13,14 +13,9 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
     if (window.history.scrollRestoration) {
       window.history.scrollRestoration = "manual";
     }
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
   }
 
   handleScroll = () => {
@@ -48,9 +43,6 @@ class HomePage extends React.Component {
         <Link to="/intro" className="Help">
           <Button>מה זה?</Button>
         </Link>
-        <h1 className="Logo" style={{ opacity: logoOpacity + 0.15 }}>
-          על טעם וריח
-        </h1>
       </FadeInOut>
     );
   }

@@ -392,23 +392,26 @@ export const highlightHerb = (slug) => {
   const herbNode = document.getElementsByClassName(`node-${slug}`)[0];
   d3.select(herbNode).classed("highlighted", true);
   currRotation = -herbNode.transform.baseVal[1].angle;
-  const x = -2 * herbNode.transform.baseVal[0].matrix.e;
-  const y = -2 * herbNode.transform.baseVal[0].matrix.f;
+  let x = -2 * herbNode.transform.baseVal[0].matrix.e;
+  let y = -2 * herbNode.transform.baseVal[0].matrix.f;
 
   const rotationNeeded = Math.abs(currRotation) / 360;
   const scrollTop = containerEl.parentElement.scrollTop;
 
   const moveX = width < 700 ? width - (70 + 80) : 550;
 
-  d3.select(containerEl).attr(
-    "style",
-    `transform: translate(${moveX}px,${-550 + scrollTop}px)`
-  );
+  // d3.select(containerEl).attr(
+  //   "style",
+  //   `transform: translate(${moveX}px,${-550 + scrollTop}px)`
+  // );
+
+  x += moveX;
+  y += -550 + scrollTop;
 
   svg
     .transition()
     .duration(highlightDuration * (1 + rotationNeeded))
-    .attr("transform", `rotate(${currRotation}) translate(${x} ${y})`);
+    .attr("transform", `rotate(${0}) translate(${x} ${y})`);
 };
 
 export const unhighlightAll = (scaleImages) => {

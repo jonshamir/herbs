@@ -56,10 +56,12 @@ class HerbPage extends React.Component {
                 onLoad={(e) => this.handleImageLoad(e)}
               />
             </div>
-            <h1>{herb.commonName[lang]}</h1>
-            <ReactMarkdown>{this.state.md}</ReactMarkdown>
-            <h2>משפחת ה{family.name[lang]}</h2>
-            <p>{family.description[lang]}</p>
+            <div className="mainText">
+              <h1>{herb.commonName[lang]}</h1>
+              <ReactMarkdown>{this.state.md}</ReactMarkdown>
+              <h2>משפחת ה{family.name[lang]}</h2>
+              <p>{family.description[lang]}</p>
+            </div>
           </div>
         </main>
       </FadeInOut>
