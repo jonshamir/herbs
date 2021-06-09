@@ -6,6 +6,7 @@ import {
   showProtoPlant,
   moveProtoPlant,
   growTree,
+  fadeOut,
 } from "./introGraphUtils";
 
 import "./IntroGraph.scss";
@@ -45,13 +46,15 @@ class IntroGraph extends React.Component {
   }
 
   updateGraph(page) {
-    console.log(page);
     switch (page) {
       case 1:
         showProtoPlant();
         break;
       case 2:
         moveProtoPlant().then(growTree);
+        break;
+      case 3:
+        fadeOut();
         break;
       default:
     }

@@ -43,14 +43,14 @@ const renderPage = (page, setPage) => {
       );
     case 2:
       return (
-        <FadeInOut className="page P2" key="P2" enterDelay={2.3}>
-          <p>לאורך עידנים הצמחים השתנו, התפצלו והתפתחו לאינספור זנים שונים.</p>
+        <FadeInOut className="page P2" key="P2" enterDelay={3}>
+          <p>לאורך עידנים צאצאיו השתנו, התפתחו והתפצלו לאינספור צמחים שונים.</p>
           <Button onClick={() => setPage(3)}>סבבה</Button>
         </FadeInOut>
       );
     case 3:
       return (
-        <FadeInOut className="page P3" key="P3">
+        <FadeInOut className="page P3" key="P3" enterDelay={1}>
           <p>
             האתר שלפניכם נותן הצצה לעץ החיים הענק הזה, דרך צמחי התבלין.
             <br />

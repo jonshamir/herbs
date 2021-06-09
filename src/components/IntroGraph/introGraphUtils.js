@@ -80,7 +80,7 @@ export const setupSimulation = (nodes, links) => {
         .distance(40)
         .strength(0.5)
     )
-    .force("charge", forceManyBodyReuse().strength(-80))
+    .force("charge", forceManyBodyReuse().strength(-40))
     .force(
       "collision",
       d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
@@ -112,7 +112,7 @@ export const showProtoPlant = () => {
 export const moveProtoPlant = () => {
   return protoPlant
     .transition()
-    .ease(d3.easeCubicInOut)
+    .ease(d3.easeCubicIn)
     .duration(1000)
     .delay(300)
     .attr("transform", `translate(0,${rootNode.fy}) scale(0.15)`)
@@ -158,7 +158,22 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .attr("transform", "scale(0.01)");
 };
 
+export const fadeOut = () => {
+  return svg
+    .selectAll("g:not(.protoPlant)")
+    .attr("opacity", 1)
+    .transition()
+    .duration(1000)
+    .attr("opacity", 0)
+    .end();
+};
+
 export const growTree = (growthTime = 550) => {
+  protoPlant
+    .transition()
+    .duration(growthTime * 3)
+    .attr("opacity", 0);
+
   link
     .attr("opacity", 1)
     .attr("stroke-dasharray", (d) => linkLength(d) + " " + linkLength(d))
