@@ -51,8 +51,6 @@ class HerbTree extends React.Component {
       this
     );
 
-    this.containerRef.current.scrollTo(0, this.d3ref.current.scrollHeight);
-
     window.addEventListener("resize", (e) => this.handleResize(e));
     setTimeout(() => {
       this.onRouteChanged();
@@ -126,7 +124,8 @@ class HerbTree extends React.Component {
 
       if (!this.state.initalLoaded) {
         this.setState({ initalLoaded: true });
-        growTree(500);
+        this.containerRef.current.scrollTo(0, this.d3ref.current.scrollHeight);
+        setTimeout(growTree, 500);
       }
     } else {
       this.setState({ isInteractive: false });

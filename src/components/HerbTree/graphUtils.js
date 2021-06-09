@@ -312,7 +312,7 @@ export const setupInteractions = (parentComponent) => {
     });
 };
 
-export const growTree = (growthTime = 400, callback = () => {}) => {
+export const growTree = (growthTime = 550, callback = () => {}) => {
   link
     .attr("opacity", 1)
     .attr("stroke-dasharray", (d) => linkLength(d) + " " + linkLength(d))
