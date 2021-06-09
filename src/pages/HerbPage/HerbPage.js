@@ -52,6 +52,7 @@ class HerbPage extends React.Component {
               className="Button"
               alt="Back"
             />
+            <span>חזרה לעץ</span>
           </Link>
           <HerbSummary herb={herb} slug={slug} family={family} />
           <div className="HerbContent">

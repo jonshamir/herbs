@@ -58,18 +58,22 @@
     opacity: 0.7;
   }
 
-  // &:hover img {
-  //   background-color: rgba(0, 0, 0, 0.1);
-  // }
-  //
-  // img {
-  //   opacity: 0.7;
-  //   width: 1em;
-  //   height: 1em;
-  //   padding: 0.5em;
-  //   pointer-events: none;
-  //   background-color: rgba(0, 0, 0, 0);
-  //   border-radius: 500px;
-  //   transition: background-color $transition-defaults;
-  // }
+  span {
+    display: inline-block;
+    text-decoration: none !important;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all $transition-defaults;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  &:hover {
+    span {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
