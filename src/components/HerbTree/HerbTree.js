@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { debounce } from "lodash";
 import taxonomyTree from "../../data/taxonomyTree.json";
 import taxonomyTreeOverrides from "../../data/taxonomyTreeOverrides.json";
 import {
@@ -28,6 +29,11 @@ class HerbTree extends React.Component {
       isInteractive: false,
       initalLoaded: false,
     };
+
+    this.positionHighlightedHerbDebounced = debounce(
+      positionHighlightedHerb,
+      100
+    );
   }
 
   componentDidMount() {
@@ -74,6 +80,7 @@ class HerbTree extends React.Component {
   }
 
   handleResize(e) {
+    this.positionHighlightedHerbDebounced();
     this.setGraphSize();
   }
 
@@ -87,7 +94,6 @@ class HerbTree extends React.Component {
     const w = document.documentElement.clientWidth;
     // const h = document.documentElement.clientHeight;
     updateGraphSize(w, 710);
-    positionHighlightedHerb();
   }
 
   logPositions() {

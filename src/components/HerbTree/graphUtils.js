@@ -1,6 +1,12 @@
 import * as d3 from "d3";
 import { forceManyBodyReuse } from "d3-force-reuse";
-import { radToDeg, normalize2D, dist2D, clamp01 } from "../../utils/math";
+import {
+  radToDeg,
+  degToRad,
+  normalize2D,
+  dist2D,
+  clamp01,
+} from "../../utils/math";
 
 import herbInfo from "../../data/herbInfo.json";
 import familyInfo from "../../data/familyInfo.json";
@@ -376,7 +382,6 @@ export const updateGraphSize = (w, h) => {
 };
 
 const highlightDuration = 600;
-let currRotation = 0;
 
 export const highlightHerb = (slug) => {
   svg
@@ -400,21 +405,23 @@ export const highlightHerb = (slug) => {
 export const positionHighlightedHerb = () => {
   const herbNode = document.getElementsByClassName(`highlighted`)[0];
   if (herbNode) {
-    currRotation = -herbNode.transform.baseVal[1].angle;
+    const { scrollTop } = containerEl.parentElement;
+
+    const herbRotation = degToRad(herbNode.transform.baseVal[1].angle);
     let x = -2 * herbNode.transform.baseVal[0].matrix.e;
     let y = -2 * herbNode.transform.baseVal[0].matrix.f;
 
-    const rotationNeeded = Math.abs(currRotation) / 360;
-    const scrollTop = containerEl.parentElement.scrollTop;
-
     const moveX = width < 700 ? width - (70 + 80) : 550;
 
-    x += moveX;
-    y += -550 + scrollTop;
+    console.log(Math.sin(herbRotation));
+    console.log(Math.cos(herbRotation));
+
+    x += moveX - 10 * Math.sin(herbRotation);
+    y += -550 + scrollTop - 25 * clamp01(-Math.cos(herbRotation));
 
     svg
       .transition()
-      .duration(highlightDuration * (1 + rotationNeeded))
+      .duration(highlightDuration)
       .attr("transform", `rotate(${0}) translate(${x} ${y})`);
   }
 };
@@ -429,13 +436,13 @@ export const unhighlightAll = (scaleImages) => {
       .attr("transform", "scale(1)");
   }
 
+  for (let el of document.getElementsByClassName("highlighted")) {
+    d3.select(el).classed("highlighted", false);
+  }
+
   d3.select(containerEl).attr("style", "");
-  const rotationNeeded = Math.abs(currRotation) / 360;
-  currRotation = 0;
-  svg
-    .transition()
-    .duration(highlightDuration * (1 + rotationNeeded))
-    .attr("transform", "");
+
+  svg.transition().duration(highlightDuration).attr("transform", "");
 };
 
 function handleMouseMove(event) {
