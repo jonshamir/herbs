@@ -344,13 +344,14 @@ export const growTree = (growthTime = 400, callback = () => {}) => {
     .end()
     .then(callback);
 
-  svg
-    .selectAll("image")
-    // .attr("opacity", 1)
-    .transition()
-    .delay((d) => d.depth * growthTime + 600 * Math.random() - 300)
-    .duration(growthTime)
-    .attr("transform", "scale(1)");
+  if (growthTime > 0) {
+    svg
+      .selectAll("image")
+      .transition()
+      .delay((d) => d.depth * growthTime + 600 * Math.random() - 300)
+      .duration(growthTime)
+      .attr("transform", "scale(1)");
+  }
 };
 
 const setSubtreeActive = (root, isActive) => {
@@ -380,6 +381,7 @@ let currRotation = 0;
 export const highlightHerb = (slug) => {
   svg
     .selectAll("image")
+    .raise()
     .transition()
     .duration(highlightDuration / 2)
     .attr("transform", (d) =>
@@ -418,6 +420,7 @@ export const unhighlightAll = (scaleImages) => {
   if (scaleImages) {
     svg
       .selectAll("image")
+      .lower()
       .transition()
       .duration(highlightDuration)
       .attr("transform", "scale(1)");
