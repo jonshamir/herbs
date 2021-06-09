@@ -65,7 +65,13 @@ class HerbPage extends React.Component {
             </div>
             <div className="mainText">
               <h1>{herb.commonName[lang]}</h1>
-              <ReactMarkdown>{this.state.md}</ReactMarkdown>
+              <ReactMarkdown
+                components={{
+                  a: (props) => <Link to={props.href}>{props.children}</Link>,
+                }}
+              >
+                {this.state.md}
+              </ReactMarkdown>
               <h2>משפחת ה{family.name[lang]}</h2>
               <p>{family.description[lang]}</p>
             </div>
