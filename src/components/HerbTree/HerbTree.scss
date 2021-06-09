@@ -195,48 +195,6 @@ svg {
   }
 }
 
-.protoPlant {
-  fill: #55814d;
-  display: none;
-}
-
-@keyframes from360to0 {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-@keyframes from0to360 {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-#Circle1 {
-  animation: from0to360 1s linear infinite;
-  transform-origin: -1px 0;
-}
-
-#Circle2 {
-  animation: from360to0 2s linear infinite;
-  transform-origin: 1px 0;
-}
-
-#Circle3 {
-  animation: from0to360 3s linear infinite;
-  transform-origin: 0 -1px;
-}
-
-#Circle4 {
-  animation: from360to0 2.5s linear infinite;
-  transform-origin: 0 1px;
-}
-
 .Logo {
   position: fixed;
   top: -0.1em;

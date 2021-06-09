@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 
 import Button from "../../components/Button/Button";
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
+import IntroGraph from "../../components/IntroGraph/IntroGraph";
 
 import "./IntroPage.scss";
 
@@ -12,6 +13,7 @@ const IntroPage = (props) => {
 
   return (
     <FadeInOut className="IntroPage">
+      <IntroGraph page={page} />
       <AnimatePresence exitBeforeEnter>
         {renderPage(page, setPage)}
       </AnimatePresence>
@@ -34,34 +36,21 @@ const renderPage = (page, setPage) => {
       );
     case 1:
       return (
-        <FadeInOut className="page P1" key="P1">
-          <div className="ProtoPlant"></div>
+        <FadeInOut className="page P1" key="P1" enterDelay={0.8}>
           <p>כל הצמחים בעולם התפתחו מאב קדמון אחד.</p>
           <Button onClick={() => setPage(2)}>אוקיי</Button>
         </FadeInOut>
       );
     case 2:
       return (
-        <FadeInOut
-          className="page P2"
-          key="P2"
-          style={{
-            backgroundImage: "url('/images/tree-bg-big.jpg')",
-          }}
-        >
+        <FadeInOut className="page P2" key="P2" enterDelay={2.3}>
           <p>לאורך עידנים הצמחים השתנו, התפצלו והתפתחו לאינספור זנים שונים.</p>
           <Button onClick={() => setPage(3)}>סבבה</Button>
         </FadeInOut>
       );
     case 3:
       return (
-        <FadeInOut
-          className="page P3"
-          key="P3"
-          style={{
-            backgroundImage: "url('/images/tree-bg-small.jpg')",
-          }}
-        >
+        <FadeInOut className="page P3" key="P3">
           <p>
             האתר שלפניכם נותן הצצה לעץ החיים הענק הזה, דרך צמחי התבלין.
             <br />

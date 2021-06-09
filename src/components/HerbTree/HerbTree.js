@@ -126,7 +126,7 @@ class HerbTree extends React.Component {
 
       if (!this.state.initalLoaded) {
         this.setState({ initalLoaded: true });
-        growTree(400);
+        growTree(500);
       }
     } else {
       this.setState({ isInteractive: false });

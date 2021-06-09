@@ -25,17 +25,11 @@ const collisionRadius = 16;
 // Global variables
 let svg, link, node, text;
 let tooltip, tooltipContainer;
-let protoPlant;
 let simulation;
 let rootNode;
 let svgEl;
 let containerEl;
 let mousePos = { x: -1, y: -1 };
-
-const getCirclePath = (cx, cy, r) =>
-  `M ${cx - r}, ${cy}
-   a ${r},${r} 0 1,0 ${r * 2},0
-   a ${r},${r} 0 1,0 -${r * 2},0`;
 
 export const initTree = (ref, tooltipRef, data, parentComponent) => {
   rootNode = d3.hierarchy(data);
@@ -58,14 +52,6 @@ export const initTree = (ref, tooltipRef, data, parentComponent) => {
   drawTree(ref, simulation, nodes, links);
   setupTooltip(tooltipRef);
   setupInteractions(parentComponent);
-
-  protoPlant = svg.append("g").classed("protoPlant", true);
-  for (let i = 1; i <= 4; i++) {
-    protoPlant
-      .append("path")
-      .attr("d", getCirclePath(0, 0, 16))
-      .attr("id", `Circle${i}`);
-  }
 
   svgEl = svg.node();
 
@@ -206,7 +192,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .filter((d) => d.children)
     .append("circle")
     .attr("r", (d) => (d.data.slug in familyInfo ? 2 : 1.5))
-    .attr("opacity", 0);
+    .attr("transform", "scale(0.01)");
 
   // Internode click areas
   node
@@ -342,7 +328,16 @@ export const growTree = (growthTime = 400, callback = () => {}) => {
     });
 
   svg
-    .selectAll("circle, text")
+    .selectAll("circle")
+    .transition()
+    .delay((d) => d.depth * growthTime - 100)
+    .duration(growthTime)
+    .attr("transform", "")
+    .end()
+    .then(callback);
+
+  svg
+    .selectAll("text")
     .transition()
     .delay((d) => d.depth * growthTime + 500)
     .duration(growthTime)

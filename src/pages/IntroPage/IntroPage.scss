@@ -6,6 +6,7 @@
     font-size: 8em;
     margin-bottom: 0;
     opacity: 0.9;
+    font-weight: 400;
   }
   h2 {
     margin-top: 0;
@@ -16,11 +17,16 @@
     font-weight: bold;
     margin: auto;
     margin-bottom: 2em;
+    margin-top: 150px;
   }
   .page {
+    position: absolute;
+    top: 0;
     padding-top: 30vh;
+    width: 100vw;
     height: 100vh;
     box-sizing: border-box;
+    z-index: 100;
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,15 +40,4 @@
   bottom: 0;
   left: 0;
   padding: 1.5em;
-}
-
-.ProtoPlant {
-  width: 50px;
-  height: 50px;
-  border-radius: 30% 70% 70% 30% / 30% 42% 58% 70%;
-  background-color: #55814d;
-  margin: 2em auto;
-
-  &.minimized {
-  }
 }
