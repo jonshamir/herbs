@@ -52,19 +52,17 @@ svg {
       stroke: $bg-color;
       fill: #ddd !important;
       fill-opacity: 1 !important;
-      stroke-width: 10px;
+      stroke-width: 8px;
       transition: fill-opacity $transition-defaults;
 
       circle {
         transform-origin: 0 0;
-        transform: scale(0.2, 0.2);
+        transform: scale(0.18);
       }
     }
 
     &.internode {
       fill: #ddd !important;
-      stroke-width: 3 !important;
-      stroke-opacity: 1 !important;
     }
   }
 
@@ -113,7 +111,7 @@ svg {
       fill: #ccc;
       transition: fill $transition-defaults;
       paint-order: stroke fill;
-      stroke-width: 3;
+      stroke-width: 2.5;
       stroke: $bg-color;
       transition: fill $transition-defaults, stroke $transition-defaults;
       cursor: help;

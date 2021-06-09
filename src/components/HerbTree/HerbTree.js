@@ -26,7 +26,7 @@ class HerbTree extends React.Component {
       logoOpacity: MIN_LOGO_OPACITY,
       isHidden: true,
       isMinimal: false,
-      isInteractive: false,
+      isInteractive: true,
       initalLoaded: false,
     };
 
@@ -115,14 +115,12 @@ class HerbTree extends React.Component {
     const routeParts = route.split("/");
     if (route === "/") {
       this.setState({ isMinimal: false, isHidden: false });
-      this.setState({ isInteractive: this.state.initalLoaded });
+      this.setState({ isInteractive: true });
       unhighlightAll(this.state.initalLoaded);
 
       if (!this.state.initalLoaded) {
         this.setState({ initalLoaded: true });
-        growTree(400, () => {
-          this.setState({ isInteractive: true });
-        });
+        growTree(400);
       }
     } else {
       this.setState({ isInteractive: false });
