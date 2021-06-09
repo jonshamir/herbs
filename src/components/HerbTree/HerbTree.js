@@ -7,6 +7,7 @@ import {
   updateGraphSize,
   highlightHerb,
   unhighlightAll,
+  positionHighlightedHerb,
   growTree,
 } from "./graphUtils";
 import "./HerbTree.scss";
@@ -86,6 +87,7 @@ class HerbTree extends React.Component {
     const w = document.documentElement.clientWidth;
     // const h = document.documentElement.clientHeight;
     updateGraphSize(w, 710);
+    positionHighlightedHerb();
   }
 
   logPositions() {

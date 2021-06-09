@@ -393,27 +393,30 @@ export const highlightHerb = (slug) => {
   }
   const herbNode = document.getElementsByClassName(`node-${slug}`)[0];
   d3.select(herbNode).classed("highlighted", true);
-  currRotation = -herbNode.transform.baseVal[1].angle;
-  let x = -2 * herbNode.transform.baseVal[0].matrix.e;
-  let y = -2 * herbNode.transform.baseVal[0].matrix.f;
 
-  const rotationNeeded = Math.abs(currRotation) / 360;
-  const scrollTop = containerEl.parentElement.scrollTop;
+  positionHighlightedHerb();
+};
 
-  const moveX = width < 700 ? width - (70 + 80) : 550;
+export const positionHighlightedHerb = () => {
+  const herbNode = document.getElementsByClassName(`highlighted`)[0];
+  if (herbNode) {
+    currRotation = -herbNode.transform.baseVal[1].angle;
+    let x = -2 * herbNode.transform.baseVal[0].matrix.e;
+    let y = -2 * herbNode.transform.baseVal[0].matrix.f;
 
-  // d3.select(containerEl).attr(
-  //   "style",
-  //   `transform: translate(${moveX}px,${-550 + scrollTop}px)`
-  // );
+    const rotationNeeded = Math.abs(currRotation) / 360;
+    const scrollTop = containerEl.parentElement.scrollTop;
 
-  x += moveX;
-  y += -550 + scrollTop;
+    const moveX = width < 700 ? width - (70 + 80) : 550;
 
-  svg
-    .transition()
-    .duration(highlightDuration * (1 + rotationNeeded))
-    .attr("transform", `rotate(${0}) translate(${x} ${y})`);
+    x += moveX;
+    y += -550 + scrollTop;
+
+    svg
+      .transition()
+      .duration(highlightDuration * (1 + rotationNeeded))
+      .attr("transform", `rotate(${0}) translate(${x} ${y})`);
+  }
 };
 
 export const unhighlightAll = (scaleImages) => {

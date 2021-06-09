@@ -36,7 +36,6 @@ class HomePage extends React.Component {
   };
 
   render() {
-    const { logoOpacity } = this.state;
     return (
       <FadeInOut className="HomePage">
         {/*<HerbTree onNodeClick={this.handleNodeClick} />*/}
