@@ -11,6 +11,8 @@ import {
   positionHighlightedHerb,
   growTree,
 } from "./graphUtils";
+import { clamp } from "../../utils/math";
+
 import "./HerbTree.scss";
 
 const MIN_LOGO_OPACITY = 0.15;
@@ -74,7 +76,11 @@ class HerbTree extends React.Component {
         this.setState({ logoOpacity: MIN_LOGO_OPACITY });
     } else {
       this.setState({
-        logoOpacity: 1 - currScroll / opacityThreshold + MIN_LOGO_OPACITY,
+        logoOpacity: clamp(
+          1 - currScroll / opacityThreshold,
+          MIN_LOGO_OPACITY,
+          0.9
+        ),
       });
     }
   }

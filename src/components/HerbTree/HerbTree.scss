@@ -236,3 +236,15 @@ svg {
   animation: from360to0 2.5s linear infinite;
   transform-origin: 0 1px;
 }
+
+.Logo {
+  position: fixed;
+  top: -0.1em;
+  width: 100vw;
+  text-align: center;
+  font-size: 6em;
+  pointer-events: none;
+  z-index: 101;
+  transition: opacity $transition-defaults;
+  font-weight: 400;
+}

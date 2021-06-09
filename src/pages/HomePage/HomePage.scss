@@ -1,16 +1,5 @@
 @use "src/utils" as *;
 
-.Logo {
-  position: fixed;
-  top: -0.1em;
-  width: 100vw;
-  text-align: center;
-  font-size: 6em;
-  pointer-events: none;
-  z-index: 101;
-  transition: opacity $transition-defaults;
-}
-
 .Help {
   position: fixed;
   z-index: 101;

@@ -20,8 +20,14 @@
 
 @font-face {
   font-family: "Hadassah Friedlaender";
+  src: url("./fonts/HadassahFriedlaenderRegular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Hadassah Friedlaender";
   src: url("./fonts/HadassahFriedlaenderBold.ttf");
-  font-weight: 800;
+  font-weight: 600;
 }
 
 body {
