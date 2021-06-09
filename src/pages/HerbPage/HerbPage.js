@@ -1,6 +1,6 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import lang from "../../lang";
 
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
@@ -46,6 +46,7 @@ class HerbPage extends React.Component {
     return (
       <FadeInOut className="HerbPage">
         <main>
+          <Link to="/">חזרה</Link>
           <HerbSummary herb={herb} slug={slug} family={family} />
           <div className="HerbContent">
             <div className="herbPhoto">

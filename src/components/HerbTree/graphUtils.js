@@ -413,9 +413,6 @@ export const positionHighlightedHerb = () => {
 
     const moveX = width < 700 ? width - (70 + 80) : 550;
 
-    console.log(Math.sin(herbRotation));
-    console.log(Math.cos(herbRotation));
-
     x += moveX - 10 * Math.sin(herbRotation);
     y += -550 + scrollTop - 25 * clamp01(-Math.cos(herbRotation));
 
