@@ -46,7 +46,13 @@ class HerbPage extends React.Component {
     return (
       <FadeInOut className="HerbPage">
         <main>
-          <Link to="/">חזרה</Link>
+          <Link to="/" className="backIcon">
+            <img
+              src="/images/ui/arrow-right.svg"
+              className="Button"
+              alt="Back"
+            />
+          </Link>
           <HerbSummary herb={herb} slug={slug} family={family} />
           <div className="HerbContent">
             <div className="herbPhoto">
