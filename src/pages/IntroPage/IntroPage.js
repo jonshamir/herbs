@@ -43,7 +43,7 @@ const renderPage = (page, setPage) => {
       );
     case 2:
       return (
-        <FadeInOut className="page P2" key="P2" enterDelay={3}>
+        <FadeInOut className="page P2" key="P2" enterDelay={2.5}>
           <p>לאורך עידנים צאצאיו השתנו, התפתחו והתפצלו לאינספור צמחים שונים.</p>
           <Button onClick={() => setPage(3)}>סבבה</Button>
         </FadeInOut>

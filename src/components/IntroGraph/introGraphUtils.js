@@ -80,7 +80,7 @@ export const setupSimulation = (nodes, links) => {
         .distance(40)
         .strength(0.5)
     )
-    .force("charge", forceManyBodyReuse().strength(-40))
+    .force("charge", forceManyBodyReuse().strength(-50))
     .force(
       "collision",
       d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
@@ -159,20 +159,28 @@ export const drawTree = (ref, simulation, nodes, links) => {
 };
 
 export const fadeOut = () => {
+  svg.selectAll("g:not(.protoPlant)").attr("opacity", 1);
+
   return svg
-    .selectAll("g:not(.protoPlant)")
-    .attr("opacity", 1)
+    .selectAll("g")
     .transition()
     .duration(1000)
     .attr("opacity", 0)
     .end();
 };
 
-export const growTree = (growthTime = 600) => {
+export const growTree = (growthTime = 500) => {
+  svg
+    .attr("opacity", 1)
+    .transition()
+    .duration(growthTime * 8)
+    .ease(d3.easeCubicOut)
+    .attr("opacity", 0.5);
+
   protoPlant
     .transition()
     .duration(growthTime * 3)
-    .attr("opacity", 0);
+    .attr("opacity", 1);
 
   link
     .attr("opacity", 1)
