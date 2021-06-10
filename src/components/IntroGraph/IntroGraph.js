@@ -1,5 +1,5 @@
 import React from "react";
-import taxonomyTree from "../../data/taxonomyTree.json";
+import randomTree from "../../data/randomTree.json";
 import {
   initTree,
   updateGraphSize,
@@ -15,16 +15,14 @@ class IntroGraph extends React.Component {
   constructor(props) {
     super(props);
     this.d3ref = React.createRef();
+    // this.tree = removeSingleChildren(getRandomTree(8));
+    this.tree = randomTree;
   }
 
   componentDidMount() {
     this.setGraphSize();
 
-    const taxonomyTreePruned = removeSingleChildren(
-      JSON.parse(JSON.stringify(taxonomyTree))
-    );
-
-    this.simulation = initTree(this.d3ref, taxonomyTreePruned, this);
+    this.simulation = initTree(this.d3ref, this.tree, this);
 
     window.addEventListener("resize", (e) => this.handleResize(e));
   }
@@ -60,32 +58,46 @@ class IntroGraph extends React.Component {
     }
   }
 
-  logPositions() {
+  logTree() {
     const nodePositions = {};
     this.simulation.nodes().forEach((node, i) => {
       nodePositions[node.data.id] = { x: node.x, y: node.y };
     });
+    console.log(JSON.stringify(this.tree));
+
     console.log(JSON.stringify(nodePositions));
   }
 
   render() {
-    return <div className="IntroGraph" ref={this.d3ref}></div>;
+    return (
+      <div className="IntroGraph" ref={this.d3ref}>
+        {/*<button onClick={() => this.logTree()}>Log Tree</button>*/}
+      </div>
+    );
   }
 }
 
+const leafNode = { children: [] };
+const NUM_CHILDREN = [1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 4];
+const NUM_CHILDREN_LEN = NUM_CHILDREN.length;
+let nodeId = 0;
+
+const getRandomTree = (depth) => {
+  const node = { id: nodeId++, children: [] };
+  if (depth === 0) return node;
+  const numChilren = NUM_CHILDREN[Math.floor(Math.random() * NUM_CHILDREN_LEN)];
+  for (let i = 0; i < numChilren; i++) {
+    node.children.push(randomTree(depth - 1));
+  }
+  return node;
+};
+
 const removeSingleChildren = (node) => {
   if (node.children) node.children.forEach(removeSingleChildren);
-  if (
-    node.children &&
-    node.children.length === 1 &&
-    node.rank.en !== "Cladus"
-  ) {
-    const { id, children, name, rank, slug } = node.children[0];
+  if (node.children && node.children.length === 1) {
+    const { id, children } = node.children[0];
     node.id = id;
     node.children = children;
-    node.name = name;
-    node.rank = rank;
-    node.slug = slug;
   }
   return node;
 };

@@ -1,10 +1,8 @@
 import * as d3 from "d3";
 import { forceManyBodyReuse } from "d3-force-reuse";
-import { normalize2D, dist2D, clamp01 } from "../../utils/math";
+import { dist2D } from "../../utils/math";
 
-import herbInfo from "../../data/herbInfo.json";
-import familyInfo from "../../data/familyInfo.json";
-import initialNodePositions from "../../data/initialNodePositions.json";
+import initialNodePositions from "../../data/initialNodePositionsRandom.json";
 
 let width = 400;
 let height = 400;
@@ -18,6 +16,8 @@ let simulation;
 let rootNode;
 let svgEl;
 let containerEl;
+
+const HIDE_TREE = true;
 
 const getCirclePath = (cx, cy, r) =>
   `M ${cx - r}, ${cy}
@@ -135,7 +135,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .join("line")
     .attr("class", "link")
     .attr("stroke", "#ccc")
-    .attr("opacity", 0);
+    .attr("opacity", HIDE_TREE ? 0 : 1);
 
   node = svg
     .append("g")
@@ -144,8 +144,6 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .join("g")
     .attr("class", (d) => `node node-${d.data.slug}`)
     .classed("internode", (d) => d.children)
-    .classed("family", (d) => d.data.slug in familyInfo)
-    .classed("leaf", (d) => !d.children)
     .attr("id", (d) => d.data.id);
 
   // Internodes
@@ -155,7 +153,9 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .attr("fill", "#ccc")
     .attr("stroke", "#f9f5f4")
     .attr("stroke-width", "1.5")
-    .attr("transform", "scale(0.01)");
+    .attr("transform", HIDE_TREE ? "scale(0.01)" : "");
+
+  node.filter((d) => d.depth > 0).call(drag(simulation));
 };
 
 export const fadeOut = () => {
@@ -168,7 +168,7 @@ export const fadeOut = () => {
     .end();
 };
 
-export const growTree = (growthTime = 550) => {
+export const growTree = (growthTime = 600) => {
   protoPlant
     .transition()
     .duration(growthTime * 3)
@@ -211,4 +211,26 @@ export const updateGraphSize = (w, h) => {
     rootNode.fx = 0;
     rootNode.fy = 0.5 * height - 1 * marginY;
   }
+};
+
+const drag = (simulation) => {
+  function dragstarted(event, d) {
+    if (!event.active) simulation.alphaTarget(0.4).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+  function dragged(event, d) {
+    d.fx = event.x;
+    d.fy = event.y;
+  }
+  function dragended(event, d) {
+    if (!event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+  return d3
+    .drag()
+    .on("start", dragstarted)
+    .on("drag", dragged)
+    .on("end", dragended);
 };
