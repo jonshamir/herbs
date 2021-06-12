@@ -17,9 +17,11 @@ const IntroPage = (props) => {
       <AnimatePresence exitBeforeEnter>
         {renderPage(page, setPage)}
       </AnimatePresence>
-      <Link to="/" className="Skip">
-        <Button>דלג ></Button>
-      </Link>
+      {page !== 3 && (
+        <Link to="/" className="Skip">
+          <Button>דלג ></Button>
+        </Link>
+      )}
     </FadeInOut>
   );
 };
@@ -39,14 +41,14 @@ const renderPage = (page, setPage) => {
       return (
         <FadeInOut className="page P1" key="P1" enterDelay={0.8}>
           <p>כל הצמחים בעולם התפתחו מאב קדמון אחד.</p>
-          <Button onClick={() => setPage(2)}>אוקיי</Button>
+          <Button onClick={() => setPage(2)}>המשך</Button>
         </FadeInOut>
       );
     case 2:
       return (
         <FadeInOut className="page P2" key="P2" enterDelay={2.5}>
           <p>לאורך עידנים צאצאיו השתנו, התפתחו והתפצלו לאינספור צמחים שונים.</p>
-          <Button onClick={() => setPage(3)}>סבבה</Button>
+          <Button onClick={() => setPage(3)}>אוקיי</Button>
         </FadeInOut>
       );
     case 3:
@@ -58,7 +60,7 @@ const renderPage = (page, setPage) => {
             בנוסף תוכלו למצוא הסברים, מתכונים, ושימושים לצמחים השונים.
           </p>
           <Link to="/">
-            <Button>יאללה!</Button>
+            <Button>לאתר ></Button>
           </Link>
         </FadeInOut>
       );
