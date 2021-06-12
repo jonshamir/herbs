@@ -31,7 +31,8 @@ const renderPage = (page, setPage) => {
         <FadeInOut className="page P0" key="P0">
           <h1>על טעם וריח</h1>
           <h2>מדריך לעשבי תיבול במטבח</h2>
-          <Button onClick={() => setPage(1)}>מה הקטע?</Button>
+          <Button onClick={() => setPage(1)}>מה זה?</Button>
+          <Button onClick={() => setPage(1)}>אודות</Button>
         </FadeInOut>
       );
     case 1:

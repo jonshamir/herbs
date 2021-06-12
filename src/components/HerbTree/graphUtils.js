@@ -392,7 +392,7 @@ export const highlightHerb = (slug) => {
     d3.select(el).classed("highlighted", false);
   }
   const herbNode = document.getElementsByClassName(`node-${slug}`)[0];
-  d3.select(herbNode).classed("highlighted", true);
+  d3.select(herbNode).raise().classed("highlighted", true);
 
   positionHighlightedHerb();
 };
