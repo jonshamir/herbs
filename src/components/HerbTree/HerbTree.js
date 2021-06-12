@@ -97,7 +97,7 @@ class HerbTree extends React.Component {
   setGraphSize() {
     const w = document.documentElement.clientWidth;
     // const h = document.documentElement.clientHeight;
-    updateGraphSize(w, 710);
+    updateGraphSize(w, 700);
   }
 
   logPositions() {

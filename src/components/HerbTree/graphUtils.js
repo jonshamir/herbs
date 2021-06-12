@@ -17,8 +17,9 @@ import lang from "../../lang";
 let width = 400;
 let height = 400;
 // const marginX = 15;
-const marginY = 30;
-const offsetX = 0;
+const marginY = 50;
+const centerOffsetX = 0;
+const centerOffsetY = -20;
 const imageSize = 40;
 const collisionRadius = 16;
 
@@ -45,7 +46,7 @@ export const initTree = (ref, tooltipRef, data, parentComponent) => {
   });
 
   rootNode.fixed = true;
-  rootNode.fx = offsetX;
+  rootNode.fx = centerOffsetX;
   rootNode.fy = 0.5 * height - 1 * marginY;
 
   setupSimulation(nodes, links);
@@ -111,8 +112,8 @@ export const setupSimulation = (nodes, links) => {
       "collision",
       d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
     )
-    .force("x", d3.forceX(offsetX))
-    .force("y", d3.forceY())
+    .force("x", d3.forceX(centerOffsetX))
+    .force("y", d3.forceY(centerOffsetY))
     .force("mouse", (alpha) => {
       nodes.forEach((d) => {
         if (mousePos.x !== -1 && !d.fixed) {
@@ -371,7 +372,7 @@ export const updateGraphSize = (w, h) => {
   if (simulation) {
     simulation.alpha(0.2).restart();
 
-    rootNode.fx = offsetX;
+    rootNode.fx = centerOffsetX;
     rootNode.fy = 0.5 * height - 1 * marginY;
   }
 };

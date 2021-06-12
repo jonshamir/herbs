@@ -34,6 +34,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   @include bg-noise;
+  font-size: $base-font-size * 1rem;
 }
 
 input,
@@ -43,8 +44,12 @@ button {
   font-family: "ArbelHagilda", "Days", "Charter", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1em;
   color: $text-color;
+}
+
+input,
+button {
+  font-size: 1em;
   border-radius: 0;
 }
 

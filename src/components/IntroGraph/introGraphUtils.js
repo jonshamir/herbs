@@ -7,7 +7,9 @@ import initialNodePositions from "../../data/initialNodePositionsRandom.json";
 let width = 400;
 let height = 400;
 const collisionRadius = 16;
-const marginY = 30;
+const marginY = 50;
+let centerOffsetX = 0;
+let centerOffsetY = -250;
 
 // Global variables
 let svg, link, node;
@@ -85,8 +87,8 @@ export const setupSimulation = (nodes, links) => {
       "collision",
       d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
     )
-    .force("x", d3.forceX())
-    .force("y", d3.forceY())
+    .force("x", d3.forceX(centerOffsetX))
+    .force("y", d3.forceY(centerOffsetY))
     .force("growth", (alpha) => {
       const multiplier = Math.pow(alpha, 1);
 

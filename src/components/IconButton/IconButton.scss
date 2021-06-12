@@ -4,19 +4,20 @@
   position: fixed;
   right: 0;
   z-index: 200;
-  padding: 1.5em;
+  padding: $body-padding;
 
   &:hover .Button {
     background-color: rgba(0, 0, 0, 0.06);
   }
 
   .Button {
-    width: 1em;
-    height: 1em;
+    width: 1rem;
+    height: 1rem;
     padding: 0.5em;
     border-radius: 500px;
     opacity: 0.7;
     border: 2px solid rgba(0, 0, 0, 0.15);
+    margin: 0;
   }
 
   span {
@@ -25,6 +26,7 @@
     opacity: 0;
     transform: translateX(10px);
     transition: all $transition-defaults;
+    padding-right: $body-padding;
   }
 
   img {

@@ -166,7 +166,9 @@ class Search extends React.Component {
 
     return (
       <div className="Search">
-        <img src="/images/ui/search.svg" alt="Search" className="searchIcon" />
+        <div className="searchIcon">
+          <img src="/images/ui/search.svg" alt="Search" />
+        </div>
         <Autosuggest
           suggestions={suggestions}
           onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}

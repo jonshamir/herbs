@@ -3,7 +3,7 @@
 .IntroPage {
   text-align: center;
   h1 {
-    font-size: 8em;
+    font-size: 7em;
     margin-bottom: 0;
     opacity: 0.9;
     font-weight: 400;
@@ -39,5 +39,5 @@
   z-index: 101;
   bottom: 0;
   left: 0;
-  padding: 1.5em;
+  padding: $body-padding;
 }
