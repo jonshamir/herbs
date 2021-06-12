@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Button.scss";
 
-const Nav = ({ children, ...rest }) => {
+const Button = ({ children, ...rest }) => {
   return (
     <button {...rest} className="Button">
       {children}
@@ -10,4 +10,4 @@ const Nav = ({ children, ...rest }) => {
   );
 };
 
-export default Nav;
+export default Button;

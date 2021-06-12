@@ -1,0 +1,40 @@
+@use "src/utils" as *;
+
+.IconButton {
+  position: fixed;
+  right: 0;
+  z-index: 200;
+  padding: 1.5em;
+
+  &:hover .Button {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+
+  .Button {
+    width: 1em;
+    height: 1em;
+    padding: 0.5em;
+    border-radius: 500px;
+    opacity: 0.7;
+    border: 2px solid rgba(0, 0, 0, 0.15);
+  }
+
+  span {
+    display: inline-block;
+    text-decoration: none !important;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all $transition-defaults;
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  &:hover {
+    span {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import { withRouter, Link } from "react-router-dom";
 import lang from "../../lang";
 
+import IconButton from "../../components/IconButton/IconButton";
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
 import HerbSummary from "../../components/HerbSummary/HerbSummary";
 import herbInfo from "../../data/herbInfo.json";
@@ -47,12 +48,7 @@ class HerbPage extends React.Component {
       <FadeInOut className="HerbPage">
         <main>
           <Link to="/" className="backIcon">
-            <img
-              src="/images/ui/arrow-right.svg"
-              className="Button"
-              alt="Back"
-            />
-            <span>חזרה לעץ</span>
+            <IconButton icon="arrow-right" label="חזרה לעץ" />
           </Link>
           <HerbSummary herb={herb} slug={slug} family={family} />
           <div className="HerbContent">

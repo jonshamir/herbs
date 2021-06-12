@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter, Link } from "react-router-dom";
 
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
-import Button from "../../components/Button/Button";
+import IconButton from "../../components/IconButton/IconButton";
 
 import "./HomePage.scss";
 
@@ -39,8 +39,8 @@ class HomePage extends React.Component {
     return (
       <FadeInOut className="HomePage">
         {/*<HerbTree onNodeClick={this.handleNodeClick} />*/}
-        <Link to="/intro" className="Help">
-          <Button>מה זה?</Button>
+        <Link to="/intro">
+          <IconButton icon="help" />
         </Link>
       </FadeInOut>
     );
