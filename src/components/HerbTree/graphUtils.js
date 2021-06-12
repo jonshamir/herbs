@@ -415,7 +415,7 @@ export const positionHighlightedHerb = () => {
     svg
       .transition()
       .duration(highlightDuration)
-      .attr("transform", `rotate(${0}) translate(${x} ${y})`);
+      .attr("style", `transform: translate(${x}px, ${y}px)`);
   }
 };
 
@@ -435,7 +435,10 @@ export const unhighlightAll = (scaleImages) => {
 
   d3.select(containerEl).attr("style", "");
 
-  svg.transition().duration(highlightDuration).attr("transform", "");
+  svg
+    .transition()
+    .duration(highlightDuration)
+    .attr("style", "transform: translate(0px,0px)");
 };
 
 function handleMouseMove(event) {

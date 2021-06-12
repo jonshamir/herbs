@@ -79,6 +79,10 @@ svg {
   .node:not(.active) {
     &.leaf {
       fill-opacity: 0.9 !important;
+
+      circle {
+        transform: scale(1);
+      }
     }
 
     &.internode {
@@ -104,6 +108,7 @@ svg {
 
       image {
         transform-origin: 0 10px;
+        z-index: 100;
       }
     }
 

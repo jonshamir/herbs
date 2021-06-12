@@ -30,11 +30,17 @@
   font-weight: 600;
 }
 
+html {
+  -webkit-text-size-adjust: none;
+  touch-action: pan-y;
+}
+
 body {
   margin: 0;
   overflow-x: hidden;
   @include bg-noise;
   font-size: $base-font-size * 1rem;
+  touch-action: pan-y;
 }
 
 input,
