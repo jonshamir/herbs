@@ -30,6 +30,7 @@ class HerbTree extends React.Component {
       isMinimal: false,
       isInteractive: true,
       initalLoaded: false,
+      isSubtreeActive: false,
     };
 
     this.positionHighlightedHerbDebounced = debounce(
@@ -48,7 +49,8 @@ class HerbTree extends React.Component {
       this.d3ref,
       this.tooltipRef,
       taxonomyTreePruned,
-      this
+      this,
+      this.handleSubtreeActivate
     );
 
     window.addEventListener("resize", (e) => this.handleResize(e));
@@ -108,6 +110,14 @@ class HerbTree extends React.Component {
     console.log(JSON.stringify(nodePositions));
   }
 
+  handleSubtreeActivate = (isActive, slug, hasChildren) => {
+    if (!isActive && this.state.isSubtreeActive) {
+      this.setState({ isSubtreeActive: false });
+    } else if (hasChildren) {
+      this.setState({ isSubtreeActive: true });
+    }
+  };
+
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
       this.onRouteChanged(prevProps.location);
@@ -151,19 +161,24 @@ class HerbTree extends React.Component {
     }
   }
 
+  getLogoOpacity() {
+    const { isMinimal, isHidden, isSubtreeActive, logoOpacity } = this.state;
+    if (isMinimal || isHidden) return 0;
+    if (isSubtreeActive) return 0.05;
+    return logoOpacity;
+  }
+
   render() {
-    const { isMinimal, isHidden, isInteractive, logoOpacity } = this.state;
+    const { isMinimal, isHidden, isInteractive } = this.state;
     let classNames = "HerbTree";
     if (isMinimal) classNames += " minimal";
     if (isHidden) classNames += " hidden";
     if (isInteractive) classNames += " interactive";
     if ((isMinimal || isHidden) && this.simulation) this.simulation.stop();
 
-    const finalLogoOpacity = isMinimal || isHidden ? 0 : logoOpacity;
-
     return (
       <div className={classNames} ref={this.containerRef}>
-        <h1 className="Logo" style={{ opacity: finalLogoOpacity }}>
+        <h1 className="Logo" style={{ opacity: this.getLogoOpacity() }}>
           על טעם וריח
         </h1>
         {/*<button onClick={() => this.logPositions()}>Get positions</button>*/}

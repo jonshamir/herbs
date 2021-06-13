@@ -32,7 +32,13 @@ let svgEl;
 let containerEl;
 let mousePos = { x: -1, y: -1 };
 
-export const initTree = (ref, tooltipRef, data, parentComponent) => {
+export const initTree = (
+  ref,
+  tooltipRef,
+  data,
+  parentComponent,
+  onSubtreeActivate
+) => {
   rootNode = d3.hierarchy(data);
   const links = rootNode.links();
   const nodes = rootNode.descendants();
@@ -49,10 +55,12 @@ export const initTree = (ref, tooltipRef, data, parentComponent) => {
   rootNode.fx = centerOffsetX;
   rootNode.fy = 0.5 * height - 1 * marginY;
 
+  const logoEl = ref.current.getElementsByClassName("Logo")[0];
+
   setupSimulation(nodes, links);
   drawTree(ref, simulation, nodes, links);
   setupTooltip(tooltipRef);
-  setupInteractions(parentComponent);
+  setupInteractions(parentComponent, onSubtreeActivate);
 
   svgEl = svg.node();
 
@@ -253,8 +261,19 @@ export const setupTooltip = (tooltipRef) => {
     .style("opacity", 0);
 };
 
-const onHover = (d, svg, link, node, text, tooltip, tooltipContainer) => {
+const handleHover = (
+  d,
+  svg,
+  link,
+  node,
+  text,
+  tooltip,
+  tooltipContainer,
+  onSubtreeActivate
+) => {
   const { slug, name, rank } = d.data;
+
+  onSubtreeActivate(true, slug, d.children !== undefined);
 
   if (d.children) {
     // console.log(d3.select(`.node-${slug}`));
@@ -289,11 +308,20 @@ const onHover = (d, svg, link, node, text, tooltip, tooltipContainer) => {
 
 let hoverTimer;
 
-export const setupInteractions = (parentComponent) => {
+const setupInteractions = (parentComponent, onSubtreeActivate) => {
   node
     .on("mouseover", (e, d) => {
       hoverTimer = setTimeout(() => {
-        onHover(d, svg, link, node, text, tooltip, tooltipContainer);
+        handleHover(
+          d,
+          svg,
+          link,
+          node,
+          text,
+          tooltip,
+          tooltipContainer,
+          onSubtreeActivate
+        );
       }, 300);
     })
     .on("mouseout", (e, d) => {
@@ -306,6 +334,7 @@ export const setupInteractions = (parentComponent) => {
         text.filter((d) => d.data.id === id).classed("visible", false);
 
         tooltip.transition().duration(200).style("opacity", 0);
+        onSubtreeActivate(false);
       }
     })
     .on("click", (e, d) => {
