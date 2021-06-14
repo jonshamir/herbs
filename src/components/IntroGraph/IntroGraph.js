@@ -77,29 +77,29 @@ class IntroGraph extends React.Component {
   }
 }
 
-const leafNode = { children: [] };
-const NUM_CHILDREN = [1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 4];
-const NUM_CHILDREN_LEN = NUM_CHILDREN.length;
-let nodeId = 0;
-
-const getRandomTree = (depth) => {
-  const node = { id: nodeId++, children: [] };
-  if (depth === 0) return node;
-  const numChilren = NUM_CHILDREN[Math.floor(Math.random() * NUM_CHILDREN_LEN)];
-  for (let i = 0; i < numChilren; i++) {
-    node.children.push(randomTree(depth - 1));
-  }
-  return node;
-};
-
-const removeSingleChildren = (node) => {
-  if (node.children) node.children.forEach(removeSingleChildren);
-  if (node.children && node.children.length === 1) {
-    const { id, children } = node.children[0];
-    node.id = id;
-    node.children = children;
-  }
-  return node;
-};
+// const leafNode = { children: [] };
+// const NUM_CHILDREN = [1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 4];
+// const NUM_CHILDREN_LEN = NUM_CHILDREN.length;
+// let nodeId = 0;
+//
+// const getRandomTree = (depth) => {
+//   const node = { id: nodeId++, children: [] };
+//   if (depth === 0) return node;
+//   const numChilren = NUM_CHILDREN[Math.floor(Math.random() * NUM_CHILDREN_LEN)];
+//   for (let i = 0; i < numChilren; i++) {
+//     node.children.push(randomTree(depth - 1));
+//   }
+//   return node;
+// };
+//
+// const removeSingleChildren = (node) => {
+//   if (node.children) node.children.forEach(removeSingleChildren);
+//   if (node.children && node.children.length === 1) {
+//     const { id, children } = node.children[0];
+//     node.id = id;
+//     node.children = children;
+//   }
+//   return node;
+// };
 
 export default IntroGraph;

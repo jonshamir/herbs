@@ -16,6 +16,7 @@ import { clamp } from "../../utils/math";
 import "./HerbTree.scss";
 
 const MIN_LOGO_OPACITY = 0.15;
+const DEBUG = false;
 
 class HerbTree extends React.Component {
   constructor(props) {
@@ -110,6 +111,10 @@ class HerbTree extends React.Component {
     console.log(JSON.stringify(nodePositions));
   }
 
+  getPrintLayout() {
+    console.log("hey");
+  }
+
   handleSubtreeActivate = (isActive, slug, hasChildren) => {
     if (!isActive && this.state.isSubtreeActive) {
       this.setState({ isSubtreeActive: false });
@@ -181,7 +186,12 @@ class HerbTree extends React.Component {
         <h1 className="Logo" style={{ opacity: this.getLogoOpacity() }}>
           על טעם וריח
         </h1>
-        {/*<button onClick={() => this.logPositions()}>Get positions</button>*/}
+        {DEBUG && (
+          <div className="DebugMenu">
+            <button onClick={() => this.logPositions()}>Get Positions</button>
+            <button onClick={() => this.getPrintLayout()}>Print Layout</button>
+          </div>
+        )}
         <div className="treeContainer" ref={this.d3ref}>
           <div className="tooltipContainer" ref={this.tooltipRef}></div>
         </div>

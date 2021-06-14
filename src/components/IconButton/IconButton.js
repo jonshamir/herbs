@@ -5,7 +5,9 @@ import "./IconButton.scss";
 const IconButton = ({ icon, label, ...rest }) => {
   return (
     <div className="IconButton">
-      <img src={`/images/ui/${icon}.svg`} alt={label} className="Button" />
+      <button className="Button">
+        <img src={`/images/ui/${icon}.svg`} alt={label} />
+      </button>
       <span>{label}</span>
     </div>
   );

@@ -14,6 +14,8 @@ import initialNodePositions from "../../data/initialNodePositions.json";
 
 import lang from "../../lang";
 
+const ALLOW_DRAG = false;
+
 let width = 400;
 let height = 400;
 // const marginX = 15;
@@ -54,8 +56,6 @@ export const initTree = (
   rootNode.fixed = true;
   rootNode.fx = centerOffsetX;
   rootNode.fy = 0.5 * height - 1 * marginY;
-
-  const logoEl = ref.current.getElementsByClassName("Logo")[0];
 
   setupSimulation(nodes, links);
   drawTree(ref, simulation, nodes, links);
@@ -212,6 +212,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .attr("stroke-width", 0);
 
   // Leaf images
+  const imageCenter = -imageSize / 2;
   node
     .filter((d) => !d.children)
     .append("svg:image")
@@ -220,8 +221,8 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .on("error", function (d) {
       d3.select(this).attr("xlink:href", "/images/herb.png");
     })
-    .attr("x", -imageSize / 2)
-    .attr("y", -imageSize / 2)
+    .attr("x", imageCenter)
+    .attr("y", imageCenter)
     .attr("width", imageSize)
     .attr("height", imageSize)
     .attr("transform", "scale(0.01)");
@@ -250,6 +251,16 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .attr("y", (d) => (d.children ? -5 : 0))
     .attr("opacity", 0);
   return { svg, link, node, text };
+};
+
+export const printLayout = () => {
+  simulation.stop();
+  const imageCenter = -imageSize / 2;
+  const imageCenterTransform = `translate(${imageCenter} ${imageCenter})`;
+  node
+    .filter((d) => !d.children)
+    .selectAll("image")
+    .attr("transform", imageCenterTransform);
 };
 
 export const setupTooltip = (tooltipRef) => {
@@ -340,6 +351,8 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
     .on("click", (e, d) => {
       parentComponent.handleClick(e, d);
     });
+
+  if (ALLOW_DRAG) node.filter((d) => d.depth > 0).call(drag(simulation));
 };
 
 export const growTree = (growthTime = 550, callback = () => {}) => {
@@ -478,3 +491,25 @@ function handleMouseMove(event) {
   };
   simulation.alpha(0.2).restart();
 }
+
+const drag = (simulation) => {
+  function dragstarted(event, d) {
+    if (!event.active) simulation.alphaTarget(0.4).restart();
+    d.fx = d.x;
+    d.fy = d.y;
+  }
+  function dragged(event, d) {
+    d.fx = event.x;
+    d.fy = event.y;
+  }
+  function dragended(event, d) {
+    if (!event.active) simulation.alphaTarget(0);
+    d.fx = null;
+    d.fy = null;
+  }
+  return d3
+    .drag()
+    .on("start", dragstarted)
+    .on("drag", dragged)
+    .on("end", dragended);
+};
