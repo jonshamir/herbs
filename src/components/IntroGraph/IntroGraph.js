@@ -73,7 +73,7 @@ class IntroGraph extends React.Component {
   render() {
     return (
       <div className="IntroGraph" ref={this.d3ref}>
-        <button onClick={() => this.logTree()}>Log Tree</button>
+        {/*<button onClick={() => this.logTree()}>Log Tree</button>*/}
       </div>
     );
   }
