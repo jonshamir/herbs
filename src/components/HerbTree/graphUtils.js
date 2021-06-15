@@ -336,7 +336,9 @@ const handleHover = (
 
     if (nodeInfo) {
       tooltip.html(
-        `<h4>${nodeInfo.name[lang]} /<span> ${rank[lang]}</span></h4><p>${nodeInfo.description[lang]}</p>`
+        `<img src="images/family-icons/${slug}.png">
+        <h4>${nodeInfo.name[lang]} /<span> ${rank[lang]}</span></h4>
+        <p>${nodeInfo.description[lang]}</p>`
       );
     } else {
       tooltip.html(`<h4>${name} /<span> ${rank[lang]}</span></h4>`);
@@ -389,7 +391,7 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
   if (allowDrag) node.filter((d) => d.depth > 0).call(drag(simulation));
 };
 
-export const growTree = (growthTime = 10, callback = () => {}) => {
+export const growTree = (growthTime = 550, callback = () => {}) => {
   link
     .attr("opacity", 1)
     .attr("stroke-dasharray", (d) => linkLength(d) + " " + linkLength(d))

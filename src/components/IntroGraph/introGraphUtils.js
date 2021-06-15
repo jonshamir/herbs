@@ -79,7 +79,7 @@ export const setupSimulation = (nodes, links) => {
       d3
         .forceLink(links)
         .id((d) => d.id)
-        .distance(40)
+        .distance(30)
         .strength(0.5)
     )
     .force("charge", forceManyBodyReuse().strength(-50))

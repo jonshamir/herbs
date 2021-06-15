@@ -23,6 +23,7 @@ class IntroGraph extends React.Component {
     this.setGraphSize();
 
     this.simulation = initTree(this.d3ref, this.tree, this);
+    // moveProtoPlant().then(growTree);
 
     window.addEventListener("resize", (e) => this.handleResize(e));
   }
@@ -55,6 +56,7 @@ class IntroGraph extends React.Component {
         fadeOut();
         break;
       default:
+        break;
     }
   }
 
@@ -71,7 +73,7 @@ class IntroGraph extends React.Component {
   render() {
     return (
       <div className="IntroGraph" ref={this.d3ref}>
-        {/*<button onClick={() => this.logTree()}>Log Tree</button>*/}
+        <button onClick={() => this.logTree()}>Log Tree</button>
       </div>
     );
   }
