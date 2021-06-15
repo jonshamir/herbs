@@ -7,6 +7,10 @@
 
   h2 {
     margin-top: 2em;
+    margin-bottom: 0.6em;
+  }
+  h3 {
+    margin-bottom: 0.4em;
   }
 
   @media screen and (max-width: $mobile-width) {
@@ -19,10 +23,11 @@
 
   .HerbContent {
     text-align: right;
-    min-height: 1200px;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     padding: 2em;
     padding-right: 0;
+    padding-bottom: 8em;
     box-sizing: border-box;
     margin-right: 300px;
 
@@ -56,5 +61,30 @@
   .mainText {
     animation: fadeIn 300ms ease-in 700ms;
     animation-fill-mode: both;
+  }
+
+  .HerbLink {
+    width: 5em;
+    height: 7em;
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+    text-align: center;
+    transition: color $transition-defaults;
+    font-weight: 600;
+
+    img {
+      width: 5em;
+      height: 5em;
+      transition: transform $transition-defaults;
+    }
+
+    &:hover {
+      color: $text-color;
+
+      img {
+        transform: scale(1.1);
+      }
+    }
   }
 }

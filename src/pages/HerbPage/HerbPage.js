@@ -19,7 +19,6 @@ class HerbPage extends React.Component {
 
   async componentDidMount() {
     const { slug } = this.props.match.params;
-    // const slug = "bay-leaf";
     const response = await fetch(`/herb-pages/${slug}.md`);
     const text = await response.text();
 
@@ -27,11 +26,25 @@ class HerbPage extends React.Component {
       md: text,
     });
 
+    window.scrollTo(0, 0);
+
     setTimeout(() => this.setState({ timerComplete: true }), 1000);
   }
 
   handleImageLoad(e) {
     this.setState({ imageLoaded: true });
+  }
+
+  renderLink({ href, children, title }) {
+    if (title === "HerbIcon")
+      return (
+        <Link to={href} className="HerbLink">
+          <img src={`/images/icons/${href}.png`} />
+          {children}
+        </Link>
+      );
+
+    return <Link to={href}>{children}</Link>;
   }
 
   render() {
@@ -64,7 +77,8 @@ class HerbPage extends React.Component {
               <h1>{herb.commonName[lang]}</h1>
               <ReactMarkdown
                 components={{
-                  a: (props) => <Link to={props.href}>{props.children}</Link>,
+                  a: this.renderLink,
+                  // code: this.renderCustomComponent,
                 }}
               >
                 {this.state.md}

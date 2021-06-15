@@ -9,7 +9,6 @@ import "./HomePage.scss";
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { logoOpacity: 1 };
   }
 
   componentDidMount() {
@@ -18,27 +17,9 @@ class HomePage extends React.Component {
     }
   }
 
-  handleScroll = () => {
-    const currScroll =
-      document.body.scrollTop || document.documentElement.scrollTop;
-
-    const opacityThreshold = 100;
-
-    if (currScroll > opacityThreshold) {
-      if (this.state.logoOpacity !== 0) this.setState({ logoOpacity: 0 });
-    } else {
-      this.setState({ logoOpacity: 1 - currScroll / opacityThreshold });
-    }
-  };
-
-  handleNodeClick = (node) => {
-    this.props.history.push(`/herb/${node.slug}`);
-  };
-
   render() {
     return (
       <FadeInOut className="HomePage">
-        {/*<HerbTree onNodeClick={this.handleNodeClick} />*/}
         <Link to="/intro">
           <IconButton icon="help" />
         </Link>
