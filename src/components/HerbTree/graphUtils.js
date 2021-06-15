@@ -14,8 +14,6 @@ import initialNodePositions from "../../data/initialNodePositions.json";
 
 import lang from "../../lang";
 
-const ALLOW_DRAG = false;
-
 let width = 400;
 let height = 400;
 // const marginX = 15;
@@ -24,6 +22,7 @@ const centerOffsetX = 0;
 const centerOffsetY = -20;
 const imageSize = 40;
 const collisionRadius = 16;
+let allowDrag = false;
 
 // Global variables
 let svg, link, node, text;
@@ -39,8 +38,10 @@ export const initTree = (
   tooltipRef,
   data,
   parentComponent,
-  onSubtreeActivate
+  onSubtreeActivate,
+  shouldAllowDrag
 ) => {
+  allowDrag = shouldAllowDrag;
   rootNode = d3.hierarchy(data);
   const links = rootNode.links();
   const nodes = rootNode.descendants();
@@ -254,13 +255,46 @@ export const drawTree = (ref, simulation, nodes, links) => {
 };
 
 export const printLayout = () => {
-  simulation.stop();
-  const imageCenter = -imageSize / 2;
+  const lineColor = "#ccc";
+  const bgColor = "#fff";
+  document.body.style.backgroundImage = "none";
+  document.body.style.backgroundColor = bgColor;
+
+  simulation.alpha(0).stop();
+
+  // Position images
+  const imageCenter = imageSize * 0.5;
   const imageCenterTransform = `translate(${imageCenter} ${imageCenter})`;
   node
     .filter((d) => !d.children)
     .selectAll("image")
     .attr("transform", imageCenterTransform);
+
+  // Style graph
+  svg
+    .selectAll(".link")
+    .attr("class", "")
+    .attr("stroke-width", 1)
+    .attr("stroke", lineColor);
+
+  node
+    .selectAll(".internode circle")
+    .attr("r", 2)
+    .attr("fill", lineColor)
+    .attr("stroke", bgColor)
+    .attr("stroke-width", 1);
+
+  node.selectAll(".leaf circle").remove();
+
+  text.filter((d) => d.children).remove();
+
+  svg
+    .selectAll("text")
+    .attr("class", "")
+    .attr("style", "direction: rtl")
+    .attr("stroke-width", 0)
+    .attr("font-size", "8")
+    .attr("font-family", "ArbelHagilda");
 };
 
 export const setupTooltip = (tooltipRef) => {
@@ -352,10 +386,10 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
       parentComponent.handleClick(e, d);
     });
 
-  if (ALLOW_DRAG) node.filter((d) => d.depth > 0).call(drag(simulation));
+  if (allowDrag) node.filter((d) => d.depth > 0).call(drag(simulation));
 };
 
-export const growTree = (growthTime = 550, callback = () => {}) => {
+export const growTree = (growthTime = 10, callback = () => {}) => {
   link
     .attr("opacity", 1)
     .attr("stroke-dasharray", (d) => linkLength(d) + " " + linkLength(d))

@@ -10,6 +10,7 @@ import {
   unhighlightAll,
   positionHighlightedHerb,
   growTree,
+  printLayout,
 } from "./graphUtils";
 import { clamp } from "../../utils/math";
 
@@ -51,7 +52,8 @@ class HerbTree extends React.Component {
       this.tooltipRef,
       taxonomyTreePruned,
       this,
-      this.handleSubtreeActivate
+      this.handleSubtreeActivate,
+      DEBUG
     );
 
     window.addEventListener("resize", (e) => this.handleResize(e));
@@ -112,7 +114,8 @@ class HerbTree extends React.Component {
   }
 
   getPrintLayout() {
-    console.log("hey");
+    this.setState({ isInteractive: false });
+    printLayout();
   }
 
   handleSubtreeActivate = (isActive, slug, hasChildren) => {
