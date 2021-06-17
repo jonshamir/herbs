@@ -184,6 +184,20 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .data(links)
     .join("line")
     .attr("class", "link")
+    .attr("stroke-width", (d) => {
+      const rank = d.target.data.rank["en"];
+      switch (rank) {
+        case "Cladus":
+          return 3;
+        case "Ordo":
+          return 2;
+        case "Familia":
+          return 1.5;
+        default:
+          return 1;
+      }
+      return (d.source.height + 1) / 2;
+    })
     .attr("opacity", 0);
 
   node = svg
@@ -193,7 +207,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .join("g")
     .attr("class", (d) => `node node-${d.data.slug}`)
     .classed("internode", (d) => d.children)
-    .classed("family", (d) => d.data.slug in familyInfo)
+    .classed("moreInfo", (d) => d.data.slug in familyInfo)
     .classed("leaf", (d) => !d.children)
     .attr("id", (d) => d.data.id);
 
@@ -319,12 +333,11 @@ const handleHover = (
   const { slug, name, rank } = d.data;
 
   onSubtreeActivate(true, slug, d.children !== undefined);
+  const currNode = d3.select(`.node-${slug}`);
 
   if (d.children) {
-    // console.log(d3.select(`.node-${slug}`));
-    d3.select(`.node-${slug}`).raise();
+    currNode.raise();
     svg.classed("inactive", true);
-    // text.filter((d) => d.data.id === id).classed("visible", true);
 
     setSubtreeActive(d, true);
 
@@ -370,8 +383,22 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
           onSubtreeActivate
         );
       }, 300);
+
+      // Show small internode on hover
+      d3.select(`.node-${d.data.slug} circle`)
+        .transition()
+        .duration(250)
+        .attr("transform", "scale(1)");
     })
     .on("mouseout", (e, d) => {
+      // Hide small internode on hover
+      if (d.data.children) {
+        d3.select(`.node-${d.data.slug}:not(.moreInfo) circle`)
+          .transition()
+          .duration(250)
+          .attr("transform", "scale(0.01)");
+      }
+
       clearTimeout(hoverTimer);
       if (d.children) {
         svg.classed("inactive", false);
@@ -407,7 +434,7 @@ export const growTree = (growthTime = 550, callback = () => {}) => {
     });
 
   svg
-    .selectAll("circle")
+    .selectAll(".moreInfo circle")
     .transition()
     .delay((d) => d.depth * growthTime - 100)
     .duration(growthTime)

@@ -117,7 +117,7 @@ export const moveProtoPlant = () => {
     .ease(d3.easeCubicIn)
     .duration(1000)
     .delay(300)
-    .attr("transform", `translate(0,${rootNode.fy}) scale(0.15)`)
+    .attr("transform", `translate(0,${rootNode.fy}) scale(0.12)`)
     .end();
 };
 
@@ -137,6 +137,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .join("line")
     .attr("class", "link")
     .attr("stroke", "#ccc")
+    .attr("stroke-width", (d) => Math.min(d.target.height + 1, 4))
     .attr("opacity", HIDE_TREE ? 0 : 1);
 
   node = svg

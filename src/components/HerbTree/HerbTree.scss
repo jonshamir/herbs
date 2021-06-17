@@ -68,9 +68,7 @@ svg {
 
   .link {
     stroke: #ddd !important;
-    stroke-width: 1;
     stroke-opacity: 1;
-    // stroke-linecap: round;
     transition: stroke-opacity $transition-defaults;
   }
 }
@@ -121,17 +119,16 @@ svg {
       transition: fill $transition-defaults, stroke $transition-defaults;
       cursor: help;
 
-      &.family {
-        fill: #999;
+      &.moreInfo {
+        fill: #aaa;
+        opacity: 1;
       }
     }
   }
 
   .link {
     stroke: #ccc;
-    stroke-width: 1;
     stroke-opacity: 1;
-    // stroke-linecap: round;
     transition: stroke-opacity $transition-defaults;
   }
 
