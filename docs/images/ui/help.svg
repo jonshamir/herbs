@@ -4,7 +4,8 @@
 	 viewBox="0 0 17.5 17.5" style="enable-background:new 0 0 17.5 17.5;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:none;stroke:#1D1D1B;stroke-width:2.0002;stroke-miterlimit:10.0008;}
+	.st1{fill:#1D1D1B;stroke:#1D1D1B;stroke-width:2.0002;stroke-miterlimit:10.0008;}
 </style>
 <path class="st0" d="M4.7,5.4c0-2.2,1.9-4.1,4.1-4c2.2,0,4,1.9,4,4c0,1.6-0.8,3-2.2,3.6c-1.2,0.7-1.9,1.9-1.9,3.3l0,0"/>
-<circle class="st0" cx="8.8" cy="15.5" r="0.5"/>
+<circle class="st1" cx="8.8" cy="15.5" r="0.5"/>
 </svg>

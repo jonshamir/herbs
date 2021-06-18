@@ -218,7 +218,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .attr("r", (d) => (d.data.slug in familyInfo ? 2 : 1.5))
     .attr("transform", "scale(0.01)");
 
-  // Internode click areas
+  // Internode hover areas
   node
     .filter((d) => d.children)
     .append("circle")
@@ -414,6 +414,10 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
     .on("click", (e, d) => {
       parentComponent.handleClick(e, d);
     });
+
+  text.on("click", (e, d) => {
+    parentComponent.handleClick(e, d);
+  });
 
   if (allowDrag) node.filter((d) => d.depth > 0).call(drag(simulation));
 };

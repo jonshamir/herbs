@@ -72,6 +72,7 @@
     text-align: center;
     transition: color $transition-defaults;
     font-weight: 600;
+    font-weight: normal;
 
     img {
       width: 5em;
@@ -81,9 +82,9 @@
 
     &:hover {
       color: $text-color;
-
+      font-weight: bold;
       img {
-        transform: scale(1.1);
+        transform: rotate(-15deg);
       }
     }
   }

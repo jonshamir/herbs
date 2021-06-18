@@ -144,7 +144,7 @@ svg {
     text-align: center;
     transition: fill-opacity $transition-defaults,
       stroke-opacity $transition-defaults, fill $transition-defaults;
-    pointer-events: none;
+    // pointer-events: none;
     font-weight: 600;
 
     &.visible {
