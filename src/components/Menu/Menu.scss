@@ -70,5 +70,9 @@ nav.Menu {
         background-color: rgba(0, 0, 0, 0.05);
       }
     }
+
+    &:active::before {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   }
 }
