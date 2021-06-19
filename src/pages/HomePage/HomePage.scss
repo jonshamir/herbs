@@ -1,9 +1,11 @@
 @use "src/utils" as *;
 
-.Help {
-  position: fixed;
-  z-index: 101;
-  top: 0;
-  right: 0;
-  padding: 1.5em;
+.HomePage {
+  .Menu {
+    position: fixed;
+    .IconButton {
+      padding: 0.25em 1em;
+      margin-top: 0.5em;
+    }
+  }
 }

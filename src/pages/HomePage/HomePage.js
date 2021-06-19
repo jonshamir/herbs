@@ -20,9 +20,14 @@ class HomePage extends React.Component {
   render() {
     return (
       <FadeInOut className="HomePage">
-        <Link to="/intro">
-          <IconButton icon="help" />
-        </Link>
+        <div className="Menu">
+          <Link to="/intro">
+            <IconButton icon="help" label="מה זה?" />
+          </Link>
+          <Link to="/about">
+            <IconButton icon="about" label="אודות" />
+          </Link>
+        </div>
       </FadeInOut>
     );
   }

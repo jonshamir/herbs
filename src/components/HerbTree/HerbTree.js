@@ -160,7 +160,7 @@ class HerbTree extends React.Component {
         growTree(0);
         const herbSlug = routeParts[2];
         highlightHerb(herbSlug);
-      } else if (routeParts[1] === "intro") {
+      } else {
         this.setState({
           isMinimal: false,
           isHidden: true,

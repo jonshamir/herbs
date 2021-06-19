@@ -19,7 +19,7 @@ const IntroPage = (props) => {
       </AnimatePresence>
       {page !== 3 && (
         <Link to="/" className="Skip">
-          <Button>דלג ></Button>
+          <Button>דלג לאתר ></Button>
         </Link>
       )}
     </FadeInOut>
@@ -28,20 +28,12 @@ const IntroPage = (props) => {
 
 const renderPage = (page, setPage) => {
   switch (page) {
-    case -1:
-      return (
-        <FadeInOut className="page P-1" key="P-0">
-          <h2>אודות</h2>
-          <p>בצלאל</p>
-        </FadeInOut>
-      );
     case 0:
       return (
         <FadeInOut className="page P0" key="P0">
           <h1>על טעם וריח</h1>
           <h2>מדריך לעשבי תיבול במטבח</h2>
           <Button onClick={() => setPage(1)}>מה זה?</Button>
-          <Button onClick={() => setPage(-1)}>אודות</Button>
         </FadeInOut>
       );
     case 1:
