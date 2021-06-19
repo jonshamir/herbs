@@ -6,10 +6,6 @@ import FadeInOut from "../../components/FadeInOut/FadeInOut";
 import "./HomePage.scss";
 
 class HomePage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     if (window.history.scrollRestoration) {
       window.history.scrollRestoration = "manual";

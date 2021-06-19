@@ -6,10 +6,6 @@ import OutLink from "../../components/OutLink/OutLink";
 import "./AboutPage.scss";
 
 class AboutPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <FadeInOut className="AboutPage">

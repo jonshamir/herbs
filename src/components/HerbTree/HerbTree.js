@@ -145,8 +145,14 @@ class HerbTree extends React.Component {
       unhighlightAll(this.state.initalLoaded);
 
       if (!this.state.initalLoaded) {
+        const { scrollWidth, offsetWidth } = this.containerRef.current;
+        const maxScroll = scrollWidth - offsetWidth;
+
         this.setState({ initalLoaded: true });
-        this.containerRef.current.scrollTo(0, this.d3ref.current.scrollHeight);
+        this.containerRef.current.scrollTo(
+          maxScroll / 2,
+          this.d3ref.current.scrollHeight
+        );
         setTimeout(growTree, 500);
       }
     } else {
