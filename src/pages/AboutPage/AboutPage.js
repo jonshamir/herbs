@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
 import OutLink from "../../components/OutLink/OutLink";
@@ -28,7 +27,7 @@ class AboutPage extends React.Component {
           </p>
           <p>
             מידע על הסיווג המדעי של הצמחים מ-
-            <OutLink href="https://species.wikimedia.org">Wikispecies</OutLink>
+            <OutLink href="https://species.wikimedia.org">Wikispecies</OutLink>.
           </p>
           <p>תודה לאמיתי גלעד, רונית ורד ונתיב דודאי על הייעוץ.</p>
 

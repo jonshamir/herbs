@@ -3,7 +3,6 @@ import ReactMarkdown from "react-markdown";
 import { withRouter, Link } from "react-router-dom";
 import lang from "../../lang";
 
-import IconButton from "../../components/IconButton/IconButton";
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
 import HerbSummary from "../../components/HerbSummary/HerbSummary";
 import herbInfo from "../../data/herbInfo.json";
@@ -39,7 +38,7 @@ class HerbPage extends React.Component {
     if (title === "HerbIcon")
       return (
         <Link to={href} className="HerbLink">
-          <img src={`/images/icons/${href}.png`} />
+          <img src={`/images/icons/${href}.png`} alt={children} />
           {children}
         </Link>
       );
@@ -60,9 +59,10 @@ class HerbPage extends React.Component {
     return (
       <FadeInOut className="HerbPage">
         <main>
+          {/*
           <Link to="/" className="backIcon">
             <IconButton icon="arrow-right" label="חזרה לעץ" />
-          </Link>
+          </Link>*/}
           <HerbSummary herb={herb} slug={slug} family={family} />
           <div className="HerbContent">
             <div className="herbPhoto">

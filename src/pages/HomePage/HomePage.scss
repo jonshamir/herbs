@@ -1,11 +1,4 @@
 @use "src/utils" as *;
 
 .HomePage {
-  .Menu {
-    position: fixed;
-    .IconButton {
-      padding: 0.25em 1em;
-      margin-top: 0.5em;
-    }
-  }
 }

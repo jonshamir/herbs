@@ -1,8 +1,7 @@
 import React from "react";
-import { withRouter, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
-import IconButton from "../../components/IconButton/IconButton";
 
 import "./HomePage.scss";
 
@@ -18,19 +17,11 @@ class HomePage extends React.Component {
   }
 
   render() {
-    return (
-      <FadeInOut className="HomePage">
-        <div className="Menu">
-          <Link to="/intro">
-            <IconButton icon="help" label="מה זה?" />
-          </Link>
-          <Link to="/about">
-            <IconButton icon="about" label="אודות" />
-          </Link>
-        </div>
-      </FadeInOut>
-    );
+    if (this.props.shouldShowIntro) {
+      return <Redirect to="/intro" />;
+    }
+    return <FadeInOut className="HomePage"></FadeInOut>;
   }
 }
 
-export default withRouter(HomePage);
+export default HomePage;

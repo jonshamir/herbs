@@ -136,6 +136,7 @@ class HerbTree extends React.Component {
     const route = this.props.location.pathname;
     const routeParts = route.split("/");
     if (route === "/") {
+      this.setGraphSize();
       this.setState({ isMinimal: false, isHidden: false });
       this.setState({ isInteractive: true });
       unhighlightAll(this.state.initalLoaded);
@@ -146,12 +147,8 @@ class HerbTree extends React.Component {
         setTimeout(growTree, 500);
       }
     } else {
+      // herb routes
       this.setState({ isInteractive: false });
-      // this.containerRef.current.scrollTo({
-      //   top: 0,
-      //   left: 0,
-      //   behavior: "smooth",
-      // });
       if (routeParts[1] === "herb") {
         this.setState({
           isMinimal: true,
@@ -161,6 +158,7 @@ class HerbTree extends React.Component {
         const herbSlug = routeParts[2];
         highlightHerb(herbSlug);
       } else {
+        // other routes
         this.setState({
           isMinimal: false,
           isHidden: true,

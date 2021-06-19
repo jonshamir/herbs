@@ -1,0 +1,41 @@
+@use "src/utils" as *;
+
+nav.Menu {
+  position: fixed;
+  z-index: 1000;
+
+  &.logoOnly {
+    .IconButton {
+      display: none;
+    }
+
+    .LogoIcon {
+      opacity: 0.4;
+    }
+  }
+
+  .LogoIcon {
+    display: block;
+    width: 4.5em;
+    height: 4.5em;
+    margin: 1em;
+    padding: 0.5em;
+    box-sizing: border-box;
+    border-radius: 500px;
+    border: 2px solid rgba(0, 0, 0, 0);
+    cursor: pointer;
+    opacity: 0.6;
+    transition: background-color $transition-defaults,
+      opacity $transition-defaults;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.08);
+      opacity: 0.7;
+    }
+  }
+
+  .IconButton {
+    padding: 0.25em 1em;
+    margin-top: 0.5em;
+  }
+}

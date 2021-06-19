@@ -519,7 +519,7 @@ export const positionHighlightedHerb = () => {
     const moveX = width < 700 ? width - (70 + 80) : 550;
 
     x += moveX - 10 * Math.sin(herbRotation);
-    y += -550 + scrollTop - 25 * clamp01(-Math.cos(herbRotation));
+    y += -520 + scrollTop - 25 * clamp01(-Math.cos(herbRotation));
 
     svg
       .transition()

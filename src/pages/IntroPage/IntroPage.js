@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
@@ -10,6 +10,10 @@ import "./IntroPage.scss";
 
 const IntroPage = (props) => {
   const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    props.onMount();
+  });
 
   return (
     <FadeInOut className="IntroPage">
