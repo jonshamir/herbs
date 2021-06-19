@@ -26,7 +26,12 @@ class AboutPage extends React.Component {
             <OutLink href="https://species.wikimedia.org">Wikispecies</OutLink>.
           </p>
           <p>תודה לאמיתי גלעד, רונית ורד ונתיב דודאי על הייעוץ.</p>
-
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <br />
           <br />
           <br />
