@@ -13,8 +13,8 @@ const Menu = (props) => {
 
   return (
     <nav className={className}>
-      <Link to="/">
-        <img src="/images/ui/logo.svg" className="LogoIcon" alt="על טעם וריח" />
+      <Link to="/" className="LogoIcon">
+        <img src="/images/ui/logo.svg" alt="על טעם וריח" />
       </Link>
       <div className="IconButtonContainer">
         <Link to="/intro">
