@@ -3,13 +3,24 @@
 .HerbTree {
   width: 100vw;
   height: 100vh;
+  padding: 0;
+  margin: 0;
   overflow-y: scroll;
+  overflow-x: hidden;
   box-sizing: border-box;
   transition: transform 600ms ease-in, opacity $transition-defaults;
   position: fixed;
   direction: ltr;
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @media screen and (max-width: $tablet-width) {
+    overflow-x: scroll;
+
+    .treeContainer {
+      width: $tablet-width;
+    }
   }
 
   svg {
@@ -28,16 +39,14 @@
   direction: rtl;
   position: relative;
   transition: transform $transition-defaults;
+  width: 100%;
+  svg {
+    text-rendering: optimizeSpeed;
+    image-rendering: optimizeSpeed;
+    box-sizing: border-box;
+    width: 100%;
+  }
 }
-
-svg {
-  // shape-rendering: optimizeSpeed;
-  text-rendering: optimizeSpeed;
-  image-rendering: optimizeSpeed;
-  box-sizing: border-box;
-  width: 100vw;
-}
-
 .hidden {
   opacity: 0;
 }

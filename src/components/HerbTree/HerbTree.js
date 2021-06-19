@@ -18,6 +18,7 @@ import "./HerbTree.scss";
 
 const MIN_LOGO_OPACITY = 0.15;
 const DEBUG = false;
+const TABLET_WIDTH = 1000;
 
 class HerbTree extends React.Component {
   constructor(props) {
@@ -100,9 +101,11 @@ class HerbTree extends React.Component {
   }
 
   setGraphSize() {
-    const w = document.documentElement.clientWidth;
+    // const w = document.documentElement.clientWidth;
     // const h = document.documentElement.clientHeight;
-    updateGraphSize(w, 700);
+    const w = Math.max(document.documentElement.clientWidth, TABLET_WIDTH);
+    const h = 700;
+    updateGraphSize(w, h);
   }
 
   logPositions() {

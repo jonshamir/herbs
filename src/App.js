@@ -15,7 +15,7 @@ const App = () => {
   const location = useLocation();
 
   const [shouldShowIntro, setShouldShowIntro] = useState(
-    location.pathname === "/"
+    location.pathname === "/no"
   );
 
   const handleNodeClick = (node) => {

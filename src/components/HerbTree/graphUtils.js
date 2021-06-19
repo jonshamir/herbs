@@ -518,7 +518,11 @@ export const positionHighlightedHerb = () => {
 
     const moveX = width < 700 ? width - (70 + 80) : 550;
 
-    x += moveX - 10 * Math.sin(herbRotation);
+    const { scrollLeft, scrollWidth, offsetWidth } = containerEl.parentElement;
+    const maxScroll = scrollWidth - offsetWidth;
+    const scrollRight = maxScroll - scrollLeft;
+
+    x += moveX - 10 * Math.sin(herbRotation) - scrollRight;
     y += -520 + scrollTop - 25 * clamp01(-Math.cos(herbRotation));
 
     svg
@@ -552,11 +556,14 @@ export const unhighlightAll = (scaleImages) => {
 
 function handleMouseMove(event) {
   const { x, offsetY } = event;
-  mousePos = {
-    x: (x - width) / 2,
-    y: (offsetY - height) / 2,
-  };
-  simulation.alpha(0.2).restart();
+  const TABLET_WIDTH = 1000;
+  if (width * 2 > TABLET_WIDTH) {
+    mousePos = {
+      x: (x - width) / 2,
+      y: (offsetY - height) / 2,
+    };
+    simulation.alpha(0.2).restart();
+  }
 }
 
 const drag = (simulation) => {
