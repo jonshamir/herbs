@@ -14,14 +14,16 @@ const Menu = (props) => {
   return (
     <nav className={className}>
       <Link to="/">
-        <img src="images/ui/logo.svg" className="LogoIcon" alt="על טעם וריח" />
+        <img src="/images/ui/logo.svg" className="LogoIcon" alt="על טעם וריח" />
       </Link>
-      <Link to="/intro">
-        <IconButton icon="help" label="מה זה?" />
-      </Link>
-      <Link to="/about">
-        <IconButton icon="about" label="אודות" />
-      </Link>
+      <div className="IconButtonContainer">
+        <Link to="/intro">
+          <IconButton icon="help" label="מה זה?" />
+        </Link>
+        <Link to="/about">
+          <IconButton icon="about" label="אודות" />
+        </Link>
+      </div>
     </nav>
   );
 };

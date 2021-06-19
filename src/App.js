@@ -11,9 +11,12 @@ import Search from "./components/Search/Search";
 import Menu from "./components/Menu/Menu";
 
 const App = () => {
-  const [shouldShowIntro, setShouldShowIntro] = useState(true);
   const history = useHistory();
   const location = useLocation();
+
+  const [shouldShowIntro, setShouldShowIntro] = useState(
+    location.pathname === "/"
+  );
 
   const handleNodeClick = (node) => {
     history.push(`/herb/${node.slug}`);

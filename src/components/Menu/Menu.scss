@@ -3,10 +3,15 @@
 nav.Menu {
   position: fixed;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   &.logoOnly {
-    .IconButton {
-      display: none;
+    .IconButtonContainer {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .LogoIcon {
@@ -14,11 +19,21 @@ nav.Menu {
     }
   }
 
+  .IconButtonContainer {
+    opacity: 1;
+    transition: opacity $transition-defaults;
+
+    .IconButton {
+      padding: 0.25em 1em;
+      margin-top: 0.5em;
+    }
+  }
+
   .LogoIcon {
     display: block;
     width: 4.5em;
     height: 4.5em;
-    margin: 1em;
+    margin: 1em 1em 0.5em 1em;
     padding: 0.5em;
     box-sizing: border-box;
     border-radius: 500px;
@@ -32,10 +47,5 @@ nav.Menu {
       background-color: rgba(0, 0, 0, 0.08);
       opacity: 0.7;
     }
-  }
-
-  .IconButton {
-    padding: 0.25em 1em;
-    margin-top: 0.5em;
   }
 }
