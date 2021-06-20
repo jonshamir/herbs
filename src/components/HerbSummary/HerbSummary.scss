@@ -8,7 +8,6 @@
   width: 300px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   line-height: 1.3em;
   height: 100vh;
   margin-bottom: -100vh;
@@ -26,6 +25,7 @@
     font-style: italic;
     text-align: center;
     padding-bottom: 2em !important;
+    width: 300px;
   }
 
   .HerbIcon {
@@ -37,6 +37,8 @@
   }
 
   .InfoTable {
+    width: 300px;
+
     tr {
       animation: fadeIn 300ms ease-in;
       animation-fill-mode: both;
