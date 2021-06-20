@@ -4,7 +4,7 @@ import { Route, Switch, useLocation, useHistory } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import IntroPage from "./pages/IntroPage/IntroPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
-import RecipePage from "./pages/RecipePage/RecipePage";
+import AllRecipesPage from "./pages/AllRecipesPage/AllRecipesPage";
 import HerbPage from "./pages/HerbPage/HerbPage";
 import HerbTree from "./components/HerbTree/HerbTree";
 import Search from "./components/Search/Search";
@@ -39,7 +39,7 @@ const App = () => {
             <AboutPage />
           </Route>
           <Route exact path="/recipes">
-            <RecipePage />
+            <AllRecipesPage />
           </Route>
           <Route path="/herb/:slug">
             <HerbPage />

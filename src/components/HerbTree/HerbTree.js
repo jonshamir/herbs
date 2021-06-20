@@ -38,7 +38,7 @@ class HerbTree extends React.Component {
 
     this.positionHighlightedHerbDebounced = debounce(
       positionHighlightedHerb,
-      100
+      300
     );
   }
 
@@ -90,8 +90,8 @@ class HerbTree extends React.Component {
   }
 
   handleResize(e) {
-    this.positionHighlightedHerbDebounced();
     this.setGraphSize();
+    this.positionHighlightedHerbDebounced();
   }
 
   handleClick(event, node) {
@@ -158,10 +158,15 @@ class HerbTree extends React.Component {
     } else {
       // herb routes
       this.setState({ isInteractive: false });
-      if (routeParts[1] === "herb") {
+      if (
+        routeParts[1] === "herb" ||
+        routeParts[1] === "about" ||
+        routeParts[1] === "recipes"
+      ) {
         this.setState({
           isMinimal: true,
           isHidden: false,
+          isInteractive: false,
         });
         growTree(0);
         const herbSlug = routeParts[2];

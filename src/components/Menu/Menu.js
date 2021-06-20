@@ -7,7 +7,8 @@ import "./Menu.scss";
 
 const Menu = (props) => {
   let className = "Menu";
-  const logoOnly = props.history.location.pathname !== "/";
+  const routeParts = props.location.pathname.split("/");
+  const logoOnly = routeParts[1] === "herb";
 
   if (logoOnly) className += " logoOnly";
 
@@ -17,6 +18,9 @@ const Menu = (props) => {
         <img src="/images/ui/logo.svg" alt="על טעם וריח" />
       </Link>
       <div className="IconButtonContainer">
+        <Link to="/recipes">
+          <IconButton icon="recipes" label="מתכונים" />
+        </Link>
         <Link to="/intro">
           <IconButton icon="help" label="מה זה?" />
         </Link>

@@ -1,23 +1,6 @@
 @use "src/utils" as *;
 
 .AboutPage {
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-
-  main {
-    text-align: right;
-    max-width: 800px;
-    padding: 0 1.5em;
-
-    @media screen and (max-width: $tablet-width) {
-      padding-top: 5em;
-    }
-  }
-}
-
-p {
-  text-align: right;
 }
 
 .BezalelLogo {

@@ -13,13 +13,13 @@
   height: 100vh;
   margin-bottom: -100vh;
 
-  @media screen and (max-width: $tablet-width) {
+  @media screen and (max-width: $mobile-width) {
     background-image: linear-gradient(
       rgba($bg-color, 0),
       rgba($bg-color, 0),
       rgba($bg-color, 0.5)
     );
-    width: 100%;
+    width: 100vw;
   }
 
   .scientificName {
