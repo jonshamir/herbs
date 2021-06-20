@@ -1,5 +1,7 @@
 import React from "react";
 
+import recipeInfo from "../../data/recipeInfo.json";
+
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
 import RecipePreview from "../../components/RecipePreview/RecipePreview";
 
@@ -10,15 +12,9 @@ const AllRecipesPage = (props) => {
     <FadeInOut className="AllRecipesPage PageContainer">
       <main>
         <h1>מתכונים</h1>
-        <RecipePreview title="תערובת זעתר" slug="zaatar-spice" />
-        <RecipePreview title="עוגיות רוזמרין" slug="rosemary-cookies" />
-        <RecipePreview title="סלט פומלה תאילנדי" slug="yum-som-o" />
-        <RecipePreview
-          title="גלידת זעתר עם סירופ סומק ועוגיות שומשום"
-          slug="zaatar-ice-cream"
-        />
-        <RecipePreview title="סחוג" slug="zhoug" />
-        <RecipePreview title="לבבות ארטישוק בעלי דפנה" slug="bay-artichoke" />
+        {recipeInfo.map((recipe) => (
+          <RecipePreview key={recipe.slug} recipe={recipe} />
+        ))}
       </main>
     </FadeInOut>
   );

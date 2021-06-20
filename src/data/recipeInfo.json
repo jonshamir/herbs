@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "zaatar-spice",
+    "title": "תערובת זעתר",
+    "herbs": ["zaatar", "summer-savory", "thyme"]
+  },
+  {
+    "slug": "rosemary-cookies",
+    "title": "עוגיות רוזמרין",
+    "herbs": ["rosemary", "oregano"]
+  },
+  {
+    "slug": "yum-som-o",
+    "title": "סלט פומלה תאילנדי (יאם סום-או)",
+    "herbs": ["lemongrass", "kaffir-lime", "spearmint", "coriander"]
+  },
+  {
+    "slug": "zaatar-ice-cream",
+    "title": "גלידת זעתר עם סירופ סומק ועוגיות שומשום",
+    "herbs": ["zaatar"]
+  },
+  {
+    "slug": "zhug",
+    "title": "סחוג",
+    "herbs": ["coriander"]
+  },
+  {
+    "slug": "bay-artichoke",
+    "title": "לבבות ארטישוק בעלי דפנה",
+    "herbs": ["bay-leaf", "parsley"]
+  }
+]
