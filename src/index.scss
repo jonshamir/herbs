@@ -52,6 +52,11 @@ button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: rgba(#e2ddd2, 0.6);
 }
 
 input,
