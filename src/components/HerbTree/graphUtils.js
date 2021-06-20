@@ -515,6 +515,8 @@ export const highlightHerb = (slug) => {
   }
 };
 
+let positionHerbDuration = highlightDuration;
+
 export const positionHighlightedHerb = (duration = 0) => {
   const herbNode = document.getElementsByClassName(`highlighted`)[0];
   if (herbNode) {
@@ -537,9 +539,12 @@ export const positionHighlightedHerb = (duration = 0) => {
     x += moveX - 10 * Math.sin(herbRotation) - scrollRight;
     y += -520 + scrollTop - 25 * clamp01(-Math.cos(herbRotation));
 
+    const dist = Math.sqrt(Math.sqrt(x * x + y * y));
+    positionHerbDuration = dist * 35;
+
     svg
       .transition()
-      .duration(duration)
+      .duration(positionHerbDuration)
       .attr("style", `transform: translate(${x}px, ${y}px)`);
   }
 };
@@ -566,7 +571,7 @@ export const unhighlightAll = (scaleImages) => {
 
   svg
     .transition()
-    .duration(highlightDuration)
+    .duration(positionHerbDuration)
     .attr("style", "transform: translate(0px,0px)");
 };
 

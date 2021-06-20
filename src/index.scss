@@ -94,6 +94,8 @@ p {
 
 a {
   color: lighten($text-color, 35%);
+  // color: #1479b5;
+  font-weight: 600;
   &:hover {
     text-decoration: none;
   }

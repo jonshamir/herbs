@@ -27,7 +27,7 @@ class HerbPage extends React.Component {
 
     window.scrollTo(0, 0);
 
-    setTimeout(() => this.setState({ timerComplete: true }), 1000);
+    setTimeout(() => this.setState({ timerComplete: true }), 1100);
   }
 
   handleImageLoad(e) {
