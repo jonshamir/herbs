@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import IntroPage from "./pages/IntroPage/IntroPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import AllRecipesPage from "./pages/AllRecipesPage/AllRecipesPage";
+import RecipePage from "./pages/RecipePage/RecipePage";
 import HerbPage from "./pages/HerbPage/HerbPage";
 import HerbTree from "./components/HerbTree/HerbTree";
 import Search from "./components/Search/Search";
@@ -40,6 +41,9 @@ const App = () => {
           </Route>
           <Route exact path="/recipes">
             <AllRecipesPage />
+          </Route>
+          <Route exact path="/recipes/:slug">
+            <RecipePage />
           </Route>
           <Route path="/herb/:slug">
             <HerbPage />

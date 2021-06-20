@@ -1,11 +1,12 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import { withRouter, Link } from "react-router-dom";
-import lang from "../../lang";
+
+import recipeInfo from "../../data/recipeInfo.json";
 
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
 
-import "./HerbPage.scss";
+import "./RecipePage.scss";
 
 class RecipePage extends React.Component {
   constructor(props) {
@@ -28,10 +29,27 @@ class RecipePage extends React.Component {
   render() {
     const { slug } = this.props.match.params;
 
+    const recipe = recipeInfo.filter((recipe) => recipe.slug === slug)[0];
+    const { title, herbs } = recipe;
+
     return (
       <FadeInOut className="RecipePage PageContainer">
         <main>
-          <h1>זה פה מתכון</h1>
+          <h1>{title}</h1>
+          {herbs.map((herbSlug) => (
+            <img
+              className="HerbIcon"
+              src={`/images/icons/${herbSlug}.png`}
+              alt={herbSlug}
+              key={herbSlug}
+            />
+          ))}
+
+          <img
+            className="RecipePhoto"
+            src={`/images/recipes/${slug}.jpg`}
+            alt={title}
+          />
         </main>
       </FadeInOut>
     );

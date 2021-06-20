@@ -58,12 +58,22 @@ class HerbTree extends React.Component {
     );
 
     window.addEventListener("resize", (e) => this.handleResize(e));
+    this.scrollToBottom();
     setTimeout(() => {
       this.onRouteChanged();
       this.containerRef.current.addEventListener("scroll", (e) =>
         this.handleScroll(e)
       );
     }, 200);
+  }
+
+  scrollToBottom() {
+    const { scrollWidth, offsetWidth } = this.containerRef.current;
+    const maxScroll = scrollWidth - offsetWidth;
+    this.containerRef.current.scrollTo(
+      maxScroll / 2,
+      this.d3ref.current.scrollHeight
+    );
   }
 
   componentWillUnmount() {
@@ -146,42 +156,19 @@ class HerbTree extends React.Component {
       unhighlightAll(this.state.initalLoaded);
 
       if (!this.state.initalLoaded) {
-        const { scrollWidth, offsetWidth } = this.containerRef.current;
-        const maxScroll = scrollWidth - offsetWidth;
-
         this.setState({ initalLoaded: true });
-        this.containerRef.current.scrollTo(
-          maxScroll / 2,
-          this.d3ref.current.scrollHeight
-        );
         setTimeout(growTree, 500);
       }
     } else {
-      // herb routes
-      this.setState({ isInteractive: false });
-      if (
-        routeParts[1] === "herb" ||
-        routeParts[1] === "about" ||
-        routeParts[1] === "recipes"
-      ) {
-        this.setState({
-          isMinimal: true,
-          isHidden: false,
-          isInteractive: false,
-          initalLoaded: true,
-        });
-        growTree(0);
-
-        const herbSlug = routeParts[1] === "herb" ? routeParts[2] : false;
-        highlightHerb(herbSlug);
-      } else {
-        // other routes hide tree
-        this.setState({
-          isMinimal: true,
-          isHidden: true,
-          initalLoaded: true,
-        });
-      }
+      growTree(0);
+      this.setState({
+        isMinimal: true,
+        isHidden: false,
+        isInteractive: false,
+        initalLoaded: true,
+      });
+      const herbSlug = routeParts[1] === "herb" ? routeParts[2] : false;
+      highlightHerb(herbSlug);
     }
   }
 

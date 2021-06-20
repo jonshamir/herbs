@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./RecipePreview.scss";
 
 const RecipePreview = ({ recipe }) => {
   const { title, herbs, slug } = recipe;
   return (
-    <div className="RecipePreview">
+    <Link to={`/recipes/${slug}`} className="RecipePreview">
       <img
         className="RecipePhoto"
         src={`/images/recipes/${slug}.jpg`}
@@ -22,7 +23,7 @@ const RecipePreview = ({ recipe }) => {
         ))}
         <h2>{title}</h2>
       </div>
-    </div>
+    </Link>
   );
 };
 

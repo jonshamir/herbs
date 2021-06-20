@@ -1,4 +1,11 @@
 @use "src/utils" as *;
 
 .RecipePage {
+  .RecipePhoto {
+    width: 100%;
+  }
+
+  .HerbIcon {
+    width: 5em;
+  }
 }
