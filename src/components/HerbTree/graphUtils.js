@@ -529,16 +529,9 @@ export const positionHighlightedHerb = (duration = 0) => {
     let scrollRight = 0;
     if (width * 2 <= TABLET_WIDTH) {
       const scrollingContainer = containerEl.parentElement;
-      const {
-        scrollLeft,
-        scrollWidth,
-        offsetWidth,
-        scrollTop,
-      } = scrollingContainer;
-      const maxScroll = scrollWidth - offsetWidth;
+      const { scrollLeft, offsetWidth } = scrollingContainer;
+      const maxScroll = TABLET_WIDTH - offsetWidth;
       scrollRight = maxScroll - scrollLeft;
-
-      // scrollingContainer.scrollTo(0, scrollTop);
     }
 
     x += moveX - 10 * Math.sin(herbRotation) - scrollRight;
