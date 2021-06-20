@@ -198,7 +198,6 @@ export const drawTree = (ref, simulation, nodes, links) => {
         default:
           return 1;
       }
-      return (d.source.height + 1) / 2;
     })
     .attr("opacity", 0);
 
@@ -503,10 +502,11 @@ export const highlightHerb = (slug) => {
   for (let el of document.getElementsByClassName("highlighted")) {
     d3.select(el).classed("highlighted", false);
   }
-  const herbNode = document.getElementsByClassName(`node-${slug}`)[0];
-  d3.select(herbNode).raise().classed("highlighted", true);
-
-  positionHighlightedHerb();
+  if (slug) {
+    const herbNode = document.getElementsByClassName(`node-${slug}`)[0];
+    d3.select(herbNode).raise().classed("highlighted", true);
+    positionHighlightedHerb();
+  }
 };
 
 export const positionHighlightedHerb = () => {
