@@ -459,6 +459,7 @@ export const growTree = (growthTime = 550, callback = () => {}) => {
   if (growthTime > 0) {
     svg
       .selectAll("image")
+      .attr("opacity", 1)
       .transition()
       .delay((d) => d.depth * growthTime + 600 * Math.random() - 300)
       .duration(growthTime)
@@ -494,22 +495,27 @@ export const highlightHerb = (slug) => {
     .selectAll("image")
     .raise()
     .transition()
-    .duration(highlightDuration / 2)
-    .attr("transform", (d) =>
-      d.data.slug === slug ? "scale(2)" : "scale(0.01)"
-    );
+    .attr("opacity", (d) => (d.data.slug === slug ? 1 : 0));
 
   for (let el of document.getElementsByClassName("highlighted")) {
     d3.select(el).classed("highlighted", false);
   }
   if (slug) {
     const herbNode = document.getElementsByClassName(`node-${slug}`)[0];
-    d3.select(herbNode).raise().classed("highlighted", true);
-    positionHighlightedHerb();
+    d3.select(herbNode)
+      .raise()
+      .classed("highlighted", true)
+      .select("image")
+      .transition()
+      .duration(highlightDuration / 2)
+      .attr("transform", "scale(2)")
+      .attr("opacity", 1);
+
+    positionHighlightedHerb(highlightDuration);
   }
 };
 
-export const positionHighlightedHerb = () => {
+export const positionHighlightedHerb = (duration = 0) => {
   const herbNode = document.getElementsByClassName(`highlighted`)[0];
   if (herbNode) {
     const { scrollTop } = containerEl.parentElement;
@@ -521,14 +527,18 @@ export const positionHighlightedHerb = () => {
     const moveX = width < 700 ? width - (70 + 80) : 550;
 
     let scrollRight = 0;
-    if (width * 2 < TABLET_WIDTH) {
+    if (width * 2 <= TABLET_WIDTH) {
+      const scrollingContainer = containerEl.parentElement;
       const {
         scrollLeft,
         scrollWidth,
         offsetWidth,
-      } = containerEl.parentElement;
+        scrollTop,
+      } = scrollingContainer;
       const maxScroll = scrollWidth - offsetWidth;
       scrollRight = maxScroll - scrollLeft;
+
+      // scrollingContainer.scrollTo(0, scrollTop);
     }
 
     x += moveX - 10 * Math.sin(herbRotation) - scrollRight;
@@ -536,7 +546,7 @@ export const positionHighlightedHerb = () => {
 
     svg
       .transition()
-      .duration(highlightDuration)
+      .duration(duration)
       .attr("style", `transform: translate(${x}px, ${y}px)`);
   }
 };
@@ -545,10 +555,14 @@ export const unhighlightAll = (scaleImages) => {
   if (scaleImages) {
     svg
       .selectAll("image")
-      .lower()
       .transition()
       .duration(highlightDuration)
-      .attr("transform", "scale(1)");
+      .attr("transform", "scale(1)")
+      .attr("opacity", 1)
+      .end()
+      .then(() => {
+        svg.selectAll("image").lower();
+      });
   }
 
   for (let el of document.getElementsByClassName("highlighted")) {
