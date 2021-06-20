@@ -198,7 +198,6 @@ export const drawTree = (ref, simulation, nodes, links) => {
         default:
           return 1;
       }
-      return (d.source.height + 1) / 2;
     })
     .attr("opacity", 0);
 
