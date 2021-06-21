@@ -30,10 +30,6 @@ class HerbPage extends React.Component {
     setTimeout(() => this.setState({ timerComplete: true }), 1100);
   }
 
-  handleImageLoad(e) {
-    this.setState({ imageLoaded: true });
-  }
-
   renderLink({ href, children, title }) {
     if (title === "HerbIcon")
       return (
@@ -70,7 +66,7 @@ class HerbPage extends React.Component {
                 src={`/images/photos/${slug}.jpg`}
                 alt={herb.commonName[lang]}
                 className={imageLoaded && timerComplete ? "loaded" : ""}
-                onLoad={(e) => this.handleImageLoad(e)}
+                onLoad={(e) => this.setState({ imageLoaded: true })}
               />
             </div>
             <div className="mainText">

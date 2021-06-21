@@ -4,14 +4,14 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  padding: 1em;
   text-decoration: none;
   color: $text-color;
   display: block;
 
   &:hover {
+    &::before,
     .RecipePhoto {
-      opacity: 0.8;
+      opacity: 1;
     }
   }
 
@@ -23,18 +23,39 @@
     height: 4em;
   }
 
+  &::before,
   .RecipePhoto {
     position: absolute;
-    top: -110px;
+    top: 0;
     right: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
     opacity: 0;
     transition: opacity $transition-defaults;
+  }
+
+  &::before {
+    content: " ";
+    display: block;
+    height: 100%;
+    bottom: 0;
+    z-index: 11;
+    background-image: linear-gradient(
+      to left,
+      rgba(lighten($bg-color, 2%), 0.8),
+      rgba(lighten($bg-color, 2%), 0.6),
+      rgba(lighten($bg-color, 2%), 0),
+      rgba(lighten($bg-color, 2%), 0)
+    );
+  }
+
+  .RecipePhoto {
+    top: -110px;
+    z-index: 10;
   }
   .RecipeInfo {
     z-index: 100;
     position: relative;
+    padding: 1em;
   }
 }

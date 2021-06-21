@@ -11,7 +11,7 @@ import "./RecipePage.scss";
 class RecipePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { md: "loading..." };
+    this.state = { md: "loading...", imageLoaded: false, timerComplete: false };
   }
 
   async componentDidMount() {
@@ -24,10 +24,24 @@ class RecipePage extends React.Component {
     });
 
     window.scrollTo(0, 0);
+    setTimeout(() => this.setState({ timerComplete: true }), 500);
+  }
+
+  renderLink({ href, children, title }) {
+    if (title === "HerbIcon")
+      return (
+        <Link to={href} className="HerbLink">
+          <img src={`/images/icons/${href}.png`} alt={children} />
+          {children}
+        </Link>
+      );
+
+    return <Link to={href}>{children}</Link>;
   }
 
   render() {
     const { slug } = this.props.match.params;
+    const { imageLoaded, timerComplete } = this.state;
 
     const recipe = recipeInfo.filter((recipe) => recipe.slug === slug)[0];
     const { title, herbs } = recipe;
@@ -35,21 +49,23 @@ class RecipePage extends React.Component {
     return (
       <FadeInOut className="RecipePage PageContainer">
         <main>
-          <h1>{title}</h1>
-          {herbs.map((herbSlug) => (
+          <div className="RecipePhoto">
             <img
-              className="HerbIcon"
-              src={`/images/icons/${herbSlug}.png`}
-              alt={herbSlug}
-              key={herbSlug}
+              className={imageLoaded && timerComplete ? "loaded" : ""}
+              src={`/images/recipes/${slug}/main.jpg`}
+              alt={title}
+              onLoad={() => this.setState({ imageLoaded: true })}
             />
-          ))}
-
-          <img
-            className="RecipePhoto"
-            src={`/images/recipes/${slug}.jpg`}
-            alt={title}
-          />
+          </div>
+          <h1>{title}</h1>
+          <ReactMarkdown
+            components={{
+              a: this.renderLink,
+              // code: this.renderCustomComponent,
+            }}
+          >
+            {this.state.md}
+          </ReactMarkdown>
         </main>
       </FadeInOut>
     );

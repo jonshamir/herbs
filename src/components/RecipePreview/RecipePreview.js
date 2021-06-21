@@ -9,7 +9,7 @@ const RecipePreview = ({ recipe }) => {
     <Link to={`/recipes/${slug}`} className="RecipePreview">
       <img
         className="RecipePhoto"
-        src={`/images/recipes/${slug}.jpg`}
+        src={`/images/recipes/${slug}/cover.jpg`}
         alt={title}
       />
       <div className="RecipeInfo">

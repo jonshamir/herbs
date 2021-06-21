@@ -149,21 +149,28 @@ class HerbTree extends React.Component {
   onRouteChanged(prevLocation) {
     const route = this.props.location.pathname;
     const routeParts = route.split("/");
+    if (routeParts.slice(-1)[0] === "") routeParts.pop();
+
     if (route === "/") {
       this.setGraphSize();
-      this.setState({ isMinimal: false, isHidden: false });
-      this.setState({ isInteractive: true });
-      unhighlightAll(this.state.initalLoaded);
+      this.setState({ isHidden: false, isInteractive: true });
 
       if (!this.state.initalLoaded) {
         this.setState({ initalLoaded: true });
         setTimeout(growTree, 500);
+      } else {
+        setTimeout(() => {
+          this.setState({
+            isMinimal: false,
+          });
+          unhighlightAll(this.state.initalLoaded);
+        }, 350);
       }
     } else {
       growTree(0, false);
       this.setState({
         isMinimal: true,
-        isHidden: false,
+        isHidden: routeParts[1] === "recipes" && routeParts.length > 2,
         isInteractive: false,
         initalLoaded: true,
       });

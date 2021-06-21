@@ -1,8 +1,13 @@
 [
   {
-    "slug": "zaatar-spice",
+    "slug": "zaatar-mix",
     "title": "תערובת זעתר",
     "herbs": ["zaatar", "summer-savory", "thyme"]
+  },
+  {
+    "slug": "bay-artichoke",
+    "title": "ארטישוק בעלי דפנה",
+    "herbs": ["bay-leaf", "parsley"]
   },
   {
     "slug": "rosemary-cookies",
@@ -23,10 +28,5 @@
     "slug": "zhug",
     "title": "סחוג",
     "herbs": ["coriander"]
-  },
-  {
-    "slug": "bay-artichoke",
-    "title": "לבבות ארטישוק בעלי דפנה",
-    "herbs": ["bay-leaf", "parsley"]
   }
 ]

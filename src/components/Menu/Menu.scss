@@ -8,6 +8,21 @@ nav.Menu {
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: $tablet-width) {
+    flex-direction: row;
+    .IconButtonContainer {
+      flex-direction: row !important;
+
+      .IconButton {
+        transform: rotate(-45deg);
+
+        img {
+          transform: rotate(45deg);
+        }
+      }
+    }
+  }
+
   &.logoOnly {
     .IconButtonContainer {
       opacity: 0;
@@ -22,6 +37,11 @@ nav.Menu {
   .IconButtonContainer {
     opacity: 1;
     transition: opacity $transition-defaults;
+    display: flex;
+    flex-direction: column;
+    a {
+      display: block;
+    }
 
     .IconButton {
       padding: 0.25em 1em;
