@@ -52,6 +52,7 @@
 }
 
 .minimal {
+  overflow-y: hidden;
   .textGroup {
     opacity: 0;
     transition-delay: 0s;
