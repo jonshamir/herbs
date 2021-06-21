@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Image from "../Image/Image";
 
 import "./RecipePreview.scss";
 
@@ -7,9 +8,9 @@ const RecipePreview = ({ recipe }) => {
   const { title, herbs, slug } = recipe;
   return (
     <Link to={`/recipes/${slug}`} className="RecipePreview">
-      <img
+      <Image
         className="RecipePhoto"
-        src={`/images/recipes/${slug}/cover.jpg`}
+        src={`/images/recipes/${slug}/main.jpg`}
         alt={title}
       />
       <div className="RecipeInfo">
@@ -22,6 +23,7 @@ const RecipePreview = ({ recipe }) => {
           />
         ))}
         <h2>{title}</h2>
+        <p>זמן הכנה | קל | קינוח</p>
       </div>
     </Link>
   );

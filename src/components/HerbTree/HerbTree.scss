@@ -59,15 +59,9 @@
   }
   .node {
     &.leaf:not(.highlighted) {
-      stroke: $bg-color;
-      fill: #ddd !important;
-      fill-opacity: 1 !important;
-      stroke-width: 8px;
-      transition: fill-opacity $transition-defaults;
-
-      circle {
-        transform-origin: 0 0;
-        transform: scale(0.18);
+      .minimalLeaf {
+        fill-opacity: 1;
+        stroke-opacity: 1;
       }
     }
 
@@ -86,9 +80,8 @@
 .inactive {
   .node:not(.active) {
     &.leaf {
-      fill-opacity: 0.9 !important;
-
-      circle {
+      .imageOverlay {
+        fill-opacity: 0.9 !important;
         transform: scale(1);
       }
     }
@@ -110,9 +103,18 @@
     cursor: pointer;
 
     &.leaf {
-      fill: $bg-color;
-      fill-opacity: 0;
-      transition: fill-opacity $transition-defaults;
+      .imageOverlay {
+        fill: $bg-color;
+        fill-opacity: 0;
+        transition: fill-opacity $transition-defaults;
+      }
+      .minimalLeaf {
+        stroke: $bg-color;
+        fill: #ddd;
+        stroke-width: 1.5px;
+        fill-opacity: 0;
+        stroke-opacity: 0;
+      }
 
       image {
         transform-origin: 0 10px;

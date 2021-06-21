@@ -1,0 +1,36 @@
+@use "src/utils" as *;
+
+@keyframes loading {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 0.25;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  &::before {
+    background-color: #000000;
+    animation: loading 800ms infinite alternate ease-in-out;
+  }
+  width: 100%;
+  overflow: hidden;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  opacity: 0;
+  transition: opacity 500ms;
+
+  &.loaded {
+    opacity: 1;
+  }
+}

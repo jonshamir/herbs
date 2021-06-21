@@ -112,8 +112,6 @@ class HerbTree extends React.Component {
   }
 
   setGraphSize() {
-    // const w = document.documentElement.clientWidth;
-    // const h = document.documentElement.clientHeight;
     const w = Math.max(document.documentElement.clientWidth, TABLET_WIDTH);
     const h = 700;
     updateGraphSize(w, h);
@@ -168,9 +166,11 @@ class HerbTree extends React.Component {
       }
     } else {
       growTree(0, false);
+      // unhighlightAll(this.state.initalLoaded); TODO add?
+
       this.setState({
         isMinimal: true,
-        isHidden: routeParts[1] === "recipes" && routeParts.length > 2,
+        isHidden: routeParts[1] === "recipes",
         isInteractive: false,
         initalLoaded: true,
       });

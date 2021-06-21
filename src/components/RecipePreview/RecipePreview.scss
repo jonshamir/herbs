@@ -6,56 +6,35 @@
   overflow: hidden;
   text-decoration: none;
   color: $text-color;
-  display: block;
+  display: inline-block;
+  padding: 1em;
+  width: 50%;
+  box-sizing: border-box;
+  vertical-align: text-top;
 
-  &:hover {
-    &::before,
-    .RecipePhoto {
-      opacity: 1;
-    }
-  }
-
-  h2 {
+  h2,
+  p {
     margin: 0;
   }
+
   .HerbIcon {
-    width: 4em;
-    height: 4em;
+    width: 3em;
+    height: 3em;
   }
 
-  &::before,
   .RecipePhoto {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
     width: 100%;
-    opacity: 0;
-    transition: opacity $transition-defaults;
-  }
-
-  &::before {
-    content: " ";
-    display: block;
-    height: 100%;
-    bottom: 0;
-    z-index: 11;
-    background-image: linear-gradient(
-      to left,
-      rgba(lighten($bg-color, 2%), 0.8),
-      rgba(lighten($bg-color, 2%), 0.6),
-      rgba(lighten($bg-color, 2%), 0),
-      rgba(lighten($bg-color, 2%), 0)
-    );
-  }
-
-  .RecipePhoto {
-    top: -110px;
+    height: 15em;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
     z-index: 10;
   }
   .RecipeInfo {
     z-index: 100;
     position: relative;
     padding: 1em;
+    padding-top: 0.2em;
   }
 }

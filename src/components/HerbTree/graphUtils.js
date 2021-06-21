@@ -247,7 +247,15 @@ export const drawTree = (ref, simulation, nodes, links) => {
   node
     .filter((d) => !d.children)
     .append("circle")
+    .attr("class", "imageOverlay")
     .attr("r", collisionRadius + 4);
+
+  // Minimal leaf nodes
+  node
+    .filter((d) => !d.children)
+    .append("circle")
+    .attr("class", "minimalLeaf")
+    .attr("r", 3);
 
   // Mouse hover effect
   svg.on("mousemove", handleMouseMove);
