@@ -160,7 +160,7 @@ class HerbTree extends React.Component {
         setTimeout(growTree, 500);
       }
     } else {
-      growTree(0);
+      growTree(0, false);
       this.setState({
         isMinimal: true,
         isHidden: false,

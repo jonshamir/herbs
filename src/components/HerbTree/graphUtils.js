@@ -423,7 +423,9 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
   if (allowDrag) node.filter((d) => d.depth > 0).call(drag(simulation));
 };
 
-export const growTree = (growthTime = 550, callback = () => {}) => {
+export const growTree = (growthTime = 550, growImages = true) => {
+  svg.attr("opacity", 1);
+
   link
     .attr("opacity", 1)
     .attr("stroke-dasharray", (d) => linkLength(d) + " " + linkLength(d))
@@ -444,8 +446,8 @@ export const growTree = (growthTime = 550, callback = () => {}) => {
     .delay((d) => d.depth * growthTime - 100)
     .duration(growthTime)
     .attr("transform", "")
-    .end()
-    .then(callback);
+    .end();
+  // .then(callback);
 
   svg
     .selectAll("text")
@@ -453,10 +455,16 @@ export const growTree = (growthTime = 550, callback = () => {}) => {
     .delay((d) => d.depth * growthTime + 500)
     .duration(growthTime)
     .attr("opacity", 1)
-    .end()
-    .then(callback);
+    .end();
 
-  if (growthTime > 0) {
+  svg
+    .selectAll(".leaf circle")
+    .transition()
+    .delay((d) => d.depth * growthTime + 600 * Math.random() - 300)
+    .duration(growthTime)
+    .attr("opacity", 1);
+
+  if (growImages) {
     svg
       .selectAll("image")
       .attr("opacity", 1)
@@ -465,6 +473,29 @@ export const growTree = (growthTime = 550, callback = () => {}) => {
       .duration(growthTime)
       .attr("transform", "scale(1)");
   }
+};
+
+export const unGrowTree = (duration = 300) => {
+  // Hide all
+  svg
+    .transition()
+    .duration(duration)
+    .attr("opacity", 0)
+    .end()
+    .then(() => {
+      scrollContainerToBottom();
+      //Ungrow
+      svg.selectAll(".moreInfo circle").attr("transform", "scale(0.01)");
+      svg.selectAll(".leaf circle").attr("opacity", 0);
+    });
+};
+
+const scrollContainerToBottom = () => {
+  const scrollingContainer = containerEl.parentElement;
+
+  const { scrollWidth, offsetWidth } = scrollingContainer;
+  const maxScroll = scrollWidth - offsetWidth;
+  scrollingContainer.scrollTo(maxScroll / 2, containerEl.scrollHeight);
 };
 
 const setSubtreeActive = (root, isActive) => {

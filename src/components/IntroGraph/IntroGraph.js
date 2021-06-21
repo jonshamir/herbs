@@ -8,6 +8,7 @@ import {
   growTree,
   fadeOut,
 } from "./introGraphUtils";
+import * as GraphUtils from "../HerbTree/graphUtils";
 
 import "./IntroGraph.scss";
 
@@ -47,10 +48,14 @@ class IntroGraph extends React.Component {
   updateGraph(page) {
     switch (page) {
       case 1:
+        GraphUtils.unGrowTree();
         showProtoPlant();
         break;
       case 2:
-        moveProtoPlant().then(growTree);
+        moveProtoPlant().then(() => {
+          growTree();
+          GraphUtils.growTree(550, false);
+        });
         break;
       case 3:
         fadeOut();
