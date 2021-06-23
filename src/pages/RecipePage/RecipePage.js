@@ -39,6 +39,13 @@ class RecipePage extends React.Component {
     return <Link to={href}>{children}</Link>;
   }
 
+  renderImage({ src, alt }) {
+    const { slug } = this.props.match.params;
+    return (
+      <img src={`/images/recipes/${slug}/${src}`} alt={alt} className={alt} />
+    );
+  }
+
   render() {
     const { slug } = this.props.match.params;
     const { imageLoaded, timerComplete } = this.state;
@@ -61,6 +68,7 @@ class RecipePage extends React.Component {
           <ReactMarkdown
             components={{
               a: this.renderLink,
+              img: (props) => this.renderImage(props),
               // code: this.renderCustomComponent,
             }}
           >

@@ -16,7 +16,7 @@ import { clamp } from "../../utils/math";
 
 import "./HerbTree.scss";
 
-const MIN_LOGO_OPACITY = 0.15;
+const MIN_LOGO_OPACITY = 0;
 const DEBUG = false;
 const TABLET_WIDTH = 1000;
 
@@ -182,7 +182,6 @@ class HerbTree extends React.Component {
   getLogoOpacity() {
     const { isMinimal, isHidden, isSubtreeActive, logoOpacity } = this.state;
     if (isMinimal || isHidden) return 0;
-    if (isSubtreeActive) return 0.05;
     return logoOpacity;
   }
 

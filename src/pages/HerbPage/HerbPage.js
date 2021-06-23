@@ -7,6 +7,7 @@ import FadeInOut from "../../components/FadeInOut/FadeInOut";
 import HerbSummary from "../../components/HerbSummary/HerbSummary";
 import herbInfo from "../../data/herbInfo.json";
 import familyInfo from "../../data/familyInfo.json";
+import recipeInfo from "../../data/recipeInfo.json";
 
 import "./HerbPage.scss";
 
@@ -40,6 +41,28 @@ class HerbPage extends React.Component {
       );
 
     return <Link to={href}>{children}</Link>;
+  }
+
+  renderRecipes() {
+    const { slug } = this.props.match.params;
+    const recipes = recipeInfo.filter((recipe) => recipe.herbs.includes(slug));
+
+    if (recipes.length > 0) {
+      return (
+        <>
+          <h2>מתכונים</h2>
+          {recipes.map((recipe) => (
+            <Link
+              to={`/recipes/${recipe.slug}`}
+              className="recipeLink"
+              key={recipe.slug}
+            >
+              {recipe.title + " >"}
+            </Link>
+          ))}
+        </>
+      );
+    }
   }
 
   render() {
@@ -81,6 +104,7 @@ class HerbPage extends React.Component {
               </ReactMarkdown>
               <h2>משפחת ה{family.name[lang]}</h2>
               <p>{family.description[lang]}</p>
+              {this.renderRecipes()}
             </div>
           </div>
         </main>
