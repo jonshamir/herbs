@@ -68,34 +68,8 @@
     animation-fill-mode: both;
   }
 
-  .recipeLink {
+  .RecipeLink {
     display: block;
     margin: 1em 0;
-  }
-
-  .HerbLink {
-    width: 5em;
-    height: 7em;
-    display: inline-flex;
-    flex-direction: column;
-    text-decoration: none;
-    text-align: center;
-    transition: color $transition-defaults;
-    font-weight: 600;
-    font-weight: normal;
-
-    img {
-      width: 5em;
-      height: 5em;
-      transition: transform $transition-defaults;
-    }
-
-    &:hover {
-      color: $text-color;
-      font-weight: bold;
-      img {
-        transform: rotate(-15deg);
-      }
-    }
   }
 }

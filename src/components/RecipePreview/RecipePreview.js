@@ -14,12 +14,12 @@ const RecipePreview = ({ recipe }) => {
         alt={title}
       />
       <div className="RecipeInfo">
-        {herbs.map((herbSlug) => (
+        {herbs.map((herb) => (
           <img
             className="HerbIcon"
-            src={`/images/icons/${herbSlug}.png`}
-            alt={herbSlug}
-            key={herbSlug}
+            src={`/images/icons/${herb.slug}.png`}
+            alt={herb.slug}
+            key={herb.slug}
           />
         ))}
         <h2>{title}</h2>

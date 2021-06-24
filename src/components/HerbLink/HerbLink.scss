@@ -1,0 +1,65 @@
+@use "src/utils" as *;
+
+.HerbLink {
+  width: 4.5em;
+  height: 7em;
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+  text-align: center;
+  transition: color $transition-defaults;
+  font-weight: 600;
+  font-weight: normal;
+  color: $text-color;
+
+  img {
+    width: 4.5em;
+    height: 4.5em;
+    transition: transform $transition-defaults;
+  }
+
+  &:hover {
+    font-weight: bold;
+    img {
+      transform: rotate(-15deg);
+    }
+  }
+}
+
+.InlineHerbLink {
+  position: relative;
+  display: inline-block;
+
+  .linkText {
+    position: relative;
+    z-index: 100;
+    opacity: 1;
+  }
+  .herbSmallIcon {
+    @include bg-noise;
+    z-index: 10;
+    border-radius: 500px;
+    overflow: hidden;
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -2em);
+    opacity: 0;
+    transition: transform $transition-defaults, opacity $transition-defaults;
+    pointer-events: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &:hover {
+    .herbSmallIcon {
+      transform: translate(-50%, -3em);
+      opacity: 1;
+    }
+  }
+}

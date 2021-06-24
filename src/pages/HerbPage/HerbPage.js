@@ -5,6 +5,7 @@ import lang from "../../lang";
 
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
 import HerbSummary from "../../components/HerbSummary/HerbSummary";
+import HerbLink from "../../components/HerbLink/HerbLink";
 import herbInfo from "../../data/herbInfo.json";
 import familyInfo from "../../data/familyInfo.json";
 import recipeInfo from "../../data/recipeInfo.json";
@@ -32,29 +33,32 @@ class HerbPage extends React.Component {
   }
 
   renderLink({ href, children, title }) {
-    if (title === "HerbIcon")
-      return (
-        <Link to={href} className="HerbLink">
-          <img src={`/images/icons/${href}.png`} alt={children} />
-          {children}
-        </Link>
-      );
+    if (title === "HerbIcon") return <HerbLink slug={href} title={children} />;
+    const hrefParts = href.split("/");
+    if (hrefParts.length < 2) {
+      console.log(href);
+      return <HerbLink slug={href} title={children} inline />;
+    }
 
     return <Link to={href}>{children}</Link>;
   }
 
   renderRecipes() {
     const { slug } = this.props.match.params;
-    const recipes = recipeInfo.filter((recipe) => recipe.herbs.includes(slug));
+    const recipes = recipeInfo.filter((recipe) =>
+      recipe.herbs.map((h) => h.slug).includes(slug)
+    );
+
+    const title = recipes.length > 1 ? "מתכונים" : "מתכון";
 
     if (recipes.length > 0) {
       return (
         <>
-          <h2>מתכונים</h2>
+          <h2>{title}</h2>
           {recipes.map((recipe) => (
             <Link
               to={`/recipes/${recipe.slug}`}
-              className="recipeLink"
+              className="RecipeLink"
               key={recipe.slug}
             >
               {recipe.title + " >"}

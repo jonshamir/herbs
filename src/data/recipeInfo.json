@@ -1,43 +1,61 @@
 [
   {
     "slug": "zaatar-mix",
+    "author": "טורקיה ויונתן",
     "title": "תערובת זעתר",
-    "herbs": ["zaatar", "summer-savory", "thyme"],
+    "herbs": [
+      { "slug": "zaatar", "title": "אזוב מצוי" },
+      { "slug": "summer-savory", "title": "צתרה" },
+      { "slug": "thyme", "title": "קורנית" }
+    ],
     "time": "10 דקות",
     "difficulty": "קל"
   },
   {
+    "slug": "zaatar-ice-cream",
+    "author": "טורקיה ויונתן",
+    "title": "גלידת זעתר",
+    "herbs": [{ "slug": "zaatar", "title": "אזוב מצוי" }],
+    "time": "6 שעות",
+    "difficulty": "מורכב"
+  },
+  {
     "slug": "bay-artichoke",
+    "author": "יונתן",
     "title": "ארטישוק בעלי דפנה",
-    "herbs": ["bay-leaf", "parsley"],
+    "herbs": [{ "slug": "bay-leaf", "title": "עלה דפנה" }],
     "time": "שעה",
     "difficulty": "קל"
   },
   {
     "slug": "rosemary-cookies",
+    "author": "יונתן",
     "title": "עוגיות רוזמרין",
-    "herbs": ["rosemary", "oregano"],
+    "herbs": [
+      { "slug": "rosemary", "title": "רוזמרין" },
+      { "slug": "oregano", "title": "אורגנו" }
+    ],
     "time": "4 שעות",
     "difficulty": "בינוני"
   },
   {
-    "slug": "zaatar-ice-cream",
-    "title": "גלידת זעתר",
-    "herbs": ["zaatar"],
-    "time": "6 שעות",
-    "difficulty": "מורכב"
-  },
-  {
     "slug": "yum-som-o",
-    "title": "סלט פומלה תאילנדי (יאם סום-או)",
-    "herbs": ["lemongrass", "kaffir-lime", "spearmint", "coriander"],
+    "author": "יונתן",
+    "title": "סלט פומלה תאילנדי",
+    "herbs": [
+      { "slug": "lemongrass", "title": "למון גראס" },
+      { "slug": "kaffir-lime", "title": "עלי ליים" },
+      { "slug": "spearmint", "title": "נענע" },
+      { "slug": "coriander", "title": "כוסברה" }
+    ],
     "time": "שעתיים",
     "difficulty": "בינוני"
   },
   {
     "slug": "zhug",
+    "author": "יונתן",
     "title": "סחוג",
-    "herbs": ["coriander"],
+    "herbs": [{ "slug": "coriander", "title": "כוסברה" }],
     "time": "30 דקות",
     "difficulty": "קל"
   }

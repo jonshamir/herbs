@@ -5,6 +5,7 @@ import { withRouter, Link } from "react-router-dom";
 import recipeInfo from "../../data/recipeInfo.json";
 
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
+import HerbLink from "../../components/HerbLink/HerbLink";
 
 import "./RecipePage.scss";
 
@@ -28,13 +29,11 @@ class RecipePage extends React.Component {
   }
 
   renderLink({ href, children, title }) {
-    if (title === "HerbIcon")
-      return (
-        <Link to={href} className="HerbLink">
-          <img src={`/images/icons/${href}.png`} alt={children} />
-          {children}
-        </Link>
-      );
+    const hrefParts = href.split("/");
+    if (hrefParts[1] === "herb") {
+      const slug = hrefParts[2];
+      return <HerbLink slug={slug} title={children} inline />;
+    }
 
     return <Link to={href}>{children}</Link>;
   }
@@ -51,7 +50,7 @@ class RecipePage extends React.Component {
     const { imageLoaded, timerComplete } = this.state;
 
     const recipe = recipeInfo.filter((recipe) => recipe.slug === slug)[0];
-    const { title, herbs } = recipe;
+    const { title, herbs, time, difficulty, author } = recipe;
 
     return (
       <FadeInOut className="RecipePage PageContainer">
@@ -64,7 +63,15 @@ class RecipePage extends React.Component {
               onLoad={() => this.setState({ imageLoaded: true })}
             />
           </div>
+          <div className="RecipeHerbs">
+            {herbs.map((herb) => (
+              <HerbLink slug={herb.slug} title={herb.title} />
+            ))}
+          </div>
           <h1>{title}</h1>
+          <p className="RecipeMetadata">
+            מאת {author} | {time} | {difficulty}
+          </p>
           <ReactMarkdown
             components={{
               a: this.renderLink,
