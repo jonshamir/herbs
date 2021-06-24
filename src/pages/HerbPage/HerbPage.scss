@@ -52,6 +52,11 @@
     @include bg-noise;
     overflow: hidden;
 
+    @media screen and (max-width: $tablet-width) {
+      position: relative;
+      right: 0;
+    }
+
     img {
       width: 100%;
       mix-blend-mode: multiply;

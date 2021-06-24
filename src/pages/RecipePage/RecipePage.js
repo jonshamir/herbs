@@ -54,18 +54,19 @@ class RecipePage extends React.Component {
 
     return (
       <FadeInOut className="RecipePage PageContainer">
+        <div className="RecipePhoto">
+          <img
+            className={imageLoaded && timerComplete ? "loaded" : ""}
+            src={`/images/recipes/${slug}/main.jpg`}
+            alt={title}
+            onLoad={() => this.setState({ imageLoaded: true })}
+          />
+        </div>
+
         <main>
-          <div className="RecipePhoto">
-            <img
-              className={imageLoaded && timerComplete ? "loaded" : ""}
-              src={`/images/recipes/${slug}/main.jpg`}
-              alt={title}
-              onLoad={() => this.setState({ imageLoaded: true })}
-            />
-          </div>
           <div className="RecipeHerbs">
             {herbs.map((herb) => (
-              <HerbLink slug={herb.slug} title={herb.title} />
+              <HerbLink slug={herb.slug} title={herb.title} key={herb.slug} />
             ))}
           </div>
           <h1>{title}</h1>

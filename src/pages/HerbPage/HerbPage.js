@@ -88,14 +88,6 @@ class HerbPage extends React.Component {
           </Link>*/}
           <HerbSummary herb={herb} slug={slug} family={family} />
           <div className="HerbContent">
-            <div className="herbPhoto">
-              <img
-                src={`/images/photos/${slug}.jpg`}
-                alt={herb.commonName[lang]}
-                className={imageLoaded && timerComplete ? "loaded" : ""}
-                onLoad={(e) => this.setState({ imageLoaded: true })}
-              />
-            </div>
             <div className="mainText">
               <h1>{herb.commonName[lang]}</h1>
               <ReactMarkdown
@@ -110,6 +102,14 @@ class HerbPage extends React.Component {
               <p>{family.description[lang]}</p>
               {this.renderRecipes()}
             </div>
+          </div>
+          <div className="herbPhoto">
+            <img
+              src={`/images/photos/${slug}.jpg`}
+              alt={herb.commonName[lang]}
+              className={imageLoaded && timerComplete ? "loaded" : ""}
+              onLoad={(e) => this.setState({ imageLoaded: true })}
+            />
           </div>
         </main>
       </FadeInOut>
