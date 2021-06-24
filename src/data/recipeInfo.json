@@ -2,31 +2,43 @@
   {
     "slug": "zaatar-mix",
     "title": "תערובת זעתר",
-    "herbs": ["zaatar", "summer-savory", "thyme"]
+    "herbs": ["zaatar", "summer-savory", "thyme"],
+    "time": "10 דקות",
+    "difficulty": "קל"
   },
   {
     "slug": "bay-artichoke",
     "title": "ארטישוק בעלי דפנה",
-    "herbs": ["bay-leaf", "parsley"]
+    "herbs": ["bay-leaf", "parsley"],
+    "time": "שעה",
+    "difficulty": "קל"
   },
   {
     "slug": "rosemary-cookies",
     "title": "עוגיות רוזמרין",
-    "herbs": ["rosemary", "oregano"]
+    "herbs": ["rosemary", "oregano"],
+    "time": "4 שעות",
+    "difficulty": "בינוני"
+  },
+  {
+    "slug": "zaatar-ice-cream",
+    "title": "גלידת זעתר",
+    "herbs": ["zaatar"],
+    "time": "6 שעות",
+    "difficulty": "מורכב"
   },
   {
     "slug": "yum-som-o",
     "title": "סלט פומלה תאילנדי (יאם סום-או)",
-    "herbs": ["lemongrass", "kaffir-lime", "spearmint", "coriander"]
-  },
-  {
-    "slug": "zaatar-ice-cream",
-    "title": "גלידת זעתר עם סירופ סומק ועוגיות שומשום",
-    "herbs": ["zaatar"]
+    "herbs": ["lemongrass", "kaffir-lime", "spearmint", "coriander"],
+    "time": "שעתיים",
+    "difficulty": "בינוני"
   },
   {
     "slug": "zhug",
     "title": "סחוג",
-    "herbs": ["coriander"]
+    "herbs": ["coriander"],
+    "time": "30 דקות",
+    "difficulty": "קל"
   }
 ]

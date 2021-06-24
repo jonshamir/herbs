@@ -5,12 +5,12 @@ import Image from "../Image/Image";
 import "./RecipePreview.scss";
 
 const RecipePreview = ({ recipe }) => {
-  const { title, herbs, slug } = recipe;
+  const { title, herbs, slug, time, difficulty } = recipe;
   return (
     <Link to={`/recipes/${slug}`} className="RecipePreview">
       <Image
         className="RecipePhoto"
-        src={`/images/recipes/${slug}/main.jpg`}
+        src={`/images/recipes/${slug}/cover.jpg`}
         alt={title}
       />
       <div className="RecipeInfo">
@@ -23,7 +23,9 @@ const RecipePreview = ({ recipe }) => {
           />
         ))}
         <h2>{title}</h2>
-        <p>זמן הכנה | קל | קינוח</p>
+        <p>
+          {time} | {difficulty}
+        </p>
       </div>
     </Link>
   );
