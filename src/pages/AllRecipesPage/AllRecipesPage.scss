@@ -4,4 +4,11 @@
   h1 {
     text-align: center;
   }
+  @media screen and (max-width: $mobile-width) {
+    .RecipePreview {
+      width: 100%;
+      padding: 0;
+      padding-bottom: 1em;
+    }
+  }
 }

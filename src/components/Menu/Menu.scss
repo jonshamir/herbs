@@ -2,7 +2,7 @@
 
 nav.Menu {
   position: fixed;
-  z-index: 1000;
+  z-index: 90;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,11 +10,14 @@ nav.Menu {
 
   @media screen and (max-width: $tablet-width) {
     flex-direction: row;
+    align-items: end;
+
     .IconButtonContainer {
       flex-direction: row !important;
 
       .IconButton {
         transform: rotate(-45deg);
+        padding: 0.5em !important;
 
         img {
           transform: rotate(45deg);

@@ -22,7 +22,7 @@ const App = () => {
   const location = useLocation();
 
   const [shouldShowIntro, setShouldShowIntro] = useState(
-    location.pathname === "/no"
+    location.pathname === "/"
   );
 
   const handleNodeClick = (node) => {

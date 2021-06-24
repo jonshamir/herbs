@@ -2,6 +2,12 @@
 
 .IntroPage {
   text-align: center;
+
+  @media screen and (max-width: $mobile-width) {
+    h1 {
+      font-size: 5em !important;
+    }
+  }
   h1 {
     font-size: 7em;
     margin-bottom: 0;
