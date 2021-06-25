@@ -17,7 +17,7 @@ class RecipePage extends React.Component {
 
   async componentDidMount() {
     const { slug } = this.props.match.params;
-    const response = await fetch(`/recipes/${slug}.md`);
+    const response = await fetch(`/recipe-pages/${slug}.md`);
     const text = await response.text();
 
     this.setState({

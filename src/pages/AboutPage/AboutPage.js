@@ -26,7 +26,7 @@ const AboutPage = (props) => {
         <p>תודה לטורקיה על הייעוץ, המתכונים והבישולים המשותפים</p>
         <p>
           מידע על הסיווג המדעי של הצמחים מ-
-          <OutLink href="https://species.wikimedia.org">Wikispecies</OutLink>.
+          <OutLink href="https://species.wikimedia.org">Wikispecies</OutLink>
         </p>
         <p>תודה לשי על התמיכה והעזרה בהכל</p>
 

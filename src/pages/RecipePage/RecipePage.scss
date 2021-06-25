@@ -4,7 +4,7 @@
   padding-bottom: 8em;
 
   ol {
-    padding: 0;
+    padding-right: 2em;
     list-style: none;
     counter-reset: step-counter;
 
@@ -15,7 +15,7 @@
         content: counter(step-counter) ". ";
         font-weight: bold;
         position: absolute;
-        right: -0em;
+        right: 1.5em;
       }
     }
   }
@@ -47,6 +47,11 @@
     height: 50vh;
     max-height: 700px;
     background-color: rgba(0, 0, 0, 0.1);
+
+    @media screen and (max-width: $mobile-width) {
+      width: 120%;
+      margin-right: -10%;
+    }
 
     img {
       width: 100%;
