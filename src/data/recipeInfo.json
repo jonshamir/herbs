@@ -20,12 +20,12 @@
     "difficulty": "מורכב"
   },
   {
-    "slug": "bay-artichoke",
-    "author": "יונתן",
-    "title": "ארטישוק בעלי דפנה",
-    "herbs": [{ "slug": "bay-leaf", "title": "עלה דפנה" }],
-    "time": "שעה",
-    "difficulty": "קל"
+    "slug": "oregano-challah",
+    "author": "שי",
+    "title": "חלת פרמז'ן ואורגנו",
+    "herbs": [{ "slug": "oregano", "title": "אורגנו" }],
+    "time": "שעתיים",
+    "difficulty": "בינוני"
   },
   {
     "slug": "rosemary-cookies",
@@ -39,18 +39,18 @@
     "difficulty": "בינוני"
   },
   {
-    "slug": "oregano-challah",
-    "author": "שי",
-    "title": "חלת פרמז'ן ואורגנו",
-    "herbs": [{ "slug": "oregano", "title": "אורגנו" }],
-    "time": "שעתיים",
-    "difficulty": "בינוני"
+    "slug": "bay-artichoke",
+    "author": "יונתן",
+    "title": "ארטישוק בעלי דפנה",
+    "herbs": [{ "slug": "bay-leaf", "title": "עלה דפנה" }],
+    "time": "שעה",
+    "difficulty": "קל"
   },
   {
-    "slug": "zhug",
-    "author": "יונתן",
-    "title": "סחוג",
-    "herbs": [{ "slug": "coriander", "title": "כוסברה" }],
+    "slug": "thyme-crackers",
+    "author": "שי",
+    "title": "קרקר תימין",
+    "herbs": [{ "slug": "thyme", "title": "תימין" }],
     "time": "30 דקות",
     "difficulty": "קל"
   }

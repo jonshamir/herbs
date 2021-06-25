@@ -12,7 +12,7 @@ import "./RecipePage.scss";
 class RecipePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { md: "loading...", imageLoaded: false, timerComplete: false };
+    this.state = { md: "טוען...", imageLoaded: false, timerComplete: false };
   }
 
   async componentDidMount() {
