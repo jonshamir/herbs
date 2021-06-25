@@ -39,15 +39,10 @@
     "difficulty": "בינוני"
   },
   {
-    "slug": "yum-som-o",
-    "author": "יונתן",
-    "title": "סלט פומלה תאילנדי",
-    "herbs": [
-      { "slug": "lemongrass", "title": "למון גראס" },
-      { "slug": "kaffir-lime", "title": "עלי ליים" },
-      { "slug": "spearmint", "title": "נענע" },
-      { "slug": "coriander", "title": "כוסברה" }
-    ],
+    "slug": "oregano-challah",
+    "author": "שי",
+    "title": "חלת פרמז'ן ואורגנו",
+    "herbs": [{ "slug": "oregano", "title": "אורגנו" }],
     "time": "שעתיים",
     "difficulty": "בינוני"
   },

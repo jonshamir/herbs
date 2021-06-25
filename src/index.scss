@@ -40,6 +40,7 @@ body {
 
   margin: 0;
   overflow-x: hidden;
+  overflow-y: scroll;
   font-size: $base-font-size * 1rem;
   touch-action: pan-y;
 }
