@@ -109,11 +109,13 @@
     text-align: center;
     overflow: visible;
     right: 100%;
-    height: 300px;
+    height: 450px;
+    max-width: 400px;
+
     position: absolute;
     top: 3em;
+    transform: translateY(-50%);
     width: 100%;
-    max-width: 500px;
     box-sizing: border-box;
     padding-right: 3em;
 
@@ -133,6 +135,10 @@
       right: 0;
       top: 0;
       padding: 0;
+      margin-top: 3em;
+      transform: none;
+      width: 100%;
+      max-width: 100%;
     }
   }
 }
