@@ -1,7 +1,7 @@
 [
   {
     "slug": "zaatar-mix",
-    "author": "טורקיה ויונתן",
+    "author": "טורקיה עבד אל-חי ויונתן שמיר",
     "title": "תערובת זעתר",
     "herbs": [
       { "slug": "zaatar", "title": "אזוב מצוי" },
@@ -13,7 +13,7 @@
   },
   {
     "slug": "zaatar-ice-cream",
-    "author": "טורקיה ויונתן",
+    "author": "טורקיה עבד אל-חי ויונתן שמיר",
     "title": "גלידת זעתר",
     "herbs": [{ "slug": "zaatar", "title": "אזוב מצוי" }],
     "time": "6 שעות",
@@ -21,7 +21,7 @@
   },
   {
     "slug": "oregano-challah",
-    "author": "שי",
+    "author": "שי כהנא",
     "title": "חלת פרמזן ואורגנו",
     "herbs": [{ "slug": "oregano", "title": "אורגנו" }],
     "time": "שעתיים",
@@ -29,7 +29,7 @@
   },
   {
     "slug": "rosemary-cookies",
-    "author": "יונתן",
+    "author": "יונתן שמיר",
     "title": "עוגיות רוזמרין",
     "herbs": [
       { "slug": "rosemary", "title": "רוזמרין" },
@@ -39,22 +39,46 @@
     "difficulty": "בינוני"
   },
   {
-    "slug": "bay-artichoke",
-    "author": "יונתן",
-    "title": "ארטישוק בעלי דפנה",
-    "herbs": [{ "slug": "bay-leaf", "title": "עלה דפנה" }],
-    "time": "שעה",
-    "difficulty": "קל"
+    "slug": "lavender-cookies",
+    "author": "שי כהנא",
+    "title": "עוגיות לבנדר",
+    "herbs": [{ "slug": "lavender", "title": "לבנדר" }],
+    "time": "4 שעות",
+    "difficulty": "בינוני"
+  },
+  {
+    "slug": "gondi",
+    "author": "ירדן רפאלי",
+    "title": "גונדי בטרגון",
+    "herbs": [{ "slug": "tarragon", "title": "טרגון" }],
+    "time": "שעתיים",
+    "difficulty": "בינוני"
   },
   {
     "slug": "thyme-crackers",
-    "author": "שי",
+    "author": "שי כהנא",
     "title": "קרקר צתרה וקורנית",
     "herbs": [
       { "slug": "thyme", "title": "קורנית" },
       { "slug": "summer-savory", "title": "צתרה" }
     ],
     "time": "30 דקות",
+    "difficulty": "קל"
+  },
+  {
+    "slug": "geranium-cake",
+    "author": "שי כהנא",
+    "title": "עוגת גרניום ריחני בציפוי מרנג",
+    "herbs": [{ "slug": "scented-geranium", "title": "גרניום" }],
+    "time": "8 שעות",
+    "difficulty": "קשה"
+  },
+  {
+    "slug": "bay-artichoke",
+    "author": "יונתן שמיר",
+    "title": "ארטישוק בעלי דפנה",
+    "herbs": [{ "slug": "bay-leaf", "title": "עלה דפנה" }],
+    "time": "שעה",
     "difficulty": "קל"
   }
 ]

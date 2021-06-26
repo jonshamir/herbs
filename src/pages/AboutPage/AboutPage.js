@@ -10,27 +10,35 @@ const AboutPage = (props) => {
     <FadeInOut className="AboutPage PageContainer">
       <main>
         <h1>אודות האתר</h1>
+        <p>פרויקט גמר של יונתן שמיר</p>
         <p>
-          פרויקט של <OutLink href="https://jonshamir.com/">יונתן שמיר</OutLink>
-        </p>
-        <p>
-          רוב תמונות הצמחים באתר צולמו ב
+          תמונות הצמחים באתר צולמו ב
           <OutLink href="http://nnhc.huji.ac.il/herbarium/">
             עשביית האוניברסיטה העברית
           </OutLink>
-          . תודה על האירוח והגישה לאוספים
+          <br />
+          תודה על האירוח והגישה לאוספים
+        </p>
+        <p>
+          מידע על הסיווג המדעי של הצמחים מ-
+          <OutLink href="https://species.wikimedia.org">Wikispecies</OutLink>
         </p>
         <p>תודה לאמיתי גלעד על ההנחייה והליווי</p>
         <p>תודה לרונית ורד על ההשראה והייעוץ הקולינרי</p>
         <p>תודה לפרופ' נתיב דודאי על המידע המדעי</p>
         <p>תודה לטורקיה על הייעוץ, המתכונים והבישולים המשותפים</p>
-        <p>
-          מידע על הסיווג המדעי של הצמחים מ-
-          <OutLink href="https://species.wikimedia.org">Wikispecies</OutLink>
-        </p>
         <p>תודה לשי על התמיכה והעזרה בהכל</p>
 
         <br />
+        <p>
+          <OutLink href="https://www.instagram.com/the.herb.tree/">
+            <img
+              src="/images/ui/insta.svg"
+              alt="Instagram"
+              className="InstaIcon"
+            />
+          </OutLink>
+        </p>
         <br />
         <br />
         <br />
