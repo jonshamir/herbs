@@ -428,7 +428,14 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
     parentComponent.handleClick(e, d);
   });
 
-  if (allowDrag) node.filter((d) => d.depth > 0).call(drag(simulation));
+  if (allowDrag) setupDrag();
+};
+
+export const setupDrag = () => {
+  console.log("Ma kore?");
+
+  if (!allowDrag) node.filter((d) => d.depth > 0).call(drag(simulation));
+  allowDrag = true;
 };
 
 export const growTree = (growthTime = 550, growImages = true) => {

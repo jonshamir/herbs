@@ -11,13 +11,13 @@ import {
   positionHighlightedHerb,
   growTree,
   printLayout,
+  setupDrag,
 } from "./graphUtils";
 import { clamp } from "../../utils/math";
 
 import "./HerbTree.scss";
 
 const MIN_LOGO_OPACITY = 0;
-const DEBUG = false;
 const TABLET_WIDTH = 1000;
 
 class HerbTree extends React.Component {
@@ -54,7 +54,7 @@ class HerbTree extends React.Component {
       taxonomyTreePruned,
       this,
       this.handleSubtreeActivate,
-      DEBUG
+      this.props.debug
     );
 
     window.addEventListener("resize", (e) => this.handleResize(e));
@@ -149,6 +149,10 @@ class HerbTree extends React.Component {
     const routeParts = route.split("/");
     if (routeParts.slice(-1)[0] === "") routeParts.pop();
 
+    if (route === "/herb/dill/shamir") {
+      setupDrag();
+    }
+
     if (route === "/") {
       this.setGraphSize();
       this.setState({ isHidden: false, isInteractive: true });
@@ -162,9 +166,10 @@ class HerbTree extends React.Component {
             isMinimal: false,
           });
           unhighlightAll(this.state.initalLoaded);
-        }, 10);
+        }, 50);
       }
     } else {
+      this.setGraphSize();
       growTree(0, false);
       // unhighlightAll(this.state.initalLoaded); TODO add?
 
@@ -198,7 +203,7 @@ class HerbTree extends React.Component {
         <h1 className="Logo" style={{ opacity: this.getLogoOpacity() }}>
           על טעם וריח
         </h1>
-        {DEBUG && (
+        {this.props.debug && (
           <div className="DebugMenu">
             <button onClick={() => this.logPositions()}>Get Positions</button>
             <button onClick={() => this.getPrintLayout()}>Print Layout</button>

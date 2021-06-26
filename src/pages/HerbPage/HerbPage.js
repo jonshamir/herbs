@@ -36,7 +36,6 @@ class HerbPage extends React.Component {
     if (title === "HerbIcon") return <HerbLink slug={href} title={children} />;
     const hrefParts = href.split("/");
     if (hrefParts.length < 2) {
-      console.log(href);
       return <HerbLink slug={href} title={children} inline />;
     }
 
@@ -71,6 +70,12 @@ class HerbPage extends React.Component {
     }
   }
 
+  onTitleClick() {
+    const { slug } = this.props.match.params;
+
+    if (slug === "dill") this.props.history.push("/herb/dill/shamir");
+  }
+
   render() {
     const { slug } = this.props.match.params;
     const { imageLoaded, timerComplete } = this.state;
@@ -91,7 +96,9 @@ class HerbPage extends React.Component {
           <HerbSummary herb={herb} slug={slug} family={family} />
           <div className="HerbContent">
             <div className="mainText">
-              <h1>{herb.commonName[lang]}</h1>
+              <h1 onClick={() => this.onTitleClick()}>
+                {herb.commonName[lang]}
+              </h1>
               <ReactMarkdown
                 components={{
                   a: this.renderLink,

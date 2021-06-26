@@ -11,6 +11,8 @@ import HerbTree from "./components/HerbTree/HerbTree";
 import Search from "./components/Search/Search";
 import Menu from "./components/Menu/Menu";
 
+let DEBUG = false;
+
 const App = () => {
   const history = useHistory();
   const location = useLocation();
@@ -30,7 +32,7 @@ const App = () => {
     <div>
       <Menu />
       <Search />
-      <HerbTree onNodeClick={handleNodeClick} />
+      <HerbTree onNodeClick={handleNodeClick} debug={DEBUG} />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/">
