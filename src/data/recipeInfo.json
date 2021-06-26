@@ -22,7 +22,7 @@
   {
     "slug": "oregano-challah",
     "author": "שי",
-    "title": "חלת פרמז'ן ואורגנו",
+    "title": "חלת פרמזן ואורגנו",
     "herbs": [{ "slug": "oregano", "title": "אורגנו" }],
     "time": "שעתיים",
     "difficulty": "בינוני"
@@ -49,8 +49,11 @@
   {
     "slug": "thyme-crackers",
     "author": "שי",
-    "title": "קרקר תימין",
-    "herbs": [{ "slug": "thyme", "title": "תימין" }],
+    "title": "קרקר צתרה וקורנית",
+    "herbs": [
+      { "slug": "thyme", "title": "קורנית" },
+      { "slug": "summer-savory", "title": "צתרה" }
+    ],
     "time": "30 דקות",
     "difficulty": "קל"
   }

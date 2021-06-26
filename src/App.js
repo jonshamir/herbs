@@ -21,6 +21,9 @@ const App = () => {
   const history = useHistory();
   const location = useLocation();
 
+  if (window.history.scrollRestoration)
+    window.history.scrollRestoration = "manual";
+
   const [shouldShowIntro, setShouldShowIntro] = useState(
     location.pathname === "/"
   );

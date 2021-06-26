@@ -36,5 +36,9 @@
     position: relative;
     padding: 1em;
     padding-top: 0.5em;
+    p {
+      font-weight: 400;
+      color: $text-color-light;
+    }
   }
 }

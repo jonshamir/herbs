@@ -2,7 +2,7 @@
 
 nav.Menu {
   position: fixed;
-  z-index: 90;
+  z-index: 500;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +17,7 @@ nav.Menu {
 
       .IconButton {
         transform: rotate(-45deg);
-        padding: 0.5em !important;
+        padding-left: 0em !important;
 
         img {
           transform: rotate(45deg);

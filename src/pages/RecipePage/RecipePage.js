@@ -40,8 +40,23 @@ class RecipePage extends React.Component {
 
   renderImage({ src, alt }) {
     const { slug } = this.props.match.params;
+    const metadata = alt.trim().split("/");
+    const className = metadata[0];
+    if (className === "InlineImage") {
+      const altText = metadata.length > 1 ? metadata[1] : "";
+      return (
+        <span className={className}>
+          <img src={`/images/recipes/${slug}/${src}`} />
+          <span className="label">{altText}</span>
+        </span>
+      );
+    }
     return (
-      <img src={`/images/recipes/${slug}/${src}`} alt={alt} className={alt} />
+      <img
+        src={`/images/recipes/${slug}/${src}`}
+        alt={alt}
+        className={className}
+      />
     );
   }
 

@@ -3,6 +3,10 @@
 .RecipePage {
   padding-bottom: 8em;
 
+  p {
+    position: relative;
+  }
+
   ol {
     padding-right: 2em;
     list-style: none;
@@ -10,6 +14,8 @@
 
     li {
       counter-increment: step-counter;
+      padding-left: 2em;
+      box-sizing: border-box;
 
       &::before {
         content: counter(step-counter) ". ";
@@ -30,7 +36,7 @@
     margin-right: 0.5em;
     margin-top: -1em;
     // margin-bottom: -1em;
-    opacity: 0.6;
+    color: $text-color-light;
   }
   .RecipeHerbs {
     float: left;
@@ -95,6 +101,38 @@
       margin-right: 0;
       margin-bottom: 0;
       transform: none;
+    }
+  }
+
+  .InlineImage {
+    display: inline-block;
+    text-align: center;
+    overflow: visible;
+    right: 100%;
+    height: 300px;
+    position: absolute;
+    top: 3em;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    padding-right: 3em;
+
+    .label {
+      color: $text-color-light;
+      padding: 0 0.5em;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: $tablet-width) {
+      position: relative;
+      right: 0;
+      top: 0;
+      padding: 0;
     }
   }
 }
