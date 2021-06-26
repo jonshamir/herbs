@@ -43,27 +43,29 @@ class HerbPage extends React.Component {
     return <Link to={href}>{children}</Link>;
   }
 
-  renderRecipes() {
-    const { slug } = this.props.match.params;
+  renderRecipes(herb) {
+    const { slug } = herb;
     const recipes = recipeInfo.filter((recipe) =>
       recipe.herbs.map((h) => h.slug).includes(slug)
     );
 
-    const title = recipes.length > 1 ? "מתכונים" : "מתכון";
-
     if (recipes.length > 0) {
       return (
         <>
-          <h2>{title}</h2>
-          {recipes.map((recipe) => (
-            <Link
-              to={`/recipes/${recipe.slug}`}
-              className="RecipeLink"
-              key={recipe.slug}
-            >
-              {recipe.title + " >"}
-            </Link>
-          ))}
+          <h2>מתכונים</h2>
+          <p>
+            ניתן למצוא פה באתר רעיונות לשימושים של {herb.commonName[lang]}{" "}
+            בבישול:
+          </p>
+          <ul>
+            {recipes.map((recipe) => (
+              <li key={recipe.slug}>
+                <Link to={`/recipes/${recipe.slug}`} className="RecipeLink">
+                  {recipe.title + " >"}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </>
       );
     }
@@ -100,7 +102,7 @@ class HerbPage extends React.Component {
               </ReactMarkdown>
               <h2>משפחת ה{family.name[lang]}</h2>
               <p>{family.description[lang]}</p>
-              {this.renderRecipes()}
+              {this.renderRecipes(herb)}
             </div>
           </div>
           <div className="herbPhoto">
