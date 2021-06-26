@@ -152,9 +152,9 @@ class HerbTree extends React.Component {
     if (route === "/herb/dill/shamir") {
       setupDrag();
     }
+    this.setGraphSize();
 
     if (route === "/") {
-      this.setGraphSize();
       this.setState({ isHidden: false, isInteractive: true });
 
       if (!this.state.initalLoaded) {
@@ -169,7 +169,6 @@ class HerbTree extends React.Component {
         }, 50);
       }
     } else {
-      this.setGraphSize();
       growTree(0, false);
       // unhighlightAll(this.state.initalLoaded); TODO add?
 

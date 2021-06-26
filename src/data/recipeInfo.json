@@ -28,6 +28,14 @@
     "difficulty": "בינוני"
   },
   {
+    "slug": "lavender-cookies",
+    "author": "שי כהנא",
+    "title": "עוגיות לבנדר",
+    "herbs": [{ "slug": "lavender", "title": "לבנדר" }],
+    "time": "4 שעות",
+    "difficulty": "בינוני"
+  },
+  {
     "slug": "rosemary-cookies",
     "author": "יונתן שמיר",
     "title": "עוגיות רוזמרין",
@@ -39,18 +47,13 @@
     "difficulty": "בינוני"
   },
   {
-    "slug": "lavender-cookies",
-    "author": "שי כהנא",
-    "title": "עוגיות לבנדר",
-    "herbs": [{ "slug": "lavender", "title": "לבנדר" }],
-    "time": "4 שעות",
-    "difficulty": "בינוני"
-  },
-  {
     "slug": "gondi",
     "author": "ירדן רפאלי",
     "title": "גונדי בטרגון",
-    "herbs": [{ "slug": "tarragon", "title": "טרגון" }],
+    "herbs": [
+      { "slug": "tarragon", "title": "טרגון" },
+      { "slug": "parsley", "title": "פטרוזיליה" }
+    ],
     "time": "שעתיים",
     "difficulty": "בינוני"
   },
