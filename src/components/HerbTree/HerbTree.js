@@ -64,7 +64,7 @@ class HerbTree extends React.Component {
       this.containerRef.current.addEventListener("scroll", (e) =>
         this.handleScroll(e)
       );
-    }, 200);
+    }, 350);
   }
 
   scrollToBottom() {

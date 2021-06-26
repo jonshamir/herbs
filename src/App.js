@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import {
-  Route,
-  Switch,
-  Redirect,
-  useLocation,
-  useHistory,
-} from "react-router-dom";
+import { Route, Switch, useLocation, useHistory } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import IntroPage from "./pages/IntroPage/IntroPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
