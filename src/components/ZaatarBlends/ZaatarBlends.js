@@ -46,6 +46,7 @@ const ZaatarBlends = (props) => {
             <span className="pile" key={blend.slug + i}>
               <img
                 src={`/images/recipes/zaatar-mix/blends/${blend.slug}/${i}.png`}
+                alt={name}
               />
               <span className="label">{name}</span>
             </span>

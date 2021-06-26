@@ -47,7 +47,7 @@ class RecipePage extends React.Component {
       const altText = metadata.length > 1 ? metadata[1] : "";
       return (
         <span className={className}>
-          <img src={`/images/recipes/${slug}/${src}`} />
+          <img src={`/images/recipes/${slug}/${src}`} alt={altText} />
           <span className="label">{altText}</span>
         </span>
       );

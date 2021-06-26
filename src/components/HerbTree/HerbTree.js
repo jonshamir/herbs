@@ -162,7 +162,7 @@ class HerbTree extends React.Component {
             isMinimal: false,
           });
           unhighlightAll(this.state.initalLoaded);
-        }, 350);
+        }, 10);
       }
     } else {
       growTree(0, false);
