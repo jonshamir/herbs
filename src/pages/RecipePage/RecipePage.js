@@ -6,6 +6,7 @@ import recipeInfo from "../../data/recipeInfo.json";
 
 import FadeInOut from "../../components/FadeInOut/FadeInOut";
 import HerbLink from "../../components/HerbLink/HerbLink";
+import ZaatarBlends from "../../components/ZaatarBlends/ZaatarBlends";
 
 import "./RecipePage.scss";
 
@@ -51,6 +52,8 @@ class RecipePage extends React.Component {
         </span>
       );
     }
+    if (className === "ZaatarBlends") return <ZaatarBlends />;
+
     return (
       <img
         src={`/images/recipes/${slug}/${src}`}

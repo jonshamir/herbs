@@ -5,7 +5,10 @@
 
   @media screen and (max-width: $mobile-width) {
     h1 {
-      font-size: 5em !important;
+      font-size: 6em !important;
+    }
+    h2 {
+      font-size: 1.5em;
     }
   }
   h1 {

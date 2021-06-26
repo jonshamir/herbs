@@ -3,6 +3,10 @@
 .RecipePage {
   padding-bottom: 8em;
 
+  h2 {
+    margin-bottom: 0.5em;
+  }
+
   p {
     position: relative;
   }
@@ -43,7 +47,6 @@
     padding-top: 1em;
     @media screen and (max-width: $tablet-width) {
       float: none;
-      margin-bottom: -1em;
     }
   }
 
