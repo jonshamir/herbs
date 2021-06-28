@@ -169,17 +169,22 @@ class HerbTree extends React.Component {
         }, 50);
       }
     } else {
-      growTree(0, false);
-      // unhighlightAll(this.state.initalLoaded); TODO add?
+      setTimeout(
+        () => {
+          growTree(0, false);
+          // unhighlightAll(this.state.initalLoaded); TODO add?
 
-      this.setState({
-        isMinimal: true,
-        isHidden: routeParts[1] === "recipes",
-        isInteractive: false,
-        initalLoaded: true,
-      });
-      const herbSlug = routeParts[1] === "herb" ? routeParts[2] : false;
-      highlightHerb(herbSlug);
+          this.setState({
+            isMinimal: true,
+            isHidden: routeParts[1] === "recipes",
+            isInteractive: false,
+            initalLoaded: true,
+          });
+          const herbSlug = routeParts[1] === "herb" ? routeParts[2] : false;
+          highlightHerb(herbSlug);
+        },
+        this.state.initalLoaded ? 0 : 1000
+      );
     }
   }
 
