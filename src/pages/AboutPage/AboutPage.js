@@ -30,7 +30,6 @@ const AboutPage = (props) => {
         <p>תודה לשי על התמיכה והעזרה בהכל</p>
 
         <br />
-
         <br />
         <br />
         <br />

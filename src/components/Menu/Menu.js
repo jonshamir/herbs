@@ -8,9 +8,9 @@ import "./Menu.scss";
 
 const Menu = (props) => {
   let className = "Menu";
-  // const routeParts = props.location.pathname.split("/");
-  // const logoOnly = routeParts[1] === "herb";
-  // if (logoOnly) className += " logoOnly";
+  const routeParts = props.location.pathname.split("/");
+  const logoOnly = routeParts[1] === "herb";
+  if (logoOnly) className += " logoOnly";
 
   return (
     <nav className={className}>

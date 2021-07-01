@@ -17,12 +17,19 @@ nav.Menu {
       flex-direction: row !important;
 
       .IconButton {
-        transform: rotate(-45deg);
+        // transform: rotate(-45deg);
         padding-left: 0em !important;
 
-        img {
-          transform: rotate(45deg);
+        // img {
+        //   transform: rotate(45deg);
+        // }
+        span {
+          display: none;
         }
+      }
+
+      .instaLink {
+        margin-right: 0.5em;
       }
     }
   }

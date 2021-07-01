@@ -58,7 +58,7 @@ class HerbTree extends React.Component {
     );
 
     window.addEventListener("resize", (e) => this.handleResize(e));
-    this.scrollToBottom();
+    this.scrollToBottomCenter();
     setTimeout(() => {
       this.onRouteChanged();
       this.containerRef.current.addEventListener("scroll", (e) =>
@@ -67,13 +67,14 @@ class HerbTree extends React.Component {
     }, 800);
   }
 
-  scrollToBottom() {
+  scrollToBottomCenter() {
     const { scrollWidth, offsetWidth } = this.containerRef.current;
     const maxScroll = scrollWidth - offsetWidth;
-    this.containerRef.current.scrollTo(
-      maxScroll / 2,
-      this.d3ref.current.scrollHeight
-    );
+    this.containerRef.current.scrollTo({
+      left: maxScroll / 2,
+      top: this.d3ref.current.scrollHeight,
+      behavior: "smooth",
+    });
   }
 
   componentWillUnmount() {
@@ -149,41 +150,43 @@ class HerbTree extends React.Component {
     const routeParts = route.split("/");
     if (routeParts.slice(-1)[0] === "") routeParts.pop();
 
-    if (route === "/herb/dill/shamir") {
-      setupDrag();
-    }
+    if (route === "/herb/dill/shamir") setupDrag();
+
     this.setGraphSize();
 
-    if (route === "/") {
-      this.setState({ isHidden: false, isInteractive: true });
+    if (route)
+      if (route === "/") {
+        this.setState({ isHidden: false, isInteractive: true });
 
-      if (!this.state.initalLoaded) {
-        this.setState({ initalLoaded: true });
-        setTimeout(growTree, 500);
+        if (!this.state.initalLoaded) {
+          this.setState({ initalLoaded: true });
+          setTimeout(growTree, 500);
+        } else {
+          setTimeout(() => {
+            this.setState({ isMinimal: false });
+            unhighlightAll(this.state.initalLoaded);
+          }, 50);
+        }
       } else {
-        setTimeout(() => {
-          this.setState({ isMinimal: false });
-          unhighlightAll(this.state.initalLoaded);
-        }, 50);
-      }
-    } else {
-      setTimeout(
-        () => {
-          growTree(0, false);
-          // unhighlightAll(this.state.initalLoaded); TODO add?
+        if (routeParts[1] !== "herb") this.scrollToBottomCenter();
 
-          this.setState({
-            isMinimal: true,
-            isHidden: routeParts[1] === "recipes",
-            isInteractive: false,
-            initalLoaded: true,
-          });
-          const herbSlug = routeParts[1] === "herb" ? routeParts[2] : false;
-          highlightHerb(herbSlug);
-        },
-        this.state.initalLoaded ? 0 : 1000
-      );
-    }
+        setTimeout(
+          () => {
+            growTree(0, false);
+            unhighlightAll(false);
+
+            this.setState({
+              isMinimal: true,
+              isHidden: routeParts[1] === "recipes",
+              isInteractive: false,
+              initalLoaded: true,
+            });
+            const herbSlug = routeParts[1] === "herb" ? routeParts[2] : false;
+            highlightHerb(herbSlug);
+          },
+          this.state.initalLoaded ? 0 : 1000
+        );
+      }
   }
 
   getLogoOpacity() {
