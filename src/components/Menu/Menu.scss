@@ -43,8 +43,23 @@ nav.Menu {
     transition: opacity $transition-defaults;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
     a {
       display: block;
+    }
+
+    .instaLink {
+      width: 1.2em;
+      height: 1.2em;
+      opacity: 0.2;
+      margin-top: 0.5em;
+      padding: 1em;
+      transition: opacity $transition-defaults;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     .IconButton {

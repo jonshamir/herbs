@@ -2,6 +2,7 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
 import IconButton from "../IconButton/IconButton";
+import OutLink from "../OutLink/OutLink";
 
 import "./Menu.scss";
 
@@ -26,6 +27,13 @@ const Menu = (props) => {
         <Link to="/about">
           <IconButton icon="about" label="אודות" />
         </Link>
+        <OutLink href="https://www.instagram.com/the.herb.tree/">
+          <img
+            src="/images/ui/insta.svg"
+            className="instaLink"
+            alt="אינסטגרם"
+          />
+        </OutLink>
       </div>
     </nav>
   );

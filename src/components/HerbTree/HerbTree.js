@@ -162,9 +162,7 @@ class HerbTree extends React.Component {
         setTimeout(growTree, 500);
       } else {
         setTimeout(() => {
-          this.setState({
-            isMinimal: false,
-          });
+          this.setState({ isMinimal: false });
           unhighlightAll(this.state.initalLoaded);
         }, 50);
       }

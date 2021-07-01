@@ -30,15 +30,7 @@ const AboutPage = (props) => {
         <p>תודה לשי על התמיכה והעזרה בהכל</p>
 
         <br />
-        <p>
-          <OutLink href="https://www.instagram.com/the.herb.tree/">
-            <img
-              src="/images/ui/insta.svg"
-              alt="Instagram"
-              className="InstaIcon"
-            />
-          </OutLink>
-        </p>
+
         <br />
         <br />
         <br />
