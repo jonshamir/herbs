@@ -13,6 +13,15 @@ import Menu from "./components/Menu/Menu";
 
 let DEBUG = false;
 
+// refresh if no interaction
+let timeout;
+document.onmousemove = function () {
+  clearTimeout(timeout);
+  timeout = setTimeout(function () {
+    window.location.href = "/";
+  }, 5 * 60 * 1000);
+};
+
 const App = () => {
   const history = useHistory();
   const location = useLocation();
