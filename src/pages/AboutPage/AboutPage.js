@@ -10,7 +10,12 @@ const AboutPage = (props) => {
     <FadeInOut className="AboutPage PageContainer">
       <main>
         <h1>אודות האתר</h1>
-        <p>מאת יונתן שמיר</p>
+        <p>
+          מאת&nbsp;
+          <OutLink href="https://www.instagram.com/yonshamir/">
+            יונתן שמיר
+          </OutLink>
+        </p>
         <p>
           תמונות הצמחים באתר צולמו ב
           <OutLink href="http://nnhc.huji.ac.il/herbarium/">
