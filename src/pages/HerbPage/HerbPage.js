@@ -20,7 +20,7 @@ class HerbPage extends React.Component {
 
   async componentDidMount() {
     const { slug } = this.props.match.params;
-    const response = await fetch(`/herb-pages/${slug}.md`);
+    const response = await fetch(`herbs/herb-pages/${slug}.md`);
     const text = await response.text();
 
     this.setState({
