@@ -20,7 +20,7 @@ class HerbPage extends React.Component {
 
   async componentDidMount() {
     const { slug } = this.props.match.params;
-    const response = await fetch(`herbs/herb-pages/${slug}.md`);
+    const response = await fetch(`/herbs/herb-pages/${slug}.md`);
     const text = await response.text();
 
     this.setState({
@@ -59,7 +59,10 @@ class HerbPage extends React.Component {
           <ul>
             {recipes.map((recipe) => (
               <li key={recipe.slug}>
-                <Link to={`/recipes/${recipe.slug}`} className="RecipeLink">
+                <Link
+                  to={`/herbs/recipes/${recipe.slug}`}
+                  className="RecipeLink"
+                >
                   {recipe.title + " >"}
                 </Link>
               </li>
@@ -114,7 +117,7 @@ class HerbPage extends React.Component {
           </div>
           <div className="herbPhoto">
             <img
-              src={`images/photos/${slug}.jpg`}
+              src={`/herbs/images/photos/${slug}.jpg`}
               alt={herb.commonName[lang]}
               className={imageLoaded && timerComplete ? "loaded" : ""}
               onLoad={(e) => this.setState({ imageLoaded: true })}
