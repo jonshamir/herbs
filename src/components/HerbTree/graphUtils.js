@@ -232,10 +232,10 @@ export const drawTree = (ref, simulation, nodes, links) => {
   node
     .filter((d) => !d.children)
     .append("svg:image")
-    .attr("xlink:href", (d) => `images/icons/${d.data.slug}.png`)
+    .attr("xlink:href", (d) => `/herbs/images/icons/${d.data.slug}.png`)
     .attr("class", (d) => `image-${d.data.slug}`)
     .on("error", function (d) {
-      d3.select(this).attr("xlink:href", "images/herb.png");
+      d3.select(this).attr("xlink:href", "/herbs/images/herb.png");
     })
     .attr("x", imageCenter)
     .attr("y", imageCenter)
@@ -358,7 +358,7 @@ const handleHover = (
 
     if (nodeInfo) {
       tooltip.html(
-        `<img src="images/family-icons/${slug}.png">
+        `<img src="/herbs/images/family-icons/${slug}.png">
         <h4>${nodeInfo.name[lang]} /<span> ${rank[lang]}</span></h4>
         <p>${nodeInfo.description[lang]}</p>`
       );

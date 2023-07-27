@@ -45,7 +45,7 @@ const AboutPage = (props) => {
         <br />
         <p>
           <img
-            src="images/ui/bezalel.svg"
+            src="/herbs/images/ui/bezalel.svg"
             className="BezalelLogo"
             alt="בצלאל"
           />

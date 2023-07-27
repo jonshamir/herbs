@@ -117,7 +117,7 @@ class HerbPage extends React.Component {
           </div>
           <div className="herbPhoto">
             <img
-              src={`../../images/photos/${slug}.jpg`}
+              src={`../images/photos/${slug}.jpg`}
               alt={herb.commonName[lang]}
               className={imageLoaded && timerComplete ? "loaded" : ""}
               onLoad={(e) => this.setState({ imageLoaded: true })}

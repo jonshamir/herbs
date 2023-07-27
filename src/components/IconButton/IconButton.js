@@ -6,7 +6,7 @@ const IconButton = ({ icon, label, ...rest }) => {
   return (
     <div className="IconButton">
       <button className="Button">
-        <img src={`images/ui/${icon}.svg`} alt={label} />
+        <img src={`/herbs/images/ui/${icon}.svg`} alt={label} />
       </button>
       <span>{label}</span>
     </div>

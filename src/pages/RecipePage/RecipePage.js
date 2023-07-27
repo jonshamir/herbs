@@ -47,7 +47,7 @@ class RecipePage extends React.Component {
       const altText = metadata.length > 1 ? metadata[1] : "";
       return (
         <span className={className}>
-          <img src={`images/recipes/${slug}/${src}`} alt={altText} />
+          <img src={`/herbs/images/recipes/${slug}/${src}`} alt={altText} />
           <span className="label">{altText}</span>
         </span>
       );
@@ -56,7 +56,7 @@ class RecipePage extends React.Component {
 
     return (
       <img
-        src={`images/recipes/${slug}/${src}`}
+        src={`/herbs/images/recipes/${slug}/${src}`}
         alt={alt}
         className={className}
       />
@@ -76,7 +76,7 @@ class RecipePage extends React.Component {
           <div className="RecipePhoto">
             <img
               className={imageLoaded && timerComplete ? "loaded" : ""}
-              src={`images/recipes/${slug}/main.jpg`}
+              src={`/herbs/images/recipes/${slug}/main.jpg`}
               alt={title}
               onLoad={() => this.setState({ imageLoaded: true })}
             />
