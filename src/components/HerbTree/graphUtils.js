@@ -232,10 +232,10 @@ export const drawTree = (ref, simulation, nodes, links) => {
   node
     .filter((d) => !d.children)
     .append("svg:image")
-    .attr("xlink:href", (d) => `/images/icons/${d.data.slug}.png`)
+    .attr("xlink:href", (d) => `images/icons/${d.data.slug}.png`)
     .attr("class", (d) => `image-${d.data.slug}`)
     .on("error", function (d) {
-      d3.select(this).attr("xlink:href", "/images/herb.png");
+      d3.select(this).attr("xlink:href", "images/herb.png");
     })
     .attr("x", imageCenter)
     .attr("y", imageCenter)

@@ -15,7 +15,7 @@ const Menu = (props) => {
   return (
     <nav className={className}>
       <Link to="/" className="LogoIcon">
-        <img src="/images/ui/logo.svg" alt="על טעם וריח" />
+        <img src="images/ui/logo.svg" alt="על טעם וריח" />
       </Link>
       <div className="IconButtonContainer">
         <Link to="/recipes">
@@ -28,11 +28,7 @@ const Menu = (props) => {
           <IconButton icon="about" label="אודות" />
         </Link>
         <OutLink href="https://www.instagram.com/the.herb.tree/">
-          <img
-            src="/images/ui/insta.svg"
-            className="instaLink"
-            alt="אינסטגרם"
-          />
+          <img src="images/ui/insta.svg" className="instaLink" alt="אינסטגרם" />
         </OutLink>
       </div>
     </nav>

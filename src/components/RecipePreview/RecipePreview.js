@@ -10,14 +10,14 @@ const RecipePreview = ({ recipe }) => {
     <Link to={`/recipes/${slug}`} className="RecipePreview">
       <Image
         className="RecipePhoto"
-        src={`/images/recipes/${slug}/cover.jpg`}
+        src={`images/recipes/${slug}/cover.jpg`}
         alt={title}
       />
       <div className="RecipeInfo">
         {herbs.map((herb) => (
           <img
             className="HerbIcon"
-            src={`/images/icons/${herb.slug}.png`}
+            src={`images/icons/${herb.slug}.png`}
             alt={herb.slug}
             key={herb.slug}
           />

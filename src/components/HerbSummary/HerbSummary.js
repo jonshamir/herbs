@@ -11,7 +11,7 @@ const HerbSummary = (props) => {
       <img
         className="HerbIcon"
         id="herb-icon"
-        src={`/images/icons/${slug}.png`}
+        src={`images/icons/${slug}.png`}
         alt={slug}
       />
       <table className="InfoTable">
