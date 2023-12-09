@@ -45,7 +45,7 @@ const App = () => {
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/">
-            <HomePage shouldShowIntro={shouldShowIntro} />
+            <HomePage shouldShowIntro={false} />
           </Route>
           <Route exact path="/intro">
             <IntroPage onMount={() => setShouldShowIntro(false)} />
