@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { Route, Switch, useLocation, useHistory } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
-import IntroPage from "./pages/IntroPage/IntroPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
-import AllRecipesPage from "./pages/AllRecipesPage/AllRecipesPage";
-import RecipePage from "./pages/RecipePage/RecipePage";
 import HerbPage from "./pages/HerbPage/HerbPage";
 import HerbTree from "./components/HerbTree/HerbTree";
 import Search from "./components/Search/Search";
@@ -45,19 +42,10 @@ const App = () => {
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/">
-            <HomePage shouldShowIntro={false} />
-          </Route>
-          <Route exact path="/intro">
-            <IntroPage onMount={() => setShouldShowIntro(false)} />
+            <HomePage />
           </Route>
           <Route exact path="/about">
             <AboutPage />
-          </Route>
-          <Route exact path="/recipes">
-            <AllRecipesPage />
-          </Route>
-          <Route exact path="/recipes/:slug">
-            <RecipePage />
           </Route>
           <Route path="/herb/:slug">
             <HerbPage />

@@ -18,22 +18,16 @@ const Menu = (props) => {
         <img src="/herbs/images/ui/logo.svg" alt="על טעם וריח" />
       </Link>
       <div className="IconButtonContainer">
-        <Link to="/recipes">
-          <IconButton icon="recipes" label="מתכונים" />
-        </Link>
-        <Link to="/intro">
-          <IconButton icon="help" label="מה זה?" />
-        </Link>
         <Link to="/about">
           <IconButton icon="about" label="אודות" />
         </Link>
-        <OutLink href="https://www.instagram.com/the.herb.tree/">
+        {/* <OutLink href="https://www.instagram.com/the.herb.tree/">
           <img
             src="/herbs/images/ui/insta.svg"
             className="instaLink"
             alt="אינסטגרם"
           />
-        </OutLink>
+        </OutLink> */}
       </div>
     </nav>
   );

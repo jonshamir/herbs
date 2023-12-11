@@ -58,46 +58,13 @@ class HerbTree extends React.Component {
     );
 
     window.addEventListener("resize", (e) => this.handleResize(e));
-    this.scrollToBottomCenter();
     setTimeout(() => {
       this.onRouteChanged();
-      this.containerRef.current.addEventListener("scroll", (e) =>
-        this.handleScroll(e)
-      );
     }, 800);
-  }
-
-  scrollToBottomCenter() {
-    const { scrollWidth, offsetWidth } = this.containerRef.current;
-    const maxScroll = scrollWidth - offsetWidth;
-    this.containerRef.current.scrollTo({
-      left: maxScroll / 2,
-      top: this.d3ref.current.scrollHeight,
-      behavior: "smooth",
-    });
   }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
-  }
-
-  handleScroll() {
-    const currScroll = this.containerRef.current.scrollTop;
-
-    const opacityThreshold = 100;
-
-    if (currScroll > opacityThreshold) {
-      if (this.state.logoOpacity !== 0)
-        this.setState({ logoOpacity: MIN_LOGO_OPACITY });
-    } else {
-      this.setState({
-        logoOpacity: clamp(
-          1 - currScroll / opacityThreshold,
-          MIN_LOGO_OPACITY,
-          0.9
-        ),
-      });
-    }
   }
 
   handleResize(e) {
@@ -113,7 +80,8 @@ class HerbTree extends React.Component {
   }
 
   setGraphSize() {
-    const w = Math.max(document.documentElement.clientWidth, TABLET_WIDTH);
+    // const w = Math.max(document.documentElement.clientWidth, TABLET_WIDTH);
+    const w = document.documentElement.clientWidth;
     const h = 700;
     updateGraphSize(w, h);
   }
@@ -160,7 +128,8 @@ class HerbTree extends React.Component {
 
         if (!this.state.initalLoaded) {
           this.setState({ initalLoaded: true });
-          setTimeout(growTree, 500);
+          // setTimeout(growTree, 500);
+          growTree();
         } else {
           setTimeout(() => {
             this.setState({ isMinimal: false });
@@ -168,8 +137,6 @@ class HerbTree extends React.Component {
           }, 50);
         }
       } else {
-        if (routeParts[1] !== "herb") this.scrollToBottomCenter();
-
         setTimeout(
           () => {
             growTree(0, false);
@@ -206,7 +173,7 @@ class HerbTree extends React.Component {
     return (
       <div className={classNames} ref={this.containerRef}>
         <h1 className="Logo" style={{ opacity: this.getLogoOpacity() }}>
-          על טעם וריח
+          Herbarium
         </h1>
         {this.props.debug && (
           <div className="DebugMenu">

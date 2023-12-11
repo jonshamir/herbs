@@ -92,7 +92,7 @@ export const initTree = (
         yPos += dir.y * imageSize * 0.5;
       }
 
-      return `translate(${xPos},${yPos})`;
+      return `translate(${xPos},${yPos}) scale(${1 / currentZoom})`;
     });
 
     link
@@ -171,6 +171,10 @@ const getNodeLabel = (d) => {
   else return herbInfo[d.data.id].commonName[lang];
 };
 
+let currentZoom = 1;
+let currentXPan = 0;
+let currentYPan = 0;
+
 export const drawTree = (ref, simulation, nodes, links) => {
   containerEl = ref.current;
 
@@ -180,7 +184,28 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .attr("viewBox", [-width / 2, -height / 2, width, height])
     .lower();
 
-  link = svg
+  const root = svg.append("g").attr("cursor", "grab");
+
+  function handleZoom({ transform }) {
+    currentZoom = transform.k;
+    currentXPan = transform.x;
+    currentYPan = transform.y;
+    root.attr("transform", transform);
+    simulation.alpha(0.2).restart();
+  }
+
+  svg.call(
+    d3
+      .zoom()
+      .extent([
+        [0, 0],
+        [width, height],
+      ])
+      .scaleExtent([0.5, 6])
+      .on("zoom", handleZoom)
+  );
+
+  link = root
     .append("g")
     .selectAll("line")
     .data(links)
@@ -201,7 +226,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
     })
     .attr("opacity", 0);
 
-  node = svg
+  node = root
     .append("g")
     .selectAll("g")
     .data(nodes)
@@ -261,7 +286,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
   svg.on("mousemove", handleMouseMove);
 
   // Leaf text
-  text = svg
+  text = root
     .append("g")
     .attr("class", "textGroup")
     .selectAll("g")
@@ -274,6 +299,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .attr("text-anchor", "middle")
     .attr("y", (d) => (d.children ? -5 : 0))
     .attr("opacity", 0);
+
   return { svg, link, node, text };
 };
 
@@ -314,7 +340,6 @@ export const printLayout = () => {
   svg
     .selectAll("text")
     .attr("class", "")
-    .attr("style", "direction: rtl")
     .attr("stroke-width", 0)
     .attr("font-size", "8")
     .attr("font-family", "ArbelHagilda");
@@ -367,7 +392,7 @@ const handleHover = (
     }
     tooltipContainer.attr(
       "style",
-      `transform: translate(${2 * d.x}px,${2 * d.y}px)`
+      `transform: translate(${2 * d.x}px, ${2 * d.y}px)`
     );
     tooltip.transition().duration(300).style("opacity", 1);
   } else {
@@ -432,13 +457,11 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
 };
 
 export const setupDrag = () => {
-  console.log("Ma kore?");
-
   if (!allowDrag) node.filter((d) => d.depth > 0).call(drag(simulation));
   allowDrag = true;
 };
 
-export const growTree = (growthTime = 550, growImages = true) => {
+export const growTree = (growthTime = 0, growImages = true) => {
   svg.attr("opacity", 1);
 
   link
@@ -498,19 +521,10 @@ export const unGrowTree = (duration = 300) => {
     .attr("opacity", 0)
     .end()
     .then(() => {
-      scrollContainerToBottom();
-      //Ungrow
+      // Ungrow
       svg.selectAll(".moreInfo circle").attr("transform", "scale(0.01)");
       svg.selectAll(".leaf circle").attr("opacity", 0);
     });
-};
-
-const scrollContainerToBottom = () => {
-  const scrollingContainer = containerEl.parentElement;
-
-  const { scrollWidth, offsetWidth } = scrollingContainer;
-  const maxScroll = scrollWidth - offsetWidth;
-  scrollingContainer.scrollTo(maxScroll / 2, containerEl.scrollHeight);
 };
 
 const setSubtreeActive = (root, isActive) => {
@@ -623,13 +637,13 @@ export const unhighlightAll = (scaleImages) => {
 
 function handleMouseMove(event) {
   const { x, offsetY } = event;
-  if (width * 2 > TABLET_WIDTH) {
-    mousePos = {
-      x: (x - width) / 2,
-      y: (offsetY - height) / 2,
-    };
-    simulation.alpha(0.2).restart();
-  }
+  // if (width * 2 > TABLET_WIDTH) {
+  mousePos = {
+    x: ((x - width) / 2 - currentXPan) / currentZoom,
+    y: ((offsetY - height) / 2 - currentYPan) / currentZoom,
+  };
+  simulation.alpha(0.2).restart();
+  // }
 }
 
 const drag = (simulation) => {
