@@ -9,31 +9,6 @@ nav.Menu {
   align-items: center;
   user-select: none;
 
-  @media screen and (max-width: $tablet-width) {
-    flex-direction: row;
-    align-items: end;
-
-    .IconButtonContainer {
-      flex-direction: row !important;
-
-      .IconButton {
-        // transform: rotate(-45deg);
-        padding-left: 0em !important;
-
-        // img {
-        //   transform: rotate(45deg);
-        // }
-        span {
-          display: none;
-        }
-      }
-
-      .instaLink {
-        margin-right: 0.5em;
-      }
-    }
-  }
-
   &.logoOnly {
     .IconButtonContainer {
       opacity: 0;

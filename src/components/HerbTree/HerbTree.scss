@@ -40,7 +40,6 @@
   transition: transform $transition-defaults;
   width: 100vw;
   height: 100vh;
-  cursor: grab;
 
   svg {
     text-rendering: optimizeSpeed;
@@ -156,7 +155,8 @@
     user-select: none;
     text-align: center;
     transition: fill-opacity $transition-defaults,
-      stroke-opacity $transition-defaults, fill $transition-defaults;
+      stroke-opacity $transition-defaults, fill $transition-defaults,
+      opacity $transition-defaults;
     // pointer-events: none;
     font-weight: 600;
 

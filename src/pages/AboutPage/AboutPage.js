@@ -5,27 +5,27 @@ import OutLink from "../../components/OutLink/OutLink";
 
 import "./AboutPage.scss";
 
-const AboutPage = (props) => {
+const AboutPage = () => {
   return (
     <FadeInOut className="AboutPage PageContainer">
       <main>
-        <h1>אודות האתר</h1>
+        <h1>About</h1>
         <p>
-          מאת&nbsp;
+          Project by &nbsp;
           <OutLink href="https://www.instagram.com/yonshamir/">
-            יונתן שמיר
+            Jon Shamir
           </OutLink>
         </p>
         <p>
-          תמונות הצמחים באתר צולמו ב
+          Plant specimens photographed at the{" "}
           <OutLink href="http://nnhc.huji.ac.il/herbarium/">
-            עשביית האוניברסיטה העברית
+            Hebrew University Herbarium
           </OutLink>
           <br />
           תודה על האירוח והגישה לאוספים
         </p>
         <p>
-          מידע על הסיווג המדעי של הצמחים מ-
+          taxonomy information taken from{" "}
           <OutLink href="https://species.wikimedia.org">Wikispecies</OutLink>
         </p>
         <p>תודה לאמיתי גלעד על ההנחייה והליווי</p>
@@ -33,12 +33,6 @@ const AboutPage = (props) => {
         <p>תודה לפרופ' נתיב דודאי על המידע המדעי</p>
         <p>תודה לטורקיה על הייעוץ, המתכונים והבישולים המשותפים</p>
         <p>תודה לשי על התמיכה והעזרה בהכל</p>
-
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <br />
         <br />
         <br />
@@ -49,7 +43,7 @@ const AboutPage = (props) => {
             className="BezalelLogo"
             alt="בצלאל"
           />
-          בצלאל אקדמיה לאמנות ועיצוב
+          Bezalel
         </p>
         <p></p>
       </main>

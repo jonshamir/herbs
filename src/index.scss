@@ -126,9 +126,9 @@ main {
   box-sizing: border-box;
 
   main {
-    text-align: right;
+    text-align: left;
     max-width: 1000px;
-    padding: 0 1.5em;
+    padding: 0 10em;
 
     @media screen and (max-width: $tablet-width) {
       padding-top: 5em;

@@ -79,6 +79,17 @@ export const initTree = (
       return transform;
     });
 
+    link.attr("d", (d) => {
+      return `
+            M 
+              ${d.source.x} ${d.source.y} 
+            C 
+              ${d.source.x} ${(d.source.y + d.target.y) / 2}
+              ${d.target.x} ${(d.source.y + d.target.y) / 2}
+              ${d.target.x} ${d.target.y}
+          `;
+    });
+
     text.attr("transform", (d) => {
       let xPos = d.x;
       let yPos = d.y;
@@ -93,6 +104,10 @@ export const initTree = (
       }
 
       return `translate(${xPos},${yPos}) scale(${1 / currentZoom})`;
+    });
+
+    text.attr("opacity", (d) => {
+      return currentZoom > 0.8 ? 1 : 0;
     });
 
     link
@@ -132,7 +147,10 @@ export const setupSimulation = (nodes, links) => {
           if (dist < 25) {
             // Snap to cursor
           } else if (dist < 250) {
-            const invDist = Math.pow(clamp01(1 - (6 * dist) / height), 2);
+            const invDist = Math.pow(
+              clamp01(1 - (6 * dist) / height),
+              2 * currentZoom
+            );
             const deltaX = d.x - mousePos.x;
             const deltaY = d.y - mousePos.y;
             const dir = normalize2D(deltaX, deltaY);
@@ -184,7 +202,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .attr("viewBox", [-width / 2, -height / 2, width, height])
     .lower();
 
-  const root = svg.append("g").attr("cursor", "grab");
+  const root = svg.append("g");
 
   function handleZoom({ transform }) {
     currentZoom = transform.k;
@@ -201,30 +219,31 @@ export const drawTree = (ref, simulation, nodes, links) => {
         [0, 0],
         [width, height],
       ])
-      .scaleExtent([0.5, 6])
+      .scaleExtent([0.5, 4])
       .on("zoom", handleZoom)
   );
 
   link = root
     .append("g")
-    .selectAll("line")
+    .selectAll("path")
     .data(links)
-    .join("line")
+    .join("path")
     .attr("class", "link")
-    .attr("stroke-width", (d) => {
-      const rank = d.target.data.rank["en"];
-      switch (rank) {
-        case "Cladus":
-          return 3;
-        case "Ordo":
-          return 2;
-        case "Familia":
-          return 1.5;
-        default:
-          return 1;
-      }
-    })
-    .attr("opacity", 0);
+    .attr("fill", "none");
+  // .attr("stroke-width", (d) => {
+  //   const rank = d.target.data.rank["en"];
+  //   switch (rank) {
+  //     case "Cladus":
+  //       return 3;
+  //     case "Ordo":
+  //       return 2;
+  //     case "Familia":
+  //       return 1.5;
+  //     default:
+  //       return 1;
+  //   }
+  // })
+  // .attr("opacity", 0);
 
   node = root
     .append("g")
@@ -637,6 +656,7 @@ export const unhighlightAll = (scaleImages) => {
 
 function handleMouseMove(event) {
   const { x, offsetY } = event;
+  // TODO disable on mobile
   // if (width * 2 > TABLET_WIDTH) {
   mousePos = {
     x: ((x - width) / 2 - currentXPan) / currentZoom,

@@ -19,7 +19,7 @@ const Menu = (props) => {
       </Link>
       <div className="IconButtonContainer">
         <Link to="/about">
-          <IconButton icon="about" label="אודות" />
+          <IconButton icon="about" label="About" />
         </Link>
         {/* <OutLink href="https://www.instagram.com/the.herb.tree/">
           <img
