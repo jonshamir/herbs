@@ -80,12 +80,31 @@ export const initTree = (
     });
 
     link.attr("d", (d) => {
+      const targetControlPos = d.target.height === 0 ? 0.5 : 0.3;
+      const dir = normalize2D(d.target.x - d.source.x, d.target.y - d.source.y);
+      const length = dist2D(d.source, d.target);
+      const controlPoint2 = {
+        x: d.target.x - dir.x * length * targetControlPos,
+        y: d.target.y - dir.y * length * targetControlPos,
+      };
+
+      const prevDir = d.source.parent
+        ? normalize2D(
+            d.source.x - d.source.parent.x,
+            d.source.y - d.source.parent.y
+          )
+        : { x: 0, y: -1 };
+
+      const controlPoint1 = {
+        x: d.source.x + prevDir.x * length * 0.4,
+        y: d.source.y + prevDir.y * length * 0.4,
+      };
       return `
             M 
               ${d.source.x} ${d.source.y} 
             C 
-              ${d.source.x} ${(d.source.y + d.target.y) / 2}
-              ${d.target.x} ${(d.source.y + d.target.y) / 2}
+              ${controlPoint1.x} ${controlPoint1.y}
+              ${controlPoint2.x} ${controlPoint2.y}
               ${d.target.x} ${d.target.y}
           `;
     });
@@ -229,21 +248,21 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .data(links)
     .join("path")
     .attr("class", "link")
-    .attr("fill", "none");
-  // .attr("stroke-width", (d) => {
-  //   const rank = d.target.data.rank["en"];
-  //   switch (rank) {
-  //     case "Cladus":
-  //       return 3;
-  //     case "Ordo":
-  //       return 2;
-  //     case "Familia":
-  //       return 1.5;
-  //     default:
-  //       return 1;
-  //   }
-  // })
-  // .attr("opacity", 0);
+    .attr("fill", "none")
+    .attr("stroke-width", (d) => {
+      const rank = d.target.data.rank["en"];
+      switch (rank) {
+        case "Cladus":
+          return 3;
+        case "Ordo":
+          return 2;
+        case "Familia":
+          return 1.5;
+        default:
+          return 1;
+      }
+    })
+    .attr("opacity", 0);
 
   node = root
     .append("g")
@@ -282,7 +301,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
       d3.select(this).attr("xlink:href", "images/herb.png");
     })
     .attr("x", imageCenter)
-    .attr("y", imageCenter)
+    .attr("y", imageCenter * 1.5)
     .attr("width", imageSize)
     .attr("height", imageSize)
     .attr("transform", "scale(0.01)");
