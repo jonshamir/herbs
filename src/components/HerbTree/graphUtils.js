@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 import { forceManyBodyReuse } from "d3-force-reuse";
-import {
+import math, {
   radToDeg,
   degToRad,
   normalize2D,
@@ -10,6 +10,7 @@ import {
   angleBetweenVectors,
   dot2D,
   sign,
+  cross2D,
 } from "../../utils/math";
 
 import herbInfo from "../../data/herbInfo.json";
@@ -75,9 +76,11 @@ export const initTree = (
     node.attr("transform", (d) => {
       let transform = `translate(${d.x},${d.y})`;
       if (!d.children) {
+        if (d.angleOffset === undefined) d.angleOffset = 0;
         const deltaX = d.x - d.parent.x;
         const deltaY = d.y - d.parent.y;
-        const angle = radToDeg(Math.atan2(deltaY, deltaX)) + 90;
+        const angle = radToDeg(Math.atan2(deltaY, deltaX) + d.angleOffset) + 90;
+
         transform += ` rotate(${angle})`;
       }
       return transform;
@@ -98,6 +101,7 @@ export const initTree = (
       );
 
       const control1strength = d.target.height === 0 ? 0.3 : 0.4;
+      const control2strength = d.target.height === 0 ? 0.5 : 0.3;
 
       const controlPoint1 = {
         x: d.source.x + prevDir.x * length * control1strength,
@@ -106,11 +110,11 @@ export const initTree = (
 
       // Rotate tree leaves to look more natural
       if (d.target.height === 0) {
-        const angle = angleBetweenVectors(prevDir, currDir);
+        const angle = Math.asin(cross2D(prevDir, currDir));
         currDir = rotateVector(currDir, angle / 2);
+        d.target.angleOffset = angle / 2;
       }
 
-      const control2strength = d.target.height === 0 ? 0.5 : 0.3;
       const controlPoint2 = {
         x: d.target.x - currDir.x * length * control2strength,
         y: d.target.y - currDir.y * length * control2strength,
