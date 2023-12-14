@@ -6,6 +6,10 @@ import {
   normalize2D,
   dist2D,
   clamp01,
+  rotateVector,
+  angleBetweenVectors,
+  dot2D,
+  sign,
 } from "../../utils/math";
 
 import herbInfo from "../../data/herbInfo.json";
@@ -80,32 +84,52 @@ export const initTree = (
     });
 
     link.attr("d", (d) => {
-      const targetControlPos = d.target.height === 0 ? 0.5 : 0.3;
-      const dir = normalize2D(d.target.x - d.source.x, d.target.y - d.source.y);
       const length = dist2D(d.source, d.target);
-      const controlPoint2 = {
-        x: d.target.x - dir.x * length * targetControlPos,
-        y: d.target.y - dir.y * length * targetControlPos,
-      };
-
+      // Calculate direction vectors
       const prevDir = d.source.parent
         ? normalize2D(
             d.source.x - d.source.parent.x,
             d.source.y - d.source.parent.y
           )
         : { x: 0, y: -1 };
+      let currDir = normalize2D(
+        d.target.x - d.source.x,
+        d.target.y - d.source.y
+      );
+
+      const control1strength = d.target.height === 0 ? 0.3 : 0.4;
 
       const controlPoint1 = {
-        x: d.source.x + prevDir.x * length * 0.4,
-        y: d.source.y + prevDir.y * length * 0.4,
+        x: d.source.x + prevDir.x * length * control1strength,
+        y: d.source.y + prevDir.y * length * control1strength,
       };
+
+      // Rotate tree leaves to look more natural
+      if (d.target.height === 0) {
+        const angle = angleBetweenVectors(prevDir, currDir);
+        currDir = rotateVector(currDir, angle / 2);
+      }
+
+      const control2strength = d.target.height === 0 ? 0.5 : 0.3;
+      const controlPoint2 = {
+        x: d.target.x - currDir.x * length * control2strength,
+        y: d.target.y - currDir.y * length * control2strength,
+      };
+
+      const endPointPos = d.target.height === 0 ? 0.3 : 0;
+
+      const endPoint = {
+        x: d.target.x - currDir.x * imageSize * endPointPos,
+        y: d.target.y - currDir.y * imageSize * endPointPos,
+      };
+
       return `
             M 
               ${d.source.x} ${d.source.y} 
             C 
               ${controlPoint1.x} ${controlPoint1.y}
               ${controlPoint2.x} ${controlPoint2.y}
-              ${d.target.x} ${d.target.y}
+              ${endPoint.x} ${endPoint.y}
           `;
     });
 
@@ -301,7 +325,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
       d3.select(this).attr("xlink:href", "images/herb.png");
     })
     .attr("x", imageCenter)
-    .attr("y", imageCenter * 1.5)
+    .attr("y", imageCenter)
     .attr("width", imageSize)
     .attr("height", imageSize)
     .attr("transform", "scale(0.01)");

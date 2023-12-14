@@ -207,28 +207,46 @@ function dist2D(v1, v2) {
   return len2D(v1.x - v2.x, v1.y - v2.y);
 }
 
+function rotateVector(v, rad) {
+  const cos = Math.cos(rad);
+  const sin = Math.sin(rad);
+  return {
+    x: v.x * cos - v.y * sin,
+    y: v.x * sin + v.y * cos,
+  };
+}
+
+function angleBetweenVectors(v1, v2) {
+  const dot = v1.x * v2.x + v1.y * v2.y;
+  const det = v1.x * v2.y - v1.y * v2.x;
+  return Math.atan2(det, dot);
+}
+
 module.exports = {
-  mod: mod,
-  fract: fract,
-  sign: sign,
-  degToRad: degToRad,
-  radToDeg: radToDeg,
-  pingPong: pingPong,
-  linspace: linspace,
-  lerp: lerp,
-  lerpArray: lerpArray,
-  inverseLerp: inverseLerp,
-  lerpFrames: lerpFrames,
-  clamp: clamp,
-  clamp01: clamp01,
-  smoothstep: smoothstep,
-  damp: damp,
-  dampArray: dampArray,
-  mapRange: mapRange,
+  mod,
+  fract,
+  sign,
+  degToRad,
+  radToDeg,
+  pingPong,
+  linspace,
+  lerp,
+  lerpArray,
+  inverseLerp,
+  lerpFrames,
+  clamp,
+  clamp01,
+  smoothstep,
+  damp,
+  dampArray,
+  mapRange,
   expand2D: expandVector(2),
   expand3D: expandVector(3),
   expand4D: expandVector(4),
-  normalize2D: normalize2D,
-  len2D: len2D,
-  dist2D: dist2D,
+  normalize2D,
+  len2D,
+  dist2D,
+  rotateVector,
+  angleBetweenVectors,
+  dot2D: (v1, v2) => v1.x * v2.x + v1.y * v2.y,
 };
