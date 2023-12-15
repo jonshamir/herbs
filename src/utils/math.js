@@ -181,6 +181,14 @@ function len2D(x, y) {
   return Math.sqrt(x * x + y * y);
 }
 
+function rotate90(v) {
+  return { x: -v.y, y: v.x };
+}
+
+function rotateMinus90(v) {
+  return { x: v.y, y: -v.x };
+}
+
 function mapRange(value, inputMin, inputMax, outputMin, outputMax, clamp) {
   // Reference:
   // https://openframeworks.cc/documentation/math/ofMath/
@@ -250,4 +258,8 @@ module.exports = {
   angleBetweenVectors,
   dot2D: (v1, v2) => v1.x * v2.x + v1.y * v2.y,
   cross2D: (v1, v2) => v1.x * v2.y - v1.y * v2.x,
+  rotate90,
+  rotateMinus90,
+  flip: (v) => ({ x: -v.x, y: -v.y }),
+  sumVectors: (v1, v2) => ({ x: v1.x + v2.x, y: v1.y + v2.y }),
 };

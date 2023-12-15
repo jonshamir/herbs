@@ -10,7 +10,10 @@ import math, {
   angleBetweenVectors,
   dot2D,
   sign,
+  rotate90,
   cross2D,
+  flip,
+  sumVectors,
 } from "../../utils/math";
 
 import herbInfo from "../../data/herbInfo.json";
@@ -82,6 +85,28 @@ export const initTree = (
         const angle = radToDeg(Math.atan2(deltaY, deltaX) + d.angleOffset) + 90;
 
         transform += ` rotate(${angle})`;
+      } else if (d.depth > 0) {
+        // Has children
+        // Calculate bezier control incoming direction using children
+        d.bezierDir = { x: 0, y: 0 };
+        let maxChildHeight = 0;
+        d.children.forEach((child) => {
+          const childDir = normalize2D(child.x - d.x, child.y - d.y);
+          if (maxChildHeight == child.height) {
+            // Average direction
+            d.bezierDir = sumVectors(d.bezierDir, childDir);
+          } else if (maxChildHeight < child.height) {
+            // Replace direction
+            maxChildHeight = child.height;
+            d.bezierDir = childDir;
+          }
+        });
+        const parentDir = normalize2D(d.x - d.parent.x, d.y - d.parent.y);
+        d.bezierDir = normalize2D(d.bezierDir.x, d.bezierDir.y);
+        d.bezierDir = normalize2D(
+          d.bezierDir.x + parentDir.x,
+          d.bezierDir.y + parentDir.y
+        );
       }
       return transform;
     });
@@ -100,29 +125,36 @@ export const initTree = (
         d.target.y - d.source.y
       );
 
-      const control1strength = d.target.height === 0 ? 0.3 : 0.4;
-      const control2strength = d.target.height === 0 ? 0.5 : 0.3;
+      let control1strength = d.target.height === 0 ? 0.3 : 0.4;
+      let control2strength = d.target.height === 0 ? 0.5 : 0.3;
 
-      const controlPoint1 = {
-        x: d.source.x + prevDir.x * length * control1strength,
-        y: d.source.y + prevDir.y * length * control1strength,
+      const control1dir = normalize2D(
+        prevDir.x + currDir.x,
+        prevDir.y + currDir.y
+      );
+
+      const control1pos = {
+        x: d.source.x + control1dir.x * length * control1strength,
+        y: d.source.y + control1dir.y * length * control1strength,
       };
 
-      // Rotate tree leaves to look more natural
+      // Rotate leaves to look more natural
       if (d.target.height === 0) {
-        const angle = Math.asin(cross2D(prevDir, currDir));
-        currDir = rotateVector(currDir, angle / 2);
-        d.target.angleOffset = angle / 2;
+        const angle = Math.asin(cross2D(prevDir, currDir)) / 3;
+        currDir = rotateVector(currDir, angle);
+        d.target.angleOffset = angle;
+      } else {
+        currDir = d.target.bezierDir;
       }
 
-      const controlPoint2 = {
+      const control2pos = {
         x: d.target.x - currDir.x * length * control2strength,
         y: d.target.y - currDir.y * length * control2strength,
       };
 
       const endPointPos = d.target.height === 0 ? 0.3 : 0;
 
-      const endPoint = {
+      const endPos = {
         x: d.target.x - currDir.x * imageSize * endPointPos,
         y: d.target.y - currDir.y * imageSize * endPointPos,
       };
@@ -131,9 +163,9 @@ export const initTree = (
             M 
               ${d.source.x} ${d.source.y} 
             C 
-              ${controlPoint1.x} ${controlPoint1.y}
-              ${controlPoint2.x} ${controlPoint2.y}
-              ${endPoint.x} ${endPoint.y}
+              ${control1pos.x} ${control1pos.y}
+              ${control2pos.x} ${control2pos.y}
+              ${endPos.x} ${endPos.y}
           `;
     });
 
@@ -200,35 +232,49 @@ export const setupSimulation = (nodes, links) => {
             );
             const deltaX = d.x - mousePos.x;
             const deltaY = d.y - mousePos.y;
-            const dir = normalize2D(deltaX, deltaY);
-            d.x += dir.x * invDist * 12 * alpha;
-            d.y += dir.y * invDist * 12 * alpha;
+            const movementDir = normalize2D(deltaX, deltaY);
+            d.x += movementDir.x * invDist * 12 * alpha;
+            d.y += movementDir.y * invDist * 12 * alpha;
+
+            // const applyMovementRecursive = (n) => {
+            //   if (n !== d) {
+            //     const parentDist = dist2D(n, d) / 10;
+            //     const parentDir = normalize2D(n.x - d.x, n.y - d.y);
+            //     // const dir = movementDir;
+            //     const dir = rotate90(parentDir);
+
+            //     n.x += dir.x * parentDist * alpha;
+            //     n.y += dir.y * parentDist * alpha;
+            //   }
+            //   n.children?.forEach(applyMovementRecursive);
+            // };
+            // applyMovementRecursive(d);
           }
         }
       });
     });
-  /*
-    .force("growth", (alpha) => {
-      const multiplier = Math.pow(alpha, 1);
 
-      nodes.forEach((node) => {
-        // Cause nodes to be above their parents
-        if (node.parent && node.y > node.parent.y - 1000) {
-          node.y -= multiplier * 6;
-        }
-      });
-    })
-    .force("bounding", (alpha) => {
-      nodes.forEach((node) => {
-        const wallRepulsionX =
-          alpha *
-          Math.max(1, Math.abs(node.x + offsetX) - (width / 2 - marginX));
-        node.x -= Math.sign(node.x) * wallRepulsionX;
-        // const wallRepulsionY =
-        //   alpha * Math.max(1, Math.abs(node.y) - (height / 2 - marginY));
-        // node.y -= Math.sign(node.y) * wallRepulsionY;
-      });
-    });*/
+  // .force("growth", (alpha) => {
+  //   const multiplier = Math.pow(alpha, 1);
+
+  //   nodes.forEach((node) => {
+  //     // Cause nodes to be above their parents
+  //     if (node.parent && node.y > node.parent.y - 1000) {
+  //       node.y -= multiplier * 6;
+  //     }
+  //   });
+  // });
+  // .force("bounding", (alpha) => {
+  //   nodes.forEach((node) => {
+  //     const wallRepulsionX =
+  //       alpha *
+  //       Math.max(1, Math.abs(node.x + offsetX) - (width / 2 - marginX));
+  //     node.x -= Math.sign(node.x) * wallRepulsionX;
+  //     // const wallRepulsionY =
+  //     //   alpha * Math.max(1, Math.abs(node.y) - (height / 2 - marginY));
+  //     // node.y -= Math.sign(node.y) * wallRepulsionY;
+  //   });
+  // });
 };
 
 const getNodeLabel = (d) => {
