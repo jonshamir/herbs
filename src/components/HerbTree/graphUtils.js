@@ -35,7 +35,7 @@ const collisionRadius = 16;
 let allowDrag = false;
 
 // Global variables
-let svg, link, node, text;
+let svg, link, node, text, textGroup;
 let tooltip, tooltipContainer;
 let simulation;
 let rootNode;
@@ -185,7 +185,7 @@ export const initTree = (
       return `translate(${xPos},${yPos}) scale(${1 / currentZoom})`;
     });
 
-    text.attr("opacity", (d) => {
+    textGroup.attr("opacity", (d) => {
       return currentZoom > 0.8 ? 1 : 0;
     });
 
@@ -398,9 +398,8 @@ export const drawTree = (ref, simulation, nodes, links) => {
   svg.on("mousemove", handleMouseMove);
 
   // Leaf text
-  text = root
-    .append("g")
-    .attr("class", "textGroup")
+  textGroup = text = root.append("g").attr("class", "textGroup");
+  text = textGroup
     .selectAll("g")
     .data(nodes)
     .join("g")
@@ -467,6 +466,7 @@ export const setupTooltip = (tooltipRef) => {
 };
 
 const handleHover = (
+  event,
   d,
   svg,
   link,
@@ -502,10 +502,10 @@ const handleHover = (
     } else {
       tooltip.html(`<h4>${name} /<span> ${rank[lang]}</span></h4>`);
     }
-    tooltipContainer.attr(
-      "style",
-      `transform: translate(${2 * d.x}px, ${2 * d.y}px)`
-    );
+
+    const [x, y] = d3.pointer(event);
+
+    tooltipContainer.attr("style", `transform: translate(${x}px, ${y}px)`);
     tooltip.transition().duration(300).style("opacity", 1);
   } else {
     // d3.select(`.image-${slug}`).attr("transform", `scale(1.1)`);
@@ -519,6 +519,7 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
     .on("mouseover", (e, d) => {
       hoverTimer = setTimeout(() => {
         handleHover(
+          e,
           d,
           svg,
           link,

@@ -25,15 +25,15 @@
   }
 
   .HerbContent {
-    text-align: right;
+    text-align: left;
     min-height: 100vh;
     height: 100%;
     padding-top: 0.5em;
-    padding-left: 2em;
-    padding-right: 0;
+    padding-right: 2em;
+    padding-left: 0;
     padding-bottom: 8em;
     box-sizing: border-box;
-    margin-right: 300px;
+    margin-left: 300px;
 
     @media screen and (max-width: $mobile-width) {
       padding: 1em !important;

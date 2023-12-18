@@ -22,23 +22,23 @@ const HerbSummary = (props) => {
             </td>
           </tr>
           <tr>
-            <th>באנגלית</th>
+            <th>English Name</th>
             <td>{herb.commonName["en"]}</td>
           </tr>
           {altNames ? (
             <tr>
-              <th>שמות נוספים</th>
+              <th>Other Names</th>
               <td>{altNames}</td>
             </tr>
           ) : null}
           <tr>
-            <th>משפחה</th>
+            <th>Family</th>
             <td>{family.name[lang]}</td>
           </tr>
           <tr>
-            <th>צורת חיים</th>
+            <th>Growth Form</th>
             <td>
-              {herb.lifeform[lang]} {herb.lifecycle[lang]}
+              {herb.lifecycle[lang]} {herb.lifeform[lang]}
             </td>
           </tr>
         </tbody>

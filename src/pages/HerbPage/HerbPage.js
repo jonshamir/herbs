@@ -15,7 +15,7 @@ import "./HerbPage.scss";
 class HerbPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { md: "טוען...", imageLoaded: false, timerComplete: false };
+    this.state = { md: "Loading...", imageLoaded: false, timerComplete: false };
   }
 
   async componentDidMount() {
@@ -42,37 +42,6 @@ class HerbPage extends React.Component {
     return <Link to={href}>{children}</Link>;
   }
 
-  renderRecipes(herb) {
-    const { slug } = herb;
-    const recipes = recipeInfo.filter((recipe) =>
-      recipe.herbs.map((h) => h.slug).includes(slug)
-    );
-
-    if (recipes.length > 0) {
-      return (
-        <>
-          <h2>מתכונים</h2>
-          <p>
-            ניתן למצוא פה באתר רעיונות לשימושים של {herb.commonName[lang]}{" "}
-            בבישול:
-          </p>
-          <ul>
-            {recipes.map((recipe) => (
-              <li key={recipe.slug}>
-                <Link
-                  to={`../../recipes/${recipe.slug}`}
-                  className="RecipeLink"
-                >
-                  {recipe.title + " >"}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </>
-      );
-    }
-  }
-
   onTitleClick() {
     const { slug } = this.props.match.params;
 
@@ -92,10 +61,9 @@ class HerbPage extends React.Component {
     return (
       <FadeInOut className="HerbPage">
         <main>
-          {/*
-          <Link to="/" className="backIcon">
+          {/* <Link to="/" className="backIcon">
             <IconButton icon="arrow-right" label="חזרה לעץ" />
-          </Link>*/}
+          </Link> */}
           <HerbSummary herb={herb} slug={slug} family={family} />
           <div className="HerbContent">
             <div className="mainText">
@@ -110,9 +78,8 @@ class HerbPage extends React.Component {
               >
                 {this.state.md}
               </ReactMarkdown>
-              <h2>משפחת ה{family.name[lang]}</h2>
+              <h2>{family.name[lang]} Family</h2>
               <p>{family.description[lang]}</p>
-              {this.renderRecipes(herb)}
             </div>
           </div>
           <div className="herbPhoto">
