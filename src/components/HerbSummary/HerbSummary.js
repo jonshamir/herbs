@@ -22,7 +22,7 @@ const HerbSummary = (props) => {
             </td>
           </tr>
           <tr>
-            <th>English Name</th>
+            <th>Name</th>
             <td>{herb.commonName["en"]}</td>
           </tr>
           {altNames ? (

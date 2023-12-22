@@ -118,8 +118,8 @@ class HerbTree extends React.Component {
     const routeParts = route.split("/");
     if (routeParts.slice(-1)[0] === "") routeParts.pop();
 
-    setupDrag();
-    // if (route === "/herb/dill/shamir") setupDrag();
+    // setupDrag();
+    if (route === "/herb/dill/shamir") setupDrag();
 
     this.setGraphSize();
 

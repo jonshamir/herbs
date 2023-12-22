@@ -1,18 +1,13 @@
 import * as d3 from "d3";
 import { forceManyBodyReuse } from "d3-force-reuse";
-import math, {
+import {
   radToDeg,
   degToRad,
   normalize2D,
   dist2D,
   clamp01,
   rotateVector,
-  angleBetweenVectors,
-  dot2D,
-  sign,
-  rotate90,
   cross2D,
-  flip,
   sumVectors,
 } from "../../utils/math";
 
@@ -42,6 +37,24 @@ let rootNode;
 let svgEl;
 let containerEl;
 let mousePos = { x: -1, y: -1 };
+
+const calcTextTransform = (d) => {
+  let xPos = d.x;
+  let yPos = d.y;
+  if (!d.children) {
+    // Leaf nodes
+    const label = getNodeLabel(d);
+    const deltaX = d.x - d.parent.x;
+    const deltaY = d.y - d.parent.y;
+    const dir = normalize2D(deltaX, deltaY);
+    xPos += dir.x * (imageSize * 0.5 + label.length * 1.5);
+    yPos += dir.y * imageSize * 0.5;
+  }
+
+  const scale = Math.max(1 / currentZoom, 0.5);
+
+  return `translate(${xPos},${yPos}) scale(${scale})`;
+};
 
 export const initTree = (
   ref,
@@ -92,7 +105,7 @@ export const initTree = (
         let maxChildHeight = 0;
         d.children.forEach((child) => {
           const childDir = normalize2D(child.x - d.x, child.y - d.y);
-          if (maxChildHeight == child.height) {
+          if (maxChildHeight === child.height) {
             // Average direction
             d.bezierDir = sumVectors(d.bezierDir, childDir);
           } else if (maxChildHeight < child.height) {
@@ -169,25 +182,7 @@ export const initTree = (
           `;
     });
 
-    text.attr("transform", (d) => {
-      let xPos = d.x;
-      let yPos = d.y;
-      if (!d.children) {
-        // Leaf nodes
-        const label = getNodeLabel(d);
-        const deltaX = d.x - d.parent.x;
-        const deltaY = d.y - d.parent.y;
-        const dir = normalize2D(deltaX, deltaY);
-        xPos += dir.x * (imageSize * 0.5 + label.length * 1.5);
-        yPos += dir.y * imageSize * 0.5;
-      }
-
-      return `translate(${xPos},${yPos}) scale(${1 / currentZoom})`;
-    });
-
-    textGroup.attr("opacity", (d) => {
-      return currentZoom > 0.8 ? 1 : 0;
-    });
+    text.attr("transform", calcTextTransform);
 
     link
       .attr("x1", (d) => d.source.x)
@@ -302,7 +297,10 @@ export const drawTree = (ref, simulation, nodes, links) => {
     currentXPan = transform.x;
     currentYPan = transform.y;
     root.attr("transform", transform);
-    simulation.alpha(0.2).restart();
+    textGroup.attr("opacity", (d) => {
+      return currentZoom > 0.8 ? 1 : 0;
+    });
+    text.attr("transform", calcTextTransform);
   }
 
   svg.call(
@@ -312,7 +310,10 @@ export const drawTree = (ref, simulation, nodes, links) => {
         [0, 0],
         [width, height],
       ])
-      .scaleExtent([0.5, 4])
+      .scaleExtent([0.25, 4])
+      .wheelDelta((e) => {
+        return e.deltaY * (e.deltaMode === 1 ? 0.05 : e.deltaMode ? 1 : 0.002);
+      })
       .on("zoom", handleZoom)
   );
 
@@ -752,11 +753,11 @@ function handleMouseMove(event) {
   const { x, offsetY } = event;
   // TODO disable on mobile
   // if (width * 2 > TABLET_WIDTH) {
-  mousePos = {
-    x: ((x - width) / 2 - currentXPan) / currentZoom,
-    y: ((offsetY - height) / 2 - currentYPan) / currentZoom,
-  };
-  simulation.alpha(0.2).restart();
+  // mousePos = {
+  //   x: ((x - width) / 2 - currentXPan) / currentZoom,
+  //   y: ((offsetY - height) / 2 - currentYPan) / currentZoom,
+  // };
+  // simulation.alpha(0.2).restart();
   // }
 }
 
