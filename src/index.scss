@@ -30,6 +30,8 @@
   font-weight: 600;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Sora:wght@400;600&display=swap");
+
 html {
   -webkit-text-size-adjust: none;
   touch-action: pan-y;
@@ -70,11 +72,12 @@ h1 {
   font-kerning: none;
   font-size: 3.5em;
   font-weight: 400;
-  font-family: "Hadassah Friedlaender";
+  font-family: "Lexend";
+  // color: #b14408;
 }
 
 h2 {
-  font-family: "Hadassah Friedlaender";
+  font-family: "Lexend";
   font-kerning: none;
   font-size: 2em;
   // font-weight: 600;

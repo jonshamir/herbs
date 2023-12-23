@@ -160,7 +160,7 @@ class HerbTree extends React.Component {
   getLogoOpacity() {
     const { isMinimal, isHidden, isSubtreeActive, logoOpacity } = this.state;
     if (isMinimal || isHidden) return 0;
-    return logoOpacity;
+    return 1;
   }
 
   render() {

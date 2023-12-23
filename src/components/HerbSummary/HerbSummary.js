@@ -36,7 +36,7 @@ const HerbSummary = (props) => {
             <td>{family.name[lang]}</td>
           </tr>
           <tr>
-            <th>Growth Form</th>
+            <th>Growth</th>
             <td>
               {herb.lifecycle[lang]} {herb.lifeform[lang]}
             </td>

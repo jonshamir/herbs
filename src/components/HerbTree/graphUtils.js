@@ -310,10 +310,10 @@ export const drawTree = (ref, simulation, nodes, links) => {
         [0, 0],
         [width, height],
       ])
-      .scaleExtent([0.25, 4])
-      .wheelDelta((e) => {
-        return e.deltaY * (e.deltaMode === 1 ? 0.05 : e.deltaMode ? 1 : 0.002);
-      })
+      .scaleExtent([0.5, 4])
+      // .wheelDelta((e) => {
+      //   return e.deltaY * (e.deltaMode === 1 ? 0.05 : e.deltaMode ? 1 : 0.002);
+      // })
       .on("zoom", handleZoom)
   );
 

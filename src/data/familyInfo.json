@@ -2,31 +2,31 @@
   "plantae": {
     "name": {
       "he": "ממלכת הצמחים",
-      "en": "plantae"
+      "en": "Plantae"
     },
     "description": {
       "he": "כל הצמחים בעולם התפתחו מאב קדמון אחד. שורש העץ מייצג את הצמח הראשון הזה.",
-      "en": ""
+      "en": "All plants evolved from a single common ancestor. The root of the tree represents this first plant."
     }
   },
   "eudicots": {
     "name": {
       "he": "דו-פסיגיים",
-      "en": "eudicots"
+      "en": "Eudicots"
     },
     "description": {
       "he": "הגדולה מבין מחלקות הצמחים. כשצמח מהמחלקה נובט הוא מגדל שני פסיגים (עלי עובר ראשוניים).",
-      "en": ""
+      "en": "The largest of the plant divisions. When a plant from this division sprouts, it grows two cotyledons (first leaves)."
     }
   },
   "monocots": {
     "name": {
       "he": "חד-פסיגיים",
-      "en": "monocots"
+      "en": "Monocots"
     },
     "description": {
       "he": "המחלקה כוללת צמחים בעלי מבנה פשוט, דמוי- דשא. הזרע מגדל פסיג (עלה עובר) בודד.",
-      "en": ""
+      "en": "This division includes plants with a simple structure, resembling grass. The seed produces a single cotyledon (first leaf)."
     }
   },
   "lamiaceae": {
@@ -36,7 +36,7 @@
     },
     "description": {
       "he": "ידועה גם כמשפחת הנענע. רבים מחבריה מייצרים שמנים אתריים ריחניים בכל חלקי הצמח, ולכן משמשים כעשבי תיבול.",
-      "en": ""
+      "en": "Also known as the mint family. Many of its members produce aromatic essential oils throughout the plant, making them useful as culinary herbs."
     }
   },
   "lauraceae": {
@@ -46,7 +46,7 @@
     },
     "description": {
       "he": "חברי המשפחה הם לרוב עצים טרופיים המייצרים שמנים אתריים ריחניים. כוללת את עץ הקינמון, האבוקדו והדפנה.",
-      "en": ""
+      "en": "Members of this family are predominantly tropical trees that produce aromatic essential oils. It includes cinnamon, avocado, and bay laurel."
     }
   },
   "amaryllidaceae": {
@@ -56,7 +56,7 @@
     },
     "description": {
       "he": "כל חברי המשפחה מגדלים בצל תת-קרקעי. הבצל אוגר מים ומזון בעונה הגשומה, ומאפשר לצמח לשרוד במשך העונה היבשה.",
-      "en": ""
+      "en": "All members of the family grow in the shade of subterranean bulbs. The bulb stores water and nutrients during the rainy season, allowing the plant to survive through the dry season."
     }
   },
   "brassicaceae": {
@@ -66,7 +66,7 @@
     },
     "description": {
       "he": "ידועה גם כמשפחת החרדל או משפחת הכרוב, כוללת צמחי מאכל רבים כגון כרובית, ברוקולי, צנון וחזרת. הפרחים בצורת צלב בעלי 4 עלי כותרת.",
-      "en": ""
+      "en": "Also known as the mustard or cabbage family, it includes many edible plants such as cabbage, broccoli, turnip, and radish. The flowers have a cross shape with 4 petal-like sepals."
     }
   },
   "asteraceae": {
@@ -76,7 +76,7 @@
     },
     "description": {
       "he": "ידועה גם כמשפחת החמנייה. הפרחים דמויי-כוכב, מורכבים מהמון פרחונים קטנים. כוללת צמחי מאכל כגון חסה, אנדיב, ארטישוק, ועכובית הגלגל.",
-      "en": ""
+      "en": "Also known as the aster or daisy family. The flowers have a star-like appearance, composed of numerous small florets. It includes edible plants like lettuce, endive, artichoke, and sunflower."
     }
   },
   "rutaceae": {
@@ -86,7 +86,7 @@
     },
     "description": {
       "he": "ידועה גם כמשפחת ההדרים. הפרחים בעלי ניחוח חזק. המשפחה כוללת את צמח התבלין פיגם, ואת פירות ההדר - לימון, תפוז, אשכולית וכו'.",
-      "en": ""
+      "en": "Also known as the citrus or rue family. The flowers have a strong fragrance. The family includes citrus fruits such as lemon, orange, grapefruit, etc."
     }
   },
   "apiaceae": {
@@ -96,7 +96,7 @@
     },
     "description": {
       "he": "ידועה גם כמשפחת הגזר או משפחת הפטרוזיליה. כוללת צמחי מאכל רבים כגון פטרוזיליה, כמון, אניס וקימל.",
-      "en": ""
+      "en": "Also known as the carrot or parsley family. It includes many edible plants such as parsley, cumin, anise, and caraway."
     }
   },
   "geraniaceae": {
@@ -106,7 +106,7 @@
     },
     "description": {
       "he": "חברי המשפחה ברובם הם צמחים עשבוניים שעירים בעלי פרחים. המינים במשפחה מתחלקים ל-11 סוגים, הידועים שבהם הם גרניום, פלרגוניום, ומקור החסידה.",
-      "en": ""
+      "en": "Most members of the family are herbaceous plants with hairy stems and flowers. The genera in the family are divided into 11 types, including geranium, pelargonium, and the cranesbill genus."
     }
   },
   "polygonaceae": {
@@ -116,7 +116,7 @@
     },
     "description": {
       "he": "חברי המשפחה ברובם צמחים עשבוניים, בעלי פרקים הנראים כברך (בארמית: ארכובה), ומכאן שם המשפחה. כוללת מספר מצומצם של צמחי מאכל כגון כוסמת, ריבס וחומעה.",
-      "en": ""
+      "en": "Also known as the buckwheat or knotweed family. It includes a small number of edible plants such as buckwheat, rhubarb, and sorrel."
     }
   },
   "fabaceae": {
@@ -126,7 +126,7 @@
     },
     "description": {
       "he": "ידועה גם כמשפחת האפונה או משפחת השעועית. חברי המשפחה מגדלים תרמיל מוארך המכיל זרעים מסודרים בשורה. כוללת צמחי מאכל רבים כגון חומוס, בוטנים, חרוב וסויה.",
-      "en": ""
+      "en": "Also known as the legume or pea family. Members of the family grow elongated pods containing seeds arranged in a row. It includes many edible plants such as chickpeas, beans, carob, and soybeans."
     }
   },
   "verbenaceae": {
@@ -136,7 +136,7 @@
     },
     "description": {
       "he": "קרובה התפתחותית למשפחת השפתניים, ובאופן דומה אליה, רוב חברי המשפחה מייצרים שמנים אתריים ריחניים. מלבד הלואיזה איננה מכילה צמחי מאכל בעלי חשיבות.",
-      "en": ""
+      "en": "Closely related to the mint family, and similarly, most members of the family produce aromatic essential oils. Besides vervain, it does not include economically significant edible plants."
     }
   },
   "poaceae": {
@@ -146,7 +146,7 @@
     },
     "description": {
       "he": "ידועה גם כמשפחת הדשא, רוב מיני הדגניים הם עשבים. המשפחה חשובה במיוחד לאדם וכוללת צמחי מאכל רבים כגון אורז, תירס, חיטה ושעורה.",
-      "en": ""
+      "en": "Also known as the grass family, most members are herbaceous plants. The family is especially important for humans and includes staple food plants such as rice, barley, wheat, and oats."
     }
   }
 }
