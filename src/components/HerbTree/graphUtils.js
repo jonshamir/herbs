@@ -47,7 +47,7 @@ const calcTextTransform = (d) => {
     const deltaX = d.x - d.parent.x;
     const deltaY = d.y - d.parent.y;
     const dir = normalize2D(deltaX, deltaY);
-    xPos += dir.x * (imageSize * 0.5 + label.length * 1.5);
+    xPos += dir.x * (imageSize * 0.5 + (label.length * 1.5) / currentZoom);
     yPos += dir.y * imageSize * 0.5;
   }
 
@@ -294,6 +294,11 @@ export const drawTree = (ref, simulation, nodes, links) => {
 
   function handleZoom({ transform }) {
     currentZoom = transform.k;
+    if (currentZoom < 0.8) {
+      // Don't allow panning when zoomed out
+      // transform.x = currentXPan;
+      // transform.y = currentYPan;
+    }
     currentXPan = transform.x;
     currentYPan = transform.y;
     root.attr("transform", transform);
@@ -710,7 +715,7 @@ export const positionHighlightedHerb = (duration = 0) => {
       scrollRight = maxScroll - scrollLeft;
     }
 
-    x += moveX - 10 * Math.sin(herbRotation) - scrollRight;
+    x -= moveX - 10 * Math.sin(herbRotation) - scrollRight;
     y += -520 + scrollTop - 25 * clamp01(-Math.cos(herbRotation));
 
     const dist = Math.sqrt(Math.sqrt(x * x + y * y));
@@ -749,15 +754,16 @@ export const unhighlightAll = (scaleImages) => {
     .attr("style", "transform: translate(0px,0px)");
 };
 
+// ====== Interactions ======
 function handleMouseMove(event) {
   const { x, offsetY } = event;
   // TODO disable on mobile
   // if (width * 2 > TABLET_WIDTH) {
-  // mousePos = {
-  //   x: ((x - width) / 2 - currentXPan) / currentZoom,
-  //   y: ((offsetY - height) / 2 - currentYPan) / currentZoom,
-  // };
-  // simulation.alpha(0.2).restart();
+  mousePos = {
+    x: ((x - width) / 2 - currentXPan) / currentZoom,
+    y: ((offsetY - height) / 2 - currentYPan) / currentZoom,
+  };
+  simulation.alpha(0.2).restart();
   // }
 }
 

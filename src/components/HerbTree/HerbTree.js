@@ -13,7 +13,6 @@ import {
   printLayout,
   setupDrag,
 } from "./graphUtils";
-import { clamp } from "../../utils/math";
 
 import "./HerbTree.scss";
 
