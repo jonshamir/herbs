@@ -8,13 +8,13 @@ const HerbLink = ({ slug, title, inline }) => {
   return inline ? (
     <Link to={herbUrl} className="InlineHerbLink">
       <span className="herbSmallIcon">
-        <img src={`/herbs/images/icons/${slug}.png`} alt={title} />
+        <img src={`/images/icons/${slug}.png`} alt={title} />
       </span>
       <span className="linkText">{title}</span>
     </Link>
   ) : (
     <Link to={herbUrl} className="HerbLink">
-      <img src={`/herbs/images/icons/${slug}.png`} alt={title} />
+      <img src={`/images/icons/${slug}.png`} alt={title} />
       {title}
     </Link>
   );

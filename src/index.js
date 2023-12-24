@@ -7,7 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
   // <React.StrictMode>
-  <Router basename="/herbs/">
+  <Router basename="/">
     <App />
   </Router>,
   // </React.StrictMode>,

@@ -1,13 +1,11 @@
-השומר הוא צמח רב-שנתי בעל ניחוח אניסי מובהק. יש לו פקעת תת-קרקעית, אכילה גם כן, שמגדלת כל חורף ענפים שיכולים להגיע לגובה של מטר ויותר.
+Fennel is a perennial plant with a pronounced anise aroma. It has a subterranean bulb, which is also edible, and each winter it produces stalks that can reach a height of a meter or more.
 
-## במטבח
+## In the Kitchen
 
-ניתן לאכול את כל חלקי הצמח. העלים משמשים כצמח תבלין, ה"פקעת" בבסיס הצמח משמשת כירק והזרעים המיובשים הם תבלין חשוב - אחד המרכיבים בתערובת "חמשת התבלינים" הסינית.
+All parts of the plant are edible. The leaves are used as a herb, the "bulb" at the base of the plant serves as a vegetable, and the dried seeds are a significant spice - one of the components in the Chinese "Five Spice" blend.
 
-הגבעולים סיביים וקשים יותר ולכן לא נהוג לאכול אותם הצמח. ניתן להשתמש בעלים לסלטים, קישוט מנות. את הפקעת ניתן לפרוס לפרוסות דקות ולהוסיף לסלטים, לבשל או לצלות בתנור. 
+The fibrous and tougher stalks are less commonly consumed. The leaves can be used in salads or as a garnish. The bulb can be sliced thinly and added to salads, cooked, or roasted in the oven.
 
-בסוריה ולבנון מכינים עיג'ה עם עלי שומר.
+In Syria and Lebanon, a dish called "Aje" is prepared with fennel leaves.
 
-שומר הוא גם אחת מהצמחים המשמשים להכנת משקה האבסינת' המפורסם, יחד עם אניס ו[לענת האבסינת'](grand-wormwood).
-
-
+Fennel is also one of the plants used in making the famous Absinthe drink, along with anise and [grand-wormwood](grand-wormwood).

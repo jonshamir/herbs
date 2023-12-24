@@ -218,7 +218,7 @@ export const setupSimulation = (nodes, links) => {
       nodes.forEach((d) => {
         if (mousePos.x !== -1 && !d.fixed) {
           const dist = dist2D(d, mousePos);
-          if (dist < 25) {
+          if (dist < 30) {
             // Snap to cursor
           } else if (dist < 250) {
             const invDist = Math.pow(
@@ -230,20 +230,6 @@ export const setupSimulation = (nodes, links) => {
             const movementDir = normalize2D(deltaX, deltaY);
             d.x += movementDir.x * invDist * 12 * alpha;
             d.y += movementDir.y * invDist * 12 * alpha;
-
-            // const applyMovementRecursive = (n) => {
-            //   if (n !== d) {
-            //     const parentDist = dist2D(n, d) / 10;
-            //     const parentDir = normalize2D(n.x - d.x, n.y - d.y);
-            //     // const dir = movementDir;
-            //     const dir = rotate90(parentDir);
-
-            //     n.x += dir.x * parentDist * alpha;
-            //     n.y += dir.y * parentDist * alpha;
-            //   }
-            //   n.children?.forEach(applyMovementRecursive);
-            // };
-            // applyMovementRecursive(d);
           }
         }
       });
@@ -375,7 +361,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
   node
     .filter((d) => !d.children)
     .append("svg:image")
-    .attr("xlink:href", (d) => `/herbs/images/icons/${d.data.slug}.png`)
+    .attr("xlink:href", (d) => `/images/icons/${d.data.slug}.png`)
     .attr("class", (d) => `image-${d.data.slug}`)
     .on("error", function (d) {
       d3.select(this).attr("xlink:href", "images/herb.png");

@@ -1,15 +1,15 @@
-החילבה הוא צמח תבלין בעל ניחוח חזק ממשפחת הקטניות.
+Fenugreek is a spice with a strong aroma, belonging to the legume family.
 
-## במטבח
+## In the Kitchen
 
-באופן כללי יותר מוכר השימוש בזרעי הצמח היבשים, אך העלים גם הם בעלי אותו טעם אופייני. ניתן להשתמש בהם מיובשים או טריים.
+Generally, the use of the plant's dried seeds is more common, but the leaves also have the same characteristic flavor. They can be used either dried or fresh.
 
-החילבה מזוהה במיוחד עם המטבח התימני, ההודי והפרסי:
+Fenugreek is particularly associated with Yemeni, Indian, and Persian cuisines:
 
-התימנים מכינים ממנו מטבלים ואפילו מזהים את הצמח כ"רוביא" הנזכרת בתלמוד ונאכלת בסדר ראש השנה.
+Yemenites prepare dips and even identify the plant as "Rubia," mentioned in the Talmud and eaten on the New Year.
 
-במטבח הפרסי משמשים עלי הצמח בתבשילים כגון חורשט סבזי. שם מוכר הצמח בשם "שאנבאלילה" (شنبلیله) או לפעמים "שאמבאלילה".
+In Persian cuisine, the plant's leaves are used in dishes such as Ghormeh Sabzi. The plant is known by the name "Shanbalileh" (شنبلیله) or sometimes "Shambalileh."
 
-הצמח נפוץ מאוד גם במטבח ההודי, וידוע בשם מת'י - methi. העלים היבשים ידועים בשם kasuri methi על שם העיר קאסור בפקיסטן של ימינו.
+The plant is also widespread in Indian cuisine, known as "Methi." The dried leaves are known as Kasuri Methi, named after the city of Kasur in present-day Pakistan.
 
-באופן מפתיע, משתמשים בזרעי חילבה להכנת תחליף זול לסירופ מייפל, שכן ניתן להפיק ממנו נוזל בעל ניחוח דומה למייפל היקר.
+Surprisingly, fenugreek seeds are used to create a cheap alternative to maple syrup, as it can produce a liquid with a similar scent to the expensive maple syrup.
