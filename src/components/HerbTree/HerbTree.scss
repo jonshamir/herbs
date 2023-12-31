@@ -11,6 +11,7 @@
   transition: transform 600ms ease-in, opacity $transition-defaults;
   position: fixed;
   direction: ltr;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -32,6 +33,32 @@
   .textGroup {
     transition: opacity $transition-defaults;
     // transition-delay: 300ms;
+  }
+}
+
+.intro {
+  position: absolute;
+  text-align: left;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  margin-left: 200px;
+  max-width: 500px;
+  z-index: 10;
+  transition: opacity $transition-defaults;
+}
+
+button {
+  border: 0;
+  padding: 0.8em 1em;
+  cursor: pointer;
+  border-radius: 0.4em;
+  background-color: #f1eae2;
+  transition: background-color $transition-defaults;
+  font-weight: 600;
+
+  &:hover {
+    background-color: darken(#f1eae2, 5%);
   }
 }
 
@@ -224,12 +251,7 @@
 }
 
 .Logo {
-  position: fixed;
-  top: 0em;
-  width: 100vw;
-  text-align: center;
   font-size: 4em;
-  pointer-events: none;
   z-index: 101;
   transition: opacity $transition-defaults;
   font-weight: 400;

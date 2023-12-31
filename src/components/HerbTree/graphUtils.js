@@ -30,7 +30,7 @@ const collisionRadius = 16;
 let allowDrag = false;
 
 // Global variables
-let svg, link, node, text, textGroup;
+let svg, link, node, text, textGroup, root;
 let tooltip, tooltipContainer;
 let simulation;
 let rootNode;
@@ -276,37 +276,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .attr("viewBox", [-width / 2, -height / 2, width, height])
     .lower();
 
-  const root = svg.append("g");
-
-  function handleZoom({ transform }) {
-    currentZoom = transform.k;
-    if (currentZoom < 0.8) {
-      // Don't allow panning when zoomed out
-      // transform.x = currentXPan;
-      // transform.y = currentYPan;
-    }
-    currentXPan = transform.x;
-    currentYPan = transform.y;
-    root.attr("transform", transform);
-    textGroup.attr("opacity", (d) => {
-      return currentZoom > 0.8 ? 1 : 0;
-    });
-    text.attr("transform", calcTextTransform);
-  }
-
-  svg.call(
-    d3
-      .zoom()
-      .extent([
-        [0, 0],
-        [width, height],
-      ])
-      .scaleExtent([0.5, 4])
-      // .wheelDelta((e) => {
-      //   return e.deltaY * (e.deltaMode === 1 ? 0.05 : e.deltaMode ? 1 : 0.002);
-      // })
-      .on("zoom", handleZoom)
-  );
+  root = svg.append("g");
 
   link = root
     .append("g")
@@ -507,6 +477,45 @@ const handleHover = (
 let hoverTimer;
 
 const setupInteractions = (parentComponent, onSubtreeActivate) => {
+  function handleZoom({ transform }) {
+    currentZoom = transform.k;
+    if (currentZoom < 0.8) {
+      // Don't allow panning when zoomed out
+      // transform.x = currentXPan;
+      // transform.y = currentYPan;
+    }
+    currentXPan = transform.x;
+    currentYPan = transform.y;
+    root.attr("transform", transform);
+    textGroup.attr("opacity", (d) => {
+      return currentZoom > 0.8 ? 1 : 0;
+    });
+    text.attr("transform", calcTextTransform);
+  }
+
+  var zoom = d3
+    .zoom()
+    .extent([
+      [0, 0],
+      [width, height],
+    ])
+    .scaleExtent([0.5, 4])
+    // .wheelDelta((e) => {
+    //   return e.deltaY * (e.deltaMode === 1 ? 0.05 : e.deltaMode ? 1 : 0.002);
+    // })
+    .on("zoom", handleZoom);
+
+  var initialTransform = d3.zoomIdentity
+    .translate(width / 5, -height / 3)
+    .scale(0.8);
+  svg.call(zoom).call(zoom.transform, initialTransform);
+
+  // svg
+  //   .transition()
+  //   .duration(3000)
+  //   .ease(d3.easeQuadInOut)
+  //   .call(zoom.transform, initialTransform);
+
   node
     .on("mouseover", (e, d) => {
       hoverTimer = setTimeout(() => {

@@ -124,7 +124,11 @@ class HerbTree extends React.Component {
 
     if (route)
       if (route === "/") {
-        this.setState({ isHidden: false, isInteractive: true });
+        this.setState({
+          isHidden: false,
+          isInteractive: true,
+          showIntro: true,
+        });
 
         if (!this.state.initalLoaded) {
           this.setState({ initalLoaded: true });
@@ -147,6 +151,7 @@ class HerbTree extends React.Component {
               isHidden: routeParts[1] === "recipes",
               isInteractive: false,
               initalLoaded: true,
+              showIntro: false,
             });
             const herbSlug = routeParts[1] === "herb" ? routeParts[2] : false;
             highlightHerb(herbSlug);
@@ -157,13 +162,13 @@ class HerbTree extends React.Component {
   }
 
   getLogoOpacity() {
-    const { isMinimal, isHidden, isSubtreeActive, logoOpacity } = this.state;
+    const { isMinimal, isHidden } = this.state;
     if (isMinimal || isHidden) return 0;
     return 1;
   }
 
   render() {
-    const { isMinimal, isHidden, isInteractive } = this.state;
+    const { isMinimal, isHidden, isInteractive, showIntro } = this.state;
     let classNames = "HerbTree";
     if (isMinimal) classNames += " minimal";
     if (isHidden) classNames += " hidden";
@@ -172,15 +177,49 @@ class HerbTree extends React.Component {
 
     return (
       <div className={classNames} ref={this.containerRef}>
-        <h1 className="Logo" style={{ opacity: this.getLogoOpacity() }}>
-          Herbarium
-        </h1>
-        {this.props.debug && (
-          <div className="DebugMenu">
-            <button onClick={() => this.logPositions()}>Get Positions</button>
-            <button onClick={() => this.getPrintLayout()}>Print Layout</button>
+        <div className="intro" style={{ opacity: showIntro ? 1 : 0 }}>
+          <div>
+            <h1 className="Logo" style={{ opacity: this.getLogoOpacity() }}>
+              Herbarium
+            </h1>
+            <p>
+              This site is a index of culinary herbs. The plants are organized
+              according to their scientific classification, creating a herbal
+              “tree of life”. Each herb contains a description as well as
+              information about using it in the kitchen.
+            </p>
+            <p>
+              A culinary herb is a plant or a part of a plant that is used for
+              flavoring, scenting, or garnishing food. Culinary herbs are often
+              valued for their aromatic properties and are used to enhance the
+              taste and aroma of various dishes.
+            </p>
+            <button>Explore ></button>
+
+            {this.props.debug && (
+              <div className="DebugMenu">
+                <button onClick={() => this.logPositions()}>
+                  Get Positions
+                </button>
+                <button onClick={() => this.getPrintLayout()}>
+                  Print Layout
+                </button>
+              </div>
+            )}
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
-        )}
+        </div>
         <div className="treeContainer" ref={this.d3ref}>
           <div className="tooltipContainer" ref={this.tooltipRef}></div>
         </div>
