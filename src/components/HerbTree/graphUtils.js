@@ -419,9 +419,11 @@ export const updateGraphSize = (clientWidth, _clientHeight) => {
 };
 
 function getZoomTransform() {
-  return isIntroMode
-    ? d3.zoomIdentity.scale(0.8).translate(150, clientHeight / 4 - 200)
-    : d3.zoomIdentity;
+  if (!isIntroMode) return d3.zoomIdentity;
+  else
+    return width < TABLET_WIDTH / 2
+      ? d3.zoomIdentity.scale(0.6).translate(0, clientHeight / 4 - 280)
+      : d3.zoomIdentity.scale(0.8).translate(150, clientHeight / 4 - 200);
 }
 
 export const toggleIntroMode = (value, duration = 1000) => {

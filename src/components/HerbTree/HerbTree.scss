@@ -51,6 +51,11 @@
     // transform: translateX(-50%);
     width: 1000px;
     padding: 1em;
+
+    @media screen and (max-width: $tablet-width) {
+      width: 500px;
+      margin-top: 300px;
+    }
   }
 
   p {
