@@ -30,8 +30,6 @@
   font-weight: 600;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@500&family=Sora:wght@400;600&display=swap");
-
 html {
   -webkit-text-size-adjust: none;
   touch-action: pan-y;
@@ -73,6 +71,7 @@ h1 {
   font-size: 3.5em;
   font-weight: 400;
   font-family: "Lexend";
+  letter-spacing: -0.025em;
   // color: #b14408;
 }
 

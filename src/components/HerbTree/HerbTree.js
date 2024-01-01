@@ -16,7 +16,6 @@ import {
 
 import "./HerbTree.scss";
 
-const MIN_LOGO_OPACITY = 0;
 const TABLET_WIDTH = 1000;
 
 class HerbTree extends React.Component {
@@ -27,7 +26,6 @@ class HerbTree extends React.Component {
     this.tooltipRef = React.createRef();
 
     this.state = {
-      logoOpacity: MIN_LOGO_OPACITY,
       isHidden: true,
       isMinimal: false,
       isInteractive: true,
@@ -66,7 +64,7 @@ class HerbTree extends React.Component {
     window.removeEventListener("scroll", this.handleScroll);
   }
 
-  handleResize(e) {
+  handleResize() {
     this.setGraphSize();
     const routeParts = this.props.location.pathname.split("/");
     if (routeParts[1] === "herb") this.positionHighlightedHerbDebounced();
@@ -127,7 +125,7 @@ class HerbTree extends React.Component {
         this.setState({
           isHidden: false,
           isInteractive: true,
-          showIntro: true,
+          showIntro: false,
         });
 
         if (!this.state.initalLoaded) {
@@ -177,7 +175,13 @@ class HerbTree extends React.Component {
 
     return (
       <div className={classNames} ref={this.containerRef}>
-        <div className="intro" style={{ opacity: showIntro ? 1 : 0 }}>
+        <div
+          className="intro"
+          style={{
+            opacity: showIntro ? 1 : 0,
+            pointerEvents: showIntro ? "all" : "none",
+          }}
+        >
           <div>
             <h1 className="Logo" style={{ opacity: this.getLogoOpacity() }}>
               Herbarium
@@ -194,7 +198,9 @@ class HerbTree extends React.Component {
               valued for their aromatic properties and are used to enhance the
               taste and aroma of various dishes.
             </p>
-            <button>Explore ></button>
+            <button onClick={() => this.setState({ showIntro: false })}>
+              Explore >
+            </button>
 
             {this.props.debug && (
               <div className="DebugMenu">

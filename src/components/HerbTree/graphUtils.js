@@ -17,17 +17,11 @@ import initialNodePositions from "../../data/initialNodePositions.json";
 
 import lang from "../../lang";
 
+// Simulation Parameters
 const TABLET_WIDTH = 1000;
-
-let width = 400;
-let height = 400;
-// const marginX = 15;
-const marginY = 50;
-const centerOffsetX = 0;
-const centerOffsetY = -20;
-const imageSize = 40;
-const collisionRadius = 16;
-let allowDrag = false;
+const LEAF_SIZE = 40;
+const COLLISION_RADIUS = 16;
+const REPULSION_STRENGTH = -80;
 
 // Global variables
 let svg, link, node, text, textGroup, root;
@@ -36,25 +30,13 @@ let simulation;
 let rootNode;
 let svgEl;
 let containerEl;
+let width, height;
+let allowDrag = false;
+
 let mousePos = { x: -1, y: -1 };
-
-const calcTextTransform = (d) => {
-  let xPos = d.x;
-  let yPos = d.y;
-  if (!d.children) {
-    // Leaf nodes
-    const label = getNodeLabel(d);
-    const deltaX = d.x - d.parent.x;
-    const deltaY = d.y - d.parent.y;
-    const dir = normalize2D(deltaX, deltaY);
-    xPos += dir.x * (imageSize * 0.5 + (label.length * 1.5) / currentZoom);
-    yPos += dir.y * imageSize * 0.5;
-  }
-
-  const scale = Math.max(1 / currentZoom, 0.5);
-
-  return `translate(${xPos},${yPos}) scale(${scale})`;
-};
+let currentZoom = 1;
+let currentXPan = 0;
+let currentYPan = 0;
 
 export const initTree = (
   ref,
@@ -78,8 +60,8 @@ export const initTree = (
   });
 
   rootNode.fixed = true;
-  rootNode.fx = centerOffsetX;
-  rootNode.fy = 0.5 * height - 1 * marginY;
+  rootNode.fx = 0;
+  rootNode.fy = 0.5 * height;
 
   setupSimulation(nodes, links);
   drawTree(ref, simulation, nodes, links);
@@ -168,8 +150,8 @@ export const initTree = (
       const endPointPos = d.target.height === 0 ? 0.3 : 0;
 
       const endPos = {
-        x: d.target.x - currDir.x * imageSize * endPointPos,
-        y: d.target.y - currDir.y * imageSize * endPointPos,
+        x: d.target.x - currDir.x * LEAF_SIZE * endPointPos,
+        y: d.target.y - currDir.y * LEAF_SIZE * endPointPos,
       };
 
       return `
@@ -207,13 +189,13 @@ export const setupSimulation = (nodes, links) => {
         .distance(40)
         .strength(0.5)
     )
-    .force("charge", forceManyBodyReuse().strength(-80))
+    .force("charge", forceManyBodyReuse().strength(REPULSION_STRENGTH))
     .force(
       "collision",
-      d3.forceCollide().radius((d) => (d.children ? 2 : collisionRadius))
+      d3.forceCollide().radius((d) => (d.children ? 2 : COLLISION_RADIUS))
     )
-    .force("x", d3.forceX(centerOffsetX))
-    .force("y", d3.forceY(centerOffsetY))
+    .force("x", d3.forceX())
+    .force("y", d3.forceY())
     .force("mouse", (alpha) => {
       nodes.forEach((d) => {
         if (mousePos.x !== -1 && !d.fixed) {
@@ -234,38 +216,30 @@ export const setupSimulation = (nodes, links) => {
         }
       });
     });
+};
 
-  // .force("growth", (alpha) => {
-  //   const multiplier = Math.pow(alpha, 1);
+const calcTextTransform = (d) => {
+  let xPos = d.x;
+  let yPos = d.y;
+  if (!d.children) {
+    // Leaf nodes
+    const label = getNodeLabel(d);
+    const deltaX = d.x - d.parent.x;
+    const deltaY = d.y - d.parent.y;
+    const dir = normalize2D(deltaX, deltaY);
+    xPos += dir.x * (LEAF_SIZE * 0.5 + (label.length * 1.5) / currentZoom);
+    yPos += dir.y * LEAF_SIZE * 0.5;
+  }
 
-  //   nodes.forEach((node) => {
-  //     // Cause nodes to be above their parents
-  //     if (node.parent && node.y > node.parent.y - 1000) {
-  //       node.y -= multiplier * 6;
-  //     }
-  //   });
-  // });
-  // .force("bounding", (alpha) => {
-  //   nodes.forEach((node) => {
-  //     const wallRepulsionX =
-  //       alpha *
-  //       Math.max(1, Math.abs(node.x + offsetX) - (width / 2 - marginX));
-  //     node.x -= Math.sign(node.x) * wallRepulsionX;
-  //     // const wallRepulsionY =
-  //     //   alpha * Math.max(1, Math.abs(node.y) - (height / 2 - marginY));
-  //     // node.y -= Math.sign(node.y) * wallRepulsionY;
-  //   });
-  // });
+  const scale = Math.max(1 / currentZoom, 0.5);
+
+  return `translate(${xPos},${yPos}) scale(${scale})`;
 };
 
 const getNodeLabel = (d) => {
   if (d.children) return `${d.data.name}`;
   else return herbInfo[d.data.id].commonName[lang];
 };
-
-let currentZoom = 1;
-let currentXPan = 0;
-let currentYPan = 0;
 
 export const drawTree = (ref, simulation, nodes, links) => {
   containerEl = ref.current;
@@ -327,7 +301,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .attr("stroke-width", 0);
 
   // Leaf images
-  const imageCenter = -imageSize / 2;
+  const imageCenter = -LEAF_SIZE / 2;
   node
     .filter((d) => !d.children)
     .append("svg:image")
@@ -338,8 +312,8 @@ export const drawTree = (ref, simulation, nodes, links) => {
     })
     .attr("x", imageCenter)
     .attr("y", imageCenter)
-    .attr("width", imageSize)
-    .attr("height", imageSize)
+    .attr("width", LEAF_SIZE)
+    .attr("height", LEAF_SIZE)
     .attr("transform", "scale(0.01)");
 
   // Leaf circle overlays
@@ -347,7 +321,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
     .filter((d) => !d.children)
     .append("circle")
     .attr("class", "imageOverlay")
-    .attr("r", collisionRadius + 4);
+    .attr("r", COLLISION_RADIUS + 4);
 
   // Minimal leaf nodes
   node
@@ -376,56 +350,77 @@ export const drawTree = (ref, simulation, nodes, links) => {
   return { svg, link, node, text };
 };
 
-export const printLayout = () => {
-  const lineColor = "#ccc";
-  const bgColor = "#fff";
-  document.body.style.backgroundImage = "none";
-  document.body.style.backgroundColor = bgColor;
+export const growTree = (growthTime = 0, growImages = true) => {
+  svg.attr("opacity", 1);
 
-  simulation.alpha(0).stop();
+  link
+    .attr("opacity", 1)
+    .attr("stroke-dasharray", (d) => linkLength(d) + " " + linkLength(d))
+    .attr("stroke-dashoffset", (d) => linkLength(d))
+    .transition()
+    .delay((d) => d.source.depth * growthTime - 100)
+    .duration((d) => growthTime)
+    .ease(d3.easeLinear)
+    .attr("stroke-dashoffset", 0)
+    .end()
+    .then(function (e) {
+      link.attr("stroke-dasharray", "none");
+    });
 
-  // Position images
-  const imageCenter = imageSize * 0.5;
-  const imageCenterTransform = `translate(${imageCenter} ${imageCenter})`;
-  node
-    .filter((d) => !d.children)
-    .selectAll("image")
-    .attr("transform", imageCenterTransform);
-
-  // Style graph
   svg
-    .selectAll(".link")
-    .attr("class", "")
-    .attr("stroke-width", 1)
-    .attr("stroke", lineColor);
-
-  node
-    .selectAll(".internode circle")
-    .attr("r", 2)
-    .attr("fill", lineColor)
-    .attr("stroke", bgColor)
-    .attr("stroke-width", 1);
-
-  node.selectAll(".leaf circle").remove();
-
-  text.filter((d) => d.children).remove();
+    .selectAll(".moreInfo circle")
+    .transition()
+    .delay((d) => d.depth * growthTime - 100)
+    .duration(growthTime)
+    .attr("transform", "")
+    .end();
 
   svg
     .selectAll("text")
-    .attr("class", "")
-    .attr("stroke-width", 0)
-    .attr("font-size", "8")
-    .attr("font-family", "ArbelHagilda");
+    .transition()
+    .delay((d) => d.depth * growthTime + 500)
+    .duration(growthTime)
+    .attr("opacity", 1)
+    .end();
+
+  svg
+    .selectAll(".leaf circle")
+    .transition()
+    .delay((d) => d.depth * growthTime + 600 * Math.random() - 300)
+    .duration(growthTime)
+    .attr("opacity", 1);
+
+  if (growImages) {
+    svg
+      .selectAll("image")
+      .attr("opacity", 1)
+      .transition()
+      .delay((d) => d.depth * growthTime + 600 * Math.random() - 300)
+      .duration(growthTime)
+      .attr("transform", "scale(1)");
+  }
 };
 
-export const setupTooltip = (tooltipRef) => {
-  tooltipContainer = d3.select(tooltipRef.current);
+function linkLength(link) {
+  return dist2D(link.source, link.target) + 3;
+}
 
-  tooltip = tooltipContainer
-    .append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
+export const updateGraphSize = (w, h) => {
+  width = w / 2;
+  height = h;
+  d3.select(svgEl).attr("viewBox", [-width / 2, -height / 2, width, height]);
+  if (simulation) {
+    simulation.alpha(0.2).restart();
+
+    rootNode.fx = 0;
+    rootNode.fy = 0.5 * height;
+  }
 };
+
+// ================== Interactions ==================
+
+let hoverTimer;
+const HIGHLIGHT_DURATION = 600;
 
 const handleHover = (
   event,
@@ -474,7 +469,10 @@ const handleHover = (
   }
 };
 
-let hoverTimer;
+const setSubtreeActive = (root, isActive) => {
+  root.isActive = isActive;
+  root.children && root.children.forEach((d) => setSubtreeActive(d, isActive));
+};
 
 const setupInteractions = (parentComponent, onSubtreeActivate) => {
   function handleZoom({ transform }) {
@@ -499,16 +497,21 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
       [0, 0],
       [width, height],
     ])
+    // .translateExtent([
+    //   [-width, -height / 2],
+    //   [width * 2, height * 2],
+    // ])
     .scaleExtent([0.5, 4])
     // .wheelDelta((e) => {
     //   return e.deltaY * (e.deltaMode === 1 ? 0.05 : e.deltaMode ? 1 : 0.002);
     // })
     .on("zoom", handleZoom);
 
-  var initialTransform = d3.zoomIdentity
-    .translate(width / 5, -height / 3)
-    .scale(0.8);
-  svg.call(zoom).call(zoom.transform, initialTransform);
+  // var initialTransform = d3.zoomIdentity
+  //   .translate(width / 5, -height / 3)
+  //   .scale(0.8);
+  svg.call(zoom);
+  //.call(zoom.transform, initialTransform);
 
   // svg
   //   .transition()
@@ -570,99 +573,14 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
   if (allowDrag) setupDrag();
 };
 
-export const setupDrag = () => {
-  if (!allowDrag) node.filter((d) => d.depth > 0).call(drag(simulation));
-  allowDrag = true;
+export const setupTooltip = (tooltipRef) => {
+  tooltipContainer = d3.select(tooltipRef.current);
+
+  tooltip = tooltipContainer
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 };
-
-export const growTree = (growthTime = 0, growImages = true) => {
-  svg.attr("opacity", 1);
-
-  link
-    .attr("opacity", 1)
-    .attr("stroke-dasharray", (d) => linkLength(d) + " " + linkLength(d))
-    .attr("stroke-dashoffset", (d) => linkLength(d))
-    .transition()
-    .delay((d) => d.source.depth * growthTime - 100)
-    .duration((d) => growthTime)
-    .ease(d3.easeLinear)
-    .attr("stroke-dashoffset", 0)
-    .end()
-    .then(function (e) {
-      link.attr("stroke-dasharray", "none");
-    });
-
-  svg
-    .selectAll(".moreInfo circle")
-    .transition()
-    .delay((d) => d.depth * growthTime - 100)
-    .duration(growthTime)
-    .attr("transform", "")
-    .end();
-  // .then(callback);
-
-  svg
-    .selectAll("text")
-    .transition()
-    .delay((d) => d.depth * growthTime + 500)
-    .duration(growthTime)
-    .attr("opacity", 1)
-    .end();
-
-  svg
-    .selectAll(".leaf circle")
-    .transition()
-    .delay((d) => d.depth * growthTime + 600 * Math.random() - 300)
-    .duration(growthTime)
-    .attr("opacity", 1);
-
-  if (growImages) {
-    svg
-      .selectAll("image")
-      .attr("opacity", 1)
-      .transition()
-      .delay((d) => d.depth * growthTime + 600 * Math.random() - 300)
-      .duration(growthTime)
-      .attr("transform", "scale(1)");
-  }
-};
-
-export const unGrowTree = (duration = 300) => {
-  // Hide all
-  svg
-    .transition()
-    .duration(duration)
-    .attr("opacity", 0)
-    .end()
-    .then(() => {
-      // Ungrow
-      svg.selectAll(".moreInfo circle").attr("transform", "scale(0.01)");
-      svg.selectAll(".leaf circle").attr("opacity", 0);
-    });
-};
-
-const setSubtreeActive = (root, isActive) => {
-  root.isActive = isActive;
-  root.children && root.children.forEach((d) => setSubtreeActive(d, isActive));
-};
-
-const linkLength = (link) => {
-  return dist2D(link.source, link.target) + 3;
-};
-
-export const updateGraphSize = (w, h) => {
-  width = w / 2;
-  height = h;
-  d3.select(svgEl).attr("viewBox", [-width / 2, -height / 2, width, height]);
-  if (simulation) {
-    simulation.alpha(0.2).restart();
-
-    rootNode.fx = centerOffsetX;
-    rootNode.fy = 0.5 * height - 1 * marginY;
-  }
-};
-
-const highlightDuration = 600;
 
 export const highlightHerb = (slug) => {
   svg
@@ -681,17 +599,17 @@ export const highlightHerb = (slug) => {
       .classed("highlighted", true)
       .select("image")
       .transition()
-      .duration(highlightDuration / 2)
+      .duration(HIGHLIGHT_DURATION / 2)
       .attr("transform", "scale(2)")
       .attr("opacity", 1);
 
-    positionHighlightedHerb(highlightDuration);
+    positionHighlightedHerb(HIGHLIGHT_DURATION);
   }
 };
 
-let positionHerbDuration = highlightDuration;
+let positionHerbDuration = HIGHLIGHT_DURATION;
 
-export const positionHighlightedHerb = (duration = 0) => {
+export const positionHighlightedHerb = () => {
   const herbNode = document.getElementsByClassName(`highlighted`)[0];
   if (herbNode) {
     const { scrollTop } = containerEl.parentElement;
@@ -728,7 +646,7 @@ export const unhighlightAll = (scaleImages) => {
     svg
       .selectAll("image")
       .transition()
-      .duration(highlightDuration)
+      .duration(HIGHLIGHT_DURATION)
       .attr("transform", "scale(1)")
       .attr("opacity", 1)
       .end()
@@ -749,7 +667,11 @@ export const unhighlightAll = (scaleImages) => {
     .attr("style", "transform: translate(0px,0px)");
 };
 
-// ====== Interactions ======
+export const setupDrag = () => {
+  if (!allowDrag) node.filter((d) => d.depth > 0).call(drag(simulation));
+  allowDrag = true;
+};
+
 function handleMouseMove(event) {
   const { x, offsetY } = event;
   // TODO disable on mobile
@@ -782,4 +704,48 @@ const drag = (simulation) => {
     .on("start", dragstarted)
     .on("drag", dragged)
     .on("end", dragended);
+};
+
+// ================== Print ==================
+
+export const printLayout = () => {
+  const lineColor = "#ccc";
+  const bgColor = "#fff";
+  document.body.style.backgroundImage = "none";
+  document.body.style.backgroundColor = bgColor;
+
+  simulation.alpha(0).stop();
+
+  // Position images
+  const imageCenter = LEAF_SIZE * 0.5;
+  const imageCenterTransform = `translate(${imageCenter} ${imageCenter})`;
+  node
+    .filter((d) => !d.children)
+    .selectAll("image")
+    .attr("transform", imageCenterTransform);
+
+  // Style graph
+  svg
+    .selectAll(".link")
+    .attr("class", "")
+    .attr("stroke-width", 1)
+    .attr("stroke", lineColor);
+
+  node
+    .selectAll(".internode circle")
+    .attr("r", 2)
+    .attr("fill", lineColor)
+    .attr("stroke", bgColor)
+    .attr("stroke-width", 1);
+
+  node.selectAll(".leaf circle").remove();
+
+  text.filter((d) => d.children).remove();
+
+  svg
+    .selectAll("text")
+    .attr("class", "")
+    .attr("stroke-width", 0)
+    .attr("font-size", "8")
+    .attr("font-family", "ArbelHagilda");
 };
