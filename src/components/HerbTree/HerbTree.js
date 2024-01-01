@@ -4,7 +4,7 @@ import { debounce } from "lodash";
 import taxonomyTree from "../../data/taxonomyTree.json";
 import taxonomyTreeOverrides from "../../data/taxonomyTreeOverrides.json";
 import {
-  initTree,
+  initializeGraph,
   updateGraphSize,
   highlightHerb,
   unhighlightAll,
@@ -12,6 +12,7 @@ import {
   growTree,
   printLayout,
   setupDrag,
+  toggleIntroMode,
 } from "./graphUtils";
 
 import "./HerbTree.scss";
@@ -45,7 +46,7 @@ class HerbTree extends React.Component {
     const taxonomyTreePruned = applyNodeOverrides(
       removeSingleChildren(JSON.parse(JSON.stringify(taxonomyTree)))
     );
-    this.simulation = initTree(
+    this.simulation = initializeGraph(
       this.d3ref,
       this.tooltipRef,
       taxonomyTreePruned,
@@ -65,6 +66,7 @@ class HerbTree extends React.Component {
   }
 
   handleResize() {
+    if (!this.state.initalLoaded) return;
     this.setGraphSize();
     const routeParts = this.props.location.pathname.split("/");
     if (routeParts[1] === "herb") this.positionHighlightedHerbDebounced();
@@ -78,9 +80,8 @@ class HerbTree extends React.Component {
 
   setGraphSize() {
     // const w = Math.max(document.documentElement.clientWidth, TABLET_WIDTH);
-    const w = document.documentElement.clientWidth;
-    const h = 700;
-    updateGraphSize(w, h);
+    const { clientWidth, clientHeight } = document.documentElement;
+    updateGraphSize(clientWidth, clientHeight);
   }
 
   logPositions() {
@@ -125,19 +126,22 @@ class HerbTree extends React.Component {
         this.setState({
           isHidden: false,
           isInteractive: true,
-          showIntro: false,
+          showIntro: true,
         });
+
+        toggleIntroMode(true);
 
         if (!this.state.initalLoaded) {
           this.setState({ initalLoaded: true });
           // setTimeout(growTree, 500);
           growTree();
-        } else {
-          setTimeout(() => {
-            this.setState({ isMinimal: false });
-            unhighlightAll(this.state.initalLoaded);
-          }, 50);
         }
+        // else {
+        //   setTimeout(() => {
+        //     this.setState({ isMinimal: false });
+        //     unhighlightAll(this.state.initalLoaded);
+        //   }, 50);
+        // }
       } else {
         setTimeout(
           () => {
@@ -159,12 +163,6 @@ class HerbTree extends React.Component {
       }
   }
 
-  getLogoOpacity() {
-    const { isMinimal, isHidden } = this.state;
-    if (isMinimal || isHidden) return 0;
-    return 1;
-  }
-
   render() {
     const { isMinimal, isHidden, isInteractive, showIntro } = this.state;
     let classNames = "HerbTree";
@@ -183,9 +181,7 @@ class HerbTree extends React.Component {
           }}
         >
           <div>
-            <h1 className="Logo" style={{ opacity: this.getLogoOpacity() }}>
-              Herbarium
-            </h1>
+            <h1 className="Logo">Herbarium</h1>
             <p>
               This site is a index of culinary herbs. The plants are organized
               according to their scientific classification, creating a herbal
@@ -198,7 +194,12 @@ class HerbTree extends React.Component {
               valued for their aromatic properties and are used to enhance the
               taste and aroma of various dishes.
             </p>
-            <button onClick={() => this.setState({ showIntro: false })}>
+            <button
+              onClick={() => {
+                this.setState({ showIntro: false });
+                toggleIntroMode(false);
+              }}
+            >
               Explore >
             </button>
 
@@ -212,15 +213,6 @@ class HerbTree extends React.Component {
                 </button>
               </div>
             )}
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <br />
             <br />
             <br />

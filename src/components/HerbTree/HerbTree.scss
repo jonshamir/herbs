@@ -41,14 +41,21 @@
   text-align: left;
   display: flex;
   min-height: 100vh;
+  width: 100%;
   align-items: center;
-  margin-left: 200px;
-  max-width: 500px;
+  justify-content: center;
   z-index: 10;
   transition: opacity $transition-defaults;
 
+  & > div {
+    // transform: translateX(-50%);
+    width: 1000px;
+    padding: 1em;
+  }
+
   p {
     padding-left: 0.5em;
+    max-width: 500px;
   }
 
   button {

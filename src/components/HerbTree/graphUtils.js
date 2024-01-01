@@ -24,21 +24,19 @@ const COLLISION_RADIUS = 16;
 const REPULSION_STRENGTH = -80;
 
 // Global variables
-let svg, link, node, text, textGroup, root;
-let tooltip, tooltipContainer;
-let simulation;
-let rootNode;
-let svgEl;
-let containerEl;
 let width, height;
 let allowDrag = false;
-
 let mousePos = { x: -1, y: -1 };
 let currentZoom = 1;
 let currentXPan = 0;
 let currentYPan = 0;
 
-export const initTree = (
+let zoom, svg, link, node, text, textGroup, root, rootNode;
+let tooltip, tooltipContainer;
+let simulation;
+let containerElement;
+
+export const initializeGraph = (
   ref,
   tooltipRef,
   data,
@@ -47,10 +45,10 @@ export const initTree = (
   shouldAllowDrag
 ) => {
   allowDrag = shouldAllowDrag;
+  containerElement = ref.current;
+
   rootNode = d3.hierarchy(data);
-  const links = rootNode.links();
-  const nodes = rootNode.descendants();
-  nodes.forEach((node, i) => {
+  rootNode.descendants().forEach((node) => {
     const { id } = node.data;
     if (id !== 1000 && initialNodePositions[id]) {
       const { x, y } = initialNodePositions[id];
@@ -63,12 +61,10 @@ export const initTree = (
   rootNode.fx = 0;
   rootNode.fy = 0.5 * height;
 
-  setupSimulation(nodes, links);
-  drawTree(ref, simulation, nodes, links);
+  setupSimulation();
+  drawTree();
   setupTooltip(tooltipRef);
   setupInteractions(parentComponent, onSubtreeActivate);
-
-  svgEl = svg.node();
 
   simulation.on("tick", (e) => {
     node.attr("transform", (d) => {
@@ -164,7 +160,7 @@ export const initTree = (
           `;
     });
 
-    text.attr("transform", calcTextTransform);
+    text.attr("transform", getTextTransform);
 
     link
       .attr("x1", (d) => d.source.x)
@@ -176,7 +172,10 @@ export const initTree = (
   return simulation;
 };
 
-export const setupSimulation = (nodes, links) => {
+export const setupSimulation = () => {
+  const links = rootNode.links();
+  const nodes = rootNode.descendants();
+
   simulation = d3
     .forceSimulation(nodes)
     .alphaDecay(0.05)
@@ -218,34 +217,12 @@ export const setupSimulation = (nodes, links) => {
     });
 };
 
-const calcTextTransform = (d) => {
-  let xPos = d.x;
-  let yPos = d.y;
-  if (!d.children) {
-    // Leaf nodes
-    const label = getNodeLabel(d);
-    const deltaX = d.x - d.parent.x;
-    const deltaY = d.y - d.parent.y;
-    const dir = normalize2D(deltaX, deltaY);
-    xPos += dir.x * (LEAF_SIZE * 0.5 + (label.length * 1.5) / currentZoom);
-    yPos += dir.y * LEAF_SIZE * 0.5;
-  }
-
-  const scale = Math.max(1 / currentZoom, 0.5);
-
-  return `translate(${xPos},${yPos}) scale(${scale})`;
-};
-
-const getNodeLabel = (d) => {
-  if (d.children) return `${d.data.name}`;
-  else return herbInfo[d.data.id].commonName[lang];
-};
-
-export const drawTree = (ref, simulation, nodes, links) => {
-  containerEl = ref.current;
+export const drawTree = () => {
+  const links = rootNode.links();
+  const nodes = rootNode.descendants();
 
   svg = d3
-    .select(containerEl)
+    .select(containerElement)
     .append("svg")
     .attr("viewBox", [-width / 2, -height / 2, width, height])
     .lower();
@@ -350,7 +327,7 @@ export const drawTree = (ref, simulation, nodes, links) => {
   return { svg, link, node, text };
 };
 
-export const growTree = (growthTime = 0, growImages = true) => {
+export const growTree = (growthTime = 600, growImages = true) => {
   svg.attr("opacity", 1);
 
   link
@@ -405,16 +382,55 @@ function linkLength(link) {
   return dist2D(link.source, link.target) + 3;
 }
 
-export const updateGraphSize = (w, h) => {
-  width = w / 2;
-  height = h;
-  d3.select(svgEl).attr("viewBox", [-width / 2, -height / 2, width, height]);
-  if (simulation) {
-    simulation.alpha(0.2).restart();
+function getNodeLabel(d) {
+  return d.children ? `${d.data.name}` : herbInfo[d.data.id].commonName[lang];
+}
 
-    rootNode.fx = 0;
-    rootNode.fy = 0.5 * height;
+function getTextTransform(d) {
+  let xPos = d.x;
+  let yPos = d.y;
+  if (!d.children) {
+    // Leaf nodes
+    const label = getNodeLabel(d);
+    const deltaX = d.x - d.parent.x;
+    const deltaY = d.y - d.parent.y;
+    const dir = normalize2D(deltaX, deltaY);
+    xPos += dir.x * (LEAF_SIZE * 0.5 + (label.length * 1.5) / currentZoom);
+    yPos += dir.y * LEAF_SIZE * 0.5;
   }
+
+  const scale = Math.max(1 / currentZoom, 0.5);
+  return `translate(${xPos},${yPos}) scale(${scale})`;
+}
+
+let isIntroMode = true;
+let clientHeight;
+
+export const updateGraphSize = (clientWidth, _clientHeight) => {
+  width = clientWidth / 2;
+  height = 700;
+  clientHeight = _clientHeight;
+
+  if (!svg) return;
+  svg.attr("viewBox", [-width / 2, 0, width, height]);
+
+  if (!zoom || !isIntroMode) return;
+  svg.call(zoom.transform, getZoomTransform());
+};
+
+function getZoomTransform() {
+  return isIntroMode
+    ? d3.zoomIdentity.scale(0.8).translate(150, clientHeight / 4 - 200)
+    : d3.zoomIdentity;
+}
+
+export const toggleIntroMode = (value, duration = 1000) => {
+  isIntroMode = value;
+  svg
+    .transition()
+    .duration(duration)
+    .ease(d3.easeQuadInOut)
+    .call(zoom.transform, getZoomTransform());
 };
 
 // ================== Interactions ==================
@@ -488,10 +504,10 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
     textGroup.attr("opacity", (d) => {
       return currentZoom > 0.8 ? 1 : 0;
     });
-    text.attr("transform", calcTextTransform);
+    text.attr("transform", getTextTransform);
   }
 
-  var zoom = d3
+  zoom = d3
     .zoom()
     .extent([
       [0, 0],
@@ -507,17 +523,7 @@ const setupInteractions = (parentComponent, onSubtreeActivate) => {
     // })
     .on("zoom", handleZoom);
 
-  // var initialTransform = d3.zoomIdentity
-  //   .translate(width / 5, -height / 3)
-  //   .scale(0.8);
   svg.call(zoom);
-  //.call(zoom.transform, initialTransform);
-
-  // svg
-  //   .transition()
-  //   .duration(3000)
-  //   .ease(d3.easeQuadInOut)
-  //   .call(zoom.transform, initialTransform);
 
   node
     .on("mouseover", (e, d) => {
@@ -603,7 +609,7 @@ export const highlightHerb = (slug) => {
       .attr("transform", "scale(2)")
       .attr("opacity", 1);
 
-    positionHighlightedHerb(HIGHLIGHT_DURATION);
+    // positionHighlightedHerb(HIGHLIGHT_DURATION);
   }
 };
 
@@ -612,7 +618,7 @@ let positionHerbDuration = HIGHLIGHT_DURATION;
 export const positionHighlightedHerb = () => {
   const herbNode = document.getElementsByClassName(`highlighted`)[0];
   if (herbNode) {
-    const { scrollTop } = containerEl.parentElement;
+    const { scrollTop } = containerElement.parentElement;
 
     const herbRotation = degToRad(herbNode.transform.baseVal[1].angle);
     let x = -2 * herbNode.transform.baseVal[0].matrix.e;
@@ -622,7 +628,7 @@ export const positionHighlightedHerb = () => {
 
     let scrollRight = 0;
     if (width * 2 <= TABLET_WIDTH) {
-      const scrollingContainer = containerEl.parentElement;
+      const scrollingContainer = containerElement.parentElement;
       const { scrollLeft, offsetWidth } = scrollingContainer;
       const maxScroll = TABLET_WIDTH - offsetWidth;
       scrollRight = maxScroll - scrollLeft;
@@ -659,7 +665,7 @@ export const unhighlightAll = (scaleImages) => {
     d3.select(el).classed("highlighted", false);
   }
 
-  d3.select(containerEl).attr("style", "");
+  d3.select(containerElement).attr("style", "");
 
   svg
     .transition()
@@ -673,12 +679,12 @@ export const setupDrag = () => {
 };
 
 function handleMouseMove(event) {
-  const { x, offsetY } = event;
+  const { x, y } = event;
   // TODO disable on mobile
   // if (width * 2 > TABLET_WIDTH) {
   mousePos = {
     x: ((x - width) / 2 - currentXPan) / currentZoom,
-    y: ((offsetY - height) / 2 - currentYPan) / currentZoom,
+    y: (y / 2 - currentYPan) / currentZoom,
   };
   simulation.alpha(0.2).restart();
   // }
