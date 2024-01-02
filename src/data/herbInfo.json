@@ -160,9 +160,9 @@
     "id": 6,
     "slug": "garden-cress",
     "name": "Lepidium sativum",
-    "commonName": { "en": "Garden cress", "he": "גרגר הגינה" },
+    "commonName": { "en": "Garden Cress", "he": "גרגר הגינה" },
     "altNames": {
-      "en": "mustard and cress, garden pepper cress, pepperwort, pepper grass",
+      "en": "Mustard and Cress, Garden Pepper Cress, Pepperwort, Pepper Grass",
       "he": "גרגיר הגינה, ראשד, שחליים תרבותיים"
     },
     "lifeform": { "en": "herb", "he": "עשב" },
@@ -209,9 +209,9 @@
     "id": 8,
     "slug": "scented-geranium",
     "name": "Pelargonium graveolens",
-    "commonName": { "en": "Scented Geranium", "he": "גרניום ריחני" },
+    "commonName": { "en": "Sweet Geranium", "he": "גרניום ריחני" },
     "altNames": {
-      "en": "rose geranium, sweet scented geranium, rose-scent geranium",
+      "en": "Rose Geranium, Scented Geranium",
       "he": "פלרגוניום חריף, עַטְרָה, גרניום לימוני, פלרגוניום ריחני, פלרגון"
     },
     "lifeform": { "en": "shrub", "he": "שיח" },
@@ -264,7 +264,7 @@
     "slug": "sorrel",
     "name": "Rumex acetosa",
     "commonName": { "en": "Sorrel", "he": "חומעה" },
-    "altNames": { "en": "spinach dock, narrow-leaved dock", "he": "חמציץ" },
+    "altNames": { "en": "Spinach Dock, Narrow-Leaved Dock", "he": "חמציץ" },
     "lifeform": { "en": "herb", "he": "עשב" },
     "lifecycle": { "en": "annual", "he": "חד-שנתי" },
     "taxonomy": [
@@ -464,9 +464,9 @@
     "id": 18,
     "slug": "grand-wormwood",
     "name": "Artemisia absinthium",
-    "commonName": { "en": "Grand wormwood", "he": "לענת האבסינת" },
+    "commonName": { "en": "Grand Wormwood", "he": "לענת האבסינת" },
     "altNames": {
-      "en": "wormwood, absinthe, absinthium, absinthe wormwood",
+      "en": "Absinthium, Absinthe Wormwood",
       "he": ""
     },
     "lifeform": { "en": "herb", "he": "עשב" },
@@ -670,9 +670,9 @@
     "id": 26,
     "slug": "garlic-chives",
     "name": "Allium tuberosum",
-    "commonName": { "en": "Garlic chives", "he": "עירית שומית" },
+    "commonName": { "en": "Garlic Chives", "he": "עירית שומית" },
     "altNames": {
-      "en": "Oriental garlic, Asian chives, Chinese chives, Chinese leek",
+      "en": "Oriental Garlic, Asian Chives, Chinese Chives, Chinese Leek",
       "he": "שום הנירה"
     },
     "lifeform": { "en": "herb", "he": "עשב" },
@@ -698,7 +698,7 @@
     "name": "Laurus nobilis",
     "commonName": { "en": "Bay Leaf", "he": "עלה דפנה" },
     "altNames": {
-      "en": "laurel, sweet bay, bay laurel, Grecian laurel",
+      "en": "Laurel, Sweet Bay, Bay Laurel, Grecian Laurel",
       "he": "ער אציל"
     },
     "lifeform": { "en": "tree", "he": "עץ" },
@@ -816,7 +816,7 @@
     "id": 32,
     "slug": "summer-savory",
     "name": "Satureja hortensis",
-    "commonName": { "en": "Summer savory", "he": "צתרה קייצית" },
+    "commonName": { "en": "Summer Savory", "he": "צתרה קייצית" },
     "altNames": { "en": "Summer Savoury", "he": "" },
     "lifeform": { "en": "herb", "he": "עשב" },
     "lifecycle": { "en": "annual", "he": "חד-שנתי" },
@@ -841,8 +841,8 @@
     "id": 33,
     "slug": "winter-savory",
     "name": "Satureja montana",
-    "commonName": { "en": "Winter savory", "he": "צתרה חורפית" },
-    "altNames": { "en": "Winter Savoury, mountain savory", "he": "" },
+    "commonName": { "en": "Winter Savory", "he": "צתרה חורפית" },
+    "altNames": { "en": "Winter Savoury, Mountain Savory", "he": "" },
     "lifeform": { "en": "herb", "he": "עשב" },
     "lifecycle": { "en": "perennial", "he": "רב-שנתי" },
     "taxonomy": [
@@ -970,7 +970,7 @@
     "id": 38,
     "slug": "tree-wormwood",
     "name": "Artemisia arborescens",
-    "commonName": { "en": "Tree wormwood", "he": "שיבא" },
+    "commonName": { "en": "Tree Wormwood", "he": "שיבא" },
     "altNames": { "en": "", "he": "לענה שיחנית, שיבה" },
     "lifeform": { "en": "shrub", "he": "שיח" },
     "lifecycle": { "en": "perennial", "he": "רב-שנתי" },

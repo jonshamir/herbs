@@ -126,7 +126,7 @@ class HerbTree extends React.Component {
         this.setState({
           isHidden: false,
           isInteractive: true,
-          showIntro: true,
+          showIntro: !this.state.initalLoaded,
         });
 
         toggleIntroMode(true);
@@ -135,13 +135,12 @@ class HerbTree extends React.Component {
           this.setState({ initalLoaded: true });
           // setTimeout(growTree, 500);
           growTree();
+        } else if (this.state.isMinimal) {
+          setTimeout(() => {
+            this.setState({ isMinimal: false });
+            unhighlightAll(this.state.initalLoaded);
+          }, 50);
         }
-        // else {
-        //   setTimeout(() => {
-        //     this.setState({ isMinimal: false });
-        //     unhighlightAll(this.state.initalLoaded);
-        //   }, 50);
-        // }
       } else {
         setTimeout(
           () => {

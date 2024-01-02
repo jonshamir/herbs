@@ -86,9 +86,9 @@
   font-weight: 400;
   color: #5071a8;
 
-  @media screen and (max-width: $mobile-width) {
+  @media screen and (max-width: $tablet-width) {
     top: 2em;
-    font-size: 2.5em;
+    font-size: 3em;
   }
 }
 

@@ -229,6 +229,9 @@ export const drawTree = () => {
 
   root = svg.append("g");
 
+  // Center marker
+  // root.append("circle").attr("r", 5).attr("fill", "red");
+
   link = root
     .append("g")
     .selectAll("path")
@@ -608,7 +611,6 @@ export const highlightHerb = (slug) => {
       .select("image")
       .transition()
       .duration(HIGHLIGHT_DURATION / 2)
-      .attr("transform", "scale(2)")
       .attr("opacity", 1);
 
     // positionHighlightedHerb(HIGHLIGHT_DURATION);
