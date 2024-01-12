@@ -1,16 +1,13 @@
-הלימונית היא סוג של עשב שיכול להגיע לגובה של עד מטר וחצי. היא גדלה באזורים טרופיים חמים, ונפוצה בבישול במיוחד במטבח הדרום-מזרח אסייתי - תאילנד, קמבודיה, ויאטנאם וכו'.
+# Lemongrass
 
-## במטבח
+Lemongrass is a type of herb that can reach a height of up to one and a half meters. It grows in warm tropical regions and is particularly prevalent in Southeast Asian cuisine - Thailand, Cambodia, Vietnam, etc.
 
-רוב הניחוח הלימוני מרוכז בבסיס הלבן של הצמח שעשוי משכבות של עלים, באופן דומה למבנהו של בצל.
+## In the Kitchen
 
-ניתן להשתמש בצמח מיובש אבל הוא פחות עוצמתי.
+The majority of the lemony fragrance is concentrated in the white base of the plant, made up of layers of leaves, similar in structure to an onion.
 
-מומלץ למעוך ולפצוע את הצמח לפני השימוש, כדי לשחרר את הניחוח הלימוני. הצמח סיבי מאוד ולכן חשוב לקצוץ אותו דק או לכתוש אותו היטב לפני הבישול. ניתן גם להשתמש בפיסות גדולות של לימונית בתבשבילים, בדומה לעלי דפנה, שצריך להוציא לפני האכילה. חותכים את החלק התחתון של הגבול ומורידים את העלים החיצוניים. החלק הלבן ארומטי אך סיבי.
+Dried lemongrass can be used, but it is less potent. It is recommended to crush or bruise the plant before use to release the lemony fragrance. The plant is fibrous, so it is important to finely chop or crush it well before cooking. Large pieces of lemongrass can also be used in seasonings, similar to dill, which should be removed before eating. Trim the bottom part of the stalk and remove the outer leaves. The white part is aromatic but fibrous.
 
-העלים עצמם יכולים לשמש לחליטת תה - בארץ נפוץ השילוב יחד עם [לואיזה](lemon-verbana).
+The leaves themselves can be used to make tea - in Israel, it is common to combine them with [lemon verbena](lemon-verbena).
 
-הטעם החזק והמרקם היציב מאפשרים בישול ארוך.
-
-
-
+The strong flavor and stable texture allow for long cooking.

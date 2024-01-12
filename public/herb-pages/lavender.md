@@ -1,15 +1,19 @@
-ידוע גם בשם אזוביון, זהו צמח בושם חשוב שכל חלקיו בעלי ניחוח פרחוני אופייני. מספר מיני לבנדר גדלים בר בארץ. משמש גם כצמח נוי בזכות פרחיו הנאים.
+Also known as Azubion, Lavender is an important aromatic plant with fragrant characteristics in all its parts. Various Lavender species grow wild in different regions. It is also cultivated as an ornamental plant due to its pleasant flowers.
 
-## במטבח
+## In the Kitchen
 
-משתמשים בעלים ובפרחים בבישול ואפייה, במיוחד מתאים לקינוחים. ניתן לחלוט ממנו תה.
+Both the leaves and flowers are used in cooking and baking, especially in desserts. Lavender can be used to make tea.
 
-הניחוח יכול להיות עוצמתי, במיוחד בניצני הפרחים המיובשים, ולכן מומלץ להשתמש בכמות מועטה. בכמויות גדולות יכול להעניק טעם מריר ו"סבוני" למאכלים.
+The fragrance can be potent, particularly in dried flower buds, so it is recommended to use a small amount. In large quantities, it can impart a bitter and "soapy" taste to dishes.
 
-## תערובות תבלינים
+## Spice Blends
 
-הצמח מצוי לעיתים כחלק מה-*Herbes de Provence*, תערובת תבלינים ים-תיכוניים הנחשבת אופיינית לפרובנס שבצרפת:
+Lavender is sometimes part of the "Herbes de Provence," a Mediterranean spice blend considered typical of the Provence region in France:
 
-[מיורן](marjoram "HerbIcon") [רוזמרין](rosemary "HerbIcon") [תימין](thyme "HerbIcon") [אורגנו](oregano "HerbIcon") [צתרה](summer-savory "HerbIcon")
+- [Marjoram](marjoram "HerbIcon")
+- [Rosemary](rosemary "HerbIcon")
+- [Thyme](thyme "HerbIcon")
+- [Oregano](oregano "HerbIcon")
+- [Summer Savory](summer-savory "HerbIcon")
 
-התערובת לרוב נמכרת יבשה, מרכיביה נשמרים היטב ומתאימים לבישול בחום, במאכלים צלויים או תבשילים.
+The blend is usually sold dried, and its components are well-preserved, suitable for cooking in high-temperature dishes, grilled foods, or stews.

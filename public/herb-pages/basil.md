@@ -1,16 +1,15 @@
-הבזיליקום הוא צמח תבלין בעל עלים מבריקים ועדינים שמקורו באזורים טרופיים באפריקה ואסיה. יש מגוון רחב של סוגי בזיליקום שצבעם נע מירוק לסגול וטעמם מאניסי ללימוני. ישנם 3 סוגים בולטים במיוחד - בזיליקום מתוק, תאילנדי וקדוש (טולסי) 
+The basil is a spice plant with shiny and delicate leaves, originating in tropical regions of Africa and Asia. There is a wide variety of basil types, ranging in color from green to purple, and their flavors vary from anise-like to lemony. There are three types that stand out in particular - Sweet Basil, Thai Basil, and Holy Basil (Tulsi).
 
-## בזיליקום מתוק
+## Sweet Basil
 
-המוכר ביותר בעולם המערבי. נפוץ במיוחד במטבח האיטקלי בשילוב עם גבינות כמו מוצרלה או ריקוטה, לרוב לא יופיע יחד עם בשר במתכונים איטלקיות. אחד השימושים הנפוצים הוא בממרח הפסטו המפרוסם, בו כותשים את עלי הבזיליקום יחד עם גבינת פרמז'נו רז'יאנו, צנוברים ושום.
+The most well-known in the Western world, commonly used in Italian cuisine, especially in combination with cheeses like mozzarella or ricotta. It is often not used with meat in Italian recipes. One of its common uses is in the famous pesto sauce, where basil leaves are crushed with Parmesan cheese, pine nuts, and garlic.
 
-## בזיליקום תאילנדי
+## Thai Basil
 
-נפוץ במטבחים של דרום-מזרח אסיה.  בעל ריח יותר אניסי מאשר זנים אחרים של ריחן, אך מעודן יותר מהבזיליקום הקדוש.
+Popular in the kitchens of Southeast Asia, it has a more anise-like aroma compared to other basil varieties but is more refined than Holy Basil.
 
-במנות מהמטבח הדרום-מזרח אסייתי נהוג להשתמש בכמות גדולה של עלים טריים.
+In Southeast Asian cuisine, it is common to use a large quantity of fresh leaves in dishes.
 
-## בזיליקום קדוש (טולסי)
+## Holy Basil (Tulsi)
 
-הטולסי חריף יותר ממינים אחרים של ריחן. מקור הצמח בהודו, שם הוא נחשב לקדוש. בשל מעמדו לא נהוג לבשל איתו  - אך נהוג לחלוט את העלים מספר דקות לקבלת משקה ריחני. 
-
+Tulsi is spicier than other basil species. It originates from India, where it is considered holy. Due to its sacred status, it is not commonly cooked but is often steeped for a few minutes to create a fragrant beverage.

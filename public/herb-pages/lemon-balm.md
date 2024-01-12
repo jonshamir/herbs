@@ -1,6 +1,5 @@
-צמח תה לימוני.
+Delicate herb with a citrus scent
 
-## במטבח
+## In the Kitchen
 
-לא מאוד נפוץ בבישול. העלים הלימוניים יכולים להוסיף ולהדגיש טעם לימוני בקינוחים, ריבות, רוטבים לסלט, גלידות ועוד.
-
+Not very common in cooking, Lemon Balm leaves can add and accentuate a lemony flavor in desserts, jams, salad dressings, ice creams, and more.

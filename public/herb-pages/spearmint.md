@@ -1,13 +1,9 @@
-נענע היא אחד מצמחי התבלין החשובים, בעלת ניחוח מרענן וייחודי. 
+Spearmint is one of the important herbs, known for its refreshing and unique scent.
 
-## במטבח
+## In the Kitchen
 
-הנענע הקרחת היא המין הנפוץ יותר בשימוש בארץ. בניגוד ל[נענע החריפה](peppermint) היא מייצרת כמות מוטעה ופחות מורגשת של החומר מנתול, שיוצר תחושה קרירה במגע עם הפה.  
+Spearmint, also known as "karkat," is the more common species used in Israel. Unlike peppermint, it produces a lower and less noticeable amount of menthol, creating a cool sensation when in contact with the mouth.
 
-העלים הרעננים שימושיים בשלל מנות, מבושלות או טריות, מבשר ועד קינוחים.
+Fresh leaves are useful in various dishes, from cooked meals to fresh salads and desserts. Spearmint leaves can be steeped in hot water for a refreshing tea, blended into shakes, or used as a seasoning or garnish for different dishes.
 
-נהוג לחלוט עלי נענע טריים במים רותחים ולשתות אותם כתה, לשלב אותם בשייקים, או להשתמש בהם כתבלין או כקישוט למנות שונות.
-
-נפוץ במטבחי המזרח התיכון - המטבח הפרסי, הלבנוני, הפלסטיני וכו'.
-
-במטבח הבריטי משמשת המנטה גם לתיבול תבשילי בשר כבש וכקרם מילוי לשוקולד.
+It is prevalent in Middle Eastern cuisines, such as Persian, Lebanese, Palestinian, and more. In British cuisine, mint is also used to season lamb dishes and as a filling for chocolate.

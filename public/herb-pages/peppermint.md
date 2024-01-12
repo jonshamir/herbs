@@ -1,7 +1,7 @@
-אחד מצמחי התבלין החשובים, בעל ניחוח מרענן וייחודי. מנטה היא מין של נענע המייצר כמות גדולה של החומר מנתול היוצר תחושה קרירה במגע עם הפה. קרובת משפחה של ה[נענע הקרחת](spearmint) שיותר נפוצה במטבח המקומי.
+Mint, one of the important herbs, has a refreshing and unique fragrance. It is a species of the Mentha genus that produces a large amount of menthol, creating a cool sensation when in contact with the mouth. It is closely related to [spearmint](spearmint), which is more common in local kitchens.
 
-## במטבח
+## In the Kitchen
 
-ניתן לחלוט את הצמח במים חמים ולשתות אותו כתה.
+The plant can be steeped in hot water to make a soothing tea.
 
-העלים הרעננים שימושיים בשלל מנות, מבושלות או טריות, מבשר ועד קינוחים.
+Fresh leaves are versatile and can be used in various dishes, from savory to desserts, either cooked or fresh.

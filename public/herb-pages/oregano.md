@@ -1,19 +1,19 @@
-אורגנו הוא אולי המין המוכר ביותר בסוגו, ומשמש במגוון מנות במטבחים ים-תיכוניים - במיוחד באיטליה וביוון. יש לו טעם וניחוח דומים [למיורן (האזובית התרבותית)](marjoram) אבל עזים יותר. 
+Oregano, perhaps the most well-known in its genus, is extensively used in Mediterranean cuisine, especially in Italy and Greece. It has a taste and aroma similar to [marjoram](marjoram), but stronger.
 
-## במטבח
+## In the Kitchen
 
-עלי האורגנו נפוצים מאוד במטבח הים-תיכוני, בפרט האיטלקי והיווני. נהוג להשתמש בו מיובש, הוא שומר על הניחוח לאורך זמן. אורגנו מיובש משחרר טעמים לאורך בישול ארוך ולכן נהוג להוסיף אותו לרוטב עגבניות ובשר שמשבשלים זמן רב. 
+Oregano leaves are very popular in Mediterranean kitchens, particularly in Italian and Greek cuisine. It is commonly used in its dried form, preserving its aroma over time. Dried oregano releases flavors over long cooking periods, making it a common addition to tomato sauces and slow-cooked meat dishes.
 
-ביבשת אמריקה נפוץ השימוש בצמח עם טעם דומה ה"אורגנו מקסיקני" - צמח שאינו קרוב משפחה אבל מייצר חומרי ריח דומים.
+In the Americas, a plant with a similar taste, known as "Mexican oregano," is often used, although it is not closely related.
 
-## היסטוריה
+## History
 
-מקור האורגנו באזור הים התיכון, ככל הנראה בגבעות יוון. היוונים העתיקים החלו להשתמש בו כצמח מרפא ותבלין. מקור השם מיוונית ומשמעותו "שמחת ההר" ὄρος - אורוס (הר), γάνος - גאנוס (שמחה, בהירות, אושר) 
+Oregano's origin lies in the Mediterranean region, likely in the hills of Greece. Ancient Greeks began using it as both a medicinal herb and a spice. The name originates from Greek, meaning "joy of the mountain" - ὄρος (mountain), γάνος (joy, brightness, happiness).
 
-## תערובות תבלינים
+## Herb Blends
 
-הצמח לרוב מצוי כחלק מה-*Herbes de Provence*, תערובת תבלינים ים-תיכוניים הנחשבת אופיינית לפרובנס שבצרפת:
+Oregano is commonly found in the _Herbes de Provence_, a blend of Mediterranean herbs typical of the Provence region in France:
 
-[מיורן](marjoram "HerbIcon") [רוזמרין](rosemary "HerbIcon") [תימין](thyme "HerbIcon") [אורגנו](oregano "HerbIcon") [צתרה](summer-savory "HerbIcon")
+[Marjoram](marjoram "HerbIcon") [Rosemary](rosemary "HerbIcon") [Thyme](thyme "HerbIcon") [Oregano](oregano "HerbIcon") [Summer Savory](summer-savory "HerbIcon")
 
-התערובת לרוב נמכרת יבשה, מרכיביה נשמרים היטב ומתאימים לבישול בחום, במאכלים צלויים או תבשילים. לעיתים מוסיפים לתערובת גם [לבנדר](lavender).
+The blend is usually sold dried, and its components are well-preserved, suitable for cooking in heat, in grilled dishes, or stews. Lavender is sometimes added to the blend.

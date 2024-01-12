@@ -1,12 +1,11 @@
-עלי קארי הם עליו של עץ האזדרכת המתוקה שגדלה בהודו וסרי-לנקה. מרכיב חשוב במנות הודיות רבות, ומקבלים את שמם מתבשילי קארי.
+Curry leaves come from the sweet neem tree, which grows in India and Sri Lanka. They are a crucial ingredient in many Indian dishes and get their name from curry dishes.
 
-## במטבח
+### In the Kitchen
 
-לעלים יש טעם קארי מאופיין ומעט הדרי.
+Curry leaves have a distinctive and slightly citrusy flavor.
 
-בדרך כלל משתמשים בעלים בשלב הראשון של הכנת התבשיל ליצירת בסיס ארומטי. בהרבה מקרים הכנת תבשיל קארי תתחיל בטיגון עלי הקארי יחד עם זערי חרדל ובצל. התערובת מתבשלת בחום נמוך לאורך זמן עד שהבצל מתפרק ונהפך מתקתק.
+Typically, the leaves are used in the initial stages of preparing a dish to create an aromatic base. In many cases, the process of making a curry dish begins with sautéing curry leaves along with mustard seeds and onions. The mixture is cooked over low heat for an extended period until the onions break down and become caramelized.
 
-למרות שמם, עלי קארי לרוב **אינם** מרכיב הכרחי בתערובות או משחות קארי, והרבה תבשילי קארי לא מכילים אותם כלל.
+Despite their name, curry leaves are **not** a mandatory ingredient in curry blends or curry powders, and many curry dishes do not contain them at all.
 
-עדיף להשתמש בעלים טריים אבל גם העלים מיובשים שומרים על טעמם.
-
+It is preferable to use fresh leaves, but dried leaves also retain their flavor.

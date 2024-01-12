@@ -377,7 +377,7 @@ export const growTree = (growthTime = 600, growImages = true) => {
       .transition()
       .delay((d) => d.depth * growthTime + 600 * Math.random() - 300)
       .duration(growthTime)
-      .attr("transform", "scale(1)");
+      .attr("transform", "scale(1.1)");
   }
 };
 

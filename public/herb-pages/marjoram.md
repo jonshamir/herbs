@@ -1,13 +1,13 @@
-המיורן דומה מאוד לאחיו המוכר יותר, ה[אורגנו](oregano) אך בעל טעם עדין ומתקתק יותר. 
+Marjoram is very similar to its more popular relative, [oregano](oregano), but has a milder and sweeter taste.
 
-## במטבח
+## In the Kitchen
 
-שימושיו דומים מאוד לאורגנו ופעמים רבות ניתן להחליף בינהם במתכונים (ואף מוכרים בארץ מיורן בתור "אורגנו")
+Its culinary uses are very similar to oregano, and often, they can be interchangeably used in recipes (and in some places, marjoram is sold as "oregano").
 
-## תערובות תבלינים
+## Spice Blends
 
-הצמח לרוב מצוי כחלק מה-*Herbes de Provence*, תערובת תבלינים ים-תיכוניים הנחשבת אופיינית לפרובנס שבצרפת:
+The plant is often part of the _Herbes de Provence_, a Mediterranean spice blend typical of the Provence region in France:
 
-[מיורן](marjoram "HerbIcon") [רוזמרין](rosemary "HerbIcon") [תימין](thyme "HerbIcon") [אורגנו](oregano "HerbIcon") [צתרה](summer-savory "HerbIcon")
+[Marjoram](marjoram "HerbIcon") [Rosemary](rosemary "HerbIcon") [Thyme](thyme "HerbIcon") [Oregano](oregano "HerbIcon") [Summer Savory](summer-savory "HerbIcon")
 
-התערובת לרוב נמכרת יבשה, מרכיביה נשמרים היטב ומתאימים לבישול בחום, במאכלים צלויים או תבשילים. לעיתים מוסיפים לתערובת גם [לבנדר](lavender).
+This blend is usually sold dried, with its components preserving well and suitable for cooking at high temperatures, in grilled dishes, or stews. Sometimes, [lavender](lavender) is also added to the blend.

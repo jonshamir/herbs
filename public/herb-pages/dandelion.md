@@ -1,14 +1,13 @@
-שן הארי הוא צמח קטן, נפוץ במדינות סביב הים התיכון. פרחיו צהובים וקטנים וכל חלקי הצמח אכילים.
+Dandelion is a small plant common in Mediterranean countries. It has small, yellow flowers, and all parts of the plant are edible.
 
-## במטבח
+### In the Kitchen
 
-משתמשים בצמח ברחבי העולם כירק ועשב תיבול, ניתן לבשל את עליו וגבעוליו בדומה לתרד.
+The plant is used worldwide as a vegetable and herb, and its leaves and stems can be cooked similarly to spinach.
 
-מהעלים והפרחים ניתן לחלוט תה.
+You can brew tea from the leaves and flowers.
 
-אפשר לאכול את העלים טריים בסלט או כריך. עדיף להשתמש בעלים צעירים שכן העלים הבוגרים מרירים.
+Fresh leaves can be eaten in salads or sandwiches. It's preferable to use young leaves as the mature ones tend to be bitter.
 
-## היסטורה
+### History
 
-מקור השם מגיע מצורת העלים שמזכירים שיני אריה, מסתבר.
-
+The name is derived from the shape of the leaves, resembling lion's teeth, it is believed.

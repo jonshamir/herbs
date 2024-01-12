@@ -1,10 +1,9 @@
-גרגיר הגינה בעל חריפות חרדלית אופיינית לבני משפחת המצליבים. 
+## Garden Cress
 
-## במטבח
+Garden Cress is a plant known for its characteristic mustardy spiciness, typical of the cruciferous family.
 
-דומה לצמחים בני משפחת החרדל, כמו ה[רוקט](rocket), גרגיר הגינה נאכל בעיקר טרי בסלטים וכריכים. בתיאבון!
+### In the Kitchen
 
-גרגיר הנחלים דומה בטעמו ובשימושיו לקרוב משפחתו, [גרגיר הנחלים](watercress).
+Similar to other mustard family plants like [Rocket](rocket), Garden Cress is primarily consumed fresh in salads and sandwiches. Bon appétit!
 
-
-
+Garden Cress shares a similar taste and culinary use with its close relative, [Watercress](watercress).

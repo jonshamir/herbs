@@ -1,21 +1,21 @@
-הצתרה החורפית היא צמח ריחני המשמש לתיבול מנות ותבשילים אירופאים בעיקר. מקורה באירופה, היא צמח רב-שנתי לעומת קרובת המשפחה החד-שנתית, [הצרתה הקייצית](summer-savory).
+Winter savory, a fragrant herb, is used to season European dishes primarily. Originating in Europe, it is a perennial plant compared to its annual family member, [summer savory](summer-savory).
 
-בארץ גדלה הצתרה הורדה, ידועה בערבית כ"זעתר רומי" ויכולה לשמש בתערובות הזעתר במקום האזוב המצוי.
+In Israel, winter savory, known in Arabic as "Za'atar Rumi," can be used in Za'atar mixtures instead of the common Za'atar herb.
 
-## במטבח
+## In the Kitchen
 
-טעמה של הצתרה מזכיר תימין וזעתר והיא מכילה שמנים אתריים דומים.
+Winter savory's taste resembles thyme and summer savory, containing similar essential oils.
 
-הצתרה החורפית בעלת טעם חזק יותר מהקייצית, מתאימה לתבשילים ובישול ארוך שמרכך את טעמה.
+Winter savory, with a stronger flavor than the summer variety, is suitable for stews and long-cooking dishes that enhance its taste.
 
-בבישול ים-תיכוני, נהוג להשתמש בצתרה עם שעועית וקטניות אחרות, יש המאמינים שהיא נוגדת את הגזים שמאכלים כאלה גורמים. באיטליה משמשת לתיבול בשר.
+In Mediterranean cuisine, it is common to use winter savory with beans and other legumes. Some believe it counteracts the gas that such foods may cause. In Italy, it is used for seasoning meats.
 
-בפרסית הצמח נקרא מרזה ומשמש לתיבול אורז.
+In Persian cuisine, the plant is called "Marzeh" and is used for rice seasoning.
 
-## תערובות תבלינים
+## Spice Blends
 
-הצמח לרוב מצוי כחלק מה-*Herbes de Provence*, תערובת תבלינים ים-תיכוניים הנחשבת אופיינית לפרובנס שבצרפת:
+The plant is often part of the "Herbes de Provence," a Mediterranean spice blend typical of the Provence region in France:
 
-[מיורן](marjoram "HerbIcon") [רוזמרין](rosemary "HerbIcon") [תימין](thyme "HerbIcon") [אורגנו](oregano "HerbIcon") [צתרה](summer-savory "HerbIcon")
+[Marjoram](marjoram "HerbIcon") [Rosemary](rosemary "HerbIcon") [Thyme](thyme "HerbIcon") [Oregano](oregano "HerbIcon") [Winter Savory](summer-savory "HerbIcon")
 
-התערובת לרוב נמכרת יבשה, מרכיביה נשמרים היטב ומתאימים לבישול בחום, במאכלים צלויים או תבשילים. לעיתים מוסיפים לתערובת גם [לבנדר](lavender).
+The blend is usually sold dried, with its components well preserved and suitable for cooking with heat, in grilled dishes or stews. Lavender is sometimes added to the blend.
