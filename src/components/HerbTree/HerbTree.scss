@@ -65,12 +65,12 @@
 
   button {
     border: 0;
-    padding: 0.8em 1em;
+    padding: 0.5em 1em 0.6em 1em;
     cursor: pointer;
     border-radius: 0.4em;
     background-color: #f1eae2;
     transition: background-color $transition-defaults;
-    font-weight: 600;
+    font-weight: 550;
     margin: 0.5em;
 
     &:hover {
@@ -216,7 +216,8 @@
       stroke-opacity $transition-defaults, fill $transition-defaults,
       opacity $transition-defaults;
     // pointer-events: none;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 0.4rem;
 
     &.visible {
       fill-opacity: 1;

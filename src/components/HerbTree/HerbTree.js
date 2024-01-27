@@ -199,7 +199,7 @@ class HerbTree extends React.Component {
                 toggleIntroMode(false);
               }}
             >
-              Explore >
+              Explore →
             </button>
 
             {this.props.debug && (

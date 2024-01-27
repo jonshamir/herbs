@@ -19,15 +19,16 @@
 }
 
 @font-face {
-  font-family: "Hadassah Friedlaender";
-  src: url("./fonts/HadassahFriedlaenderRegular.ttf");
-  font-weight: 400;
+  font-family: "Quattro";
+  src: url("./fonts/iAWriterQuattroV.ttf");
+  font-weight: 300 700;
 }
 
 @font-face {
-  font-family: "Hadassah Friedlaender";
-  src: url("./fonts/HadassahFriedlaenderMedium.ttf");
-  font-weight: 600;
+  font-family: "Quattro";
+  src: url("./fonts/iAWriterQuattroV-Italic.ttf");
+  font-style: italic;
+  font-weight: 300 700;
 }
 
 html {
@@ -48,7 +49,8 @@ body {
 input,
 body,
 button {
-  font-family: "ArbelHagilda", "Days", "Charter", serif;
+  font-family: "Quattro", "Days", "Charter", serif;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
@@ -91,7 +93,7 @@ h3 {
 
 ol li,
 p {
-  line-height: 1.5em;
+  line-height: 1.7em;
   max-width: 500px;
   margin-block-start: 0.8em;
   margin-block-end: 0.8em;
