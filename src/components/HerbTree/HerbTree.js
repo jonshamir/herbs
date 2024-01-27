@@ -128,8 +128,6 @@ class HerbTree extends React.Component {
           showIntro: !this.state.initalLoaded,
         });
 
-        if (this.state.showIntro) toggleIntroMode(true);
-
         if (!this.state.initalLoaded) {
           this.setState({ initalLoaded: true });
           // setTimeout(growTree, 500);
@@ -152,12 +150,12 @@ class HerbTree extends React.Component {
               initalLoaded: true,
               showIntro: false,
             });
-            const herbSlug = routeParts[1] === "herb" ? routeParts[2] : false;
-            // highlightHerb(herbSlug);
           },
           this.state.initalLoaded ? 0 : 1000
         );
       }
+
+    toggleIntroMode(this.state.showIntro);
   }
 
   render() {

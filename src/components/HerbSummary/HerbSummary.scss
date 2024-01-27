@@ -2,14 +2,14 @@
 
 .HerbSummary {
   box-sizing: border-box;
-  position: sticky;
+  position: fixed;
   right: 0;
-  top: 100px;
+  left: 0;
+  top: 80px;
   width: 300px;
   display: flex;
   flex-direction: column;
   line-height: 1.3em;
-  margin-bottom: -100vh;
   padding: 1em;
   z-index: 1;
 
@@ -42,12 +42,12 @@
     width: 100%;
 
     tr {
-      animation: fadeIn 300ms ease-in;
+      animation: fadeIn 0.2s ease-in;
       animation-fill-mode: both;
 
       @for $i from 1 through 20 {
         &:nth-child(#{$i}) {
-          animation-delay: 100ms * $i;
+          animation-delay: 0.05s * $i;
         }
       }
     }

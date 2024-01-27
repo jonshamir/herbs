@@ -8,6 +8,7 @@ import HerbSummary from "../../components/HerbSummary/HerbSummary";
 import HerbLink from "../../components/HerbLink/HerbLink";
 import herbInfo from "../../data/herbInfo.json";
 import familyInfo from "../../data/familyInfo.json";
+import IconButton from "../../components/IconButton/IconButton";
 import recipeInfo from "../../data/recipeInfo.json";
 
 import "./HerbPage.scss";
@@ -62,7 +63,7 @@ class HerbPage extends React.Component {
       <FadeInOut className="HerbPage">
         <main>
           {/* <Link to="/" className="backIcon">
-            <IconButton icon="arrow-right" label="חזרה לעץ" />
+            <IconButton icon="arrow-right" label="Back" />
           </Link> */}
           <HerbSummary herb={herb} slug={slug} family={family} />
           <div className="HerbContent">
@@ -73,7 +74,6 @@ class HerbPage extends React.Component {
               <ReactMarkdown
                 components={{
                   a: this.renderLink,
-                  // code: this.renderCustomComponent,
                 }}
               >
                 {this.state.md}
@@ -87,7 +87,7 @@ class HerbPage extends React.Component {
               src={`../images/photos/${slug}.jpg`}
               alt={herb.commonName[lang]}
               className={imageLoaded && timerComplete ? "loaded" : ""}
-              onLoad={(e) => this.setState({ imageLoaded: true })}
+              onLoad={() => this.setState({ imageLoaded: true })}
             />
           </div>
         </main>
