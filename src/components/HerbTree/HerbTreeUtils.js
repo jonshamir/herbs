@@ -301,7 +301,7 @@ export const drawTree = () => {
     .filter((d) => !d.children)
     .append("circle")
     .attr("class", "imageOverlay")
-    .attr("r", COLLISION_RADIUS + 4);
+    .attr("r", COLLISION_RADIUS + 5.5);
 
   // Minimal leaf nodes
   node
@@ -425,7 +425,7 @@ function getZoomTransform() {
   if (!isIntroMode) return d3.zoomIdentity;
   else
     return width < TABLET_WIDTH / 2
-      ? d3.zoomIdentity.scale(0.6).translate(0, clientHeight / 4 - 280)
+      ? d3.zoomIdentity.scale(0.8).translate(0, clientHeight / 4 - 350)
       : d3.zoomIdentity.scale(0.8).translate(150, clientHeight / 4 - 200);
 }
 

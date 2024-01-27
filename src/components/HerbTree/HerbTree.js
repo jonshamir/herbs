@@ -12,7 +12,7 @@ import {
   printLayout,
   setupDrag,
   toggleIntroMode,
-} from "./graphUtils";
+} from "./HerbTreeUtils";
 
 import "./HerbTree.scss";
 
@@ -128,6 +128,8 @@ class HerbTree extends React.Component {
           showIntro: !this.state.initalLoaded,
         });
 
+        toggleIntroMode(this.state.showIntro);
+
         if (!this.state.initalLoaded) {
           this.setState({ initalLoaded: true });
           // setTimeout(growTree, 500);
@@ -154,8 +156,6 @@ class HerbTree extends React.Component {
           this.state.initalLoaded ? 0 : 1000
         );
       }
-
-    toggleIntroMode(this.state.showIntro);
   }
 
   render() {
