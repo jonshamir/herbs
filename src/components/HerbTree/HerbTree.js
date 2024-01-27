@@ -6,7 +6,6 @@ import taxonomyTreeOverrides from "../../data/taxonomyTreeOverrides.json";
 import {
   initializeGraph,
   updateGraphSize,
-  highlightHerb,
   unhighlightAll,
   positionHighlightedHerb,
   growTree,
@@ -129,7 +128,7 @@ class HerbTree extends React.Component {
           showIntro: !this.state.initalLoaded,
         });
 
-        toggleIntroMode(true);
+        if (this.state.showIntro) toggleIntroMode(true);
 
         if (!this.state.initalLoaded) {
           this.setState({ initalLoaded: true });
@@ -148,14 +147,13 @@ class HerbTree extends React.Component {
             unhighlightAll(false);
 
             this.setState({
-              isMinimal: true,
-              isHidden: routeParts[1] === "recipes",
+              isHidden: true,
               isInteractive: false,
               initalLoaded: true,
               showIntro: false,
             });
             const herbSlug = routeParts[1] === "herb" ? routeParts[2] : false;
-            highlightHerb(herbSlug);
+            // highlightHerb(herbSlug);
           },
           this.state.initalLoaded ? 0 : 1000
         );

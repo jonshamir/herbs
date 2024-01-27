@@ -613,7 +613,7 @@ export const highlightHerb = (slug) => {
       .duration(HIGHLIGHT_DURATION / 2)
       .attr("opacity", 1);
 
-    // positionHighlightedHerb(HIGHLIGHT_DURATION);
+    positionHighlightedHerb(HIGHLIGHT_DURATION);
   }
 };
 
