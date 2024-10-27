@@ -11,6 +11,6 @@ $mobile-width: 600px;
 
 @mixin bg-noise {
   background-color: $bg-color;
-  background-image: url("/bg.png");
-  background-size: 256px 256px;
+  // background-image: url("/bg.png");
+  // background-size: 256px 256px;
 }
