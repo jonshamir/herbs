@@ -1,8 +1,9 @@
-קרובת משפחה של העירית הנפוצה בבישול אסייתי. עלי העירית השומית שטוחים ולא גליליים כמו הרבה מבני משפחת הבצלים.
+## In the Kitchen
 
-## במטבח
+A close relative of common chives, Garlic Chives are commonly used in Asian cuisine. Their flat leaves, unlike the cylindrical ones of many onion family members, make them distinctive.
 
-משמש לתיבול מנות במזרח הרחוק - סין, יפן, קוריאה וכו'.
+### In East Asian Cuisine
 
-בקוריאה התבלין נפוץ במיוחד והוא מרכיב חשוב בפנקייק קוריאני המלוח.
+Used for seasoning dishes in East Asia - China, Japan, Korea, etc.
 
+In Korea, this herb is particularly popular and serves as a crucial ingredient in savory Korean pancakes.

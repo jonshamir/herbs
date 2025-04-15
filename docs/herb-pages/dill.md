@@ -1,15 +1,17 @@
-השמיר, ידוע גם כשבת ריחי, הוא צמח תבלין נפוץ בעל עלים מנוצים עדינים. 
+## Dill
 
-## במטבח
+Dill, also known as "Shamir" or "Shavit," is a common herb with delicate feathery leaves.
 
-ניתן להשתמש בשמיר מיובש אבל לעלים הטריים טעם ניכר יותר. באופן כללי השמיר רגיש לחום, ולכן עדיף להוסיף לאחר הבישול או בסופו.
+### In the Kitchen
 
-זרעי שמיר מיובשים משמשים גם כן כתבלין, אך טעמם שונה.
+Dill can be used dried, but fresh leaves have a more distinct flavor. Generally, dill is sensitive to heat, so it's preferable to add it after cooking or towards the end.
 
-במטבחים מזרח אירופאים השמיר פופולרי ונהוג להוסיף אותו לדגים, ביצים, תפוחי אדמה, מטבלים, סלטים ומרקים.
+Dill seeds, when dried, are also used as a spice, but they have a different taste.
 
-מלפפון חמוץ שנכבש עם שמיר מכונה בארצות הברית Kosher Dill pickle ונחשב אחד מהסמלים של המטבח היהודי בארצות הברית. מלבד שימושו כירק וכתבלין חי, ניתן להשתמש גם בעלי שמיר מיובשים כתבלין.
+In Eastern European kitchens, dill is popular and commonly added to fish, eggs, potatoes, dressings, salads, and soups.
 
-## היסטוריה
+A cucumber pickled with dill is called a "Kosher Dill pickle" in the United States and is considered a symbol of Jewish cuisine in the country. Besides being used as a herb and live spice, dried dill seeds can also be used as a spice.
 
-הצמח קיבל את שמו העברי ככל הנראה בטעות. בספר ישעיהו מופיע הביטוי "שָׁמִיר וָשָׁיִת" ככינוי לצמחייה קוצנית או סבך. חז"ל החלו להשתמש בשם בהתייחסות לצמח התבלין.
+### History
+
+The plant likely received its Hebrew name by mistake. In the book of Isaiah, the expression "shamir v'shayit" appears, referring to thorny vegetation. The sages began using the name when referring to the herb.

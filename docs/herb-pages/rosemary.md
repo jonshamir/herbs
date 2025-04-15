@@ -1,23 +1,23 @@
-הרוזמרין בעל עלים דקים ומוארכים, ונפוץ בכל מדינות הים התיכון. מבחינה בוטנית הרוזמרין נחשב סוג של מרווה, אך מבחינה קולינרית ומבחינת הטעם שונה מאוד. 
+Rosemary, with its thin and elongated leaves, is prevalent in Mediterranean countries. While botanically considered a type of mint, in culinary terms and taste, it is notably different.
 
-## במטבח
+## In the Kitchen
 
-ניתן להשתמש בו מיובש או טרי, גם בבישול ארוך או בתנור. בניגוד לצמחי תבלין עדינים יותר, הרוזמרין לא מאבד מהטעמו בקלות.
+Rosemary can be utilized in both dried and fresh forms, suitable for long cooking or oven roasting. Unlike milder herbs, rosemary retains its flavor well.
 
-בעל ניחוח אופייני שקרוב מעט לריחו של ה[לבנדר](lavender) וניתן להשתמש בהם באופן דומה בהרבה מקרים.
+It possesses a distinct aroma somewhat reminiscent of [lavender](lavender), and they can be used interchangeably in many cases.
 
-העלים עשויים להיות סיביים ולכן כדאי לקצוץ אותם דק, לבשל לאורך זמן או להוציא לפני האכילה. בצלייה בתנור העלים נשרפים מעט ומוסיפים טעם מעושן למאכל הצלוי.
+The leaves may be fibrous, so finely chopping them, prolonged cooking, or removing before consumption is recommended. When roasted in the oven, the leaves char slightly, imparting a smoky flavor to the dish.
 
-## היסטוריה
+## History
 
-היוונים האמינו שרוזמרין מזחק את הזיכרון, ויש עדויות שהשתמשו בו בבישול כבר אז.
+Ancient Greeks believed that rosemary could enhance memory, and historical evidence suggests its use in their cuisine.
 
-מקור השם בלטינית ומשמעותו "ורד הים", כלל הנראה מכיוון שגדל ליד הים התיכון ואולי כי פרחיו כחולים (כמו הים).
+The name has Latin origins, meaning "sea dew," possibly due to its growth near the Mediterranean Sea or the blue color of its flowers.
 
-## תערובות תבלינים
+## Spice Blends
 
-הצמח לרוב מצוי כחלק מה-*Herbes de Provence*, תערובת תבלינים ים-תיכוניים הנחשבת אופיינית לפרובנס שבצרפת:
+Rosemary is a key component of "Herbes de Provence," a Mediterranean herb blend typical of the Provence region in France:
 
-[מיורן](marjoram "HerbIcon") [רוזמרין](rosemary "HerbIcon") [תימין](thyme "HerbIcon") [אורגנו](oregano "HerbIcon") [צתרה](summer-savory "HerbIcon")
+[Marjoram](marjoram "HerbIcon") [Rosemary](rosemary "HerbIcon") [Thyme](thyme "HerbIcon") [Oregano](oregano "HerbIcon") [Summer Savory](summer-savory "HerbIcon")
 
-התערובת לרוב נמכרת יבשה, מרכיביה נשמרים היטב ומתאימים לבישול בחום, במאכלים צלויים או תבשילים. לעיתים מוסיפים לתערובת גם [לבנדר](lavender).
+This blend is commonly sold in a dried form, with well-preserved components suitable for various cooking methods, such as grilling or stewing. Occasionally, [lavender](lavender) is included in the blend.

@@ -1,8 +1,7 @@
-בעל ניחוח לימוני עוצמתי שמזכיר ארטיק לימון, הצמח מגיע במקור מדרום אמריקה - פרו, צ'ילה וארגנטינה.
+Possessing a powerful lemony fragrance reminiscent of lemon verbena, the plant originates from South America - Peru, Chile, and Argentina.
 
-## במטבח
+## In the Kitchen
 
-לא מאוד נפוץ בבישול, בעיקר משמש לחליטת תה "לואיזה". בארץ נפוץ מאוד השילוב בתה יחד עם [לימונית](lemongrass).
+Not very common in cooking, it is mainly used for brewing "Louisa" tea. In Israel, it is often combined with [lemongrass](lemongrass) in tea blends.
 
-העלים הלימוניים יכולים להוסיף ולהדגיש טעם לימוני בקינוחים, ריבות, רוטבים לסלט, גלידות ועוד.
-
+The lemony leaves can add and accentuate a lemony flavor in desserts, jams, salad dressings, ice creams, and more.

@@ -1,12 +1,11 @@
-עלי דפנה הם עליו של העָר אציל, צמח ירוק-עד הגדל כעץ או כשיח. ער אציל גדל בישראל באופן טבעי, וניתן למצוא אותו גם בגינות ובשכונות ברחבי הארץ.
+Bay leaves are the leaves of the noble laurel, a plant that grows as a tree or shrub. The noble laurel grows naturally in Israel and can be found in gardens and neighborhoods throughout the country.
 
-## במטבח
+## In the Kitchen
 
-עלי דפנה נפוצים בבישול ים-תיכוני ואירופאי. בניגוד להרבה צמחי תבלין, עלי דפנה שומרים על טעמם לאורך זמן, ולכן נהוג להשתמש בעלים מיובשים. בכל זאת, לעלים טריים יש טעם עוצמתי יותר ואפשר להשתמש בהם באותו האופן.
+Bay leaves are common in Mediterranean and European cuisine. Unlike many other herbs, bay leaves retain their flavor over time, making it common to use dried leaves. However, fresh leaves have a more intense flavor and can be used in the same way.
 
-נהוג להוסיף עלי דפנה למתכונים בבישול ארוך - תבשילים, רטבים ומרקים. לעלים מיובשים יש ריח עדין שמתחזק בזמן הבישול. עלים בני יותר משנה נהפכים לחומים ומאבדים מהריח.  
+Bay leaves are often added to recipes that involve long cooking times, such as stews, sauces, and soups. Dried leaves release a subtle aroma that intensifies during cooking. Leaves older than a year turn brown and lose their fragrance.
 
-## היסטוריה
+## History
 
-במיתולוגיה היוונית מסופר על דפנה, בתו של אל הנהרות, שהייתה יפהפיה. אפולו, אל השמש, התאהב בה ורדף אחריה - אך דפנה לא נענתה לחיזוריו. אפולו היה עקשן במיוחד, ולכן דפנה ביקשה מאביה שיחלץ אותה מהסיטואציה. הפתרון, כמובן, היה להפוך אותה לצמח ריחני - הער האציל, ידוע גם כעץ דפנה. 
-
+In Greek mythology, there is a tale of Daphne, the daughter of the river god. She was exceptionally beautiful, and Apollo, the sun god, fell in love with her and pursued her relentlessly. However, Daphne did not reciprocate his affections. Faced with Apollo's persistence, Daphne asked her father to rescue her from the situation. The solution was to transform her into an aromatic plant – the noble laurel, also known as the bay leaf.

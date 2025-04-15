@@ -1,6 +1,7 @@
-האזוב המצוי הוא עשב תיבול בעל ריח אופייני וטעם מעט חריף. השימוש הידוע ביותר הוא כחלק מ[תערובת הזעתר](/recipes/zaatar-mix) הנפוצה באזור המזרח התיכון. 
+## Za'atar (Origanum syriacum)
 
-## במטבח
+Za'atar, a herb with a distinctive aroma and slightly spicy taste, is most commonly known as a part of the [Za'atar spice blend](/recipes/zaatar-mix) prevalent in the Middle Eastern region.
 
-מעבר לשימוש בצמח בתערובת הזעתר, ניתן להשתמש בעלי האזוב במאפים שונים, להכנת תה או אפילו [גלידה](/recipes/zaatar-ice-cream).
+## In the Kitchen
 
+Apart from being a key component in the Za'atar blend, Za'atar leaves can be used in various pastries, for making tea, or even in [ice cream](/recipes/zaatar-ice-cream).

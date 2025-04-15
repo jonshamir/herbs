@@ -1,19 +1,15 @@
-צמח תבלין חשוב שגדל באזור הים התיכון. הצמח נמוך, עליו קטנים ועדינים אך בעלי ניחוח אופייני. בארץ גדלה הקורנית המקורקפת, קרובת משפחה בעלת טעם דומה שנקראת גם "זעתר פרסי".
+Summer Savory is an important herb that grows in the Mediterranean region. It is a low plant with small and delicate leaves but has a distinctive aroma. In Israel, it is closely related to the Coridothymus capitatus, known as "Za'atar Parsi."
 
-## במטבח
+## In the Kitchen
 
-קרוב מבחינה גנטית ומבחינה קולינרית לאורגנו. מזכיר בטעמו את ה[אזוב](zaatar) ו[הצתרה](summer-savory).
+Genetically and culinarily close to oregano, it shares its taste with [za'atar](zaatar) and [thyme](thyme). Dried savory can be used while preserving its flavor, as it is heat-resistant and suitable for long cooking.
 
-ניתן להשתמש בתימין מיובש ששומר על טעמו, הוא עמיד לחום ומתאים לבישול ארוך.
+You can remove all the leaves from the woody stem by pinching and pulling or alternatively use the stems as they are and remove them before eating. Suitable for meat dishes, cream, potatoes, mushrooms, soups, stews, and more.
 
-אפשר להוריד את כל העלים מהגבעול הסיבי על ידי לחיצה עם האצבעות ומשיכה, או לחלופין להשתמש בענפים כמו שהם ולהוציא אותם לפני האכילה.
+## Spice Blends
 
-מתאים למנות בשר, שמנת, תפוחי אדמה, פטריות, מרקים, תבשילים ועוד.
+Summer Savory is often part of Herbes de Provence, a Mediterranean herb blend typical of the Provence region in France:
 
-## תערובות תבלינים
+[Marjoram](marjoram "HerbIcon") [Rosemary](rosemary "HerbIcon") [Thyme](thyme "HerbIcon") [Oregano](oregano "HerbIcon") [Summer Savory](summer-savory "HerbIcon")
 
-הצמח לרוב מצוי כחלק מה-*Herbes de Provence*, תערובת תבלינים ים-תיכוניים הנחשבת אופיינית לפרובנס שבצרפת:
-
-[מיורן](marjoram "HerbIcon") [רוזמרין](rosemary "HerbIcon") [תימין](thyme "HerbIcon") [אורגנו](oregano "HerbIcon") [צתרה](summer-savory "HerbIcon")
-
-התערובת לרוב נמכרת יבשה, מרכיביה נשמרים היטב ומתאימים לבישול בחום, במאכלים צלויים או תבשילים. לעיתים מוסיפים לתערובת גם [לבנדר](lavender).
+The blend is usually sold dried, and its components preserve well, making it suitable for cooking in heat, grilled dishes, or stews. Lavender is sometimes added to the blend.

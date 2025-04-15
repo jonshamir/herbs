@@ -1,14 +1,11 @@
-עלי הרוקט, ידוע גם כבן-חרדל מצוי ואורוגולה בעלי חריפות הדומה לחרדל. משתמשים בעיקר בעלים הטריים שכן הם מאבדים הרבה טעם בבישול ומתפרקים.
+Arugula, also known as rocket or roquette, is a leafy green with a peppery taste reminiscent of mustard. It is often used for its fresh leaves, as they lose much of their flavor when cooked and tend to wilt.
 
-## במטבח
+## In the Kitchen
 
-העלים הטריים שימושיים בסלטים וכריכים, ומשתלבים טוב עם רטבים חמצמצים.
+Fresh arugula leaves are popular in salads and sandwiches, pairing well with tangy dressings.
 
-באיטליה נהוג להניח עלי רוקט טריים על פיצה שיוצאת מהתנור, שמספקים קונטרסט במרקם ובטעם למאפה העשיר. מכינים מהעלים גם רטבים לפסטה.
+In Italy, it is common to place fresh arugula on pizza just as it comes out of the oven, providing a contrast in texture and flavor to the rich dish. Additionally, arugula is used to make pasta sauces.
 
-העלים הצעירים עגלגלים ובעלי טעם עדין יחסית לעלים הבוגרים.
+Young arugula leaves are tender and have a relatively mild taste compared to mature leaves.
 
-בעדות מסוימות נהוג להשתמש באורוגולה ככרפס.
-
-
-
+In some cuisines, arugula is also used as a substitute for watercress.

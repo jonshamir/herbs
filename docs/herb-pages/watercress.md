@@ -1,10 +1,9 @@
-גרגיר הנחלים בעל חריפות חרדלית אופיינית לבני משפחת המצליבים. הצמח גדל בר בארץ בביצות ובנחלים ומכאן שמו. 
+Watercress, with its characteristic mustard spiciness, belongs to the cruciferous family. The plant grows near water sources, such as springs and streams, hence its name.
 
-## במטבח
+## In the Kitchen
 
-נבטים או עלים טריים של גרגיר הנחלים נאכלים טריים בסלטים וכריכים. את העלים הבוגרים יותר ניתן לאדות ולאכול כירק מבושל או להשתמש בהם למילוי מאפי בצק, בדומה לתרד.
+The leaves or fresh shoots of watercress are consumed raw in salads and sandwiches. The more mature leaves can be cooked and eaten as a vegetable or used as a filling for pastry, similar to cress.
 
-גרגיר הנחלים דומה בטעמו ובשימושיו לקרוב משפחתו, [גרגיר הגינה](garden-cress).
+Watercress has a taste and culinary use similar to its relative, [garden cress](garden-cress).
 
-אחרי פריחת הצמח העלים נהפכים למרים יותר ופחות מומלצים לאכילה.
-
+After the plant flowers, the leaves become more bitter and are less recommended for consumption.

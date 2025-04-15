@@ -1,6 +1,5 @@
-הצמח מוכר בעיקר כמרכיב חשוב במשקה האבסינת' האירופאי. קרוב משפחה של ה[שיבא](tree-wormwood), בעל טעם דומה.
+The plant is primarily known as a crucial ingredient in the European drink Absinthe. It is a close relative of [Wormwood](tree-wormwood) and has a similar taste.
 
-## במטבח
+## In the Kitchen
 
-משמש באופן כללי רק להכנת משקאות. מלבד האבסינת', משם מגיע שמו, הוא נותן טעם למשקאות נוספים - יינות, בירות, ורמות', וכו'.
-
+Generally used for preparing beverages. Besides Absinthe, from which it gets its name, it imparts its flavor to other drinks such as wines, beers, vermouth, etc.

@@ -1,10 +1,9 @@
-החרדל נפוץ ברחבי אירופה ומדינות הים התיכון, וגדל בר בכל אזורי ארץ. מלבד זרעי החרדל שמשמשים להכנת הממרח המוכר, ניתן להשתמש בעליו כעשב תיבול חריף.
+Mustard greens are widespread throughout Europe and the Mediterranean countries, growing well in various climates. Apart from the mustard seeds used for making the well-known spread, the leaves can be used as a pungent herb.
 
-## במטבח
+## In the Kitchen
 
-בדומה לצמחי תבלין בני משפחתו, עלי הרחדל נאכלים בעיקר בסלטים וכריכים. ניתן לאדות את העלים לאכלם כירק מבושל או להשתמש בהם למילוי מאפי בצק, בדומה לתרד. 
+Similar to other herbs in its family, mustard greens are commonly consumed in salads and sandwiches. The leaves can be blanched and eaten as a cooked green or used to fill pastry dough, similar to a turnover.
 
-לפרחים הצהובים יש טעם חרדלי עדין וניתן להשתמש בהם לקישוט מנות.
+The yellow flowers have a mild mustard flavor and can be used as a decorative addition to dishes.
 
-מיני חרדל אחרים נפוצים במטבחים אסייתים.
-
+Different varieties of mustard greens are common in Asian kitchens.

@@ -1,5 +1,5 @@
-ידועה גם כלענה שיחנית, מקור הצמח בדרום אירופה וצפון אפריקה. בעלת ניחוח מרענן, נהוג להשתמש בה בחליטות צמחים. הלענה גדלה בר בצפון הארץ, ויש הטוענים כי היא פליטת תרבות שהובאה מאירופה בימי הצלבנים. נפוצה בגינות ברחבי הארץ.
+Also known as tree sage and wormwood, the plant originates from southern Europe and North Africa. It has a refreshing scent and is commonly used in herbal infusions. Tree wormwood grows wild in the northern part of the country, and some claim that it is a cultural escape brought from Europe during the Crusades. It is widespread in gardens throughout the country.
 
-## במטבח
+## In the Kitchen
 
-משמש לחליטת תה. העלים מרירים ולכן לא נפוצים בבישול.
+Used for herbal infusions. The leaves are bitter and therefore not commonly used in cooking.

@@ -1,21 +1,19 @@
-הצתרה הקייצית היא צמח ריחני המשמש לתיבול מנות ותבשילים אירופאים בעיקר. מקורה באירופה, היא צמח חד-שנתי שחי עונה אחת, לעומת קרובת המשפחה הרד-שנתית, [הצרתה החורפית](winter-savory).
+Summer Savory is an aromatic herb used mainly in European seasoning. Originating in Europe, it is an annual herb that lives for one season, unlike its perennial family member, Winter Savory.
 
-בארץ גדלה הצתרה הורדה, ידועה בערבית כ"זעתר רומי" ויכולה לשמש בתערובות הזעתר במקום האזוב המצוי.
+In Israel, Winter Savory, known in Arabic as "Za'atar Rumi," is more common and can be used interchangeably in Za'atar blends.
 
-## במטבח
+## In the Kitchen
 
-טעמה של הצתרה מזכיר זעתר ותימין והיא מכילה שמנים אתריים דומים.
+Summer Savory has a taste reminiscent of thyme and marjoram, containing similar essential oils. It has a milder flavor compared to Winter Savory, with a hint of mintiness. It is particularly popular in traditional Acadian dishes in Canada during the holiday season.
 
-הצתרה הקייצית בעלת טעם עדין יותר מהחורפית, ומזכירה קצת נענע בטעמה.  היא פופולרית במיוחד באזור אקדיה שבקנדה, בתבשילים מסורתיים בתקופת החגים.
+In Mediterranean seafood cuisine, Summer Savory is often used with beans and other small legumes, believed by some to counteract gas that such foods may cause. In Italy, it is used to season meat dishes.
 
-בבישול ים-תיכוני, נהוג להשתמש בצתרה עם שעועית וקטניות אחרות, יש המאמינים שהיא נוגדת את הגזים שמאכלים כאלה גורמים. באיטליה משמשת לתיבול בשר.
+In Persian, the herb is called "Marzeh" and is used for rice seasoning.
 
-בפרסית הצמח נקרא מרזה ומשמש לתיבול אורז.
+## Spice Blends
 
-## תערובות תבלינים
+Summer Savory is commonly part of "Herbes de Provence," a Mediterranean herb blend characteristic of the Provence region in France:
 
-הצמח לרוב מצוי כחלק מה-*Herbes de Provence*, תערובת תבלינים ים-תיכוניים הנחשבת אופיינית לפרובנס שבצרפת:
+[Marjoram](marjoram "HerbIcon") [Rosemary](rosemary "HerbIcon") [Thyme](thyme "HerbIcon") [Oregano](oregano "HerbIcon") [Summer Savory](summer-savory "HerbIcon")
 
-[מיורן](marjoram "HerbIcon") [רוזמרין](rosemary "HerbIcon") [תימין](thyme "HerbIcon") [אורגנו](oregano "HerbIcon") [צתרה](summer-savory "HerbIcon")
-
-התערובת לרוב נמכרת יבשה, מרכיביה נשמרים היטב ומתאימים לבישול בחום, במאכלים צלויים או תבשילים. לעיתים מוסיפים לתערובת גם [לבנדר](lavender).
+The blend is usually sold dried, with its components well-preserved, suitable for cooking with heat, in grilled dishes, or stews. Sometimes, [lavender](lavender) is also added to the blend.

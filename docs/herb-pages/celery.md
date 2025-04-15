@@ -1,14 +1,13 @@
-סלרי או כרפס הוא ירק מאכל ותבלין. גבעולי הצמח העבים והארוכים משמשים בתבשילים, ועליו יכולים לשמש לתיבול בדומה ל[פטרוזיליה](parsley). הזרעים המיובשים אף הם תבלין חשוב במטבחים רבים.
+Celery, also known as celeriac or celery root, is a vegetable and spice. The plant's thick and long stalks are used in various dishes, and its leaves can be used for seasoning similarly to parsley. The dried seeds are also an important spice in many kitchens.
 
-## במטבח
+## In the Kitchen
 
-הצמח ידוע בעיקר בשל גבועליו העבים והארוכים. הגבעולים סיביים ופריכים כאשר מתשמים בהם טריים, בסלטים וכו'. ניתן להשתמש בעלים הטריים כצמח תבלין בעל טעם חרפרף, הדומה מעט לפלפל שחור. אפשר לערבב אותם בסלט או לקשט איתם מנות בדומה לפטרוזיליה.
+The plant is primarily known for its thick and long stalks. The stalks are fibrous and crisp when used fresh, in salads, and more. The fresh leaves can be used as a seasoning with a slightly peppery taste, somewhat similar to black pepper. They can be mixed into salads or used to garnish dishes, similar to parsley.
 
-בבישול יש לשים לב שהגבעולים סיביים במיוחד וגם העלים במידה מסוימת. יש לבשל אותם בישול ארוך או לחתוך אותם לחתיכות קטנות, אנכית לכיוון הצמיחה, כדי לקבל מרקם חלק.
+When cooking, it's important to note that the stalks are particularly fibrous, as are the leaves to some extent. They should be cooked for a long time or cut into small, vertically sliced pieces to achieve a smooth texture.
 
-כרפס נכלל בקערת ליל הסדר, ונהוג לטבול אותו במהלך הסדר - במי-מלח, בחומץ או אף בחרוסת. 
+Celery is included in the Passover Seder plate, and it is customary to dip it during the Seder ritual - in saltwater, vinegar, or even in charoset.
 
-סלרי יחד עם גזר ובצל מהווים בסיס לתבשילים רבים במטבח האירופאי. הירקות נחתכים לקוביות קטנות ומבושלים במשף זמן רב בחום נמוך עד שהם מתפרקים. בצרפת זה נקרא מִירְפּוּאָה (Mirepoix), בעוד שבמטבחים הספרדי, האיטלקי והפורטוגזי תערובות דומות נקראות סופריטו.   
+Celery, along with carrots and onions, forms the base for many European dishes. The vegetables are diced into small cubes and simmered for an extended period over low heat until they break down. In France, this mixture is called "mirepoix," while similar mixtures in Spanish, Italian, and Portuguese cuisines are known as "sofrito."
 
-בארה"ב נהוג לאכול גבעולי סלרי טריים עם חמאת בוטנים, שיהיה להם לבריאות.
-
+In the United States, it is common to eat fresh celery stalks with peanut butter as a healthy snack.

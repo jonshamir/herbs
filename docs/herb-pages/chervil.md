@@ -1,20 +1,19 @@
-התמכה שידועה גם כשרביל, היא עשב תיבול עדין שדומה לקרובת משפחתה ה[פטרוזיליה](parsley). במקור מאזור הקווקז, כיום גדלה ברחבי אירופה. בארץ גדל בר מין אחר בסוג - סייגית מבריקה *Anthriscus lamprocarpus*.
+Chervil, also known as "Kerbel" or "Raviv," is a delicate herb that resembles parsley, belonging to the same family. Originally from the Caucasus region, it now grows widely in Europe. In Israel, a different but related species, Anthriscus lamprocarpus, is commonly found.
 
-## במטבח
+## In the Kitchen
 
-טעם עדין שקרוב לפטורזיליה, אניסי מעט. הצמח עדין ולרוב עדיף להשתמש בו טרי אך ניתן להשתמש גם בתמכה מיובשת.
+Chervil has a subtle taste similar to parsley with a hint of anise. The plant is delicate, and it is generally preferable to use it fresh, although dried chervil can also be used.
 
-בעיקר נפוץ בבישול צרפתי כחלק מתערובת התבלינים Fines herbes שמשמש לתיבול עוף, מאכלי ים, ירקות צעירים מרקים ורטבים.
+It is particularly popular in French cuisine as part of the fines herbes blend, used to season chicken, seafood, young vegetables, soups, and sauces.
 
-## גידול
+## Growing
 
-התמכה אוהבת צל וקרירות, אבל רגישה לכפור. בחם הישראלי קשה לגדל אותה, רק בפינה קרירה ומוצלת במיוחד. רצוי לגדל בקרקע לחה ולהרחיק משמש ישירה.
+Chervil prefers shade and cool temperatures but is sensitive to frost. It is challenging to grow in the Israeli heat, thriving only in a cool and well-shaded corner. Ideally, it should be cultivated in moist soil, kept away from direct sunlight.
 
-## תערובות תבלינים
+## Herb Blends
 
-תמכה נכללת ב-*Fines Herbes*, תערובת תבלינים חשובה במטבח הצרפתי:
+Chervil is a key component of "Fines Herbes," an important herb blend in French cuisine:
 
-[פטרוזיליה](parsley "HerbIcon") [עירית](chives "HerbIcon") [תמכה](chervil "HerbIcon") [טרגון](tarragon "HerbIcon")
+[Parsley](parsley "HerbIcon") [Chives](chives "HerbIcon") [Chervil](chervil "HerbIcon") [Tarragon](tarragon "HerbIcon")
 
-נהוג להתשמש בתערובת כשהעשבים טריים או לאחר בישול קצר, לתיבול מנות עדינות. נפוץ השימוש בשילוב עם עוף, מאכלי ים, ירקות צעירים וביצים.
-
+The blend is commonly used with fresh herbs or after a brief cooking period to delicately season dishes. It is frequently used in combination with chicken, seafood, young vegetables, and eggs.

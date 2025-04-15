@@ -1,12 +1,11 @@
-נקרא גם בבונג. בעל עלים עדינים  ופרחים לבנים-צהובים קטנים. הפרחים יחד עם שאר חלקי הצמח בעלי ניחוח אופייני ומשמשים בעיקר לחליטות. שני מינים גדלים בר בארץ.
+This plant is also called "Babong." It has delicate leaves and small white-yellow flowers. The flowers, along with other parts of the plant, have a distinctive fragrance and are mainly used for infusions. Two species of this plant grow wild in the country.
 
-## במטבח
+## In the Kitchen
 
-בעל ניחוח פרחוני שמזכיר דבש או תפוח, מקור השם ברוב השפות קשור איכשהו ל"תפוח".
+It has a floral fragrance reminiscent of honey or apples. The name in most languages is somehow related to "apple."
 
-אפשר להשתמש בחלקי הצמח כשהם טריים או מיובשים. נפוץ בעיקר כצמח תה אך מתאים גם לקינוחים, גלידות, קוקטיילים ועוד.
+Both fresh and dried parts of the plant can be used. It is commonly used as a tea plant but is also suitable for desserts, ice creams, cocktails, and more.
 
-## היסטורה
+## History
 
-לקמומיל שמות שונים בשפות שונות אך לרוב המקור קשור בתפוח. *קמומיל* מגיע מהשם היווני *khamaimelon* שפירושו תפוח קרקע. מקור השם העברי *בבנוג* הוא במילה *בבונדש* שפרסית פירושה תפוח קרקע. השם הספרדי *manzanilla* פירושו תפוח קטן, וכך גם בשפות נוספות.
-
+Chamomile has different names in various languages, but most of them are somehow related to apples. "Chamomile" comes from the Greek name "khamaimelon," meaning ground apple. The Hebrew name "Babonog" is derived from the Persian word "babundish," which means ground apple. The Spanish name "manzanilla" translates to small apple, and similarly in other languages.

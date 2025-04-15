@@ -1,6 +1,5 @@
-הזוטה הלבנה גדלה בר ברוב אזורי הארץ, בעלת ניחוח מתקתק המזכיר סוגים של [נענע](spearmint). 
+White mint, growing wild throughout many regions of the country, has a sweet and refreshing fragrance reminiscent of certain types of [spearmint](spearmint).
 
-## במטבח
+## In the Kitchen
 
-הזוטה הלבנה משמשת לחליטות ואחד משמותיה בערבית הוא "עשב התה".
-
+White mint is used for infusions, and one of its names in Arabic is "tea herb."

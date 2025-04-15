@@ -1,20 +1,17 @@
-נקרא גם גד השדה, זהו אחד מעשבי התיבול החשובים ביותר. נפוץ במטבחים ברחבי העולם ובמטבחים מעדות שונות בישראל. יש שיגידו שהטעם לימוני ומרענן אך כרבע מהאוכלוסייה בעלת נטייה גנטית לחוש בכימיקל בצמח שנותן לו טעם מריר וסבוני.
+Also known as cilantro or Chinese parsley, coriander is one of the most important herbs in cooking. It is widespread in kitchens worldwide and plays a significant role in various cuisines, including different traditions in Israel. Some describe its taste as citrusy and refreshing, but approximately a quarter of the population has a genetic predisposition to perceive a soapy and unpleasant flavor in the plant.
 
-## במטבח
+## In the Kitchen
 
-כל חלקי הצמח אכילים, ומלבד העלים הטריים משתמשים בזרעי כוסברה כתבלין יבש, אך הם בעלי טעם מובחן ושונה מהעלים ולכן לא ניתן להשתמש בהם כתחליף.
+All parts of the coriander plant are edible, and both fresh leaves and dried seeds are used in cooking. The leaves, commonly referred to as cilantro, have a unique and distinct flavor, while the seeds are dried and used as a spice with a different taste.
 
-הצמח דומה במראו לקרובת משפחתו ה[פטרוזיליה](parsley) אך שונה מאוד בטעמו. העלים העליונים של הכוסברה שקרובים לפרח הולכים ונהיים דקים, לעיתים עד שהם ממש דומים לעלי [שמיר](dill).
+Coriander leaves are often used as a garnish, especially in Asian, Middle Eastern, and Latin American cuisines. The seeds are a crucial component in spice blends and are frequently ground into a powder for various dishes.
 
-במטבח האירופאי השימוש בעלים פחות נפוץ, מלבד במטבח הפורטוגזי.
+In European cuisine, coriander is less common, but it has found its way into certain recipes and spice mixtures.
 
-בבישול העלים העדינים מתפרקים ומאבדים הרבה מטעמם. עדיף להוסיף אותם למנה בסוף הבישול.
+When using coriander in cooking, it's important to note that the leaves have a delicate flavor that can diminish quickly. Therefore, they are best added toward the end of cooking.
 
-בפרו עלי כוסברה נפוצים מאוד בהרבה מנות, כולל במנה הלאומית - הסביצ'ה. במצרים נהוג לשים עלי גד במרקים. בדרום מזרח אסיה הם משמשים לסלטים, ומנגד לתבשילי דגים ובשר.
+Coriander is a key ingredient in many dishes worldwide, ranging from Indian curries to Mexican salsas. Its versatility makes it an integral part of global culinary traditions.
 
+## History
 
-
-## היסטוריה
-
-בשל השימוש הנרחב בצמח לאורך ההיסטוריה קשה לדעת מאיפה הוא הגיע. העדות הקדומה ביותר לשימוש בצמח, מלפני כ-10,000 שנה, נמצאה בחפירה ארכיאולוגית בנחל חמר בישראל. הצמח מוזכר בכתבים מצרים עתיקים, והתפשט באירופה עם האימפריה הרומית. הוא אינו גדל באופן טבעי ביבשת אמריקה אך הובא לשם עם המהגרים האירופאים וכיום נפוץ במטבחים מרכז ודרום אמריקאים - במקסיקו, ונזואלה, פרו וכו'.
-
+The origin of coriander is challenging to pinpoint due to its widespread use throughout history. The plant has a long history of cultivation and use in various cultures. Coriander seeds have been found in ancient Egyptian tombs, indicating its presence in the region for thousands of years. It has been embraced by different culinary traditions globally and has become an essential herb in kitchens worldwide.

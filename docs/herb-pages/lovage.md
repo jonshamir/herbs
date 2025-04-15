@@ -1,14 +1,13 @@
-מראהו וטעמו של הלובאז' מזכירים את קרוב משפחתו ה[סלרי](celery). גדל בדרום אירופה באופן טבעי, ומשמש כצמח תבלין מאז תקופת יוון העתיקה.
+The appearance and taste of lovage resemble its family member, [celery](celery). It grows naturally in Southern Europe and has been used as a culinary herb since ancient Greek times.
 
-## במטבח
+## In the Kitchen
 
-טעמו מזכיר את הסלרי, מעט יותר אניסי. אופן השימוש גם כן דומה - הגבעולים, העלים והשורש כולם מכילים את הטעם האופייני וניתן לבשל אותם או לאכלם טריים.
+Its taste is similar to celery but slightly more anise-like. It can be used in a similar way - the stems, leaves, and roots all contain the characteristic flavor and can be cooked or eaten fresh.
 
-באיטליה לעיתים מוסיפים את העלים יחד עם אורגנו לרוטב עגבניות.
+In Italy, lovage leaves are sometimes added with oregano to tomato sauce.
 
-מוכר בארץ ליהודים יוצאי רומניה כ"לאושטין" והוא מרכיב חשוב בהכנת מרק הצ'ורבה הרומני.
+Among Romanian Jews, it is known as "Lovush" and is an essential ingredient in making Romanian sorrel soup, known as "Ciorbă."
 
-## היסטוריה
+## History
 
-הרומאים והיוונים העתיקים נהגו להשתמש בצמח הרבה בבישול, אבל בימינו הוא איננו נפוץ במיוחד. משתמשים בו במטבחים דרום אירופאים ובבריטניה.
-
+Ancient Romans and Greeks used the plant extensively in cooking, but in modern times, it is not very common. It is used in Southern European kitchens and in Britain.

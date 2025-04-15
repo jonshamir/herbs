@@ -1,11 +1,11 @@
-עלי קפיר ליים הם עליו של העץ הטרופי הידוע גם כ"מקרוט ליים". לעלים ולגרידת הפרי יש ריח לימוני עז וצורה ייחודית של "עלה כפול".
+Kaffir lime leaves are the leaves of the tropical tree also known as "Kaffir Lime." The leaves and the grated fruit have a strong lemony scent and a unique "double leaf" shape.
 
-## במטבח
+## In the Kitchen
 
-נפוץ במטבח הדרום-מזרח אסייתי - עלי קפיר ליים הם מרכיב טעם חשוב במרק הטום-יאם התאילנדי, מחית קרואנג הקמבודית, תבשילי עוף ויאטנמים ועוד.
+Common in Southeast Asian cuisine, Kaffir lime leaves are an essential flavor component in dishes such as Thai Tom Yum soup, Cambodian Kroeung paste, various Vietnamese chicken dishes, and more.
 
-ניתן להשתמש בעלים טריים, מיובשים או קפואים.
+Fresh, dried, or frozen leaves can be used in cooking.
 
-## היסטוריה
+## History
 
-מקור המילה אולי מהמילה "כופר", אך לא ברור איך היא הגיעה לייצג את עץ הפרי הזה. בדרום אפריקה המונח "כפיר" נחשב כינוי גזעני לאדם שחור, ולכן מעדיפים את השם "מקרוט ליים" כפי שהוא נקרא בדרום-מזרח אסיה.
+The origin of the word may be from the term "kafir," but it's unclear how it came to represent this particular fruit tree. In South Africa, the term "kaffir" is considered a derogatory term for a black person, so the preferred name is "Kaffir Lime," as it is known in Southeast Asia.

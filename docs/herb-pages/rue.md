@@ -1,20 +1,17 @@
-הפיגם צומח בר בישראל וחלק ממדינות הים התיכון. לעלים יש טעם מריר וניחוח אופייני.
+Fennel grows wild in Israel and in parts of the Mediterranean. The leaves have a bitter taste and a distinctive aroma.
 
-## במטבח
+## In the Kitchen
 
-כאשר מבשלים עם פיגם חשוב להוציא אותו לאחר זמן קצר כיוון שהוא מריר ובעל טעם חזק מאוד. ניתן לבשל את העלים לדקה או שתיים במים רותחים, להיפטר מהם ולהשתמש במים לתיבול. השמנים האתריים משתחררים למים לפני הטעם המריר.
+When cooking with fennel, it is important to remove it after a short time as it is bitter and has a very strong taste. You can boil the leaves for a minute or two in hot water, discard them, and use the water for seasoning. The essential oils are released into the water before the bitter taste.
 
-מתאים עם חומרי גלם חומציים - עגבניות, זיתים, צלפים ועוד.
+It pairs well with acidic ingredients such as tomatoes, olives, and capers.
 
-אפשר להוסיף מעט לסלטים או ירקות כבושים.
+You can add a little to salads or pickled vegetables.
 
-באתיופיה הצמח נקרא טנדאם ונהוג לטבול אותו בקפה לקבלת ניחוח הדרי עדין. האתיופים משתמשים בו גם לתיבול גבינות ומוצרי חלב. פירות הפיגם הם מרכיב בחלק מהגרסאות של תערובת התבלינים האתיופית ברבר.
+In Ethiopia, the plant is called "Tendam," and it is customary to infuse it in coffee for a delicate fragrance. Ethiopians also use it to season cheeses and dairy products. Fennel fruits are an ingredient in some versions of the Ethiopian spice blend called "Berbere."
 
+## History
 
+In ancient Rome and the Middle Ages, fennel was more common as a spice, but today it is mainly used in Ethiopian cuisine.
 
-## היסטוריה
-
-ברומא העתיקה ובימי הביניים הצמח היה יותר נפוץ כצמח תבלין אך כיום בעיקר משתמשים בו במטבח האתיופי.
-
-לפיגם מיוחסות אמונות הקשורות לשדים ולגירושם, כפי שהסיקו חוקרים ובלשנים משמותיו בשפות שונות: בערבית, שם הצמח הוא פיג'ן (فيجن), משמע "שד"; יהודי תימן קוראים לו שד'אב, משמע "שד בו"; ובמרוקו קוראים לו רוטה (או רודא), שמו של שד מיתולוגי. לעיתים מוזכר הפיגם כבעל סגולות להרחקת עין הרע ושלל מחלות.
-
+Fennel is associated with beliefs related to demons and exorcism, as researchers and linguists have concluded from its names in different languages: in Arabic, the plant is called "Fijen," meaning "demon"; Yemeni Jews call it "Shed'av," meaning "demon's egg"; and in Morocco, it is called "Ruta" (or "Roda"), the name of a mythological demon. Sometimes fennel is mentioned for its supposed properties to ward off the evil eye and various diseases.

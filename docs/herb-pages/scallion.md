@@ -1,7 +1,7 @@
-בצל ירוק הוא עליו הירוקים של אחת ממיני בצל הגינה הרבים שקיימים ברחבי העולם. לרוב משתמשים במינים בעלי טעם עדין יותר מבצלים אחרים כיוון שנהוג לאכול אותו טרי.
+Green onion refers to the green leaves of one of the many varieties of onion plants found worldwide. Most commonly, varieties with a milder taste are used, as it is customary to eat it fresh.
 
-## במטבח
+## In the Kitchen
 
-החלק העליון, הירוק של העלים בעל טעם עדין יותר מבצל ולכן ניתן להשתמש בו טרי.
+The upper part, the green leaves, has a milder taste than regular onions, making it suitable for use when fresh.
 
-החלק ה"לבן" שבבסיס העלים הוא הפקעת של הצמח, בצל קטן בעל טעם עדין שניתן להשתמש באופן דומה לבצל רגיל בבישול.
+The "white" part at the base of the leaves is the bulb of the plant, a small onion with a delicate taste that can be used similarly to regular onions in cooking.

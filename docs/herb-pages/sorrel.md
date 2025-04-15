@@ -1,13 +1,11 @@
-החומעה בעלת טעם חמצמץ, ונקראת גם חמציץ. דומה בטעמה לחמציץ הנטוי המוכר יותר, בעל הפרחים הצהובים, זן פולש שהתפשט לשטחים פתוחים ברחבי הארץ.
+Wood sorrel has a sour taste and is also called "hamtzitz." It is similar in taste to the more familiar cultivated sorrel, which has yellow flowers, a variety that has spread to open areas around the world.
 
-## במטבח
+## In the Kitchen
 
-ניתן להשתמש בעלים הטריים להוספת חמיצות מרעננת לסלטים וכריכים. אפשר גם לבשל אותם במרק או יחד עם עלי מאכל נוספים כמו תרד.
+Fresh leaves can be used to add a refreshing sourness to salads and sandwiches. They can also be cooked in soup or with other dishes like rice.
 
-עלים גדולים ובוגרים יותר יהיו יותר חמוצים. 
+Larger and more mature leaves tend to be more sour.
 
+## History
 
-
-## היסטוריה
-
-השורש ח.מ.ע קיים בארמית בבלית-יהודית כשורש לתאר משהו חמוץ. וזה אולי מקור השם. השורש הזה מקביל לשורש ח.מ.צ בעברית.
+The root "ח.מ.ע" exists in Aramaic Babylonian-Jewish, describing something sour. This might be the origin of the name. This root corresponds to the Hebrew root "ח.מ.צ."
